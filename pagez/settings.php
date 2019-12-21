@@ -6,7 +6,7 @@ $password = "YetAnotherPassword";
 $dbname = "presence";
 
 // Create connection
-$conn = new mysqli("34.243.125.80", "hexago", "Z33rG3h31^^", "hexago");
+$conn = new mysqli("54.229.199.160", "hexago", "Z33rG3h31^^", "c44");
 
 function test_input($data) {
   $data = trim($data);
