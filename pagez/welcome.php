@@ -15,7 +15,13 @@ include_once("settings.php");
 $helper = $fb->getJavaScriptHelper();
 
 try {
-  $accessToken = $helper->getToken();
+    $session = $helper->getSessionFromRedirect();
+} catch (FacebookRequestException $ex) {
+} catch (Exception $ex) {
+}
+
+try {
+  $accessToken = $session->getToken();
   $response = $fb->get('/me?fields=first_name', $accessToken);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   // When Graph returns an error
