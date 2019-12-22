@@ -15,8 +15,17 @@ include_once("settings.php");
 $helper = $fb->getJavaScriptHelper();
 
 try {
-  $accessToken = $helper->getAccessToken();
-  //$response = $fb->get('/me?fields=first_name', $accessToken);
+	
+	if(isset($_SESSION['accessToken'])){
+		
+		$accessToken = $_SESSION['accessToken'];
+		
+	} else {
+		
+		$accessToken = $helper->getAccessToken();	
+	}
+
+  $response = $fb->get('/me?fields=first_name', $accessToken);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
@@ -31,6 +40,8 @@ if (! isset($accessToken)) {
   echo 'No cookie set or no OAuth data could be obtained from cookie.';
   exit;
 }
+
+$_SESSION['accessToken'] = $accessToken;
 
 $me = $response->getGraphUser();
 
