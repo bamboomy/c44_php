@@ -16,7 +16,7 @@ $helper = $fb->getJavaScriptHelper();
 
 try {
   $accessToken = $helper->getAccessToken();
-  $response = $fb->get('/me?fields=first_name', $accessToken);
+  //$response = $fb->get('/me?fields=first_name', $accessToken);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
