@@ -28,7 +28,7 @@
 <div class="outer">
   <div class="middle">
     <div class="inner">
-<form action="own.html" method="post">
+<form action="lobby.php" method="post">
 		Username:&nbsp
 		<input type="text" name="password" />
 		<input type="submit" value="Log in">
