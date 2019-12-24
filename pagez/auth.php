@@ -30,7 +30,7 @@
     <div class="inner">
 <form action="own.html" method="post">
 		Username:&nbsp
-		<input type="password" name="password" />
+		<input type="text" name="password" />
 		<input type="submit" value="Log in">
 		<input type="hidden" name="token" value="token">
 </form> 	
