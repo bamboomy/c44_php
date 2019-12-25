@@ -90,7 +90,7 @@ $sentence .= $one[rand(0, count($one) - 1)] . ' ' . $two[rand(0, count($two) - 1
     <div class="inner">
 		<h1>Hey <? echo $_SESSION['user']; ?>,</h1>
 		<h3>We're creating game:</h3>
-		<h3><? echo $sentence; ?>.</h3>
+		<h3><? echo $sentence; ?></h3>
 		<h3>Choose your color:</h3>
 		<br/>
 		
