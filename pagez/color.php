@@ -2,7 +2,13 @@
 
 session_start();
 
+$one = array("A breeze", "Some tea", "An outlet");
 
+$two = array("without", "in");
+
+$three = array("the dark", "elves");
+
+$sentence = $one[rand(0, count($one))] . $two[rand(0, count($two))] . $three[rand(0, count($three))] 
 
 ?>
 
@@ -80,7 +86,7 @@ session_start();
     <div class="inner">
 		<h1>Hey <? echo $_SESSION['user']; ?>,</h1>
 		<h3>We're creating game:</h3>
-		<h3>Test 1 2 3.</h3>
+		<h3><? echo $sentence; ?>.</h3>
 		<h3>Choose your color:</h3>
 		<br/>
 		
