@@ -16,6 +16,8 @@ echo rand(0, count($two));
 
 echo rand(0, count($three));
 
+echo $three[0];
+
 ?>
 
 <html>
