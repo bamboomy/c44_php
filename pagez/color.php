@@ -10,9 +10,9 @@ $two = array("without", "in", "between", "amongst", "outside of", "with");
 
 $three = array("the dark", "elves", "Godot", "a lamp", "the unknown", "the French", "a sister", "some coffee", "a group of Elvises", "Indiana Jones");
 
-$sentence = $four[rand(0, count($four) - 1)] . ' ';
+$sentence = '"' . $four[rand(0, count($four) - 1)] . ' ';
 
-$sentence .= $one[rand(0, count($one) - 1)] . ' ' . $two[rand(0, count($two) - 1)] . ' ' . $three[rand(0, count($three) - 1)];
+$sentence .= $one[rand(0, count($one) - 1)] . ' ' . $two[rand(0, count($two) - 1)] . ' ' . $three[rand(0, count($three) - 1)] . '."' ;
 
 ?>
 
