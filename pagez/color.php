@@ -2,7 +2,7 @@
 
 session_start();
 
-$four = array("A wonderfull", "Some good", "A tea spoon of", "A green", "A wooden", "A bright", "Some decent", "An excellent", "A handfull of");
+$four = array("A wonderfull", "Some good", "A tea spoon of", "A green", "A wooden", "A bright", "A decent", "An excellent", "A handfull of");
 
 $one = array("breeze", "tea", "outlet", "garden", "color", "t-shirt", "glass", "chocolate", "ashtray", "card", "letter", "globe", "bottle");
 
