@@ -40,9 +40,9 @@ session_start();
 		<h3>Choose your color:</h3>
 		<br/>
 		<img src="../imgz/yellow.png" alt="Smiley face" height="42" width="42">
-		<img src="../imgz/red.png" alt="Smiley face" height="42" width="42"><br/>
+		<img src="../imgz/grey.png" alt="Smiley face" height="42" width="42"><br/>
 		<img src="../imgz/green.png" alt="Smiley face" height="42" width="42">
-		<img src="../imgz/blue.png" alt="Smiley face" height="42" width="42"><br/>
+		<img src="../imgz/grey.png" alt="Smiley face" height="42" width="42"><br/>
 	</div>
   </div>
 </div>
