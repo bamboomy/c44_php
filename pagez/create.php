@@ -16,30 +16,36 @@ $_SESSION['sentence'] = '"' . $four[rand(0, count($four) - 1)] . ' ';
 
 $_SESSION['sentence'] .= $one[rand(0, count($one) - 1)] . ' ' . $two[rand(0, count($two) - 1)] . ' ' . $three[rand(0, count($three) - 1)] . '."' ;
 
-if(isset($_SESSION['failCounter'])){
-	
-	$_SESSION['failCounter']++;
-
-} else {
-	
-	$_SESSION['failCounter'] = 0;
-}
+$failCounter = 0;
 
 $sql = "select id from game where sentence = '".$_SESSION['sentence']."';";
 
 $result = $conn->query($sql);
 
 if ($result->num_rows != 0) {
-
-	header("Location: create.php");
 	
-	exit;
+	$fail = true;
+	
+	while($fail){
+		
+		$_SESSION['sentence'] = '"' . $four[rand(0, count($four) - 1)] . ' ';
+
+		$_SESSION['sentence'] .= $one[rand(0, count($one) - 1)] . ' ' . $two[rand(0, count($two) - 1)] . ' ' . $three[rand(0, count($three) - 1)] . '."' ;
+
+		$sql = "select id from game where sentence = '".$_SESSION['sentence']."';";
+
+		$result = $conn->query($sql);
+		
+		$fail = $result->num_rows != 0;
+		
+		$failCounter++;
+	}
 }
 
-$_SESSION['hash'] = md5(microtime() . $_SESSION['sentence'] . $_SESSION['failCounter']);
+$_SESSION['hash'] = md5(microtime() . $_SESSION['sentence'] . $failCounter);
 
 $sql = "insert into game (sentence, hash, fail) ";
-$sql .= " values ('.$_SESSION['sentence'].', '.$_SESSION['hash'].', '.$_SESSION['failCounter'].');";
+$sql .= " values ('.$_SESSION['sentence'].', '.$_SESSION['hash'].', '.$failCounter.');";
 
 $result = $conn->query($sql);
 
