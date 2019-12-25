@@ -10,13 +10,11 @@ $three = array("the dark", "elves");
 
 $sentence = $one[rand(0, count($one))] . ' ' . $two[rand(0, count($two))] . ' ' . $three[rand(0, count($three))];
 
-/*
 echo rand(0, count($one));
 
 echo rand(0, count($two));
 
 echo rand(0, count($three));
-*/
 
 ?>
 
