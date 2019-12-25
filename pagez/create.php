@@ -45,7 +45,7 @@ if ($result->num_rows != 0) {
 $_SESSION['hash'] = md5(microtime() . $_SESSION['sentence'] . $failCounter);
 
 $sql = "insert into game (sentence, hash, fail) ";
-$sql .= " values ('.$_SESSION['sentence'].', '.$_SESSION['hash'].', '.$failCounter.');";
+$sql .= " values ('".$_SESSION['sentence']."', '".$_SESSION['hash']."', '".$failCounter."');";
 
 $result = $conn->query($sql);
 
