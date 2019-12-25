@@ -64,6 +64,19 @@ $sentence .= $one[rand(0, count($one) - 1)] . ' ' . $two[rand(0, count($two) - 1
   background-color: #008CBA;
 }
 
+.overlay_orig {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
 .container:hover .overlay {
   opacity: 1;
 }
@@ -99,7 +112,9 @@ $sentence .= $one[rand(0, count($one) - 1)] . ' ' . $two[rand(0, count($two) - 1
 			  <div class="overlay">
 				<div class="text">Already taken</div>
 			  </div>
-			</div>		
+			<div class="overlay_orig">
+				<div class="text">Red</div>
+			  </div>			</div>		
 			<div class="container">
 			  <img src="../imgz/yellow.png" alt="Avatar" class="image">
 			</div>					
