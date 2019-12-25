@@ -13,7 +13,7 @@ header("Location: test.php");
 
 exit;
 
-if($_SESSION['failCounter'] == 5){
+if($_SESSION['failCounter'] == 3){
 
 	header("Location: color.php");
 }
