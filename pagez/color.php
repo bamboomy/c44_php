@@ -39,10 +39,10 @@ session_start();
 		<h1>Hey <? echo $_SESSION['user']; ?>,</h1>
 		<h3>Choose your color:</h3>
 		<br/>
-		<img src="../imgz/yellow.gif" alt="Smiley face" height="42" width="42">
-		<img src="../imgz/red.gif" alt="Smiley face" height="42" width="42"><br/>
-		<img src="../imgz/green.gif" alt="Smiley face" height="42" width="42">
-		<img src="../imgz/blue.gif" alt="Smiley face" height="42" width="42"><br/>
+		<img src="../imgz/yellow.png" alt="Smiley face" height="42" width="42">
+		<img src="../imgz/red.png" alt="Smiley face" height="42" width="42"><br/>
+		<img src="../imgz/green.png" alt="Smiley face" height="42" width="42">
+		<img src="../imgz/blue.png" alt="Smiley face" height="42" width="42"><br/>
 	</div>
   </div>
 </div>
