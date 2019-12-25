@@ -2,21 +2,17 @@
 
 session_start();
 
-$one = array("A breeze", "Some tea", "An outlet");
+$four = array("A wonderfull", "Some good", "A tea spoon of", "A green", "A wooden", "A bright", "Some decent", "An excellent", "A handfull of");
 
-$two = array("without", "in");
+$one = array("breeze", "tea", "outlet", "garden", "color", "t-shirt", "glass", "chocolate", "ashtray", "card", "letter", "globe", "bottle");
 
-$three = array("the dark", "elves");
+$two = array("without", "in", "between", "amongst", "outside of", "with");
 
-$sentence = $one[rand(0, count($one) - 1)] . ' ' . $two[rand(0, count($two) - 1)] . ' ' . $three[rand(0, count($three) - 1)];
+$three = array("the dark", "elves", "Godot", "a lamp", "the unknown", "the French", "a sister", "some coffee", "a group of Elvises", "Indiana Jones");
 
-echo rand(0, count($one));
+$sentence = $four[rand(0, count($four) - 1)] . ' ';
 
-echo rand(0, count($two));
-
-echo rand(0, count($three));
-
-echo $three[0];
+$sentence .= $one[rand(0, count($one) - 1)] . ' ' . $two[rand(0, count($two) - 1)] . ' ' . $three[rand(0, count($three) - 1)];
 
 ?>
 
