@@ -79,6 +79,8 @@ session_start();
   <div class="middle">
     <div class="inner">
 		<h1>Hey <? echo $_SESSION['user']; ?>,</h1>
+		<h3>We're creating game:</h3>
+		<h3>Test 1 2 3.</h3>
 		<h3>Choose your color:</h3>
 		<br/>
 		
