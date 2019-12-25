@@ -8,7 +8,7 @@ $two = array("without", "in");
 
 $three = array("the dark", "elves");
 
-$sentence = $one[rand(0, count($one) - 1)] . ' ' . $two[rand(0, count($two) - 1)] . ' ' . $three[rand(0, count($three) - 2)];
+$sentence = $one[rand(0, count($one) - 1)] . ' ' . $two[rand(0, count($two) - 1)] . ' ' . $three[rand(0, count($three) - 1)];
 
 echo rand(0, count($one));
 
