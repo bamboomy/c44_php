@@ -29,13 +29,19 @@ $sql = "select id from game where sentence = '".$_SESSION['sentence']."';";
 
 $result = $conn->query($sql);
 
-if ($result->num_rows == 0) {
-	
-	echo "new";
+if ($result->num_rows != 0) {
 
-} else {
+	header("Location: create.php");
 	
-	echo "taken";
+	exit;
 }
 
+$_SESSION['hash'] = md5(microtime() . $_SESSION['sentence'] . $_SESSION['failCounter']);
+
+$sql = "insert into game (sentence, hash, fail) ";
+$sql .= " values ('.$_SESSION['sentence'].', '.$_SESSION['hash'].', '.$_SESSION['failCounter'].');";
+
+$result = $conn->query($sql);
+
+header("Location: color.php");
 ?>
