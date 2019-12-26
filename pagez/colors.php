@@ -30,11 +30,11 @@ foreach ($allColors as $color){
 <?
 		if($_SESSION['ownColor'] == $color){
 			
-			echo "<div class='text'>You</div>"
+			echo "<div class='text'>You</div>";
 			
 		} else {
 			
-			echo "<div class='text'>".$color."</div>"
+			echo "<div class='text'>".$color."</div>";
 		}
 ?>
 				</div>			
