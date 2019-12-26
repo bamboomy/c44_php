@@ -86,6 +86,17 @@ session_start();
 
 
 </style>
+
+<script>
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  alert("url copied...");
+}
+</script>
+
 </head>
 <body>
 <center>
@@ -96,7 +107,7 @@ session_start();
 		<h3>We're waiting on the other players for game:</h3>
 		<h3><? echo $_SESSION['sentence']; ?></h3>
 		<h3>You can share this link:</h3>
-		<? echo "<input type='text' value='http://chess4four.io/pagez/invite.php?game=".$_SESSION['hash']."' /><input type='button' value='copy' />"; ?>
+		<? echo "<input id='myInput' type='text' value='http://chess4four.io/pagez/invite.php?game=".$_SESSION['hash']."' /><input type='button' value='copy' />"; ?>
 		<br/>
 		<br/>
 			<div class="container">
