@@ -112,21 +112,28 @@ if(isset($_SESSION['invited'])){
 
 <script>
 
-setTimeout(function(){
+function again() {
 
-	var response = '';
-	$.ajax({ type: "GET",   
-			 url: "http://chess4four.io/pagez/colors.php",   
-			 async: false,
-			 success : function(text)
-			 {
-				 response = text;
-			 }
-	});
+	setTimeout(function(){
 
-	$('colors').html(response);
+		var response = '';
+		$.ajax({ type: "GET",   
+				 url: "http://chess4four.io/pagez/colors.php",   
+				 async: false,
+				 success : function(text)
+				 {
+					 response = text;
+				 }
+		});
 
-}, 300);
+		$('#colors').html(response);
+		
+		again();
+
+	}, 300);
+}
+
+again();
 
 </script>
 
