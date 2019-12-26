@@ -2,6 +2,15 @@
 
 session_start();
 
+include_once("settings.php");
+
+$sql = "insert into colorsTaken (game, color) ";
+$sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."');";
+
+$result = $conn->query($sql);
+
+$_SESSION['ownColor'] = test_input($_GET['color']);
+
 ?>
 
 <html>
@@ -96,9 +105,28 @@ function copy() {
   alert("url copied...");
 }
 
-setTimeout(function(){
-   window.location.reload(1);
-}, 1000);
+function again() {
+
+	setTimeout(function(){
+
+		var response = '';
+		$.ajax({ type: "GET",   
+				 url: "http://chess4four.io/pagez/colors.php",   
+				 async: false,
+				 success : function(text)
+				 {
+					 response = text;
+				 }
+		});
+
+		$('#colors').html(response);
+		
+		again();
+
+	}, 1000);
+}
+
+again();
 
 </script>
 
@@ -116,36 +144,8 @@ setTimeout(function(){
 		echo "<input type='button' onclick='copy();' value='copy' />"; ?>
 		<br/>
 		<br/>
-			<div class="container">
-			  <img src="../imgz/grey.png" alt="Avatar" class="image">
-			  <div class="overlay">
-				<div class="text">Already taken</div>
-			  </div>
-			<div class="overlay_orig">
-				<div class="text">Red</div>
-			  </div>			
-			  </div>		
-			<div class="container">
-			  <img src="../imgz/grey.png" alt="Avatar" class="image">
-			  <div class="overlay">
-				<div class="text">Already taken</div>
-			  </div>
-			<div class="overlay_orig">
-				<div class="text">You</div>
-			  </div>			
-			  </div>
-			<div class="container">
-			  <img src="../imgz/green.png" alt="Avatar" class="image">
-			</div>		
-			<div class="container">
-			  <img src="../imgz/grey.png" alt="Avatar" class="image">
-			  <div class="overlay">
-				<div class="text">Already taken</div>
-			  </div>
-			<div class="overlay_orig">
-				<div class="text">Blue</div>
-			  </div>			
-			</div>					
+		
+			<div id="colors"></div>			
 	</div>
   </div>
 </div>
