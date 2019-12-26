@@ -106,12 +106,12 @@ session_start();
 			  </div>			
 			  </div>		
 			<div class="container">
-			  <img src="../imgz/grey.png" alt="Avatar" class="image">&nbsp;You
+			  <img src="../imgz/grey.png" alt="Avatar" class="image">&nbsp;
 			  <div class="overlay">
 				<div class="text">Already taken</div>
 			  </div>
 			<div class="overlay_orig">
-				<div class="text">Yellow</div>
+				<div class="text">You</div>
 			  </div>			
 			  </div>
 			<div class="container">
