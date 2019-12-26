@@ -108,7 +108,7 @@ session_start();
 			  </div>			
 			  </div>		
 			<div class="container">
-			  <img src="../imgz/yellow.png" alt="Avatar" class="image">
+			  <? echo "<a href='readyRoom.php?game=".$_SESSION['hash']."&color=yellow'><img src='../imgz/yellow.png' class='image'></a>"; ?>
 			</div>					
 			<div class="container">
 			  <img src="../imgz/green.png" alt="Avatar" class="image">
