@@ -107,6 +107,15 @@ if(isset($_SESSION['invited'])){
 
 
 </style>
+
+<script>
+
+setTimeout(function(){
+   window.location.reload(1);
+}, 300);
+
+</script>
+
 </head>
 <body>
 <center>

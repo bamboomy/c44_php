@@ -95,6 +95,11 @@ function copy() {
   document.execCommand("copy");
   alert("url copied...");
 }
+
+setTimeout(function(){
+   window.location.reload(1);
+}, 300);
+
 </script>
 
 </head>
