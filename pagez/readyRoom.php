@@ -95,6 +95,8 @@ session_start();
 		<h1>Hey <? echo $_SESSION['user']; ?>,</h1>
 		<h3>We're waiting on the other players for game:</h3>
 		<h3><? echo $_SESSION['sentence']; ?></h3>
+		<h3>You can share this link:</h3>
+		<input type="text" value="test" />
 		<br/>
 			<div class="container">
 			  <img src="../imgz/grey.png" alt="Avatar" class="image">
