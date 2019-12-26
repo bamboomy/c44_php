@@ -96,6 +96,8 @@ $_SESSION['ownColor'] = test_input($_GET['color']);
 
 </style>
 
+<script src="../js/jquery-3.4.1.min.js"></script>
+
 <script>
 function copy() {
   var copyText = document.getElementById("myInput");
