@@ -98,7 +98,7 @@ function copy() {
 
 setTimeout(function(){
    window.location.reload(1);
-}, 300);
+}, 1000);
 
 </script>
 
