@@ -124,9 +124,9 @@ setTimeout(function(){
 			 }
 	});
 
-	alert(response);
+	$('colors').html(response);
 
-}, 5000);
+}, 300);
 
 </script>
 
@@ -141,6 +141,8 @@ setTimeout(function(){
 		<h3><? echo $_SESSION['sentence']; ?></h3>
 		<h3>Choose your color:</h3>
 		<br/>
+		
+		<div id="colors"></div>
 		
 	</div>
   </div>
