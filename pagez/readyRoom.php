@@ -88,7 +88,7 @@ session_start();
 </style>
 
 <script>
-function myFunction() {
+function copy() {
   var copyText = document.getElementById("myInput");
   copyText.select();
   copyText.setSelectionRange(0, 99999)
@@ -107,7 +107,8 @@ function myFunction() {
 		<h3>We're waiting on the other players for game:</h3>
 		<h3><? echo $_SESSION['sentence']; ?></h3>
 		<h3>You can share this link:</h3>
-		<? echo "<input id='myInput' type='text' value='http://chess4four.io/pagez/invite.php?game=".$_SESSION['hash']."' /><input type='button' value='copy' />"; ?>
+		<? echo "<input id='myInput' type='text' value='http://chess4four.io/pagez/invite.php?game=".$_SESSION['hash']."' />";
+		echo "<input type='button' onclick='copy();' value='copy' />"; ?>
 		<br/>
 		<br/>
 			<div class="container">
