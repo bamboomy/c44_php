@@ -98,6 +98,8 @@ session_start();
 		<h3>You can share this link:</h3>
 		<input type="text" value="test" />
 		<br/>
+		<br/>
+		<br/>
 			<div class="container">
 			  <img src="../imgz/grey.png" alt="Avatar" class="image">
 			  <div class="overlay">
