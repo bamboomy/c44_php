@@ -108,8 +108,25 @@ if(isset($_SESSION['invited'])){
 
 </style>
 
+<script src="../js/jquery-3.4.1.min.js"></script>
+
 <script>
 
+setTimeout(function(){
+
+	var response = '';
+	$.ajax({ type: "GET",   
+			 url: "http://chess4four.io/pagez/colors.php",   
+			 async: false,
+			 success : function(text)
+			 {
+				 response = text;
+			 }
+	});
+
+	alert(response);
+
+}, 5000);
 
 </script>
 
@@ -125,30 +142,6 @@ if(isset($_SESSION['invited'])){
 		<h3>Choose your color:</h3>
 		<br/>
 		
-			<div class="container">
-			  <img src="../imgz/grey.png" alt="Avatar" class="image">
-			  <div class="overlay">
-				<div class="text">Already taken</div>
-			  </div>
-			<div class="overlay_orig">
-				<div class="text">Red</div>
-			  </div>			
-			  </div>		
-			<div class="container">
-			  <? echo "<a href='readyRoom.php?game=".$_SESSION['hash']."&color=yellow'><img src='../imgz/yellow.png' class='image'></a>"; ?>
-			</div>					
-			<div class="container">
-			  <img src="../imgz/green.png" alt="Avatar" class="image">
-			</div>		
-			<div class="container">
-			  <img src="../imgz/grey.png" alt="Avatar" class="image">
-			  <div class="overlay">
-				<div class="text">Already taken</div>
-			  </div>
-			<div class="overlay_orig">
-				<div class="text">Blue</div>
-			  </div>			
-			</div>					
 	</div>
   </div>
 </div>
