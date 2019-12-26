@@ -96,7 +96,7 @@ session_start();
 		<h3>We're waiting on the other players for game:</h3>
 		<h3><? echo $_SESSION['sentence']; ?></h3>
 		<h3>You can share this link:</h3>
-		<input type="text" value="test" />
+		<input type="text" value="test" /><input type="button" value="copy" />
 		<br/>
 		<br/>
 			<div class="container">
