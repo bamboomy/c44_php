@@ -1,3 +1,9 @@
+<?
+
+session_start();
+
+?>
+
 <html>
 <head>
 <style>

@@ -2,6 +2,27 @@
 
 session_start();
 
+if(isset($_SESSION['invited'])){
+
+	include_once("settings.php");
+
+	$sql = "select sentence from game where hash = '".test_input($_SESSION['hash'])."';";
+
+	$result = $conn->query($sql);
+	
+	if ($result->num_rows != 1) {
+		
+		echo "the site is broken";
+		
+		die;
+	}
+	
+	$row = $result->fetch_assoc();
+	
+	$_SESSION['sentence'] = $row['sentence'];
+}
+
+
 ?>
 
 <html>
