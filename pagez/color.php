@@ -2,10 +2,6 @@
 
 session_start();
 
-//unset($_SESSION['failCounter']);
-
-echo $_SESSION['failCounter'];
-
 ?>
 
 <html>
