@@ -22,6 +22,12 @@
   width: 400px;
   /*whatever width you want*/
 }
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
 </style>
 
 	</head>
@@ -31,7 +37,7 @@
 
 	<div class="outer">
 		<div class="middle">
-			<div class="inner">
+			<div class="inner center">
 
 				<div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
 
