@@ -34,6 +34,11 @@ include_once("settings.php");
   text-align: center;
 }
 
+.left{
+
+		text-align: left;
+}
+
 </style>
 
 <script>
@@ -99,11 +104,11 @@ include_once("settings.php");
 				<br/>
 				Care to choose your destiny? (oops, I mean name?):<br/>
 				<br/>
-				<input type="radio" name="gender" value="male"> Male<br>
-				<input type="radio" name="gender" value="female"> Female<br>
-				<input type="radio" name="gender" value="other"> Other
+				<input class="left" type="radio" name="gender" value="male"> Male<br>
+				<input class="left" type="radio" name="gender" value="female"> Female<br>
+				<input class="left" type="radio" name="gender" value="other"> Other
 			</div>
-		</div>
+			</div>
 	</div>
 
 </body>
