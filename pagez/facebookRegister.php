@@ -125,6 +125,7 @@ for($i=0; $i<5; $i++){
 }
 ?>
 				<div class='left'><input type='radio' name='name' onclick="alert('test');" value='own'>I want to choose my own name.</div>
+				<input type="text" name="password" />
 			</div>
 			</div>
 	</div>
