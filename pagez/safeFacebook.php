@@ -1,5 +1,10 @@
 <? 
 
-echo $_POST['name'] . " " . $_POST['ownName'];
+echo $_POST['name'];
+
+if($_POST['name'] == 'own'){
+	
+	echo $_POST['ownName'];
+}
 
 ?>
