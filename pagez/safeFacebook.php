@@ -1,10 +1,20 @@
 <? 
 
-echo $_POST['name'];
+session_start();
+
+include_once("settings.php");
+
+$sql = "insert into gebruiker (name, fbId) values (";
 
 if($_POST['name'] == 'own'){
 	
-	echo $_POST['ownName'];
+	$sql .= $_POST['ownName'];
+	
+} else {
+	
+	$sql .= $_POST['name'];
 }
+
+$sql .= ", )";
 
 ?>

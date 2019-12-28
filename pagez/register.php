@@ -86,14 +86,9 @@ $result = $conn->query($sql);
   function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
     FB.api('/me', function(response) {
 		<? echo "window.location.assign('facebookSuccess.php?token=".$token."&id=' + response.id);"; ?>
-    });
+    });	
   }
   
-  function registerFacebook(){
-	  
-	<? echo "window.location.assign('facebookRegister.php?token=".$token."');"; ?>
-  }
-
 </script>
 
 
@@ -107,7 +102,7 @@ $result = $conn->query($sql);
 			<div class="inner center">
 
 				<div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" 
-					data-use-continue-as="false" data-onlogin="registerFacebook();"></div>
+					data-use-continue-as="false" data-onlogin="statusChangeCallback"></div>
 
 			</div>
 		</div>
