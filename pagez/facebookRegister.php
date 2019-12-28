@@ -99,14 +99,9 @@ include_once("settings.php");
 				<br/>
 				Care to choose your destiny? (oops, I mean name?):<br/>
 				<br/>
-				<ul>
-					<li>frutske</li>
-					<li>frutske</li>
-					<li>frutske</li>
-					<li>frutske</li>
-					<li>frutske</li>
-					<li>frutske</li>
-				</ul>
+				<input type="radio" name="gender" value="male"> Male<br>
+				<input type="radio" name="gender" value="female"> Female<br>
+				<input type="radio" name="gender" value="other"> Other
 			</div>
 		</div>
 	</div>
