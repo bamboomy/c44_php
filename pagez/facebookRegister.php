@@ -104,7 +104,7 @@ include_once("settings.php");
 				<br/>
 				Care to choose your destiny? (oops, I mean name?):<br/>
 				<br/>
-<form action="login.php" method="post">
+<form action="safeFacebook.php" method="post">
 
 <? 
 
@@ -126,7 +126,7 @@ for($i=0; $i<5; $i++){
 	echo "<div class='left'><input type='radio' name='name' value='".$name[$i]."'>".$name[$i]."</div>";
 }
 ?>
-				<div class='left'><input type='radio' name='name' value='own'>I want to choose my own name:&nbsp;<input type="text" name="password" /></div>
+				<div class='left'><input type='radio' name='name' value='own'>I want to choose my own name:&nbsp;<input type="text" name="ownName" /></div>
 		<div class='left'><input type="submit" value="I will be named like this forever!"></div>
 		<input type="hidden" name="token" value="token">
 </form> 	
