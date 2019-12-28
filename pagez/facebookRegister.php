@@ -104,9 +104,26 @@ include_once("settings.php");
 				<br/>
 				Care to choose your destiny? (oops, I mean name?):<br/>
 				<br/>
-				<div class="left"><input class="left" type="radio" name="gender" value="male"> Male</div>
-				<div class="left"><input class="left" type="radio" name="gender" value="female"> Female</div>
-				<div class="left"><input class="left" type="radio" name="gender" value="other"> Other</div>
+<? 
+
+$four = array("Ma", "Ze", "Di", "Ka", "Fo", "Zi", "Lo", "Je", "Ri", "A", "E", "O");
+
+$one = array("nen", "maf", "kit", "jep", "pof", "hez", "nid", "ber", "set", "kif", "lod", "kag", "nif");
+
+$two = array("ozo", "afi", "elo", "ira", "ogo", "eti", "afo", "eka", "azo", "ito", "afe", "oli");
+
+for($i=0; $i<20; $i++){
+	
+	$name[$i] = $four[rand(0, count($four) - 1)] . $one[rand(0, count($one) - 1)] . $two[rand(0, count($two) - 1)];
+}
+
+//TODO: filter on existing names
+
+for($i=0; $i<5; $i++){
+	
+	echo "<div class='left'><input type='radio' name='name' value='".$name[$i]."'>".$name[$i]."</div>";
+}
+?>
 			</div>
 			</div>
 	</div>
