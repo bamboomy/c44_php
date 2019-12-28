@@ -4,13 +4,6 @@ session_start();
 
 include_once("settings.php");
 
-$token = md5($_SERVER['REMOTE_ADDR'].microtime());
-
-$sql = "insert into sessions (token, ip) ";
-$sql .= " values ('".$token."', '".$_SERVER['REMOTE_ADDR']."');";
-
-$result = $conn->query($sql);
-
 ?>
 <html>
 <head>
@@ -85,30 +78,35 @@ $result = $conn->query($sql);
  
   function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
     FB.api('/me', function(response) {
-		<? echo "window.location.assign('facebookSuccess.php?token=".$token."&id=' + response.id);"; ?>
+		//<? echo "window.location.assign('facebookSuccess.php?token=".$token."&id=' + response.id);"; ?>
     });
   }
   
-  function registerFacebook(){
-	  
-	<? echo "window.location.assign('facebookRegister.php?token=".$token."');"; ?>
-  }
 
 </script>
 
 
 	</head>
 <body>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=469961633832839&autoLogAppEvents=1"></script>
 
 	<div class="outer">
 		<div class="middle">
 			<div class="inner center">
 
-				<div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" 
-					data-use-continue-as="false" data-onlogin="registerFacebook();"></div>
-
+				<h2>Hey <span id='name'></span>,</h2>
+				
+				Seems you are new around here...<br/>
+				<br/>
+				Care to choose your destiny? (oops, I mean name?):<br/>
+				<br/>
+				<ul>
+					<li>frutske</li>
+					<li>frutske</li>
+					<li>frutske</li>
+					<li>frutske</li>
+					<li>frutske</li>
+					<li>frutske</li>
+				</ul>
 			</div>
 		</div>
 	</div>
