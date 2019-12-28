@@ -124,8 +124,7 @@ for($i=0; $i<5; $i++){
 	echo "<div class='left'><input type='radio' name='name' value='".$name[$i]."'>".$name[$i]."</div>";
 }
 ?>
-				<div class='left'><input type='radio' name='name' onclick="alert('test');" value='own'>I want to choose my own name.</div>
-				<div class='left'><input type="text" name="password" /></div>
+				<div class='left'><input type='radio' name='name' onclick="alert('test');" value='own'>I want to choose my own name.&nbsp;<input type="text" name="password" /></div>
 			</div>
 			</div>
 	</div>
