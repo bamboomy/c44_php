@@ -61,7 +61,7 @@ $_SESSION['ownColor'] = test_input($_GET['color']);
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
+  height: 50%;
   width: 100%;
   opacity: 0;
   transition: .5s ease;
@@ -74,7 +74,7 @@ $_SESSION['ownColor'] = test_input($_GET['color']);
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
+  height: 50%;
   width: 100%;
   color: white;
 }
