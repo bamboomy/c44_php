@@ -9,6 +9,8 @@ if(!isset($_SESSION['id'])){
 	exit;
 }
 
+unset($_SESSION['ownColor']);
+
 ?>
 
 <html>
