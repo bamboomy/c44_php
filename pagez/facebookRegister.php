@@ -46,6 +46,11 @@ include_once("settings.php");
 		text-align: left;
 }
 
+.right {
+	
+	text-align: right;
+}
+
 </style>
 
 <script>
@@ -91,7 +96,7 @@ for($i=0; $i<5; $i++){
 ?>
 				<div class='left'><input type='radio' name='name' value='own'>I want to choose my own name:&nbsp;<input type="text" name="ownName" /></div>
 		<div class='left'><input type="submit" value="I will be named like this forever!"></div>
-		<input type="hidden" name="token" value="token">
+		<div class='right'><input type="hidden" name="token" value="token"></div>
 </form> 	
 			</div>
 			</div>
