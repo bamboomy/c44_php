@@ -46,8 +46,7 @@ $_SESSION['ownColor'] = test_input($_GET['color']);
 
 .container {
 	position: relative;
-  width: 25%;
-  height: 15%;
+  width: 20%;
 }
 
 .image {
@@ -62,7 +61,7 @@ $_SESSION['ownColor'] = test_input($_GET['color']);
   bottom: 0;
   left: 0;
   right: 0;
-  height: 50%;
+  height: 100%;
   width: 100%;
   opacity: 0;
   transition: .5s ease;
@@ -75,7 +74,7 @@ $_SESSION['ownColor'] = test_input($_GET['color']);
   bottom: 0;
   left: 0;
   right: 0;
-  height: 50%;
+  height: 100%;
   width: 100%;
   color: white;
 }
