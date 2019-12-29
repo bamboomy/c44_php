@@ -111,7 +111,7 @@ function copy() {
   copyText.select();
   copyText.setSelectionRange(0, 99999)
   document.execCommand("copy");
-  alert("url copied...");
+  alert("Link copied...");
 }
 
 function again() {
