@@ -8,7 +8,7 @@ $_SESSION['invited'] = true;
 
 if(isset($_SESSION['id'])){
 	
-	header("Location: color.php");
+	header("Location: register.php");
 		
 	exit;
 }

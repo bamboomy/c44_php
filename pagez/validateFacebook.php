@@ -85,6 +85,14 @@ $sql = "update gebruiker set lastLogin = now() where id='" . $_SESSION['id'] . "
 
 $result = $conn->query($sql);
 
+if(isset($_SESSION['invited'])){
+	
+	header("Location: color.php");
+		
+	exit;
+}
+
+
 ?>
 <html>
 <head>
