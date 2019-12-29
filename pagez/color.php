@@ -125,7 +125,7 @@ function again() {
 
 		var response = '';
 		$.ajax({ type: "GET",   
-				 url: "http://chess4four.io/pagez/colors.php",   
+				 url: "https://chess4four.io/pagez/colors.php",   
 				 async: false,
 				 success : function(text)
 				 {
