@@ -64,7 +64,7 @@ $_SESSION['fbId'] = $me->getProperty('id');
 
 $_SESSION['firstName'] = $me->getProperty('first_name');
 
-$sql = "select id from gebruiker where fbId='" . $_SESSION['fbId'] . "';";
+$sql = "select id, name from gebruiker where fbId='" . $_SESSION['fbId'] . "';";
 
 $result = $conn->query($sql);
 
@@ -75,4 +75,73 @@ if ($result->num_rows == 0) {
 	exit;
 }
 
+$row = $result->fetch_assoc();
+
+$_SESSION['id'] = $row['id'];
+
+$sql = "update gebruiker set lastLogin = now() where id='" . $_SESSION['id'] . "';";
+
+$result = $conn->query($sql);
+
 ?>
+<html>
+<head>
+
+<style>
+.outer {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.left{
+
+		text-align: left;
+}
+
+.right {
+	
+	text-align: right;
+}
+
+</style>
+
+<script>
+
+</script>
+
+
+	</head>
+<body>
+
+	<div class="outer">
+		<div class="middle">
+			<div class="inner center">
+
+				<? echo "<h2>Welcome back " . $_SESSION['firstName'] . "(".$row['name']."),</h2>" ?>
+
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
