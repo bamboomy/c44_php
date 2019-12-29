@@ -96,7 +96,7 @@ for($i=0; $i<5; $i++){
 ?>
 				<div class='left'><input type='radio' name='name' value='own'>I want to choose my own name:<div class='right'><input type="text" name="ownName" /></div></div>
 				<br/>
-		<div class='right'><input type="submit" value="I will be named like this forever!"></div>
+		<div class='right'><input disabled type="submit" value="I will be named like this forever!"></div>
 </form> 	
 			</div>
 			</div>
