@@ -2,6 +2,13 @@
 
 session_start();
 
+if(!isset($_SESSION['id'])){
+	
+	header("Location: register.php");
+		
+	exit;
+}
+
 include_once("settings.php");
 
 $four = array("A wonderfull", "Some good", "A tea spoon of", "A green", "A wooden", "A bright", "A decent", "An excellent", "A handfull of");
