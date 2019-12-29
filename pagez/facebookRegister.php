@@ -58,6 +58,7 @@ include_once("settings.php");
 				Seems you are new around here...<br/>
 				<br/>
 				Care to choose your destiny? (oops, I mean name?):<br/>
+				(Only this name will be shared with the other users...)<br/>
 				<br/>
 <form action="safeFacebook.php" method="post">
 
