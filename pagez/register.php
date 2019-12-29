@@ -47,7 +47,7 @@ $result = $conn->query($sql);
 
   function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
     if (response.status === 'connected') {   // Logged into your webpage and Facebook.
-      testAPI();  
+      testAPI(response.authResponse.accessToken);  
     } 
   }
 
@@ -83,9 +83,9 @@ $result = $conn->query($sql);
   }(document, 'script', 'facebook-jssdk'));
 
  
-  function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+  function testAPI(token) {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
     FB.api('/me', function(response) {
-		<? echo "window.location.assign('facebookSuccess.php?token=".$token."&id=' + response.id);"; ?>
+		window.location.assign('validateFacebook.php?token='+token+'&id=' + response.id);
     });	
   }
   
