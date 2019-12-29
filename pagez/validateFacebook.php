@@ -15,8 +15,6 @@ $sql = "select ip from sessions where token='".$_SESSION['token']."';";
 
 $result = $conn->query($sql);
 
-
-
 require_once __DIR__ . '/../vendor/autoload.php'; // change path as needed
 
 $fb = new Facebook\Facebook([

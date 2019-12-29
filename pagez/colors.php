@@ -15,6 +15,19 @@ $sql = "select color, name from colorsTaken where game = '".$_SESSION['hash']."'
 
 $result = $conn->query($sql);
 
+if ($result->num_rows == 4) {
+	
+	$sql = "select javaHash from colorsTaken where game = '".$_SESSION['hash']."' and color = '".$_SESSION['ownColor']."';";
+	
+	$result = $conn->query($sql);
+	
+	$row = $result->fetch_assoc();
+	
+	echo "<a href='http://chess4four.io:8080/?id=".$row['javaHash']."'>Let's boogy</a>";
+	
+	die;
+}
+
 $takenColors = array($_SESSION['ownColor']);
 
 while($row = $result->fetch_assoc()){

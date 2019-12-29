@@ -11,8 +11,10 @@ if(!isset($_SESSION['id'])){
 
 include_once("settings.php");
 
-$sql = "insert into colorsTaken (game, color, name) ";
-$sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."', '".$_SESSION['name']."');";
+$javaHash = md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash'] . test_input($_GET['color']));
+
+$sql = "insert into colorsTaken (game, color, name, javaHash) ";
+$sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."', '".$_SESSION['name']."', '".$javaHash."');";
 
 $result = $conn->query($sql);
 
@@ -139,8 +141,8 @@ again();
 
 </script>
 
-</head>
 <body>
+</head>
 <center>
 <div class="outer">
   <div class="middle">
