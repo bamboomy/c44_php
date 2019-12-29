@@ -36,6 +36,28 @@ if (! isset($accessToken)) {
 
 $me = $response->getGraphUser();
 
-echo $me->getProperty('id'). " -> " . $_GET['id']
+if($me->getProperty('id') != $_GET['id']){
+	
+	header("Location: error.php");
+		
+	exit;
+}
+
+include_once("settings.php");
+
+$_SESSION['fbId'] = $me->getProperty('id');
+
+$_SESSION['firstName'] = $me->getProperty('first_name');
+
+$sql = "select id from gebruiker where fbId='" . $_SESSION['fbId'] . "';";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows == 0) {
+	
+	header("Location: facebookRegister.php");
+		
+	exit;
+}
 
 ?>
