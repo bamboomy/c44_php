@@ -4,12 +4,7 @@ session_start();
 
 include_once("settings.php");
 
-$token = md5($_SERVER['REMOTE_ADDR'].microtime());
-
-$sql = "insert into sessions (token, ip) ";
-$sql .= " values ('".$token."', '".$_SERVER['REMOTE_ADDR']."');";
-
-$result = $conn->query($sql);
+$_SESSION['token'] = md5($_SERVER['REMOTE_ADDR'].microtime());
 
 ?>
 <html>
@@ -85,7 +80,7 @@ $result = $conn->query($sql);
  
   function testAPI(token) {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
     FB.api('/me', function(response) {
-		window.location.assign('validateFacebook.php?token='+token+'&id=' + response.id);
+		<? echo "window.location.assign('validateFacebook.php?token='+token+'&id=' + response.id + '&ownToken=".$_SESSION['token']."');"; ?>
     });	
   }
   
