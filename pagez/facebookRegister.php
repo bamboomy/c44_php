@@ -53,7 +53,7 @@ include_once("settings.php");
 		<div class="middle">
 			<div class="inner center">
 
-				<h2>Hey <span id='name'></span>,</h2>
+				<h2>Hey <? echo $_SESSION['firstName']; ?>,</h2>
 				
 				Seems you are new around here...<br/>
 				<br/>
