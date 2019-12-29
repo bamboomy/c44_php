@@ -53,7 +53,20 @@ include_once("settings.php");
 
 </style>
 
+<script src="../js/jquery-3.4.1.min.js"></script>
+
 <script>
+
+function enableInput(){
+	
+	$("#input").prop( "disabled", false );
+	$("#submit").prop( "disabled", false );
+}
+
+function enableSubmit(){
+	
+	$("#submit").prop( "disabled", false );
+}
 
 </script>
 
@@ -91,12 +104,12 @@ for($i=0; $i<20; $i++){
 
 for($i=0; $i<5; $i++){
 	
-	echo "<div class='left'><input type='radio' name='name' value='".$name[$i]."'>".$name[$i]."</div>";
+	echo "<div class='left'><input onclick='enableSubmit();' type='radio' name='name' value='".$name[$i]."'>".$name[$i]."</div>";
 }
 ?>
-				<div class='left'><input type='radio' name='name' value='own'>I want to choose my own name:<div class='right'><input disabled type="text" name="ownName" /></div></div>
+				<div class='left'><input type='radio' onclick="enableInput();" name='name' value='own'>I want to choose my own name:<div class='right'><input id="input" disabled type="text" name="ownName" /></div></div>
 				<br/>
-		<div class='right'><input disabled type="submit" value="I will be named like this forever!"></div>
+		<div class='right'><input disabled id="submit" type="submit" value="I will be named like this forever!"></div>
 </form> 	
 			</div>
 			</div>
