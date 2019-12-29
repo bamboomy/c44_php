@@ -138,6 +138,8 @@ $result = $conn->query($sql);
 			<div class="inner center">
 
 				<? echo "<h2>Welcome back " . $_SESSION['firstName'] . " (".$row['name'].")!</h2>" ?>
+				
+				<a href="lobby.php">Let's see what great games await us...</a>
 
 			</div>
 		</div>
