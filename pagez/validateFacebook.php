@@ -137,7 +137,7 @@ $result = $conn->query($sql);
 		<div class="middle">
 			<div class="inner center">
 
-				<? echo "<h2>Welcome back " . $_SESSION['firstName'] . "(".$row['name']."),</h2>" ?>
+				<? echo "<h2>Welcome back " . $_SESSION['firstName'] . " (".$row['name']."),</h2>" ?>
 
 			</div>
 		</div>
