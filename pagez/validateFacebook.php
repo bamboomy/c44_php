@@ -79,6 +79,8 @@ $row = $result->fetch_assoc();
 
 $_SESSION['id'] = $row['id'];
 
+$_SESSION['name'] = $row['name'];
+
 $sql = "update gebruiker set lastLogin = now() where id='" . $_SESSION['id'] . "';";
 
 $result = $conn->query($sql);

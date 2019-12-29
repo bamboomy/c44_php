@@ -41,7 +41,7 @@ if(!isset($_SESSION['id'])){
 <div class="outer">
   <div class="middle">
     <div class="inner">
-		<h1>Welcome <? echo $_SESSION['user']; ?>,</h1>
+		<? echo "<h2>Hey " . $_SESSION['firstName'] . " (".$_SESSION['name'].")!</h2>" ?>
 		<h3>What do you want to do?</h3>
 		<br/>
 		<a href="create.php">Create a game</a><br/>
