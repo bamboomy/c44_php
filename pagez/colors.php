@@ -11,7 +11,7 @@ if(!isset($_SESSION['id'])){
 
 include_once("settings.php");
 
-$sql = "select color from colorsTaken where game = '".$_SESSION['hash']."';";
+$sql = "select color, name from colorsTaken where game = '".$_SESSION['hash']."';";
 
 $result = $conn->query($sql);
 
@@ -19,14 +19,14 @@ $takenColors = array($_SESSION['ownColor']);
 
 while($row = $result->fetch_assoc()){
 	
-	array_push($takenColors, $row['color']);
+	$takenColors[$row['color']] = $row['name'];
 }
 
 $allColors = array("Red", "Green", "Blue", "Yellow");
 
 foreach ($allColors as $color){ 
 
-	if(in_array($color, $takenColors)){
+	if(array_key_exists($color, $takenColors)){
 ?>
 			<div class="container">
 				<img src="../imgz/grey.png" alt="Avatar" class="image">
@@ -41,7 +41,7 @@ foreach ($allColors as $color){
 			
 		} else {
 			
-			echo "<div class='text'>".$color."</div>";
+			echo "<div class='text'>".$color." : ".$takenColors[$color]."</div>";
 		}
 ?>
 				</div>			

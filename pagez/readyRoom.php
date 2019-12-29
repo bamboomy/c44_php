@@ -11,8 +11,8 @@ if(!isset($_SESSION['id'])){
 
 include_once("settings.php");
 
-$sql = "insert into colorsTaken (game, color) ";
-$sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."');";
+$sql = "insert into colorsTaken (game, color, name) ";
+$sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."', '".$_SESSION['name']."');";
 
 $result = $conn->query($sql);
 
