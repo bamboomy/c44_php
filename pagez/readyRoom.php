@@ -141,8 +141,8 @@ again();
 
 </script>
 
-<body>
 </head>
+<body>
 <center>
 <div class="outer">
   <div class="middle">
