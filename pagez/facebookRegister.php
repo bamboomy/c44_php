@@ -2,6 +2,13 @@
 
 session_start();
 
+if(!isset($_SESSION['fbId'])){
+	
+	header("Location: register.php");
+		
+	exit;
+}
+
 include_once("settings.php");
 
 ?>
