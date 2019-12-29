@@ -11,6 +11,8 @@ if(!isset($_SESSION['fbId'])){
 
 include_once("settings.php");
 
+echo $_POST['name'] ." ". $_POST['ownName'];
+
 if($_POST['name'] == 'own'){
 	
 	$c44Name = test_input($_POST['ownName']);
