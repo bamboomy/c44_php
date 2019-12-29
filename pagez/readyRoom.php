@@ -47,7 +47,7 @@ $_SESSION['ownColor'] = test_input($_GET['color']);
 .container {
 	position: relative;
   width: 25%;
-  height: 50%;
+  height: 15%;
 }
 
 .image {
