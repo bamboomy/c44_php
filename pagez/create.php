@@ -21,7 +21,7 @@ $three = array("the dark", "elves", "Godot", "a lamp", "the unknown", "the Frenc
 
 $_SESSION['sentence'] = '"' . $four[rand(0, count($four) - 1)] . ' ';
 
-$_SESSION['sentence'] .= $one[rand(0, count($one) - 1)] . ' ' . $two[rand(0, count($two) - 1)] . ' ' . $three[rand(0, count($three) - 1)] . '."' ;
+$_SESSION['sentence'] .= $one[rand(0, count($one) - 1)] . '<br/>' . $two[rand(0, count($two) - 1)] . ' ' . $three[rand(0, count($three) - 1)] . '."' ;
 
 $failCounter = 0;
 
