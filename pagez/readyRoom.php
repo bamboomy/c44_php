@@ -11,10 +11,10 @@ if(!isset($_SESSION['id'])){
 
 include_once("settings.php");
 
-$javaHash = md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash'] . test_input($_GET['color']));
+$java_hash = md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash'] . test_input($_GET['color']));
 
-$sql = "insert into colors_taken (game, color, name, javaHash) ";
-$sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."', '".$_SESSION['name']."', '".$javaHash."');";
+$sql = "insert into colors_taken (game, color, name, java_hash) ";
+$sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."', '".$_SESSION['name']."', '".$java_hash."');";
 
 $result = $conn->query($sql);
 
