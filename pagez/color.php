@@ -2,6 +2,13 @@
 
 session_start();
 
+if(!isset($_SESSION['id'])){
+	
+	header("Location: register.php");
+		
+	exit;
+}
+
 if(isset($_SESSION['invited'])){
 
 	include_once("settings.php");
@@ -118,7 +125,7 @@ function again() {
 
 		var response = '';
 		$.ajax({ type: "GET",   
-				 url: "http://chess4four.io/pagez/colors.php",   
+				 url: "https://chess4four.io/pagez/colors.php",   
 				 async: false,
 				 success : function(text)
 				 {
@@ -143,7 +150,7 @@ again();
 <div class="outer">
   <div class="middle">
     <div class="inner">
-		<h1>Hey <? echo $_SESSION['user']; ?>,</h1>
+		<h1>Hey <? echo $_SESSION['name']; ?>,</h1>
 		<h3>We're creating game:</h3>
 		<h3><? echo $_SESSION['sentence']; ?></h3>
 		<h3>Choose your color:</h3>

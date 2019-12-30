@@ -2,10 +2,19 @@
 
 session_start();
 
+if(!isset($_SESSION['id'])){
+	
+	header("Location: register.php");
+		
+	exit;
+}
+
 include_once("settings.php");
 
-$sql = "insert into colors_taken (game, color) ";
-$sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."');";
+$javaHash = md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash'] . test_input($_GET['color']));
+
+$sql = "insert into colors_taken (game, color, name, javaHash) ";
+$sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."', '".$_SESSION['name']."', '".$javaHash."');";
 
 $result = $conn->query($sql);
 
@@ -39,7 +48,7 @@ $_SESSION['ownColor'] = test_input($_GET['color']);
 
 .container {
 	position: relative;
-  width: 15%;
+  width: 17%;
 }
 
 .image {
@@ -104,7 +113,7 @@ function copy() {
   copyText.select();
   copyText.setSelectionRange(0, 99999)
   document.execCommand("copy");
-  alert("url copied...");
+  alert("Link copied...");
 }
 
 function again() {
@@ -113,7 +122,7 @@ function again() {
 
 		var response = '';
 		$.ajax({ type: "GET",   
-				 url: "http://chess4four.io/pagez/colors.php",   
+				 url: "https://chess4four.io/pagez/colors.php",   
 				 async: false,
 				 success : function(text)
 				 {
@@ -138,11 +147,11 @@ again();
 <div class="outer">
   <div class="middle">
     <div class="inner">
-		<h1>Hey <? echo $_SESSION['user']; ?>,</h1>
+		<h1>Hey <? echo $_SESSION['name']; ?>,</h1>
 		<h3>We're waiting on the other players for game:</h3>
 		<h3><? echo $_SESSION['sentence']; ?></h3>
 		<h3>You can share this link:</h3>
-		<? echo "<input id='myInput' type='text' value='http://chess4four.io/pagez/invite.php?game=".$_SESSION['hash']."' />";
+		<? echo "<input id='myInput' type='text' value='https://chess4four.io/pagez/invite.php?game=".$_SESSION['hash']."' />";
 		echo "<input type='button' onclick='copy();' value='copy' />"; ?>
 		<br/>
 		<br/>
