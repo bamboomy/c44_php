@@ -4,7 +4,7 @@ session_start();
 
 include_once("settings.php");
 
-$sql = "insert into colorsTaken (game, color) ";
+$sql = "insert into colors_taken (game, color) ";
 $sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."');";
 
 $result = $conn->query($sql);

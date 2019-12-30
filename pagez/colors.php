@@ -4,7 +4,7 @@ session_start();
 
 include_once("settings.php");
 
-$sql = "select color from colorsTaken where game = '".$_SESSION['hash']."';";
+$sql = "select color from colors_taken where game = '".$_SESSION['hash']."';";
 
 $result = $conn->query($sql);
 
