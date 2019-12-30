@@ -17,7 +17,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows == 4) {
 	
-	$sql = "select java_hash from colorsTaken where game = '".$_SESSION['hash']."' and color = '".$_SESSION['ownColor']."';";
+	$sql = "select java_hash from colors_taken where game = '".$_SESSION['hash']."' and color = '".$_SESSION['ownColor']."';";
 	
 	$result = $conn->query($sql);
 	
