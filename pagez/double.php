@@ -110,7 +110,7 @@ if(!isset($_SESSION['id'])){
 
 			You can't join the same game twice...<br/>
 			<br/>
-			<a href="">Let's see which other games you can join.</a>
+			<a href="lobby.php">Let's see which other games you can join.</a>
 	</div>
   </div>
 </div>
