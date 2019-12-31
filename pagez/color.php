@@ -13,6 +13,20 @@ if(isset($_SESSION['invited'])){
 
 	include_once("settings.php");
 
+	$sql = "select id from colors_taken where game = '".test_input($_SESSION['hash'])."' and name='".$_SESSION['name']."';";
+	
+	$result = $conn->query($sql);
+
+	if ($result->num_rows != 0) {
+		
+		unset($_SESSION['hash']);
+		unset($_SESSION['invited']);
+		
+		header("Location: double.php");
+		
+		exit;
+	}
+
 	$sql = "select sentence from game where hash = '".test_input($_SESSION['hash'])."';";
 
 	$result = $conn->query($sql);
