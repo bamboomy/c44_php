@@ -31,7 +31,7 @@ $result = $conn->query($sql);
 
 while($row = $result->fetch_assoc()){
 	
-	$sql = "update chatDirty set cleaned = 'false' where java_hash = '".$row['java_hash']."';";
+	$sql = "update chatDirty set cleaned = 'false' where javaHash = '".$row['java_hash']."';";
 
 	$result = $conn->query($sql);
 }
