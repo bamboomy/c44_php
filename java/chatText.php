@@ -14,6 +14,19 @@ if(!isset($_SESSION['id'])){
 	exit;
 }
 
+$sql = "select cleaned from chatDirty where java_hash = '".test_input($_GET['board'])."';";
+
+$result = $conn->query($sql);
+
+$row = $result->fetch_assoc();
+
+if($row['cleaned'] == "true"){
+	
+	echo "clean";
+	
+	die;
+}
+
 $sql = "select name, game from colors_taken where java_hash = '".test_input($_GET['board'])."';";
 
 $result = $conn->query($sql);
@@ -28,5 +41,9 @@ while ($row = $result->fetch_assoc()) {
 
 	echo $row['text'] . "<br/>";
 }
+
+$sql = "update chatDirty set cleaned = 'true' where java_hash = '".test_input($_GET['board'])."';";
+
+$result = $conn->query($sql);
 
 ?>

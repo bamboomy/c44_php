@@ -25,6 +25,17 @@ $sql .= " values ('".$row['game']."', '".$row['name'].": ".  test_input($_POST['
 
 $result = $conn->query($sql);
 
+$sql = "select java_hash from colors_taken where game = '".$row['game']."';";
+
+$result = $conn->query($sql);
+
+while($row = $result->fetch_assoc()){
+	
+	$sql = "update chatDirty set cleaned = 'false' where java_hash = '".$row['java_hash']."';";
+
+	$result = $conn->query($sql);
+}
+
 echo "success";
 
 ?>

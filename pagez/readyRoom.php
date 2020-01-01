@@ -18,6 +18,11 @@ $sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."', '".
 
 $result = $conn->query($sql);
 
+$sql = "insert into chatDirty (java_hash) ";
+$sql .= " values ('".$java_hash."');";
+
+$result = $conn->query($sql);
+
 $_SESSION['ownColor'] = test_input($_GET['color']);
 
 ?>
