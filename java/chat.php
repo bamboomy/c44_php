@@ -20,11 +20,6 @@ $result = $conn->query($sql);
 
 $row = $result->fetch_assoc();
 
-$sql = "insert into chat (game, text) ";
-$sql .= " values ('".$row['game']."', '".$row['name'].": ".  test_input($_POST['text'])."');";
-
-$result = $conn->query($sql);
-
 $sql = "select java_hash from colors_taken where game = '".$row['game']."';";
 
 $result = $conn->query($sql);
@@ -35,6 +30,11 @@ while($row = $result->fetch_assoc()){
 
 	$result = $conn->query($sql);
 }
+
+$sql = "insert into chat (game, text) ";
+$sql .= " values ('".$row['game']."', '".$row['name'].": ".  test_input($_POST['text'])."');";
+
+$result = $conn->query($sql);
 
 echo "success";
 
