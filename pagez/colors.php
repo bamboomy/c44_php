@@ -23,7 +23,7 @@ if ($result->num_rows == 4) {
 	
 	$row = $result->fetch_assoc();
 	
-	echo "<a href='http://chess4four.io:8080/?id=".$row['java_hash']."'>Let's boogy</a>";
+	echo "<a href='https://chess4four.io/tomcat/?id=".$row['java_hash']."'>Let's boogy</a>";
 	
 	die;
 }
