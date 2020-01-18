@@ -69,7 +69,7 @@ if(isset($_SESSION['id'])){
 
 				<h2>Hellow there,</h2>
 				
-				You need to be <a href="register.php">registered</a> to be able to participate in a game...
+				You need to be <a href="register.php">logged in</a> to be able to participate in a game...
 
 			</div>
 		</div>
