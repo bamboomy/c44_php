@@ -12,7 +12,7 @@ $_SESSION['token'] = md5($_SERVER['REMOTE_ADDR'].microtime());
 
 <style>
 .outer {
-  display: table;
+  overflow:hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -21,7 +21,7 @@ $_SESSION['token'] = md5($_SERVER['REMOTE_ADDR'].microtime());
 }
 
 .middle {
-  display: table-cell;
+ 
   vertical-align: middle;
 }
 

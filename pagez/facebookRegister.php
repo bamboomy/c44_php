@@ -17,7 +17,7 @@ include_once("settings.php");
 
 <style>
 .outer {
-  display: table;
+  overflow:hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -26,7 +26,7 @@ include_once("settings.php");
 }
 
 .middle {
-  display: table-cell;
+ 
   vertical-align: middle;
 }
 

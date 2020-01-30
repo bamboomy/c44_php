@@ -30,7 +30,7 @@ $result = $conn->query($sql);
 
 <style>
 .outer {
-  display: table;
+  overflow:hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -39,7 +39,7 @@ $result = $conn->query($sql);
 }
 
 .middle {
-  display: table-cell;
+ 
   vertical-align: middle;
 }
 

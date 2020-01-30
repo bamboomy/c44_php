@@ -19,7 +19,7 @@ if(isset($_SESSION['id'])){
 
 <style>
 .outer {
-  display: table;
+  overflow:hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -28,7 +28,7 @@ if(isset($_SESSION['id'])){
 }
 
 .middle {
-  display: table-cell;
+ 
   vertical-align: middle;
 }
 

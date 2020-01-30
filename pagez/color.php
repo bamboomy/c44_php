@@ -50,7 +50,7 @@ if(isset($_SESSION['invited'])){
 <head>
 <style>
 .outer {
-  display: table;
+  overflow:hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -59,7 +59,7 @@ if(isset($_SESSION['invited'])){
 }
 
 .middle {
-  display: table-cell;
+ 
   vertical-align: middle;
 }
 

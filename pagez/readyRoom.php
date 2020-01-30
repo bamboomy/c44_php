@@ -31,7 +31,7 @@ $_SESSION['ownColor'] = test_input($_GET['color']);
 <head>
 <style>
 .outer {
-  display: table;
+  overflow:hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -40,7 +40,7 @@ $_SESSION['ownColor'] = test_input($_GET['color']);
 }
 
 .middle {
-  display: table-cell;
+ 
   vertical-align: middle;
 }
 
