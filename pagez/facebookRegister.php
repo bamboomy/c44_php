@@ -17,17 +17,18 @@ include_once("settings.php");
 
 <style>
 .outer {
-  overflow:hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+	display: table;
+	overflow:hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
 }
 
 .middle {
- 
-  vertical-align: middle;
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .inner {
