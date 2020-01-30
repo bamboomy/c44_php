@@ -50,23 +50,15 @@ if(isset($_SESSION['invited'])){
 <head>
 <style>
 .outer {
+	display: table;
+	
+	position: absolute;
 	top: 0;
 	left: 0;
 	height: 100%;
 	width: 100%;
-	overflow: hidden;
-	position: relative;	
 }
 
-.inner {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	margin: auto 0;
-}
-
-/*
 .middle {
 	display: table-cell;
 	vertical-align: middle;
@@ -78,7 +70,6 @@ if(isset($_SESSION['invited'])){
   width: 400px;
   /*whatever width you want*/
 }
-*/
 
 .container {
 	position: relative;
@@ -172,7 +163,7 @@ again();
 <body>
 <center>
 <div class="outer">
-  <!--div class="middle"-->
+  <div class="middle">
     <div class="inner">
 		<h1>Hey <? echo $_SESSION['name']; ?>,</h1>
 		<h3>We're creating game:</h3>
@@ -183,7 +174,7 @@ again();
 		<div id="colors"></div>
 		
 	</div>
-  <!--/div-->
+  </div>
 </div>
 </center>
 </body>

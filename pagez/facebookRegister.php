@@ -18,7 +18,7 @@ include_once("settings.php");
 <style>
 .outer {
 	display: table;
-	overflow:hidden;
+	
 	position: absolute;
 	top: 0;
 	left: 0;

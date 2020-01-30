@@ -14,7 +14,7 @@ if(!isset($_SESSION['id'])){
 <head>
 <style>
 .outer {
-  overflow:hidden;
+  
   position: absolute;
   top: 0;
   left: 0;

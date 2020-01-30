@@ -32,7 +32,7 @@ $_SESSION['ownColor'] = test_input($_GET['color']);
 <style>
 .outer {
 	display: table;
-	overflow:hidden;
+	
 	position: absolute;
 	top: 0;
 	left: 0;
