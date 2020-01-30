@@ -28,8 +28,8 @@ if(isset($_SESSION['id'])){
 }
 
 .middle {
- 
-  vertical-align: middle;
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .inner {
