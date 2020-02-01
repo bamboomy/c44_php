@@ -35,7 +35,7 @@ while($row = $result->fetch_assoc()){
 	$takenColors[$row['color']] = $row['name'];
 }
 
-$allColors = array("Red", "Green", "Blue", "Yellow");
+$allColors = array("Green", "Blue", "Red", "Yellow");
 
 foreach ($allColors as $color){ 
 
