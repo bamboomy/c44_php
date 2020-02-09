@@ -12,17 +12,18 @@ $_SESSION['token'] = md5($_SERVER['REMOTE_ADDR'].microtime());
 
 <style>
 .outer {
-  display: table;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+	display: table;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
 }
 
 .middle {
-  display: table-cell;
-  vertical-align: middle;
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .inner {
