@@ -87,7 +87,6 @@ foreach ($allColors as $color){
 	<div id="third">
 		Do you want to have a robot 3rd player?<br/>
 		<br/>
-		<br/>
 		This can be either:<br/>
 		<br/>
 		A random player ((s)he doesn't know much)?<br/>
@@ -100,6 +99,7 @@ foreach ($allColors as $color){
 		<br/>
 		Or you can wait for a 4th player...<br/>
 		<br/>
+		<a class="left">Vote random</a><a class="right">Vote dubious</a>
 	</div>
 <?
 	}

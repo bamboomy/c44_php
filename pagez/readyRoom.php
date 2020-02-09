@@ -123,8 +123,19 @@ $_SESSION['ownColor'] = test_input($_GET['color']);
 	padding: 10px;
 }
 
+.left {
+	
+	position: relative;
+	
+	left: 10px;
+}
 
-
+.right {
+	
+	position: relative;
+	
+	right: 10px;
+}
 </style>
 
 <script src="../js/jquery-3.4.1.min.js"></script>
