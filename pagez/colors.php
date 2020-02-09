@@ -99,7 +99,7 @@ foreach ($allColors as $color){
 		<br/>
 		Or you can wait for a 4th player...<br/>
 		<br/>
-		<a class="left" onclick="voteRandom();">Vote random</a><a class="right">Vote dubious</a>
+		<a class="left" onclick="voteRandom();">Vote random</a><button class="right">Vote dubious</button>
 	</div>
 <?
 	}
