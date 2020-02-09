@@ -125,14 +125,14 @@ $_SESSION['ownColor'] = test_input($_GET['color']);
 
 .left {
 	
-	position: relative;
+	position: absolute;
 	
 	left: 10px;
 }
 
 .right {
 	
-	position: relative;
+	position: absolute;
 	
 	right: 10px;
 }
