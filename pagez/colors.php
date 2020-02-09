@@ -41,8 +41,6 @@ $counter = 0;
 
 foreach ($allColors as $color){ 
 
-	$counter++;
-	
 	if($counter == 3){
 		
 		echo "3";
@@ -57,6 +55,8 @@ foreach ($allColors as $color){
 				</div>
 				<div class="overlay_orig">
 <?
+		$counter++;
+
 		if($_SESSION['ownColor'] == $color){
 			
 			echo "<div class='text'>".$color.": You</div>";
