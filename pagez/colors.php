@@ -93,13 +93,13 @@ foreach ($allColors as $color){
 		<br/>
 		Or a dubious player?<br/>
 		<br/>
-		A dubious player is controlled by the other players,<br/>
+		(A dubious player is controlled by the other players,<br/>
 		<br/>
-		each one turn...<br/>
+		each one turn...)<br/>
 		<br/>
 		Or you can wait for a 4th player...<br/>
 		<br/>
-		<a class="left">Vote random</a><a class="right">Vote dubious</a>
+		<a class="left" onclick="voteRandom();">Vote random</a><a class="right">Vote dubious</a>
 	</div>
 <?
 	}
