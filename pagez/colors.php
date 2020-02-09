@@ -41,12 +41,6 @@ $counter = 0;
 
 foreach ($allColors as $color){ 
 
-	if($counter == 3){
-?>
-	<div id="3rd">3</div>
-<?
-	}
-
 	if(array_key_exists($color, $takenColors)){
 ?>
 			<div class="container">
@@ -87,4 +81,11 @@ foreach ($allColors as $color){
 <?	
 	}
 } 
+
+	if($counter == 3){
+?>
+	<div id="3rd">3</div>
+<?
+	}
+
 ?>
