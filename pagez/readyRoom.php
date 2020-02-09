@@ -108,6 +108,22 @@ $_SESSION['ownColor'] = test_input($_GET['color']);
   text-align: center;
 }
 
+#3rd {
+
+	position: absolute;
+	
+	bottom: 20px;
+	right: 20px;
+	
+	width: 300px;
+	height: 300px;
+	
+	border: 1px solid;
+	
+	padding: 10px;
+}
+
+
 
 </style>
 
