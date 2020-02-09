@@ -43,7 +43,7 @@ foreach ($allColors as $color){
 
 	if($counter == 3){
 ?>
-	<div id="3rd"></div>
+	<div id="3rd">3</div>
 <?
 	}
 
