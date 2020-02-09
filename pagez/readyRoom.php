@@ -108,7 +108,7 @@ $_SESSION['ownColor'] = test_input($_GET['color']);
   text-align: center;
 }
 
-#3rd {
+#third {
 
 	position: absolute;
 	
