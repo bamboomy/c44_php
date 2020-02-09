@@ -37,7 +37,16 @@ while($row = $result->fetch_assoc()){
 
 $allColors = array("Red", "Green", "Blue", "Yellow");
 
+$counter = 0;
+
 foreach ($allColors as $color){ 
+
+	$counter++;
+	
+	if($counter == 3){
+		
+		echo "3";
+	}
 
 	if(array_key_exists($color, $takenColors)){
 ?>
