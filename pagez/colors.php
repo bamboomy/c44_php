@@ -84,7 +84,23 @@ foreach ($allColors as $color){
 
 	if($counter == 3){
 ?>
-	<div id="third">3</div>
+	<div id="third">
+		Do you want to have a robot 3rd player?<br/>
+		<br/>
+		<br/>
+		This can be either:<br/>
+		<br/>
+		A random player ((s)he doesn't know much)?<br/>
+		<br/>
+		Or a dubious player?<br/>
+		<br/>
+		A dubious player is controlled by the other players,<br/>
+		<br/>
+		each one turn...<br/>
+		<br/>
+		Or you can wait for a 4th player...<br/>
+		<br/>
+	</div>
 <?
 	}
 
