@@ -25,6 +25,15 @@ $result = $conn->query($sql);
 
 $_SESSION['ownColor'] = test_input($_GET['color']);
 
+$RHash = md5($java_hash . "R" . microtime());
+
+$DHash = md5($java_hash . "D" . microtime());
+
+$sql = "insert into votes (value, hash, gameHash) ";
+$sql .= " values ('R', '".$RHash."', '".$_SESSION['hash']."'), ('D', '".$DHash."', '".$_SESSION['hash']."');";
+
+$result = $conn->query($sql);
+
 ?>
 
 <html>
@@ -171,6 +180,34 @@ function again() {
 }
 
 again();
+
+function voteRandom(){
+	
+	$.ajax({ type: "GET",   
+<?
+			 echo "url: 'https://chess4four.io/pagez/vote.php?hash=".$RHash."',";
+?>
+			 async: false,
+			 success : function(text)
+			 {
+				 response = text;
+			 }
+	});
+}
+
+function voteDubious(){
+	
+	$.ajax({ type: "GET",   
+<?
+			 echo "url: 'https://chess4four.io/pagez/vote.php?hash=".$DHash."',";
+?>
+			 async: false,
+			 success : function(text)
+			 {
+				 response = text;
+			 }
+	});
+}
 
 </script>
 
