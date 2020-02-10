@@ -21,6 +21,12 @@ $result2 = $conn->query($sql);
 
 $row2 = $result2->fetch_assoc();
 
+$sql = "select value from votes where javaHash = '".$row2['java_hash']."' and voted = '1';";
+
+$result3 = $conn->query($sql);
+
+$row3 = $result3->fetch_assoc();
+	
 if ($result->num_rows == 4) {
 
 	echo "<a href='https://chess4four.io/tomcat/?id=".$row2['java_hash']."'>Let's boogy</a>";
@@ -98,7 +104,18 @@ if(isset($_SESSION['ownColor']) && $counter == 3){
 		<br/>
 		Or you can wait for a 4th player...<br/>
 		<br/>
+<?
+	if ($result3->num_rows == 1) {
+
+		echo "you voted";
+	
+	} else {
+?>
 		<button class="left" onclick="voteRandom();">Vote random</a><button class="right" onclick="voteDubious();">Vote dubious</button>
+<?
+	}
+}
+?>
 	</div>
 <?
 }
