@@ -139,10 +139,10 @@ if(isset($_SESSION['ownColor']) && $counter == 3){
 			
 			if($resultRandom->num_rows >= 2){
 				
-				$java_hash = md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash'] . test_input($_GET['color']));
+				$java_hash = md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash']);
 
 				$sql = "insert into colors_taken (game, color, name, java_hash) ";
-				$sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."', '".$_SESSION['name']."', '".$java_hash."');";
+				$sql .= " values ('".$_SESSION['hash']."', '".array_shift($remainingColors)."', 'Random85247', '".$java_hash."');";
 
 				$result = $conn->query($sql);
 			}
@@ -152,14 +152,21 @@ if(isset($_SESSION['ownColor']) && $counter == 3){
 
 		if($resultDubious->num_rows != 0){
 
+			if($resultDubious->num_rows >= 2){
+				
+				$java_hash = md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash']);
+
+				$sql = "insert into colors_taken (game, color, name, java_hash) ";
+				$sql .= " values ('".$_SESSION['hash']."', '".array_shift($remainingColors)."', 'Dubious85247', '".$java_hash."');";
+
+				$result = $conn->query($sql);
+			}
+
 			echo "<span class='right spaced'>".$resultDubious->num_rows." votes</span>";
 		}
 	}
 ?>
 	</div>
 <?
-
-var_dump($remainingColors);
-
 }
 ?>
