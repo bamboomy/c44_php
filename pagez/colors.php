@@ -126,17 +126,17 @@ if(isset($_SESSION['ownColor']) && $counter == 3){
 
 	} else {
 ?>
-		<button class="left" onclick="voteRandom();">Vote random</a><button class="right" onclick="voteDubious();">Vote dubious</button><br/><br/>
+		<button class="left" onclick="voteRandom();">Vote random</a><button class="right" onclick="voteDubious();">Vote dubious</button><br/>
 <?
 
 		if($resultRandom->num_rows != 0){
 
-			echo "<span class='left'>".$resultRandom->num_rows." votes</span>";
+			echo "<span class='left spaced'>".$resultRandom->num_rows." votes</span>";
 		}
 
 		if($resultDubious->num_rows != 0){
 
-			echo "<span class='right'>".$resultDubious->num_rows." votes</span>";
+			echo "<span class='right spaced'>".$resultDubious->num_rows." votes</span>";
 		}
 	}
 ?>

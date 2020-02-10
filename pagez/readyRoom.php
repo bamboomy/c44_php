@@ -145,6 +145,11 @@ $result = $conn->query($sql);
 	
 	right: 10px;
 }
+
+.spaced {
+	
+	padding: 10px;
+}
 </style>
 
 <script src="../js/jquery-3.4.1.min.js"></script>
