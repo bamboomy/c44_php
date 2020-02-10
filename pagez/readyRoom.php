@@ -190,7 +190,7 @@ function voteRandom(){
 			 async: false,
 			 success : function(text)
 			 {
-				 alert("You voted 'Random'!");
+				 alert("You voted...");
 			 }
 	});
 }
@@ -204,7 +204,7 @@ function voteDubious(){
 			 async: false,
 			 success : function(text)
 			 {
-				alert("You voted 'Dubious'!");
+				alert("You voted...");
 			 }
 	});
 }

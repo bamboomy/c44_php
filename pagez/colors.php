@@ -107,8 +107,15 @@ if(isset($_SESSION['ownColor']) && $counter == 3){
 <?
 	if ($result3->num_rows == 1) {
 
-		echo "you voted";
-	
+		if($row3['value'] == 'R'){
+			
+			echo "You voted 'Random'.";
+				
+		} else {
+		
+			echo "You voted 'Dubious'.";
+		}
+
 	} else {
 ?>
 		<button class="left" onclick="voteRandom();">Vote random</a><button class="right" onclick="voteDubious();">Vote dubious</button>
