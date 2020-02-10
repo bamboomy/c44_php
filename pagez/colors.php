@@ -34,11 +34,17 @@ if ($result->num_rows == 4) {
 	die;
 }
 
+$remainingColors = array("Green", "Blue", "Red", "Yellow");
+
 $takenColors = array($_SESSION['ownColor']);
 
 while($row = $result->fetch_assoc()){
 	
 	$takenColors[$row['color']] = $row['name'];
+	
+	if (($key = array_search($row['color'], $remainingColors)) !== false) {
+		unset($remainingColors[$key]);
+	}	
 }
 
 $allColors = array("Green", "Blue", "Red", "Yellow");
@@ -130,6 +136,16 @@ if(isset($_SESSION['ownColor']) && $counter == 3){
 <?
 
 		if($resultRandom->num_rows != 0){
+			
+			if($resultRandom->num_rows >= 2){
+				
+				$java_hash = md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash'] . test_input($_GET['color']));
+
+				$sql = "insert into colors_taken (game, color, name, java_hash) ";
+				$sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."', '".$_SESSION['name']."', '".$java_hash."');";
+
+				$result = $conn->query($sql);
+			}
 
 			echo "<span class='left spaced'>".$resultRandom->num_rows." votes</span>";
 		}
@@ -142,5 +158,8 @@ if(isset($_SESSION['ownColor']) && $counter == 3){
 ?>
 	</div>
 <?
+
+var_dump($remainingColors);
+
 }
 ?>
