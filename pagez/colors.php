@@ -114,7 +114,6 @@ if(isset($_SESSION['ownColor']) && $counter == 3){
 		<button class="left" onclick="voteRandom();">Vote random</a><button class="right" onclick="voteDubious();">Vote dubious</button>
 <?
 	}
-}
 ?>
 	</div>
 <?
