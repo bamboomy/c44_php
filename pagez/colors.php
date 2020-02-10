@@ -94,8 +94,7 @@ foreach ($allColors as $color){
 		Or a dubious player?<br/>
 		<br/>
 		(A dubious player is controlled by the other players,<br/>
-		<br/>
-		each one turn...)<br/>
+		each turn someone else...)<br/>
 		<br/>
 		Or you can wait for a 4th player...<br/>
 		<br/>
