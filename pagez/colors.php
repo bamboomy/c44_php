@@ -105,6 +105,14 @@ if(isset($_SESSION['ownColor']) && $counter == 3){
 		Or you can wait for a 4th player...<br/>
 		<br/>
 <?
+	$sql = "select value from votes where gameHash = '".$_SESSION['hash']."' and voted = '1' and value = 'R';";
+
+	$resultRandom = $conn->query($sql);
+
+	$sql = "select value from votes where gameHash = '".$_SESSION['hash']."' and voted = '1' and value = 'D';";
+
+	$resultDubious = $conn->query($sql);
+
 	if ($result3->num_rows == 1) {
 
 		if($row3['value'] == 'R'){
@@ -120,6 +128,16 @@ if(isset($_SESSION['ownColor']) && $counter == 3){
 ?>
 		<button class="left" onclick="voteRandom();">Vote random</a><button class="right" onclick="voteDubious();">Vote dubious</button>
 <?
+
+		if($resultRandom->num_rows != 0){
+
+			echo "<span class='left'>".$resultRandom->num_rows." votes</span>";
+		}
+
+		if($resultDubious->num_rows != 0){
+
+			echo "<span class='left'>".$resultDubious->num_rows." votes</span>";
+		}
 	}
 ?>
 	</div>
