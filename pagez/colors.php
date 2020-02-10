@@ -15,15 +15,15 @@ $sql = "select color from colors_taken where game = '".$_SESSION['hash']."';";
 
 $result = $conn->query($sql);
 
+$sql = "select java_hash from colors_taken where game = '".$_SESSION['hash']."' and color = '".$_SESSION['ownColor']."';";
+
+$result2 = $conn->query($sql);
+
+$row2 = $result2->fetch_assoc();
+
 if ($result->num_rows == 4) {
-	
-	$sql = "select java_hash from colors_taken where game = '".$_SESSION['hash']."' and color = '".$_SESSION['ownColor']."';";
-	
-	$result = $conn->query($sql);
-	
-	$row = $result->fetch_assoc();
-	
-	echo "<a href='https://chess4four.io/tomcat/?id=".$row['java_hash']."'>Let's boogy</a>";
+
+	echo "<a href='https://chess4four.io/tomcat/?id=".$row2['java_hash']."'>Let's boogy</a>";
 	
 	die;
 }

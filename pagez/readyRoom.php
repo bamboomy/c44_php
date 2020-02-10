@@ -29,8 +29,8 @@ $RHash = md5($java_hash . "R" . microtime());
 
 $DHash = md5($java_hash . "D" . microtime());
 
-$sql = "insert into votes (value, hash, gameHash) ";
-$sql .= " values ('R', '".$RHash."', '".$_SESSION['hash']."'), ('D', '".$DHash."', '".$_SESSION['hash']."');";
+$sql = "insert into votes (value, hash, gameHash, javaHash) ";
+$sql .= " values ('R', '".$RHash."', '".$_SESSION['hash']."', '".$java_hash."'), ('D', '".$DHash."', '".$_SESSION['hash']."', '".$java_hash."');";
 
 $result = $conn->query($sql);
 
