@@ -64,7 +64,25 @@ foreach ($allColors as $color){
 				</div>			
 			</div>		
 <?		
-		if($counter == 3){
+	} else {
+?>
+			<div class="container">
+<?
+		if(isset($_SESSION['ownColor'])){
+			
+			echo "<img src='../imgz/".$color.".png' class='image'>";
+			
+		} else {
+			
+			echo "<a href='readyRoom.php?game=".$_SESSION['hash']."&color=".$color."'><img src='../imgz/".$color.".png' class='image'></a>";
+		}
+?>
+			</div>		
+<?	
+	}
+} 
+
+if(isset($_SESSION['ownColor']) && $counter == 3){
 ?>
 	<div id="third">
 		Do you want to have a robot 3rd player?<br/>
@@ -83,23 +101,5 @@ foreach ($allColors as $color){
 		<button class="left" onclick="voteRandom();">Vote random</a><button class="right" onclick="voteDubious();">Vote dubious</button>
 	</div>
 <?
-		}
-
-	} else {
-?>
-			<div class="container">
-<?
-		if(isset($_SESSION['ownColor'])){
-			
-			echo "<img src='../imgz/".$color.".png' class='image'>";
-			
-		} else {
-			
-			echo "<a href='readyRoom.php?game=".$_SESSION['hash']."&color=".$color."'><img src='../imgz/".$color.".png' class='image'></a>";
-		}
-?>
-			</div>		
-<?	
-	}
-} 
+}
 ?>
