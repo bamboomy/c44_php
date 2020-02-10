@@ -126,7 +126,7 @@ if(isset($_SESSION['ownColor']) && $counter == 3){
 
 	} else {
 ?>
-		<button class="left" onclick="voteRandom();">Vote random</a><button class="right" onclick="voteDubious();">Vote dubious</button><br/>
+		<button class="left" onclick="voteRandom();">Vote random</a><button class="right" onclick="voteDubious();">Vote dubious</button><br/><br/>
 <?
 
 		if($resultRandom->num_rows != 0){
