@@ -136,7 +136,7 @@ if(isset($_SESSION['ownColor']) && $counter == 3){
 
 		if($resultDubious->num_rows != 0){
 
-			echo "<span class='left'>".$resultDubious->num_rows." votes</span>";
+			echo "<span class='right'>".$resultDubious->num_rows." votes</span>";
 		}
 	}
 ?>
