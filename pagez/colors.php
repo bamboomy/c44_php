@@ -89,7 +89,7 @@ if(isset($_SESSION['ownColor']) && $counter == 3){
 		<br/>
 		This can be either:<br/>
 		<br/>
-		A random player ((s)he doesn't know much)?<br/>
+		A random player (it doesn't know much)?<br/>
 		<br/>
 		Or a dubious player?<br/>
 		<br/>
