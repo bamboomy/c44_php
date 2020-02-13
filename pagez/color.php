@@ -152,7 +152,7 @@ function again() {
 		
 		again();
 
-	}, 300);
+	}, 1000);
 }
 
 again();
