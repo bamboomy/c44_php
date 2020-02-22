@@ -4,7 +4,7 @@ session_start();
 
 if(!isset($_SESSION['fbId'])){
 	
-	header("Location: register.php");
+	header("Location: welcome.php");
 		
 	exit;
 }

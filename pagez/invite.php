@@ -8,7 +8,7 @@ $_SESSION['invited'] = true;
 
 if(isset($_SESSION['id'])){
 	
-	header("Location: register.php");
+	header("Location: welcome.php");
 		
 	exit;
 }
@@ -70,7 +70,7 @@ if(isset($_SESSION['id'])){
 
 				<h2>Hellow there,</h2>
 				
-				You need to be <a href="register.php">logged in</a> to be able to participate in a game...
+				You need to be <a href="welcome.php">logged in</a> to be able to participate in a game...
 
 			</div>
 		</div>

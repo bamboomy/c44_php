@@ -4,7 +4,7 @@ session_start();
 
 if(!isset($_SESSION['fbId'])){
 	
-	header("Location: register.php");
+	header("Location: welcome.php");
 		
 	exit;
 }
@@ -86,7 +86,7 @@ $result = $conn->query($sql);
 				<br/>
 				May your actions be just, fierce and fair!!!<br/>
 				<br/>
-				<a href='register.php'>I shall continue</a>
+				<a href='welcome.php'>I shall continue</a>
 				
 			</div>
 		</div>

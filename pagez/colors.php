@@ -4,7 +4,7 @@ session_start();
 
 if(!isset($_SESSION['id'])){
 	
-	header("Location: register.php");
+	header("Location: welcome.php");
 		
 	exit;
 }

@@ -4,7 +4,7 @@ session_start();
 
 if(!isset($_SESSION['token']) || $_SESSION['token'] != $_GET['ownToken']){
 	
-	header("Location: register.php");
+	header("Location: welcome.php");
 		
 	exit;
 }
