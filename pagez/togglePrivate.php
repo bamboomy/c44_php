@@ -9,6 +9,8 @@ if(!isset($_SESSION['id'])){
 	exit;
 }
 
+include_once("settings.php");
+
 $sql = "select private from game where hash = '".test_input($_SESSION['hash'])."';";
 
 $result = $conn->query($sql);
