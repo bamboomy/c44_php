@@ -25,6 +25,7 @@
 		<br/>
 		Thanks a bunch!<br/>
 		<br/>
+		</p>
 		
 	</center>
 
