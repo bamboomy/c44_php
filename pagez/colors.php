@@ -34,6 +34,24 @@ if ($result->num_rows == 4) {
 	die;
 }
 
+$greenHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
+$blueHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
+$redHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
+$yellowHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
+
+$_SESSION['colorValues'] = array( 
+
+	$greenHash => 'Green' , 
+	$blueHash => 'Blue', 
+	$redHash => 'Red', 
+	$yellowHash => 'Yellow',
+	
+	'Green' => $greenHash, 
+	'Blue' => $blueHash, 
+	'Red' => $redHash =>, 
+	'Yellow' => $yellowHash 
+);
+
 $remainingColors = array("Green", "Blue", "Red", "Yellow");
 
 $takenColors = array($_SESSION['ownColor']);
@@ -86,7 +104,7 @@ foreach ($allColors as $color){
 			
 		} else {
 			
-			echo "<a href='readyRoom.php?game=".$_SESSION['hash']."&color=".$color."'><img src='../imgz/".$color.".png' class='image'></a>";
+			echo "<a href='readyRoom.php?game=".$_SESSION['hash']."&color=".$_SESSION['colorValues'][$color]."'><img src='../imgz/".$color.".png' class='image'></a>";
 		}
 ?>
 			</div>		
