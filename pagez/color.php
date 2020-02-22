@@ -171,6 +171,7 @@ again();
 		<h1>Hey <? echo $_SESSION['name']; ?>,</h1>
 		<h3>We're creating game:</h3>
 		<h3><? echo $_SESSION['sentence']; ?></h3>
+		<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
 		<h3>Choose your color:</h3>
 		<br/>
 		
