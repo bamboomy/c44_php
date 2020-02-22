@@ -23,6 +23,7 @@
 		<br/>
 		Thanks a bunch!<br/>
 		<br/>
+		The Chess4Four Team<br/>
 		</p>
 		
 	</center>
