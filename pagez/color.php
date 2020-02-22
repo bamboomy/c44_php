@@ -27,7 +27,7 @@ if(isset($_SESSION['invited'])){
 		exit;
 	}
 
-	$sql = "select sentence from game where hash = '".test_input($_SESSION['hash'])."';";
+	$sql = "select sentence, private from game where hash = '".test_input($_SESSION['hash'])."';";
 
 	$result = $conn->query($sql);
 	
@@ -137,6 +137,18 @@ if(isset($_SESSION['invited'])){
 
 <script>
 
+$( document ).ready(function() {
+
+<?
+
+if($row['private'] == 'Y'){
+	
+	echo "document.getElementById('private').checked = true;";
+}
+
+?>
+});
+
 function again() {
 
 	setTimeout(function(){
@@ -160,6 +172,18 @@ function again() {
 
 again();
 
+function again() {
+
+	$.ajax({ type: "GET",   
+			 url: "https://chess4four.io/pagez/togglePrivate.php",   
+			 async: false,
+			 success : function(text)
+			 {
+				 location.reload();
+			 }
+	});
+}
+
 </script>
 
 </head>
@@ -171,7 +195,7 @@ again();
 		<h1>Hey <? echo $_SESSION['name']; ?>,</h1>
 		<h3>We're creating game:</h3>
 		<h3><? echo $_SESSION['sentence']; ?></h3>
-		<input type="checkbox" onclick="alert('clicked');"> private game.
+		<input id="private" type="checkbox" onclick="alert('clicked');"> private game.
 		<h3>Choose your color:</h3>
 		<br/>
 		
