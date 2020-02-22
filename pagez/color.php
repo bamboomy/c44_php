@@ -9,9 +9,15 @@ if(!isset($_SESSION['id'])){
 	exit;
 }
 
-if(isset($_SESSION['invited'])){
+include_once("settings.php");
 
-	include_once("settings.php");
+$sql = "select private from game where hash = '".test_input($_SESSION['hash'])."';";
+
+$result = $conn->query($sql);
+
+$row = $result->fetch_assoc();
+
+if(isset($_SESSION['invited'])){
 
 	$sql = "select id from colors_taken where game = '".test_input($_SESSION['hash'])."' and name='".$_SESSION['name']."';";
 	
