@@ -34,6 +34,13 @@ $sql .= " values ('R', '".$RHash."', '".$_SESSION['hash']."', '".$java_hash."'),
 
 $result = $conn->query($sql);
 
+$sql = "select private from game where hash = '".test_input($_SESSION['hash'])."';";
+
+$result = $conn->query($sql);
+
+$row = $result->fetch_assoc();
+
+
 ?>
 
 <html>
@@ -226,6 +233,18 @@ function voteDubious(){
 		<h1>Hey <? echo $_SESSION['name']; ?>,</h1>
 		<h3>We're waiting on the other players for game:</h3>
 		<h3><? echo $_SESSION['sentence']; ?></h3>
+<?
+
+if($row['private'] == 'Y'){
+	
+	echo "This is a private game.";
+
+} else {
+	
+	echo "This is a public game.";
+}
+
+?>
 		<h3>You can share this link:</h3>
 		<? echo "<input id='myInput' type='text' value='https://chess4four.io/pagez/invite.php?game=".$_SESSION['hash']."' />";
 		echo "<input type='button' onclick='copy();' value='copy' />"; ?>
