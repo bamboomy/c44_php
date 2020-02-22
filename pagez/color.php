@@ -167,7 +167,7 @@ again();
 <center>
 <div class="outer">
   <div class="middle">
-    <div class="inner center">
+    <div class="inner">
 		<h1>Hey <? echo $_SESSION['name']; ?>,</h1>
 		<h3>We're creating game:</h3>
 		<h3><? echo $_SESSION['sentence']; ?></h3>
