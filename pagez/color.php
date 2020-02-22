@@ -138,8 +138,6 @@ if(isset($_SESSION['invited'])){
 <script>
 
 $(document).ready(function() {
-	
-	console.log( "ready!" );
 
 <?
 
@@ -174,7 +172,7 @@ function again() {
 
 again();
 
-function again() {
+function togglePrivate() {
 
 	$.ajax({ type: "GET",   
 			 url: "https://chess4four.io/pagez/togglePrivate.php",   
@@ -197,7 +195,7 @@ function again() {
 		<h1>Hey <? echo $_SESSION['name']; ?>,</h1>
 		<h3>We're creating game:</h3>
 		<h3><? echo $_SESSION['sentence']; ?></h3>
-		<input id="private" type="checkbox" onclick="alert('clicked');"> private game.
+		<input id="private" type="checkbox" onclick="togglePrivate();"> private game.
 		<h3>Choose your color:</h3>
 		<br/>
 		
