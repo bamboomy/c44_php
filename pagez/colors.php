@@ -48,7 +48,7 @@ $_SESSION['colorValues'] = array(
 	
 	'Green' => $greenHash, 
 	'Blue' => $blueHash, 
-	'Red' => $redHash =>, 
+	'Red' => $redHash, 
 	'Yellow' => $yellowHash 
 );
 
