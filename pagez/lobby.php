@@ -37,13 +37,18 @@ unset($_SESSION['ownColor']);
   width: 400px;
   /*whatever width you want*/
 }
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
 </style>
 </head>
 <body>
 <center>
 <div class="outer">
   <div class="middle">
-    <div class="inner">
+    <div class="inner center">
 		<? echo "<h2>Hey " . $_SESSION['firstName'] . " (".$_SESSION['name']."),</h2>" ?>
 		<h3>What do you want to do?</h3>
 		<br/>
