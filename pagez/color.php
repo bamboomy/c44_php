@@ -127,7 +127,10 @@ if(isset($_SESSION['invited'])){
   text-align: center;
 }
 
-
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
 </style>
 
 <script src="../js/jquery-3.4.1.min.js"></script>
@@ -164,7 +167,7 @@ again();
 <center>
 <div class="outer">
   <div class="middle">
-    <div class="inner">
+    <div class="inner center">
 		<h1>Hey <? echo $_SESSION['name']; ?>,</h1>
 		<h3>We're creating game:</h3>
 		<h3><? echo $_SESSION['sentence']; ?></h3>
