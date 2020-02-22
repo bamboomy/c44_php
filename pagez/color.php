@@ -141,7 +141,7 @@ $(document).ready(function() {
 
 <?
 
-echo "$".$row['private']."$"
+echo "$".$row['private']."$";
 
 if($row['private'] == 'Y'){
 	
