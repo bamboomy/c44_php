@@ -138,6 +138,8 @@ if(isset($_SESSION['invited'])){
 <script>
 
 $(document).ready(function() {
+	
+	console.log( "ready!" );
 
 <?
 
