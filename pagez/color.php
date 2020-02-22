@@ -72,7 +72,7 @@ if(isset($_SESSION['invited'])){
 }
 
 .container {
-	position: relative;
+	/*position: relative;*/
   width: 15%;
 }
 
