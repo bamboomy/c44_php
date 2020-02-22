@@ -65,7 +65,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows == 0) {
 	
-	header("Location: facebookRegister.php");
+	header("Location: cookie.php");
 		
 	exit;
 }
