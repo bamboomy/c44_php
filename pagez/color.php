@@ -147,14 +147,13 @@ $(document).ready(function() {
 
 <?
 
-echo "$".$row['private']."$";
-
 if($row['private'] == 'Y'){
 	
 	echo "document.getElementById('private').checked = true;";
 }
 
 ?>
+
 });
 
 function again() {
