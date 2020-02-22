@@ -174,7 +174,7 @@ again();
 		<h3>Choose your color:</h3>
 		<br/>
 		
-		<div id="colors"></div>
+		<div id="colors" class="center" ></div>
 		
 	</div>
   </div>
