@@ -18,9 +18,7 @@
 		<img id="logo" src="../imgz/cookie.jpg" />
 		
 		<p>The site doesn't work without, so please be so kind to:<br/>
-		<br/>
 		<a href="facebookRegister.php"><h3>accept</h3></a><br/>
-		<br/>
 		...to continue using this site...<br/>
 		<br/>
 		Thanks a bunch!<br/>
