@@ -178,7 +178,7 @@ function again() {
 
 		var response = '';
 		$.ajax({ type: "GET",   
-				 url: "https://chess4four.io/pagez/colors.php",   
+				 url: "colors.php",   
 				 async: false,
 				 success : function(text)
 				 {

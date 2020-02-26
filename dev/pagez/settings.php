@@ -44,4 +44,11 @@ function addBrs($data){
 	return $result;
 }
 
+$profilePath = "/";
+
+if(strpos("dev", getcwd()) !== false){
+	
+	$profilePath = "/dev";
+}
+
 ?>
