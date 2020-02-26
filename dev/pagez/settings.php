@@ -44,7 +44,7 @@ function addBrs($data){
 	return $result;
 }
 
-$profilePath = "/";
+$profilePath = "";
 
 if(strpos("dev", getcwd()) !== false){
 	

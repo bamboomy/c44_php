@@ -246,6 +246,8 @@ if($row['private'] == 'Y'){
 	echo "This is a public game.";
 }
 
+echo getcwd();
+
 ?>
 		<h3>You can share this link:</h3>
 		<? echo "<input id='myInput' type='text' value='https://chess4four.io".$profilePath."/pagez/invite.php?game=".$_SESSION['hash']."' />";
