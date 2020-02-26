@@ -162,7 +162,7 @@ function again() {
 
 		var response = '';
 		$.ajax({ type: "GET",   
-				 url: "https://chess4four.io/pagez/colors.php",   
+				 url: "colors.php",   
 				 async: false,
 				 success : function(text)
 				 {
@@ -182,7 +182,7 @@ again();
 function togglePrivate() {
 
 	$.ajax({ type: "GET",   
-			 url: "https://chess4four.io/pagez/togglePrivate.php",   
+			 url: "togglePrivate.php",   
 			 async: false,
 			 success : function(text)
 			 {

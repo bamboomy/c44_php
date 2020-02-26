@@ -199,7 +199,7 @@ function voteRandom(){
 	
 	$.ajax({ type: "GET",   
 <?
-			 echo "url: 'https://chess4four.io/pagez/vote.php?hash=".$RHash."',";
+			 echo "url: 'vote.php?hash=".$RHash."',";
 ?>
 			 async: false,
 			 success : function(text)
@@ -213,7 +213,7 @@ function voteDubious(){
 	
 	$.ajax({ type: "GET",   
 <?
-			 echo "url: 'https://chess4four.io/pagez/vote.php?hash=".$DHash."',";
+			 echo "url: 'vote.php?hash=".$DHash."',";
 ?>
 			 async: false,
 			 success : function(text)
@@ -248,7 +248,7 @@ if($row['private'] == 'Y'){
 
 ?>
 		<h3>You can share this link:</h3>
-		<? echo "<input id='myInput' type='text' value='https://chess4four.io/pagez/invite.php?game=".$_SESSION['hash']."' />";
+		<? echo "<input id='myInput' type='text' value='https://chess4four.io".$profilePath."/pagez/invite.php?game=".$_SESSION['hash']."' />";
 		echo "<input type='button' onclick='copy();' value='copy' />"; ?>
 		<br/>
 		<br/>
