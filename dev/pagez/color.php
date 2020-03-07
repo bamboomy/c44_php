@@ -28,6 +28,10 @@ if(isset($_SESSION['invited'])){
 		$row2 = $result->fetch_assoc();
 		
 		$_SESSION['ownColor'] = $row2['color'];
+		
+		header("Location: readyRoom.php?game=".$_SESSION['hash']);
+		
+		exit;
 	}
 		
 		
