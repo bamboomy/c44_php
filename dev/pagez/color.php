@@ -45,7 +45,7 @@ if(isset($_SESSION['invited'])){
 		exit;
 	}
 
-	$sql = "select sentence, private from game where hash = '".test_input($_SESSION['hash'])."';";
+	$sql = "select sentence, private, started from game where hash = '".test_input($_SESSION['hash'])."';";
 
 	$result = $conn->query($sql);
 	
@@ -59,6 +59,13 @@ if(isset($_SESSION['invited'])){
 	$row = $result->fetch_assoc();
 	
 	$_SESSION['sentence'] = $row['sentence'];
+	
+	if($row['started'] == 'Y'){
+		
+		header("Location: chat.php");
+		
+		exit;
+	}
 }
 
 
