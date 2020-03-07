@@ -19,16 +19,24 @@ $row = $result->fetch_assoc();
 
 if(isset($_SESSION['invited'])){
 
-	$sql = "select id from colors_taken where game = '".test_input($_SESSION['hash'])."' and name='".$_SESSION['name']."';";
+	$sql = "select color from colors_taken where game = '".test_input($_SESSION['hash'])."' and name='".$_SESSION['name']."';";
 	
 	$result = $conn->query($sql);
 
-	if ($result->num_rows != 0) {
+	if ($result->num_rows == 1) {
+		
+		$row2 = $result->fetch_assoc();
+		
+		$_SESSION['ownColor'] = $row2['color'];
+	}
+		
+		
+	if ($result->num_rows > 1) {
 		
 		unset($_SESSION['hash']);
 		unset($_SESSION['invited']);
 		
-		header("Location: double.php");
+		header("Location: error.php");
 		
 		exit;
 	}
