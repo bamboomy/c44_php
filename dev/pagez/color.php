@@ -221,7 +221,13 @@ function togglePrivate() {
 		<h1>Hey <? echo $_SESSION['name']; ?>,</h1>
 		<h3>We're creating game:</h3>
 		<h3><? echo $_SESSION['sentence']; ?></h3>
+<?
+if(!isset($_SESSION['invited'])){
+?>		
 		<input id="private" type="checkbox" onclick="togglePrivate();"> private game.
+<?
+}
+?>
 		<h3>Choose your color:</h3>
 		<br/>
 		
