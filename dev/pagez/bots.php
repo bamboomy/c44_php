@@ -40,6 +40,8 @@
 
 				<h1><a href="pagez/bots.php">Try<br/>(no stings attached)</a></h1>
 				
+				or
+				
 				<h1><a href="pagez/bots.php">Login/Register</a></h1>
 
 			</div>
