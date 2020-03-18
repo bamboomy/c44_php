@@ -39,6 +39,8 @@
 			<div class="inner center">
 
 				<h1><a href="pagez/bots.php">Try<br/>(no stings attached)</a></h1>
+				
+				<h1><a href="pagez/bots.php">Login/Register</a></h1>
 
 			</div>
 		</div>
