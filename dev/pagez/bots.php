@@ -38,9 +38,7 @@
 		<div class="middle">
 			<div class="inner center">
 
-	<a href="pagez/bots.php">
-		<div class="center">Try</div>
-	</a>
+				<h1><a href="pagez/bots.php">Try (no stings attached)</a></h1>
 
 			</div>
 		</div>
