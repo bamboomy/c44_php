@@ -1,3 +1,8 @@
+<?
+
+include_once("settings.php");
+
+?>
 <html>
 	<head>
 		<style>
@@ -37,12 +42,15 @@
 	<div class="outer">
 		<div class="middle">
 			<div class="inner center">
+<?
 
-				<h1><a href="pagez/bots.php">Try<br/>(no stings attached)</a></h1>
-				
+	echo "<h1><a href=https://chess4four.io".$profilePath."/tomcat/bots/?id=".md5(microtime() . rand(0, 1000))."'>";
+	echo "Try<br/>(no stings attached)</a></h1>";
+
+?>
 				or
 				
-				<h1><a href="pagez/bots.php">Login/Register</a></h1>
+				<h1><a href="welcome.php">Login/Register</a></h1>
 
 			</div>
 		</div>
