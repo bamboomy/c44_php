@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<style>
-		#logo {
+		.center {
 			position:absolute; 
 			left:0; right:0;
 			top:0; bottom:0;
@@ -11,7 +11,11 @@
 	</head>
 <body>
 
-	<center><a href="pagez/bots.php"><img id="logo" src="imgz/logo.png" /></a></center>
+	<center>
+	<a href="pagez/bots.php">
+		<div class="center">Try</div>
+	</a>
+	</center>
 
 </body>
 </html>
