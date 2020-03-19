@@ -13,19 +13,24 @@ include_once("settings.php");
 
 $color = $_SESSION['colorValues'][$_GET['color']];
 
-$java_hash = md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash'] . test_input($color));
+$update = false;
 
-$sql = "insert into colors_taken (game, color, name, java_hash) ";
-$sql .= " values ('".$_SESSION['hash']."', '".test_input($color)."', '".$_SESSION['name']."', '".$java_hash."');";
+$java_hash = md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash'] . $_SESSION['id']);
 
-$result = $conn->query($sql);
+if(!isset($_SESSION['ownColor'])){
+	
+	$_SESSION['ownColor'] = test_input($color);	
 
-$sql = "insert into chatDirty (javaHash) ";
-$sql .= " values ('".$java_hash."');";
+	$sql = "insert into colors_taken (game, color, name, java_hash) ";
+	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['ownColor']."', '".$_SESSION['name']."', '".$java_hash."');";
 
-$result = $conn->query($sql);
+	$result = $conn->query($sql);
 
-$_SESSION['ownColor'] = test_input($color);
+	$sql = "insert into chatDirty (javaHash) ";
+	$sql .= " values ('".$java_hash."');";
+
+	$result = $conn->query($sql);
+}
 
 $RHash = md5($java_hash . "R" . microtime());
 

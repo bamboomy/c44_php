@@ -19,21 +19,33 @@ $row = $result->fetch_assoc();
 
 if(isset($_SESSION['invited'])){
 
-	$sql = "select id from colors_taken where game = '".test_input($_SESSION['hash'])."' and name='".$_SESSION['name']."';";
+	$sql = "select color from colors_taken where game = '".test_input($_SESSION['hash'])."' and name='".$_SESSION['name']."';";
 	
 	$result = $conn->query($sql);
 
-	if ($result->num_rows != 0) {
+	if ($result->num_rows == 1) {
+		
+		$row2 = $result->fetch_assoc();
+		
+		$_SESSION['ownColor'] = $row2['color'];
+
+		header("Location: readyRoom.php?game=".$_SESSION['hash']);
+		
+		exit;
+	}
+		
+		
+	if ($result->num_rows > 1) {
 		
 		unset($_SESSION['hash']);
 		unset($_SESSION['invited']);
 		
-		header("Location: double.php");
+		header("Location: error.php");
 		
 		exit;
 	}
 
-	$sql = "select sentence, private from game where hash = '".test_input($_SESSION['hash'])."';";
+	$sql = "select sentence, private, started from game where hash = '".test_input($_SESSION['hash'])."';";
 
 	$result = $conn->query($sql);
 	
@@ -47,6 +59,13 @@ if(isset($_SESSION['invited'])){
 	$row = $result->fetch_assoc();
 	
 	$_SESSION['sentence'] = $row['sentence'];
+	
+	if($row['started'] == 'Y'){
+		
+		header("Location: chat.php");
+		
+		exit;
+	}
 }
 
 
@@ -202,7 +221,13 @@ function togglePrivate() {
 		<h1>Hey <? echo $_SESSION['name']; ?>,</h1>
 		<h3>We're creating game:</h3>
 		<h3><? echo $_SESSION['sentence']; ?></h3>
+<?
+if(!isset($_SESSION['invited'])){
+?>		
 		<input id="private" type="checkbox" onclick="togglePrivate();"> private game.
+<?
+}
+?>
 		<h3>Choose your color:</h3>
 		<br/>
 		
