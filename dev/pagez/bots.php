@@ -44,7 +44,7 @@ include_once("settings.php");
 			<div class="inner center">
 <?
 
-	echo "<h1><a href=https://chess4four.org".$profilePath."/tomcat/bots/?id=".md5(microtime() . rand(0, 1000))."'>";
+	echo "<h1><a href='https://chess4four.org".$profilePath."/tomcat/bots/?id=".md5(microtime() . rand(0, 1000))."'>";
 	echo "Try it (free)</a></h1>";
 
 ?>
