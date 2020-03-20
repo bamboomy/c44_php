@@ -45,12 +45,12 @@ include_once("settings.php");
 <?
 
 	echo "<h1><a href=https://chess4four.io".$profilePath."/tomcat/bots/?id=".md5(microtime() . rand(0, 1000))."'>";
-	echo "Try<br/>(no stings attached)</a></h1>";
+	echo "Try it (free)</a></h1>";
 
 ?>
 				or
 				
-				<h1><a href="welcome.php">Login/Register</a></h1>
+				<h1><a href="welcome.php">Use it (also free)</a></h1>
 
 			</div>
 		</div>
