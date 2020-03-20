@@ -14,14 +14,33 @@ if(!isset($_SESSION['id'])){
 	exit;
 }
 
-$sql = "select name, game from colors_taken where java_hash = '".test_input($_GET['board'])."';";
+$sql = "select name, game, color from colors_taken where java_hash = '".test_input($_GET['board'])."';";
 
 $result = $conn->query($sql);
 
 $row = $result->fetch_assoc();
 
+$color = "";
+
+if($row['color'] == "Blue"){
+	
+	$color = "blue";
+	
+}else if($row['color'] == "Yellow"){
+	
+	$color = "brown";
+	
+}else if($row['color'] == "Green"){
+	
+	$color = "green";
+	
+}else if($row['color'] == "Red"){
+	
+	$color = "red";
+}	
+
 $sql = "insert into chat (game, text) ";
-$sql .= " values ('".$row['game']."', '".$row['name'].": ".  test_input($_POST['text'])."');";
+$sql .= " values ('".$row['game']."', '<span color=\'".$color."\'>".$row['name']."</span>: ".  test_input($_POST['text'])."');";
 
 $result = $conn->query($sql);
 
