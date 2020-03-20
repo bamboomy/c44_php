@@ -40,7 +40,7 @@ if($row['color'] == "Blue"){
 }	
 
 $sql = "insert into chat (game, text) ";
-$sql .= " values ('".$row['game']."', '<span color=\'".$color."\'>".$row['name']."</span>: ".  test_input($_POST['text'])."');";
+$sql .= " values ('".$row['game']."', '<span style=\'color:".$color."\'>".$row['name']."</span>: ".  test_input($_POST['text'])."');";
 
 $result = $conn->query($sql);
 
