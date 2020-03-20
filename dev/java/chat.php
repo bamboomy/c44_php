@@ -28,7 +28,7 @@ if($row['color'] == "Blue"){
 	
 }else if($row['color'] == "Yellow"){
 	
-	$color = "brown";
+	$color = "orange";
 	
 }else if($row['color'] == "Green"){
 	
