@@ -130,30 +130,20 @@ for($i=0; $i<5; $i++){
 ?>
 				<div class='left'><input type='radio' onclick="enableInput();" name='name' value='own'>I want to choose my own name:<div class='right'><input id="input" disabled type="text" name="ownName" /></div></div>
 				<br/>
+<?
+				echo "<input type='hidden' name='fail' value='".$fail."' />";
+?>				
 		<div class='right'><input disabled id="submit" type="submit" value="I will be named like this forever!"></div>
 </form> 	
 			</div>
 			</div>
 	</div>
+
 <?
 
-var_dump($name);
-
-echo "<br/>";
-
-echo $fail;
-
-echo "<br/>";
-
-var_dump($result);
-
-echo "<br/>";
-echo "<br/>";
-
-var_dump($reindexed);
+	echo $fail;
 
 ?>
-
 
 </body>
 </html>
