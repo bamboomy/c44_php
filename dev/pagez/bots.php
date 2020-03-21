@@ -40,7 +40,7 @@ a:link {
 
 /* visited link */
 a:visited {
-  color: #00FF00;
+  color: black;
   text-decoration: none;
 }
 
