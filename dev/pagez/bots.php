@@ -32,6 +32,30 @@ include_once("settings.php");
   text-align: center;
 }
 
+/* unvisited link */
+a:link {
+  color: #FF0000;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: #00FF00;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: #FF00FF;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: #0000FF;
+  text-decoration: none;
+}
+
 </style>
 
 	</head>
