@@ -139,11 +139,5 @@ for($i=0; $i<5; $i++){
 			</div>
 	</div>
 
-<?
-
-	echo $fail;
-
-?>
-
 </body>
 </html>
