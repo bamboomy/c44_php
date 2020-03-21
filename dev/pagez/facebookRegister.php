@@ -148,6 +148,7 @@ echo "<br/>";
 var_dump($result);
 
 echo "<br/>";
+echo "<br/>";
 
 var_dump($reindexed);
 
