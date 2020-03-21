@@ -34,7 +34,7 @@ include_once("settings.php");
 
 /* unvisited link */
 a:link {
-  color: #FF0000;
+  color: grey;
   text-decoration: none;
 }
 
