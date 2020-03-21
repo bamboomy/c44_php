@@ -121,9 +121,11 @@ for($i=0; $i<20; $i++){
 
 $result = array_diff($name, $taken);
 
+$reindexed = array_values($result);
+
 for($i=0; $i<5; $i++){
 	
-	echo "<div class='left'><input onclick='enableSubmit();' type='radio' name='name' value='".$result[$i]."'>".$result[$i]."</div>";
+	echo "<div class='left'><input onclick='enableSubmit();' type='radio' name='name' value='".$reindexed[$i]."'>".$reindexed[$i]."</div>";
 }
 ?>
 				<div class='left'><input type='radio' onclick="enableInput();" name='name' value='own'>I want to choose my own name:<div class='right'><input id="input" disabled type="text" name="ownName" /></div></div>
@@ -144,6 +146,10 @@ echo $fail;
 echo "<br/>";
 
 var_dump($result);
+
+echo "<br/>";
+
+var_dump($reindexed);
 
 ?>
 
