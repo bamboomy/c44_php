@@ -101,11 +101,29 @@ for($i=0; $i<20; $i++){
 	$name[$i] = $four[rand(0, count($four) - 1)] . $one[rand(0, count($one) - 1)] . $two[rand(0, count($two) - 1)];
 }
 
-//TODO: filter on existing names
+$taken = array();
+
+$fail = 0;
+
+for($i=0; $i<20; $i++){
+	
+	$sql = "select name from gebruiker where name='".$name[$i]."'";
+
+	$result = $conn->query($sql);
+	
+	if ($result->num_rows != 0) {
+		
+		array_push($taken, $name[$i]);
+		
+		$fail++;
+	}	
+}
+
+$result = array_diff($name, $taken);
 
 for($i=0; $i<5; $i++){
 	
-	echo "<div class='left'><input onclick='enableSubmit();' type='radio' name='name' value='".$name[$i]."'>".$name[$i]."</div>";
+	echo "<div class='left'><input onclick='enableSubmit();' type='radio' name='name' value='".$result[$i]."'>".$result[$i]."</div>";
 }
 ?>
 				<div class='left'><input type='radio' onclick="enableInput();" name='name' value='own'>I want to choose my own name:<div class='right'><input id="input" disabled type="text" name="ownName" /></div></div>
@@ -115,6 +133,20 @@ for($i=0; $i<5; $i++){
 			</div>
 			</div>
 	</div>
+<?
+
+var_dump($name);
+
+echo "<br/>";
+
+echo $fail;
+
+echo "<br/>";
+
+var_dump($result);
+
+?>
+
 
 </body>
 </html>
