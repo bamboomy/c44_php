@@ -46,7 +46,7 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-  color: #FF00FF;
+  color: darkblue;
   text-decoration: none;
 }
 
