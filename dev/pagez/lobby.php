@@ -11,6 +11,8 @@ if(!isset($_SESSION['id'])){
 
 unset($_SESSION['ownColor']);
 
+$chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
+
 ?>
 
 <html>
@@ -43,8 +45,109 @@ unset($_SESSION['ownColor']);
   text-align: center;
 }
 </style>
+
+<script>
+
+	function fillChat() {
+
+		$
+				.ajax({
+					type : "get",
+					xhrFields : {
+						withCredentials : true
+					},
+					url : "https://chess4four.org/".$javaPath."/chatText.php?board=lobby",
+					success : function(text) {
+
+						if (text != "clean") {
+
+							$('#chatText').html(text);
+
+							var objDiv = document.getElementById("chatText");
+							objDiv.scrollTop = objDiv.scrollHeight;
+						}
+					}
+				});
+	}
+
+	function sendMessage() {
+		
+<?
+		echo "var chat = $('#chatField".$chatHash."').val();";
+		
+		echo "$('#chatField".$chatHash."').val('');";
+?>				 
+
+		$
+				.ajax({
+					type : "POST",
+					xhrFields : {
+						withCredentials : true
+					},
+					url : "https://chess4four.org/".$javaPath."/chat.php?board=lobby",
+					data : {
+						text : chat
+					},
+					success : function(text) {
+						//alert(text);
+
+						fillChat();
+					}
+				});
+	}
+
+	function showChat() {
+
+		setTimeout(function() {
+
+			fillChat();
+
+			showChat();
+
+		}, 1000);
+	}
+
+	showChat();
+
+	$(document).ready(function() {
+		
+<?
+				echo "<input id='chatField".$chatHash."'";
+?>				 
+		
+
+		$("#chatField${board.chatId}").on("keydown", function(e) {
+
+			if (e.which == 13) {
+
+				sendMessage();
+			}
+		});
+
+	});
+
+
+</script>
+
 </head>
 <body>
+
+	<div id="chat">
+
+		<div style="text-align: center; font-size: larger;">Chat</div>
+		<div id="chatText"></div>
+
+		<div class="bottom">
+<?
+				echo "<input id='chatField".$chatHash."'";
+?>				 
+					type="text" class="fill" autocomplete="false" /><input type="button" value="Send"
+					onclick="sendMessage();" />
+		</div>
+
+	</div>
+
+
 <center>
 <div class="outer">
   <div class="middle">
