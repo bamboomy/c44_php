@@ -120,7 +120,9 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 					xhrFields : {
 						withCredentials : true
 					},
-					url : "https://chess4four.org/".$javaPath."/chat.php?board=lobby",
+<?					
+					echo "url : 'https://chess4four.org/".$javaPath."/chat.php?board=lobby',";
+?>					
 					data : {
 						text : chat
 					},
