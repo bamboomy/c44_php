@@ -109,7 +109,7 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 	function sendMessage() {
 		
 <?
-		echo "var chat = $('#chatField".$chatHash."').val();\n\n";
+		echo "var chat = '".$_SESSION['name']." :' + $('#chatField".$chatHash."').val();\n\n";
 		
 		echo "$('#chatField".$chatHash."').val('');\n\n";
 ?>				 
@@ -121,13 +121,12 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 						withCredentials : true
 					},
 <?					
-					echo "url : 'https://chess4four.org/".$javaPath."/chat.php?board=lobby',";
+					echo "url : 'https://chess4four.org/".$javaPath."/lobbyChat.php?board=lobby',";
 ?>					
 					data : {
 						text : chat
 					},
 					success : function(text) {
-						//alert(text);
 
 						fillChat();
 					}
