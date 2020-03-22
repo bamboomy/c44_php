@@ -27,7 +27,7 @@ $result3 = $conn->query($sql);
 
 $row3 = $result3->fetch_assoc();
 	
-if ($result->num_rows == 4) {
+if ($result->num_rows >= 4) {
 	
 	$sql = "update game set started='Y' where hash='".$_SESSION['hash']."';";
 
