@@ -221,7 +221,7 @@ for($i=0; $i<5; $i++){
 
 <br/><br/>
 
-		<div class='right'><input disabled id="submit" type="submit" value="I will be named like this forever!"></div>
+		<div class='right'><input disabled id="submit" type="submit" value="All of this is super true!"></div>
 </form> 	
 			</div>
 			</div>
