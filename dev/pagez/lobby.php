@@ -101,9 +101,9 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 	function sendMessage() {
 		
 <?
-		echo "var chat = $('#chatField".$chatHash."').val();";
+		echo "var chat = $('#chatField".$chatHash."').val();\n\n";
 		
-		echo "$('#chatField".$chatHash."').val('');";
+		echo "$('#chatField".$chatHash."').val('');\n\n";
 ?>				 
 
 		$
