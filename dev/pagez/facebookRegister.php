@@ -77,7 +77,7 @@ function enableSubmit(){
 
 	<div class="outer">
 		<div class="middle">
-			<div class="inner center">
+			<div class="inner">
 
 				<h2>Hey <? echo $_SESSION['firstName']; ?>,</h2>
 				
