@@ -44,6 +44,33 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
   margin: 0 auto;
   text-align: center;
 }
+
+#chat {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	width: 300px;
+	height: 300px;
+	border: 1px solid;
+	padding: 10px;
+}
+
+.bottom {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	width: 90%;
+}
+
+.fill {
+	width: 75%;
+}
+
+#chatText {
+	overflow-y: auto;
+	height: 80%;
+}
+
 </style>
 
 <script>
