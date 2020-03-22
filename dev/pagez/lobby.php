@@ -2,6 +2,8 @@
 
 session_start();
 
+include_once("settings.php");
+
 if(!isset($_SESSION['id'])){
 	
 	header("Location: welcome.php");
