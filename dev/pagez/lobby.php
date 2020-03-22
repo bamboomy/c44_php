@@ -90,7 +90,9 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 					xhrFields : {
 						withCredentials : true
 					},
-					url : "https://chess4four.org/".$javaPath."/chatText.php?board=lobby",
+<?					
+					echo "url : 'https://chess4four.org/".$javaPath."/chatText.php?board=lobby',";
+?>					
 					success : function(text) {
 
 						if (text != "clean") {
