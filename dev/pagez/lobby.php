@@ -91,7 +91,7 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 						withCredentials : true
 					},
 <?					
-					echo "url : 'https://chess4four.org/".$javaPath."/chatText.php?board=lobby',";
+					echo "url : 'https://chess4four.org/".$javaPath."/lobbyChatText.php?board=lobby',";
 ?>					
 					success : function(text) {
 
