@@ -8,6 +8,8 @@ $_SESSION['hash'] = test_input($_GET['game']);
 
 $_SESSION['invited'] = true;
 
+unset($_SESSION['ownColor']);
+
 if(isset($_SESSION['id'])){
 	
 	header("Location: welcome.php");
