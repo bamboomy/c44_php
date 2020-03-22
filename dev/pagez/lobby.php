@@ -74,6 +74,10 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 
 </style>
 
+<?
+	echo "<script src='/".$javaPath."/../js/jquery-3.4.1.min.js'></script>";
+?>
+
 <script>
 
 	function fillChat() {
