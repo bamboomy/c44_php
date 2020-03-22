@@ -150,12 +150,8 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 	$(document).ready(function() {
 		
 <?
-				echo "<input id='chatField".$chatHash."'";
+		echo "$('#chatField".$chatHash."').on('keydown', function(e) {";
 ?>				 
-		
-
-		$("#chatField${board.chatId}").on("keydown", function(e) {
-
 			if (e.which == 13) {
 
 				sendMessage();
