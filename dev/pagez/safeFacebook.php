@@ -20,7 +20,7 @@ if($_POST['name'] == 'own'){
 	$c44Name = test_input($_POST['name']);
 }
 
-$sql = "insert into gebruiker (voornaam, name, fbId, fail) values ('".$_SESSION['firstName']."', '".$c44Name."', '".$_SESSION['fbId']."' , '".test_input($_POST['fail'])."');";
+$sql = "insert into gebruiker (voornaam, name, fbId, fail, timeZone) values ('".$_SESSION['firstName']."', '".$c44Name."', '".$_SESSION['fbId']."' , '".test_input($_POST['fail'])."', '".test_input($_POST['timeZone'])."');";
 
 $result = $conn->query($sql);
 
