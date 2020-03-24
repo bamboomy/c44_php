@@ -96,13 +96,19 @@ function checkName(){
 				if(text == "ok"){
 					
 					document.getElementById("myForm").submit();
+					
+				} else {
+					
+					alert("This name already seems to be taken...");
+					
+					return false;
 				}
 			}
 		});
 		
 	} else {
 		
-		alert("not disabled");
+		document.getElementById("myForm").submit();
 	}
 	
 	return false;
