@@ -69,6 +69,27 @@ function enableSubmit(){
 	$("#submit").prop( "disabled", false );
 }
 
+function checkName(){
+	
+	if(!$("#input").prop( "disabled")){
+		
+		$.ajax({
+			type : "GET",
+			url : "checkName.php?name=" + $("#input").val(),
+			async : false,
+			success : function(text) {
+				$('#board').html(text);
+			}
+		});
+		
+	} else {
+		
+		alert("not disabled");
+	}
+	
+	return false;
+}
+
 </script>
 
 
@@ -221,7 +242,7 @@ for($i=0; $i<5; $i++){
 
 <br/><br/>
 
-		<div class='right'><input disabled id="submit" type="submit" value="All of this is super true!"></div>
+		<div class='right'><input disabled id="submit" type="submit" onclick='checkName();' value="All of this is super true!"></div>
 </form> 	
 			</div>
 			</div>
