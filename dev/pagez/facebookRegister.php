@@ -73,12 +73,29 @@ function checkName(){
 	
 	if(!$("#input").prop( "disabled")){
 		
+		if (!$("#input").val().match(/^[0-9a-z]+$/)){
+			
+			alert("name must only contain numbers or letters");
+			
+			return false;
+		}
+		
+		if (!$("#input").val().length > 2){
+			
+			alert("name must at least contain 3 characters");
+			
+			return false;
+		}
+
 		$.ajax({
 			type : "GET",
 			url : "checkName.php?name=" + $("#input").val(),
 			async : false,
 			success : function(text) {
-				$('#board').html(text);
+				
+				if(text == "ok"){
+					
+				}
 			}
 		});
 		
@@ -107,7 +124,7 @@ function checkName(){
 				Care to choose your destiny? (oops, I mean name?):<br/>
 				(Only this name will be shared with the other users...)<br/>
 				<br/>
-<form action="safeFacebook.php" method="post">
+<form action="safeFacebook.php" method="post" id='myForm'>
 
 <? 
 
