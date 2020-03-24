@@ -2,10 +2,10 @@
 
 session_start();
 
-header("Access-Control-Allow-Origin: http://chess4four.io:8080");
-header("Access-Control-Allow-Credentials: true");
-
 include_once("../pagez/settings.php");
+
+header("Access-Control-Allow-Origin: http://chess4four.org:".$port);
+header("Access-Control-Allow-Credentials: true");
 
 if(!isset($_SESSION['id'])){
 	
@@ -14,14 +14,33 @@ if(!isset($_SESSION['id'])){
 	exit;
 }
 
-$sql = "select name, game from colors_taken where java_hash = '".test_input($_GET['board'])."';";
+$sql = "select name, game, color from colors_taken where java_hash = '".test_input($_GET['board'])."';";
 
 $result = $conn->query($sql);
 
 $row = $result->fetch_assoc();
 
+$color = "";
+
+if($row['color'] == "Blue"){
+	
+	$color = "blue";
+	
+}else if($row['color'] == "Yellow"){
+	
+	$color = "orange";
+	
+}else if($row['color'] == "Green"){
+	
+	$color = "green";
+	
+}else if($row['color'] == "Red"){
+	
+	$color = "red";
+}	
+
 $sql = "insert into chat (game, text) ";
-$sql .= " values ('".$row['game']."', '".$row['name'].": ".  test_input($_POST['text'])."');";
+$sql .= " values ('".$row['game']."', '<span style=\'color:".$color."\'>".$row['name']."</span>: ".  test_input($_POST['text'])."');";
 
 $result = $conn->query($sql);
 

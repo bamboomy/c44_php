@@ -32,6 +32,30 @@ include_once("settings.php");
   text-align: center;
 }
 
+/* unvisited link */
+a:link {
+  color: grey;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: #0000FF;
+  text-decoration: none;
+}
+
 </style>
 
 	</head>
@@ -44,13 +68,13 @@ include_once("settings.php");
 			<div class="inner center">
 <?
 
-	echo "<h1><a href=https://chess4four.io".$profilePath."/tomcat/bots/?id=".md5(microtime() . rand(0, 1000))."'>";
-	echo "Try<br/>(no stings attached)</a></h1>";
+	echo "<h1><a href='https://chess4four.org".$profilePath."/tomcat/bots/?id=".md5(microtime() . rand(0, 1000))."'>";
+	echo "Try it (free)<br/>(No registration required)</a></h1>";
 
 ?>
 				or
 				
-				<h1><a href="welcome.php">Login/Register</a></h1>
+				<h1><a href="welcome.php">Use it (also free)<br/>(Registration required)</a></h1>
 
 			</div>
 		</div>

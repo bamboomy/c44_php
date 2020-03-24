@@ -27,13 +27,13 @@ $result3 = $conn->query($sql);
 
 $row3 = $result3->fetch_assoc();
 	
-if ($result->num_rows == 4) {
+if ($result->num_rows >= 4) {
 	
 	$sql = "update game set started='Y' where hash='".$_SESSION['hash']."';";
 
 	$conn->query($sql);
 
-	echo "<a href='https://chess4four.io".$profilePath."/tomcat/?id=".$row2['java_hash']."'>Let's boogy</a>";
+	echo "<a href='https://chess4four.org".$profilePath."/tomcat/?id=".$row2['java_hash']."'>Let's boogy</a>";
 	
 	die;
 }

@@ -23,7 +23,7 @@ $sql .= " values ('".$java_hash."');";
 
 $result = $conn->query($sql);
 
-header("Location: https://chess4four.io".$profilePath."/tomcat/?id=".$java_hash);
+header("Location: https://chess4four.org".$profilePath."/tomcat/?id=".$java_hash);
 
 exit;
 

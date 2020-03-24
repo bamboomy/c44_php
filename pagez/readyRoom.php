@@ -253,7 +253,7 @@ if($row['private'] == 'Y'){
 
 ?>
 		<h3>You can share this link:</h3>
-		<? echo "<input id='myInput' type='text' value='https://chess4four.io".$profilePath."/pagez/invite.php?game=".$_SESSION['hash']."' />";
+		<? echo "<input id='myInput' type='text' value='https://chess4four.org".$profilePath."/pagez/invite.php?game=".$_SESSION['hash']."' />";
 		echo "<input type='button' onclick='copy();' value='copy' />"; ?>
 		<br/>
 		<br/>

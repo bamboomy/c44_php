@@ -145,7 +145,7 @@ if(isset($_SESSION['invited'])){
 
 				<? echo "<h2>Welcome back " . $_SESSION['firstName'] . " (".$row['name'].")!</h2>" ?>
 				
-				<a href="lobby.php">Let's see what great games await us...</a>
+				<a href="notice.html">Let's see what great games await us...</a>
 
 			</div>
 		</div>
