@@ -75,14 +75,14 @@ function checkName(){
 		
 		if (!$("#input").val().match(/^[0-9a-zA-Z]+$/)){
 			
-			alert("name must only contain numbers or letters");
+			alert("Name must only contain numbers or letters...");
 			
 			return false;
 		}
 		
-		if ($("#input").val().length < 3){
+		if ($("#input").val().length < 3 || $("#input").val().length > 30){
 			
-			alert("name must at least contain 3 characters");
+			alert("Name must at least contain 3 characters (and maximally 30).");
 			
 			return false;
 		}
