@@ -125,7 +125,7 @@ function checkName(){
 				Care to choose your destiny? (oops, I mean name?):<br/>
 				(Only this name will be shared with the other users...)<br/>
 				<br/>
-<form action="safeFacebook.php" method="post" id='myForm'>
+<form id='myForm' action="safeFacebook.php" method="post">
 
 <? 
 
