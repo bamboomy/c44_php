@@ -73,7 +73,7 @@ function checkName(){
 	
 	if(!$("#input").prop( "disabled")){
 		
-		if (!$("#input").val().match(/^[0-9a-z]+$/)){
+		if (!$("#input").val().match(/^[0-9a-zA-Z]+$/)){
 			
 			alert("name must only contain numbers or letters");
 			
