@@ -242,7 +242,7 @@ for($i=0; $i<5; $i++){
 
 <br/><br/>
 
-		<div class='right'><input disabled id="submit" type="submit" onclick='checkName();' value="All of this is super true!"></div>
+		<div class='right'><input disabled id="submit" type="submit" onclick='return checkName();' value="All of this is super true!"></div>
 </form> 	
 			</div>
 			</div>
