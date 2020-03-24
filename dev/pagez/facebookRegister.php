@@ -61,12 +61,12 @@ include_once("settings.php");
 function enableInput(){
 	
 	$("#input").prop( "disabled", false );
-	$("#submit").prop( "disabled", false );
+	$("#send").prop( "disabled", false );
 }
 
 function enableSubmit(){
 	
-	$("#submit").prop( "disabled", false );
+	$("#send").prop( "disabled", false );
 }
 
 function checkName(){
@@ -260,7 +260,7 @@ for($i=0; $i<5; $i++){
 
 <br/><br/>
 
-		<div class='right'><input disabled id="submit" type="submit" onclick='return checkName();' value="All of this is super true!"></div>
+		<div class='right'><input disabled id="send" type="submit" onclick='return checkName();' value="All of this is super true!"></div>
 </form> 	
 			</div>
 			</div>
