@@ -11,7 +11,7 @@ if(!isset($_SESSION['fbId'])){
 
 include_once("settings.php");
 
-$sql = "select name from gebruikers where name='".test_input($_GET['name'])."';";
+$sql = "select name from gebruiker where name='".test_input($_GET['name'])."';";
 
 $result = $conn->query($sql);
 
