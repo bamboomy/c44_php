@@ -95,6 +95,7 @@ function checkName(){
 				
 				if(text == "ok"){
 					
+					document.getElementById("myForm").submit();
 				}
 			}
 		});
