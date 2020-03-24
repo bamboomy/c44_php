@@ -80,7 +80,7 @@ function checkName(){
 			return false;
 		}
 		
-		if (!$("#input").val().length > 2){
+		if ($("#input").val().length < 3){
 			
 			alert("name must at least contain 3 characters");
 			
