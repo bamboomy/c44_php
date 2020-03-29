@@ -81,6 +81,17 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 	height: 80%;
 }
 
+#feedback {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 300px;
+	height: 50px;
+	border: 1px solid;
+	padding: 10px;
+	text-align: center;
+}
+
 </style>
 
 <?
@@ -197,7 +208,7 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 		</div>
 	</div>
 	
-	<div id="resign">
+	<div id="feedback">
 
 		<div class="outer">
 			<div class="middle">
