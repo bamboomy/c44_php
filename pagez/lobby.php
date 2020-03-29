@@ -19,6 +19,13 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 
 <html>
 <head>
+
+<link href="../frameworkz/bootstrap-4.4.1-dist/css/bootstrap.css"
+	rel="stylesheet">
+
+<script
+	src="../frameworkz/bootstrap-4.4.1-dist/js/bootstrap.bundle.js"></script>
+
 <style>
 .outer {
 	display: table;
@@ -164,6 +171,43 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 
 </head>
 <body>
+
+	<!-- The Waiting Modal -->
+	<div class="modal" id="feedbackModal">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">We value your opinion!</h4>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+
+					What can we do to improve the app?
+
+					<textarea id="bad" name="bad" rows="5" cols="50"></textarea>
+
+					<br /> <br /> <input type="submit" onclick='sendFeedback();'
+						value="Send">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="resign">
+
+		<div class="outer">
+			<div class="middle">
+				<div class="inner">
+					<input type="button" onclick="feedback();" value="Feedback" />
+				</div>
+			</div>
+		</div>
+
+	</div>
 
 	<div id="chat">
 
