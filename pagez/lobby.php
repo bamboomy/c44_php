@@ -42,7 +42,7 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 .inner {
   margin-left: auto;
   margin-right: auto;
-  width: 400px;
+  width: 300px;
   /*whatever width you want*/
 }
 
