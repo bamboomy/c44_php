@@ -7,7 +7,7 @@ $sql="insert into feedback (javaHash, type, text) VALUES ('".test_input($_GET['u
 
 if ($conn->query($sql) !== TRUE) {
 	
-	echo "fail -> ". $sql;
+	echo "fail";
 	
 	die;
 }
