@@ -23,9 +23,6 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 <link href="../frameworkz/bootstrap-4.4.1-dist/css/bootstrap.css"
 	rel="stylesheet">
 
-<script
-	src="../frameworkz/bootstrap-4.4.1-dist/js/bootstrap.bundle.js"></script>
-
 <style>
 .outer {
 	display: table;
@@ -97,6 +94,9 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 <?
 	echo "<script src='https://chess4four.org/".$javaPath."/../js/jquery-3.4.1.min.js'></script>";
 ?>
+
+<script
+	src="../frameworkz/bootstrap-4.4.1-dist/js/bootstrap.bundle.js"></script>
 
 <script>
 
