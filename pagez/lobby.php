@@ -207,6 +207,12 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 				});
 	}
 
+	function hideModal(){
+	    $("#feedbackModal").removeClass("in");
+	    $(".modal-backdrop").remove();
+	    $("#feedbackModal").hide();
+	}
+
 </script>
 
 </head>
