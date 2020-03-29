@@ -179,6 +179,33 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 
 	});
 
+	function sendFeedback() {
+
+		$
+				.ajax({
+					type : "POST",
+					xhrFields : {
+						withCredentials : true
+					},
+<?
+					echo "url : 'https://chess4four.org/".$javaPath."/bad.php?user=".$_SESSION['id']."',"; 
+?>
+					data : {
+						bad : $('#bad').val()
+					},
+					success : function(text) {
+
+						if(text != 'fail'){
+							
+							hideModal();			
+
+						} else {
+							
+							alert('we couldnt save your wows...');
+						}
+					}
+				});
+	}
 
 </script>
 
