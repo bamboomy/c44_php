@@ -214,7 +214,7 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 		<div class="outer">
 			<div class="middle">
 				<div class="inner center">
-					<input type="button" onclick="feedback();" value="Feedback" />
+					<input type="button" onclick="$('#feedbackModal').modal('show');" value="Feedback" />
 				</div>
 			</div>
 		</div>
