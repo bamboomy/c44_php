@@ -2,10 +2,10 @@
 
 session_start();
 
+include_once("../pagez/settings.php");
+
 header("Access-Control-Allow-Origin: http://chess4four.org:".$port);
 header("Access-Control-Allow-Credentials: true");
-
-include_once("../pagez/settings.php");
 
 if(!isset($_SESSION['id'])){
 	

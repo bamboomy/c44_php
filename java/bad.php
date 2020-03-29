@@ -1,7 +1,7 @@
 <?
 
 // Create connection
-include_once("settings.php");
+include_once("../pagez/settings.php");
 
 $sql="insert into feedback (javaHash, type, text) VALUES ('".test_input($_GET['user'])."', 'bad',  '".test_input($_POST['bad'])."');";
 
