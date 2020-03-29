@@ -189,11 +189,6 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 		<h3>What do you want to do?</h3>
 		<br/>
 		<a href="create.php">Create a game</a><br/>
-		<br/>
-		<a href="test.php">Join (hash1)</a><br/><br/>
-		<a href="test.php">Join (hash2)</a><br/><br/>
-		<a href="test.php">Join (hash3)</a><br/><br/>
-		<a href="test.php">Join (hash4)</a><br/><br/>
 	</div>
   </div>
 </div>
