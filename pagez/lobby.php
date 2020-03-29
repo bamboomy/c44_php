@@ -208,6 +208,7 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 		</div>
 	</div>
 	
+	<center>
 	<div id="feedback">
 
 		<div class="outer">
@@ -219,6 +220,7 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 		</div>
 
 	</div>
+	</center>
 
 	<div id="chat">
 
