@@ -12,4 +12,6 @@ if ($conn->query($sql) !== TRUE) {
 	die;
 }
 
+echo "ok";
+
 ?>
