@@ -2,7 +2,9 @@
 
 include_once("settings.php");
 
-$sql = "select counter from visits where page='bots';";
+$page = "bots";
+
+$sql = "select counter from visits where page='".$page."';";
 
 $result = $conn->query($sql);
 
@@ -10,11 +12,11 @@ if ($result->num_rows != 0) {
 	
 	$row = $result->fetch_assoc();
 	
-	$sql = "update visits set counter = '".($row['counter'] + 1)."', updated = now() where page = 'bots';";
+	$sql = "update visits set counter = '".($row['counter'] + 1)."', updated = now() where page = '".$page."';";
 	
 } else {
 	
-	$sql = "insert into visits (page, counter) values ('bots', '1');";
+	$sql = "insert into visits (page, counter) values ('".$page."', '1');";
 }
 
 $result = $conn->query($sql);
