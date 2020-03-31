@@ -215,6 +215,17 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 
 </script>
 
+<!-- Global site tag (gtag.js) - Google Ads: 968172277 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-968172277"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-968172277');
+</script>
+
+
 </head>
 <body>
 
