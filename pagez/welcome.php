@@ -6,6 +6,26 @@ include_once("settings.php");
 
 $_SESSION['token'] = md5($_SERVER['REMOTE_ADDR'].microtime());
 
+$page = "welcome";
+
+$sql = "select counter from visits where page='".$page."';";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows != 0) {
+	
+	$row = $result->fetch_assoc();
+	
+	$sql = "update visits set counter = '".($row['counter'] + 1)."', updated = now() where page = '".$page."';";
+	
+} else {
+	
+	$sql = "insert into visits (page, counter) values ('".$page."', '1');";
+}
+
+$result = $conn->query($sql);
+
+
 ?>
 <html>
 <head>

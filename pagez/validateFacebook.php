@@ -11,6 +11,25 @@ if(!isset($_SESSION['token']) || $_SESSION['token'] != $_GET['ownToken']){
 
 include_once("settings.php");
 
+$page = "validate";
+
+$sql = "select counter from visits where page='".$page."';";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows != 0) {
+	
+	$row = $result->fetch_assoc();
+	
+	$sql = "update visits set counter = '".($row['counter'] + 1)."', updated = now() where page = '".$page."';";
+	
+} else {
+	
+	$sql = "insert into visits (page, counter) values ('".$page."', '1');";
+}
+
+$result = $conn->query($sql);
+
 $sql = "select ip from sessions where token='".$_SESSION['token']."';";
 
 $result = $conn->query($sql);
@@ -52,8 +71,6 @@ if($me->getProperty('id') != $_GET['id']){
 		
 	exit;
 }
-
-include_once("settings.php");
 
 $_SESSION['fbId'] = $me->getProperty('id');
 

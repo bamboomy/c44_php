@@ -11,6 +11,26 @@ if(!isset($_SESSION['fbId'])){
 
 include_once("settings.php");
 
+$page = "safe";
+
+$sql = "select counter from visits where page='".$page."';";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows != 0) {
+	
+	$row = $result->fetch_assoc();
+	
+	$sql = "update visits set counter = '".($row['counter'] + 1)."', updated = now() where page = '".$page."';";
+	
+} else {
+	
+	$sql = "insert into visits (page, counter) values ('".$page."', '1');";
+}
+
+$result = $conn->query($sql);
+
+
 if($_POST['name'] == 'own'){
 	
 	$c44Name = test_input($_POST['ownName']);
