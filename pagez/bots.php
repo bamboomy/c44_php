@@ -10,7 +10,7 @@ if ($result->num_rows != 0) {
 	
 	$row = $result->fetch_assoc();
 	
-	$sql = "update visits set counter = '".($row['counter'] + 1)."' where page = 'bots';";
+	$sql = "update visits set counter = '".($row['counter'] + 1)."', updated = now() where page = 'bots';";
 	
 } else {
 	
