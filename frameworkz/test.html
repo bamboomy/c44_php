@@ -1,0 +1,19 @@
+<html>
+<head>
+	<link  href="node_modules/pickerjs/src/index.css" rel="stylesheet">
+	<script type="module" src="node_modules/pickerjs/src/index.js"></script>
+</head>
+<body>
+<input type="text" id="input">
+
+<script>
+
+	var input = document.getElementById('input');
+	var picker = new Picker(input, {
+	  format: 'YYYY/MM/DD HH:mm',
+	});
+
+</script>
+
+</body>
+</html>
