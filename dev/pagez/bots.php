@@ -80,9 +80,9 @@ a:active {
 	echo "Try it!</a></h1>";
 
 ?>
-				or
-				
 				<h1><a href="welcome.php">Use it!</a></h1>
+				
+				<h1><a href="about.php">About...</a></h1>
 
 			</div>
 		</div>
