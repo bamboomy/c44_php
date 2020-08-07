@@ -77,12 +77,12 @@ a:active {
 <?
 
 	echo "<h1><a href='https://chess4four.org".$profilePath."/tomcat/bots/?id=".md5(microtime() . rand(0, 1000))."'>";
-	echo "Try it (free)<br/>(No registration required)</a></h1>";
+	echo "Try it!</a></h1>";
 
 ?>
 				or
 				
-				<h1><a href="welcome.php">Use it (also free)<br/>(Registration required)</a></h1>
+				<h1><a href="welcome.php">Use it!</a></h1>
 
 			</div>
 		</div>
