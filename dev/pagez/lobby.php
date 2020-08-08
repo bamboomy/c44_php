@@ -135,10 +135,14 @@ a:active {
 							$('#chatText').html(text);
 
 							var objDiv = document.getElementById("chatText");
-							//objDiv.scrollTop = objDiv.scrollHeight;
-							
+
 							if (alreadyScrolled) {
+								
 								$("#chatText")[0].scrollTop = $("#chatText")[0].scrollHeight;
+								
+							} else {
+								
+								objDiv.scrollTop = objDiv.scrollHeight;
 							}
 						}
 					}
