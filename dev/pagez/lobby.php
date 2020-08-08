@@ -19,6 +19,14 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 
 <html>
 <head>
+
+	<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+	<style>
+		body {
+			font-family: 'Aclonica';font-size: 22px;
+		}
+	</style>
+
 <style>
 .outer {
 	display: table;
@@ -73,6 +81,31 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 	overflow-y: auto;
 	height: 80%;
 }
+
+/* unvisited link */
+a:link {
+  color: grey;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: #0000FF;
+  text-decoration: none;
+}
+
 
 </style>
 
