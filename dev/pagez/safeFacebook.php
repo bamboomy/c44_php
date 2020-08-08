@@ -20,6 +20,8 @@ if($_POST['name'] == 'own'){
 	$c44Name = test_input($_POST['name']);
 }
 
+echo mysqli_connect_error();
+
 $sql = "insert into gebruiker (voornaam, name, fbId, fail, timeZone) values ('".$_SESSION['firstName']."', '".$c44Name."', '".$_SESSION['fbId']."' , '".test_input($_POST['fail'])."', '".test_input($_POST['timeZone'])."');";
 
 $result = $conn->query($sql);
