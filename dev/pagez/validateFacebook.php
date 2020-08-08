@@ -92,6 +92,13 @@ if(isset($_SESSION['invited'])){
 <html>
 <head>
 
+	<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+	<style>
+		body {
+			font-family: 'Aclonica';font-size: 22px;
+		}
+	</style>
+
 <style>
 .outer {
 	display: table;
