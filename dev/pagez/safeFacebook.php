@@ -76,6 +76,8 @@ $result = $conn->query($sql);
 	</head>
 <body>
 
+<? echo $sql; ?>
+
 	<div class="outer">
 		<div class="middle">
 			<div class="inner center">
