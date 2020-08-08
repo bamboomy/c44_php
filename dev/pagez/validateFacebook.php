@@ -177,7 +177,7 @@ a:active {
 
 				<? echo "<h2>Welcome back " . $_SESSION['firstName'] . " (".$row['name'].")!</h2>" ?>
 				
-				<a href="notice.html">Let's see what great games await us...</a>
+				<a href="lobby.php">Let's see what great games await us...</a>
 
 			</div>
 		</div>
