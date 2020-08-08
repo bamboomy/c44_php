@@ -221,12 +221,9 @@ a:active {
 		<? echo "<h2>Hey " . $_SESSION['firstName'] . " (".$_SESSION['name']."),</h2>" ?>
 		<h3>What do you want to do?</h3>
 		<br/>
-		<a href="create.php">Create a game</a><br/>
+		<a href="create.php">Play now</a><br/>
 		<br/>
-		<a href="test.php">Join (hash1)</a><br/><br/>
-		<a href="test.php">Join (hash2)</a><br/><br/>
-		<a href="test.php">Join (hash3)</a><br/><br/>
-		<a href="test.php">Join (hash4)</a><br/><br/>
+		<a href="test.php">Schedule a game</a><br/><br/>
 	</div>
   </div>
 </div>
