@@ -136,8 +136,6 @@ a:active {
 
 							var objDiv = document.getElementById("chatText");
 							
-							alert(alreadyScrolled);
-
 							if (alreadyScrolled) {
 								
 								$("#chatText")[0].scrollTop = $("#chatText")[0].scrollHeight;
