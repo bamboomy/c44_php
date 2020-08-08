@@ -116,6 +116,8 @@ a:active {
 <script>
 
 	function fillChat() {
+		
+		var alreadyScrolled = $("#chatText")[0].scrollTop + $("#chatText").height() == $("#chatText")[0].scrollHeight;
 
 		$
 				.ajax({
@@ -133,7 +135,11 @@ a:active {
 							$('#chatText').html(text);
 
 							var objDiv = document.getElementById("chatText");
-							objDiv.scrollTop = objDiv.scrollHeight;
+							//objDiv.scrollTop = objDiv.scrollHeight;
+							
+							if (alreadyScrolled) {
+								$("#chatText")[0].scrollTop = $("#chatText")[0].scrollHeight;
+							}
 						}
 					}
 				});
