@@ -20,8 +20,6 @@ if($_POST['name'] == 'own'){
 	$c44Name = test_input($_POST['name']);
 }
 
-echo mysqli_connect_error();
-
 $sql = "insert into gebruiker (voornaam, name, fbId, fail, timeZone) values ('".$_SESSION['firstName']."', '".$c44Name."', '".$_SESSION['fbId']."' , '".test_input($_POST['fail'])."', '".test_input($_POST['timeZone'])."');";
 
 $result = $conn->query($sql);
@@ -29,6 +27,14 @@ $result = $conn->query($sql);
 ?>
 <html>
 <head>
+
+	<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+	<style>
+		body {
+			font-family: 'Aclonica';font-size: 22px;
+		}
+	</style>
+
 
 <style>
 .outer {
@@ -77,8 +83,6 @@ $result = $conn->query($sql);
 
 	</head>
 <body>
-
-<? echo $sql; ?>
 
 	<div class="outer">
 		<div class="middle">
