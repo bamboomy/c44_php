@@ -136,6 +136,31 @@ if(isset($_SESSION['invited'])){
 	text-align: right;
 }
 
+/* unvisited link */
+a:link {
+  color: grey;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: #0000FF;
+  text-decoration: none;
+}
+
+
 </style>
 
 <script>
