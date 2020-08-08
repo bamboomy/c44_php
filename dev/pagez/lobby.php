@@ -118,6 +118,8 @@ a:active {
 	function fillChat() {
 		
 		var alreadyScrolled = $("#chatText")[0].scrollTop + $("#chatText").height() == $("#chatText")[0].scrollHeight;
+		
+		alert(alreadyScrolled);
 
 		$
 				.ajax({
