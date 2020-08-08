@@ -135,6 +135,8 @@ a:active {
 							$('#chatText').html(text);
 
 							var objDiv = document.getElementById("chatText");
+							
+							alert(alreadyScrolled);
 
 							if (alreadyScrolled) {
 								
