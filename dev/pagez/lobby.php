@@ -142,7 +142,7 @@ a:active {
 	function sendMessage() {
 		
 <?
-		echo "var chat = '".$_SESSION['name']." :' + $('#chatField".$chatHash."').val();\n\n";
+		echo "var chat = '".$_SESSION['name'].": ' + $('#chatField".$chatHash."').val();\n\n";
 		
 		echo "$('#chatField".$chatHash."').val('');\n\n";
 ?>				 
