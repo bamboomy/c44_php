@@ -14,7 +14,7 @@
 		DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, <br/>
 		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.<br/>
 		<br/>
-		<a href="#" onclick="close();">close</a>
+		<a href="#" onclick="close();return false;">close</a>
 		</p>
 		
 	</center>
