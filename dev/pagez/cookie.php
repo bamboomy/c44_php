@@ -15,7 +15,7 @@
 	
 		<h1>(Also) we use <a target="_blank" href="https://en.wikipedia.org/wiki/HTTP_cookie">cookies</a>...</h1>
 
-		<img id="logo" src="../imgz/cookie.jpg" />
+		<img id="logo" src="../imgz/cookie.jpg" height="200" />
 		
 		<p>The site doesn't work without, so please be so kind to:
 		<a href="disclaimer.php"><h3>accept</h3></a>
