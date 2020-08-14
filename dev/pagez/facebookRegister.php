@@ -61,12 +61,21 @@ include_once("settings.php");
 function enableInput(){
 	
 	$("#input").prop( "disabled", false );
-	$("#send").prop( "disabled", false );
+	
+	checkEnableSubmit();
 }
 
 function enableSubmit(){
 	
 	$("#send").prop( "disabled", false );
+}
+
+function checkEnableSubmit(){
+	
+	if($("#vehicle1").is(':checked')){
+		
+		$("#send").prop( "disabled", false );	
+	}
 }
 
 function checkName(){
@@ -170,7 +179,7 @@ $reindexed = array_values($result);
 
 for($i=0; $i<5; $i++){
 	
-	echo "<div class='left'><input onclick='enableSubmit();' type='radio' name='name' value='".$reindexed[$i]."'>".$reindexed[$i]."</div>";
+	echo "<div class='left'><input onclick='checkEnableSubmit();' type='radio' name='name' value='".$reindexed[$i]."'>".$reindexed[$i]."</div>";
 }
 ?>
 				<div class='left'><input type='radio' onclick="enableInput();" name='name' value='own'>I want to choose my own name:<div class='right'><input id="input" disabled type="text" name="ownName" /></div></div>
