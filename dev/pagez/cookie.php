@@ -13,7 +13,7 @@
 
 	<center>
 	
-		<h1>(Surprise!!!) (Also we) use <a href="https://en.wikipedia.org/wiki/HTTP_cookie">cookies</a>...</h1>
+		<h1>(Also) we use <a target="_blank" href="https://en.wikipedia.org/wiki/HTTP_cookie">cookies</a>...</h1>
 
 		<img id="logo" src="../imgz/cookie.jpg" />
 		

@@ -141,11 +141,7 @@ a:active {
 							if (alreadyScrolled) {
 								
 								$("#chatText")[0].scrollTop = $("#chatText")[0].scrollHeight;
-								
-							} else {
-								
-								//objDiv.scrollTop = objDiv.scrollHeight;
-							}
+							} 
 						}
 					}
 				});
