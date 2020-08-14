@@ -279,7 +279,7 @@ for($i=0; $i<5; $i++){
 
 <br/><br/>
 
-<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" onclick="checkEnableSubmit();">
 <label for="vehicle1"> I have read and agree to the <a target="_blank" href="disclaimer.php">disclaimer</a>.</label><br/>
 
 <br/><br/>
