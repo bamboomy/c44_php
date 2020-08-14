@@ -266,6 +266,9 @@ for($i=0; $i<5; $i++){
 
 <br/><br/>
 
+<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+<label for="vehicle1"> I have read and agree to the <a target="_blank" href="disclaimer.php">disclaimer</a>.</label><br/>
+
 		<div class='right'><input disabled id="send" type="submit" onclick='return checkName();' value="All of this is super true!"></div>
 </form> 	
 			</div>
