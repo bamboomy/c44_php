@@ -78,7 +78,7 @@ function checkEnableSubmit(){
 		
 	} else {
 		
-		$("#send").prop( "disabled", false );
+		$("#send").prop( "disabled", true );
 	}
 }
 
