@@ -144,7 +144,7 @@ a:active {
 								
 							} else {
 								
-								objDiv.scrollTop = objDiv.scrollHeight;
+								//objDiv.scrollTop = objDiv.scrollHeight;
 							}
 						}
 					}
