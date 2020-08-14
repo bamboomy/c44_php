@@ -19,7 +19,7 @@
 		
 		<p>The site doesn't work without, so please be so kind to
 		<a href="disclaimer.php"><h3>accept</h3></a>
-		to continue using this site...<br/>
+		to continue using this site.<br/>
 		<br/>
 		Thanks a bunch!<br/>
 		<br/>
