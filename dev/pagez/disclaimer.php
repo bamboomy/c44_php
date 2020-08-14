@@ -2,9 +2,6 @@
 <body>
 
 	<center>
-	
-		<h2>Almost there...</h2>
-	
 		<h1>Disclaimer:</h1>
 
 		<p>
