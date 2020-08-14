@@ -33,7 +33,7 @@ if ($result->num_rows >= 4) {
 
 	$conn->query($sql);
 
-	echo "<a href='https://chess4four.org".$profilePath."/tomcat/?id=".$row2['java_hash']."'>Let's boogy</a>";
+	echo "<a href='https://chess4four.org".$profilePath."/tomcat/hello/".$row2['java_hash']."'>Let's boogy</a>";
 	
 	die;
 }
