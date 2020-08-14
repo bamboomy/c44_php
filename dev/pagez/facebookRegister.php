@@ -72,7 +72,7 @@ function enableSubmit(){
 
 function checkEnableSubmit(){
 	
-	if($("#vehicle1").is(':checked')){
+	if($("#vehicle1").attr('checked')){
 		
 		$("#send").prop( "disabled", false );
 		
