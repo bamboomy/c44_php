@@ -23,9 +23,9 @@ while($row = $result->fetch_assoc()){
 
 $sql = "select sentence, enddded from game where hash = '".test_input($_GET['game'])."';";
 
-$result2 = $conn->query($sql);
+$result2 = $conn->query($sql) or die($conn->error);
 
-$row2 = $result2->fetch_assoc() or die($conn->error);
+$row2 = $result2->fetch_assoc();
 
 ?>
 <html>
