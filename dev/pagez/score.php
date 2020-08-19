@@ -48,7 +48,8 @@ $row2 = $result2->fetch_assoc();
 <?
 	if($row2['ended'] == 'N'){
 ?>		
-	<p>The game is still in progress...</p>	
+	<p>The game is still in progress...<br/>
+	This is the partial result:</p>	
 <?		
 	} else {
 		
