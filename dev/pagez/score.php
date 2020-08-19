@@ -25,7 +25,7 @@ $sql = "select sentence, ended from game where game = '".test_input($_GET['game'
 
 $result2 = $conn->query($sql);
 
-$row2 = $result->fetch_assoc();
+$row2 = $result2->fetch_assoc();
 
 ?>
 <html>
