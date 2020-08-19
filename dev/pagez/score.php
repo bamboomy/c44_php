@@ -21,11 +21,11 @@ while($row = $result->fetch_assoc()){
 	
 }
 
-$sql = "select sentence, ended from game where hash = '".test_input($_GET['game'])."';";
+$sql = "select sentence, enddded from game where hash = '".test_input($_GET['game'])."';";
 
 $result2 = $conn->query($sql);
 
-$row2 = $result2->fetch_assoc();
+$row2 = $result2->fetch_assoc() or die($conn->error);
 
 ?>
 <html>
