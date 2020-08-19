@@ -23,7 +23,7 @@ while($row = $result->fetch_assoc()){
 
 $sql = "select sentence, ended from game where game = '".test_input($_GET['game'])."';";
 
-$result = $conn->query($sql);
+$result2 = $conn->query($sql);
 
 $row2 = $result->fetch_assoc();
 
