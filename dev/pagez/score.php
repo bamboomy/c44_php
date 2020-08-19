@@ -11,7 +11,7 @@ if(!isset($_SESSION['id'])){
 
 include_once("settings.php");
 
-$sql = "select reason from game_result where game = '".test_input($_GET['game'])."';";
+$sql = "select reason, player from game_result where game = '".test_input($_GET['game'])."';";
 
 $result = $conn->query($sql);
 
@@ -49,13 +49,27 @@ $row2 = $result2->fetch_assoc();
 		
 		
 	}
+?>
+
+<ol>
+
+<?
 
 while($row = $result->fetch_assoc()){
 	
-	//echo $row['reason'];
+	$sql = "select color, name from colors_taken where java_hash = '".test_input($row['player'])."';";
+
+	$result3 = $conn->query($sql) or die($conn->error);
+	
+	$row3 = $result3->fetch_assoc();
+	
+	echo "<li>".$row3['color'].": ".$row3['name'].": ".$row['reason']."</li>";
 	
 }
 ?>				
+
+</ol>
+
 				</div>
 			</div>
 		</div>
