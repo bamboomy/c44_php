@@ -15,13 +15,7 @@ $sql = "select reason from game_result where game = '".test_input($_GET['game'])
 
 $result = $conn->query($sql);
 
-while($row = $result->fetch_assoc()){
-	
-	//echo $row['reason'];
-	
-}
-
-$sql = "select sentence, enddded from game where hash = '".test_input($_GET['game'])."';";
+$sql = "select sentence, ended from game where hash = '".test_input($_GET['game'])."';";
 
 $result2 = $conn->query($sql) or die($conn->error);
 
@@ -55,8 +49,13 @@ $row2 = $result2->fetch_assoc();
 		
 		
 	}
+
+while($row = $result->fetch_assoc()){
+	
+	//echo $row['reason'];
+	
+}
 ?>				
-				
 				</div>
 			</div>
 		</div>
