@@ -45,6 +45,16 @@ $row2 = $result2->fetch_assoc();
 				
 					<h2>This was:</h2>
 					<h2><? echo $row2['sentence']; ?></h2>
+<?
+	if($row2['sentence'] == 'N'){
+?>		
+	<p>The game is still in progress...</p>	
+<?		
+	} else {
+		
+		
+	}
+?>				
 				
 				</div>
 			</div>
