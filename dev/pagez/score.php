@@ -17,8 +17,39 @@ $result = $conn->query($sql);
 
 while($row = $result->fetch_assoc()){
 	
-	echo $row['reason'];
+	//echo $row['reason'];
 	
 }
 
+$sql = "select sentence, ended from game where game = '".test_input($_GET['game'])."';";
+
+$result = $conn->query($sql);
+
+$row2 = $result->fetch_assoc();
+
 ?>
+<html>
+	<head>
+	
+		<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+		
+		<link rel="stylesheet" type="text/css" href="../css/default.css">
+		
+	</head>
+	<body>
+	<center>
+
+		<div class="outer">
+			<div class="middle">
+				<div class="inner center">
+				
+					<h2>This was:</h2>
+					<h2><? echo $row2['sentence']; ?></h2>
+				
+				</div>
+			</div>
+		</div>
+	</center>
+	
+	</body>
+</html>
