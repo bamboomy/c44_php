@@ -17,6 +17,6 @@ $result = $conn->query($sql) or die($conn->error);
 
 $row = $result->fetch_row();
 
-echo '#: ', $row[0];
+echo $row[0];
 
 ?>

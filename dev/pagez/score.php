@@ -21,6 +21,14 @@ $result2 = $conn->query($sql) or die($conn->error);
 
 $row2 = $result2->fetch_assoc();
 
+$sql = "select count(1) from game_result where game = '".test_input($_SESSION['hash'])."';";
+
+$result4 = $conn->query($sql) or die($conn->error);
+
+$row4 = $result4->fetch_row();
+
+$base = $row4[0];
+
 ?>
 <html>
 	<head>
@@ -46,6 +54,8 @@ $row2 = $result2->fetch_assoc();
 
 <script>
 
+	var shown = false;
+	
 	function checkFinished() {
 		
 		$.ajax({
@@ -54,7 +64,12 @@ $row2 = $result2->fetch_assoc();
 			async : false,
 			success : function(text) {
 				
-				alert(text);
+<?				echo "if(text != ".$base."){"; ?>
+
+					$("#reload").show(1000);
+					
+					shown = true;
+				}
 			}
 		});
 	}
@@ -65,7 +80,10 @@ $row2 = $result2->fetch_assoc();
 
 			checkFinished();
 
-			again();
+			if(!shown){
+				
+				again();
+			}
 
 		}, 1000);
 	}
@@ -77,7 +95,7 @@ $row2 = $result2->fetch_assoc();
 	</head>
 	<body>
 	
-<div id="reload">
+<div id="reload" style="display: none;">
 
 	<p>
 		The game also ended for someone else...<br/>
