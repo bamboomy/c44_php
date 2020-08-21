@@ -38,7 +38,7 @@ a:link {
 
 /* visited link */
 a:visited {
-  color: black;
+  color: grey;
   text-decoration: none;
 }
 

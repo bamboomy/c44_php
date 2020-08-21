@@ -93,82 +93,10 @@ if(isset($_SESSION['invited'])){
 <head>
 
 	<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
-	<style>
-		body {
-			font-family: 'Aclonica';font-size: 22px;
-		}
-	</style>
 
-<style>
-.outer {
-	display: table;
-	
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-}
+	<link rel="stylesheet" type="text/css" href="../css/default.css">
 
-.middle {
-	display: table-cell;
-	vertical-align: middle;
-}
-
-.inner {
-  margin-left: auto;
-  margin-right: auto;
-  width: 400px;
-}
-
-.center {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.left{
-
-		text-align: left;
-}
-
-.right {
-	
-	text-align: right;
-}
-
-/* unvisited link */
-a:link {
-  color: grey;
-  text-decoration: none;
-}
-
-/* visited link */
-a:visited {
-  color: black;
-  text-decoration: none;
-}
-
-/* mouse over link */
-a:hover {
-  color: orange;
-  text-decoration: none;
-}
-
-/* selected link */
-a:active {
-  color: #0000FF;
-  text-decoration: none;
-}
-
-
-</style>
-
-<script>
-
-</script>
-
-
-	</head>
+</head>
 <body>
 
 	<div class="outer">
