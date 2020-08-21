@@ -23,6 +23,38 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 	<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 
 	<link rel="stylesheet" type="text/css" href="../css/default.css">
+	
+<style>
+
+#chat {
+       position: absolute;
+       bottom: 20px;
+       right: 20px;
+       width: 300px;
+       height: 300px;
+       border: 1px solid;
+       padding: 10px;
+       z-index: 1;
+}
+
+.bottom {
+       position: absolute;
+       bottom: 10px;
+       right: 10px;
+       width: 90%;
+}
+
+.fill {
+       width: 75%;
+}
+
+#chatText {
+       overflow-y: auto;
+       height: 80%;
+}
+
+</style>	
+	
 
 <?
 	echo "<script src='https://chess4four.org/".$javaPath."/../js/jquery-3.4.1.min.js'></script>";
