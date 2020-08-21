@@ -35,6 +35,8 @@ $row2 = $result2->fetch_assoc();
 		
 		border-style: solid;
 		max-width: 200px;
+		top: 10px;
+		left: 10px;
 	}
 
 </style>		
