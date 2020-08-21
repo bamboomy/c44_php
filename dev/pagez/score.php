@@ -28,6 +28,8 @@ $row2 = $result2->fetch_assoc();
 		<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 		
 		<link rel="stylesheet" type="text/css" href="../css/default.css">
+		
+		<script src="../js/jquery-3.4.1.min.js"></script>
 
 <style>
 
@@ -41,6 +43,36 @@ $row2 = $result2->fetch_assoc();
 	}
 
 </style>		
+
+<script>
+
+	function checkFinished() {
+		
+		$.ajax({
+			type : "GET",
+<?			echo "url : 'https://chess4four.org".$profilePath."/pagez/numberOfFinished.php?game=".test_input($_GET['game'])."'",
+			async : false,
+			success : function(text) {
+				
+				alert(text);
+			}
+		});
+	}
+
+	function again() {
+
+		setTimeout(function() {
+
+			checkFinished();
+
+			again();
+
+		}, 1000);
+	}
+
+	again();
+
+</script>
 		
 	</head>
 	<body>
