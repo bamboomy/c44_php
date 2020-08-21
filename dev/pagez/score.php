@@ -48,8 +48,7 @@ $row2 = $result2->fetch_assoc();
 
 	<p>
 		The game also ended for someone else...<br/>
-		Do you want to:<br/>
-		<button type="button" class="btn btn-secondary">Reload</button><br/>
+		Do you want to <a href="">reload</a><br/>
 		to have the latest news?
 	</p>
 
