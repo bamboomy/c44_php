@@ -50,7 +50,7 @@ $row2 = $result2->fetch_assoc();
 		
 		$.ajax({
 			type : "GET",
-<?			echo "url : 'https://chess4four.org".$profilePath."/pagez/numberOfFinished.php?game=".test_input($_GET['game'])."'",
+<?			echo "url : 'https://chess4four.org".$profilePath."/pagez/numberOfFinished.php?game=".test_input($_GET['game'])."',"; ?>
 			async : false,
 			success : function(text) {
 				
