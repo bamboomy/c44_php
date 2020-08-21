@@ -29,8 +29,27 @@ $row2 = $result2->fetch_assoc();
 		
 		<link rel="stylesheet" type="text/css" href="../css/default.css">
 		
+<style>
+
+	#reload{
+		
+		border-style: solid;
+		
+	}
+
+</style>		
+		
 	</head>
 	<body>
+	
+<div id="reload">
+
+	<p>
+		Test
+	</p>
+
+</div>	
+	
 	<center>
 
 		<div class="outer">
