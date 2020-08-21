@@ -29,6 +29,12 @@ $row2 = $result2->fetch_assoc();
 		
 		<link rel="stylesheet" type="text/css" href="../css/default.css">
 		
+		<link rel="stylesheet" href="../frameworkz/bootstrap-4.4.1-dist/css/bootstrap.css">
+		
+		<script src="../js/jquery-3.4.1.min.js" ></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="../frameworkz/bootstrap-4.4.1-dist/js/bootstrap.bundle.js"></script>
+		
 <style>
 
 	#reload{
@@ -47,7 +53,10 @@ $row2 = $result2->fetch_assoc();
 <div id="reload">
 
 	<p>
-		Test
+		The game also ended for someone else...<br/>
+		Do you want to:<br/>
+		<button type="button" class="btn btn-secondary">Reload</button><br/>
+		to have the latest news?
 	</p>
 
 </div>	
