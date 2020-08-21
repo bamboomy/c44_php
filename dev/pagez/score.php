@@ -34,7 +34,7 @@ $row2 = $result2->fetch_assoc();
 	#reload{
 		
 		border-style: solid;
-		max-width: 200px;
+		max-width: 300px;
 		top: 10px;
 		left: 10px;
 	}
