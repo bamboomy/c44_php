@@ -15,8 +15,8 @@ $sql = "select count(1) from game_result where game = '".test_input($_SESSION['h
 
 $result = $conn->query($sql) or die($conn->error);
 
-$count = mysql_fetch_array($result);
+$row = $result->fetch_row();
 
-echo $count[0];
+echo '#: ', $row[0];
 
 ?>
