@@ -99,7 +99,7 @@ $base = $row4[0];
 
 	<p>
 		The game also ended for someone else...<br/>
-		Do you want to <a href="#">reload</a><br/>
+		Do you want to <a href="#" onclick="location.reload();">reload</a><br/>
 		to have the latest news?
 	</p>
 
