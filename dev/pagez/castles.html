@@ -1,5 +1,17 @@
 <html>
 	<head>
+	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 		<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 		
@@ -71,9 +83,24 @@ figure{
    background-image: url('../imgz/yellow_castle_taken.png');
 }
 
+h2{
+
+	margin-top: 20px;
+}
+
 </style>
 
 <script>
+
+function changeText(col-md-3or, name){
+
+	if(col-md-3or == "green"){
+	
+		$('#greenName').html(name);
+	
+	}
+
+}
 
 </script>
 	
@@ -82,51 +109,82 @@ figure{
 	
 		<center>
 
-			<div class="outer">
+			<!--div class="outer">
 				<div class="middle">
-					<div class="inner center">
+					<div class="inner center"-->
 					
-						<h2>Choose your color:</h2>
+						<div class="container-fluid">
 						
-						<table>
+							<div class="row">
+						
+								<div class="col-md-12">
+						
+									<h2>Choose your color:</h2>
+									
+								</div>
+							</div>
+							
+							<div class="row align-items-center h-100">
+							
+								<div class="col-md-3">
+						
+						<!--table>
 							<tr>
-								<td>
+								<td-->
 									<figure>
 
-										<div id="Green"></div>
+										<div id="Green" onmouseover="changeText('green','username')" 
+											onmouseout="changeText('green','unclaimed')"></div>
 										
-										<figcaption> Green: unclaimed </figcaption>
+										<figcaption> Green: <span id="greenName">unclaimed</span> </figcaption>
 									</figure>
-								</td>
-								<td>
+
+								</div>
+								<div class="col-md-3">
+								
+								<!--/td>
+								<td-->
 									<figure>
 										
 										<div id="Blue"></div>
 
 										<figcaption> Blue: unclaimed </figcaption>
 									</figure>
-								</td>
-								<td>
+
+								</div>
+								<div class="col-md-3">
+
+								<!--/td>
+								<td-->
 									<figure>
 									
 										<div id="Red"></div>
 
 										<figcaption> Red: unclaimed </figcaption>
 									</figure>
-								</td>
-								<td>
+
+								</div>
+								<div class="col-md-3">
+
+								<!--/td>
+								<td-->
 									<figure>
 									
 										<div id="Yellow"></div>
 
 										<figcaption> Yellow: unclaimed </figcaption>
 									</figure>
-								</td>
+
+								</div>
+							</div>
+						</div>
+
+								<!--/td>
 							</tr>
 						</table>
 					</div>
 				</div>
-			</div>
+			</div-->
 
 		</center>
 	
