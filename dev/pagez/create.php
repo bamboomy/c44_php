@@ -37,7 +37,7 @@ if ($result->num_rows != 0) {
 		
 		$_SESSION['sentence'] = '"' . $four[rand(0, count($four) - 1)] . ' ';
 
-		$_SESSION['sentence'] .= $one[rand(0, count($one) - 1)] . ' ' . $two[rand(0, count($two) - 1)] . ' ' . $three[rand(0, count($three) - 1)] . '."' ;
+		$_SESSION['sentence'] .= $one[rand(0, count($one) - 1)] . '<br/>' . $two[rand(0, count($two) - 1)] . ' ' . $three[rand(0, count($three) - 1)] . '."' ;
 
 		$sql = "select id from game where sentence = '".$_SESSION['sentence']."';";
 

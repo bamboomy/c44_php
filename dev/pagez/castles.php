@@ -371,9 +371,10 @@ function copy() {
 			
 					<div class="col-md-12">
 			
-						<h3>You can share this link:</h3>
+						<h3>You can share this link:
 						<? echo "<input id='myInput' type='text' value='https://chess4four.org".$profilePath."/pagez/invite.php?game=".$_SESSION['hash']."' />";
 						echo "<input type='button' onclick='copy();' value='copy' />"; ?>
+						</h3>
 						
 					</div>
 				</div>
