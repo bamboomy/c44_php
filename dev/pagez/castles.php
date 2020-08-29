@@ -24,7 +24,7 @@ while($row = $result->fetch_assoc()){
 		$claimed = true;
 	}
 	
-	if(isset($castle[$row['color']])){
+	if(array_key_exists($row['color'], $castle)){
 		
 		header("Location: correction.php?color=".$row['color']);
 		
