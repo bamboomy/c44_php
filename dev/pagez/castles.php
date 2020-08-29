@@ -271,7 +271,7 @@ function again() {
 	}, 10000);
 }
 
-again();
+//again();
 
 </script>
 	
