@@ -96,11 +96,6 @@ figure{
    background-image: url('../imgz/yellow_castle_taken.png');
 }
 
-h2{
-
-	margin-top: 20px;
-}
-
 </style>
 
 <script>
@@ -154,86 +149,79 @@ function resetText(color){
 	
 		<center>
 
-			<!--div class="outer">
-				<div class="middle">
-					<div class="inner center"-->
-					
-						<div class="container-fluid">
+			<div class="container-fluid">
+			
+				<div class="row align-items-center h-25">
+			
+					<div class="col-md-12">
+			
+						<h3>We're creating game:</h3>
 						
-							<div class="row align-items-center h-25">
+						<h3>"Some game"</h3>
+			
+						<h3>Choose your color:</h3>
 						
-								<div class="col-md-12">
-						
-									<h2>Choose your color:</h2>
-									
-								</div>
-							</div>
-							
-							<div class="row align-items-center h-50">
-							
-								<div class="col-md-3">
-
-									<figure>
-
-										<div id="Green" onmouseover="changeText('green')" 
-											onmouseout="resetText('green')"></div>
-										
-										<figcaption> Green: <span id="greenName">unclaimed</span> </figcaption>
-									</figure>
-
-								</div>
-								<div class="col-md-3">
-
-									<figure>
-										
-										<div id="Blue" onmouseover="changeText('blue')" 
-											onmouseout="resetText('blue')"></div>
-
-										<figcaption> Blue: <span id="blueName">unclaimed</span> </figcaption>
-									</figure>
-
-								</div>
-								<div class="col-md-3">
-
-									<figure>
-									
-										<div id="Red" onmouseover="changeText('red')" 
-											onmouseout="resetText('red')"></div>
-
-										<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
-									</figure>
-
-								</div>
-								<div class="col-md-3">
-
-									<figure>
-									
-										<div id="Yellow" onmouseover="changeText('yellow')" 
-											onmouseout="resetText('yellow')"></div>
-
-										<figcaption> Yellow: <span id="yellowName">unclaimed</span> </figcaption>
-									</figure>
-
-								</div>
-							</div>
-							
-							<div class="row align-items-center h-25">
-						
-								<div class="col-md-12">
-						
-									<p>test</p>
-									
-								</div>
-							</div>
-							
-						</div>
-
-								<!--/td>
-							</tr>
-						</table>
 					</div>
 				</div>
-			</div-->
+				
+				<div class="row align-items-center h-50">
+				
+					<div class="col-md-3">
+
+						<figure>
+
+							<div id="Green" onmouseover="changeText('green')" 
+								onmouseout="resetText('green')"></div>
+							
+							<figcaption> Green: <span id="greenName">unclaimed</span> </figcaption>
+						</figure>
+
+					</div>
+					<div class="col-md-3">
+
+						<figure>
+							
+							<div id="Blue" onmouseover="changeText('blue')" 
+								onmouseout="resetText('blue')"></div>
+
+							<figcaption> Blue: <span id="blueName">unclaimed</span> </figcaption>
+						</figure>
+
+					</div>
+					<div class="col-md-3">
+
+						<figure>
+						
+							<div id="Red" onmouseover="changeText('red')" 
+								onmouseout="resetText('red')"></div>
+
+							<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
+						</figure>
+
+					</div>
+					<div class="col-md-3">
+
+						<figure>
+						
+							<div id="Yellow" onmouseover="changeText('yellow')" 
+								onmouseout="resetText('yellow')"></div>
+
+							<figcaption> Yellow: <span id="yellowName">unclaimed</span> </figcaption>
+						</figure>
+
+					</div>
+				</div>
+				
+				<div class="row align-items-center h-25">
+			
+					<div class="col-md-12">
+			
+						<p>test</p>
+						
+					</div>
+				</div>
+				
+			</div>
 
 		</center>
 	
