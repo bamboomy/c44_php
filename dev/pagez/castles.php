@@ -17,6 +17,8 @@ $result = $conn->query($sql) or die($conn->error);
 
 $claimed = false;
 
+$castle = array();
+
 while($row = $result->fetch_assoc()){
 
 	if($row['name'] == $_SESSION['name']){
