@@ -289,19 +289,21 @@ again();
 
 				<!-- Modal Header -->
 				<div class="modal-header">
-					<h4 class="modal-title">We value your opinion!</h4>
+					<h4 class="modal-title">No 4th player?</h4>
 				</div>
 
 				<!-- Modal body -->
 				<div class="modal-body">
+				
+					<p>You can choose between a random robot (Annoying Bot)<br/>
+					who puts people in check whenever it can;<br/>
+					<br/>
+					or a "Dubious Player":<br/>
+					<br/>
+					that's a player which is controlled<br/>
+					by a different human player each turn...
+					</p>
 
-					What can we do to improve the app?
-
-					<textarea id="bad" name="bad" rows="5" cols="50"></textarea>
-
-					<br /> <br /> <input type="submit" onclick='sendFeedback();'
-						value="Send">
-					</form>
 				</div>
 			</div>
 		</div>
