@@ -221,7 +221,7 @@ function resetText(color){
 						
 								<div class="col-md-12">
 						
-									<h2>Choose your color:</h2>
+									<p>test</p>
 									
 								</div>
 							</div>
