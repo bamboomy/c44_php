@@ -288,6 +288,10 @@ setTimeout(function(){
 	
 	</head>
 	<body>
+		
+		<div>
+			<p>No 4th player?</p>
+		</div>
 	
 		<center>
 
