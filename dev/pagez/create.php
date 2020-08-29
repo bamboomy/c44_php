@@ -56,5 +56,5 @@ $sql .= " values ('".$_SESSION['sentence']."', '".$_SESSION['hash']."', '".$fail
 
 $result = $conn->query($sql);
 
-header("Location: color.php");
+header("Location: castles.php");
 ?>
