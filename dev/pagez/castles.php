@@ -15,8 +15,6 @@ $sql = "select color, name from colors_taken where game = '".$_SESSION['hash']."
 
 $result = $conn->query($sql) or die($conn->error);
 
-//$row = $result->fetch_assoc();
-
 $claimed = false;
 
 while($row = $result->fetch_assoc()){
@@ -236,7 +234,9 @@ function claim(color){
 		async : false,
 		success : function(text) {
 			
-			location.reload();
+			alert(text);
+			
+			//location.reload();
 		}
 	});
 }
