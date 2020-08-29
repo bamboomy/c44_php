@@ -281,7 +281,32 @@ again();
 	
 	</head>
 	<body>
-		
+	
+	<!-- The Waiting Modal -->
+	<div class="modal" id="feedbackModal">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">We value your opinion!</h4>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+
+					What can we do to improve the app?
+
+					<textarea id="bad" name="bad" rows="5" cols="50"></textarea>
+
+					<br /> <br /> <input type="submit" onclick='sendFeedback();'
+						value="Send">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
 <?
 	if($counter == 3){
 ?>
