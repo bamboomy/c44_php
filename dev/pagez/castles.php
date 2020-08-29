@@ -29,6 +29,14 @@ while($row = $result->fetch_assoc()){
 	$castle[$row['color']] = $row['name'];
 }
 
+$sql = "SELECT COUNT(DISTINCT color) from colors_taken where game = '".test_input($_SESSION['hash'])."';";
+
+$result = $conn->query($sql) or die($conn->error);
+
+$row = $result->fetch_row();
+
+$colors_taken = $row[0];
+
 ?>
 
 <html>
@@ -234,18 +242,30 @@ function copy() {
   alert("Link copied...");
 }
 
-$( document ).ready(function() {
+function again() {
 
-	$.ajax({
-		type : "GET",
-		url : "nbOfColors.php",
-		async : false,
-		success : function(text) {
-			
-			alert(text);
-		}
-	});
-});
+	setTimeout(function() {
+
+		$.ajax({
+			type : "GET",
+			url : "nbOfColors.php",
+			async : false,
+			success : function(text) {
+				
+<?				echo "if(".$colors_taken."!=text){"; ?>
+
+					location.reload();
+				}
+			}
+		});
+
+		again();
+
+	}, 700);
+}
+
+again();
+
 
 </script>
 	
