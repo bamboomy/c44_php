@@ -25,6 +25,11 @@ while($row = $result->fetch_assoc()){
 		
 		$claimed = true;
 	}
+	
+	if(isset($castle[$row['color']])){
+		
+		$correction_needed = true;
+	}
 
 	$castle[$row['color']] = $row['name'];
 }
@@ -266,6 +271,12 @@ function again() {
 
 again();
 
+<?
+	if(isset($correction_needed)){
+		
+		echo "alert('correction needed...');";
+	}
+?>
 
 </script>
 	
