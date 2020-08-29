@@ -113,6 +113,17 @@ function changeText(color){
 	
 		$('#greenName').html(name);
 	
+	} else if(color == "blue"){
+	
+		$('#blueName').html(name);
+	
+	} else if(color == "red"){
+	
+		$('#redName').html(name);
+	
+	} else if(color == "yellow"){
+	
+		$('#yellowName').html(name);
 	}
 }
 
@@ -121,6 +132,18 @@ function resetText(color){
 	if(color == "green"){
 		
 		$('#greenName').html('unclaimed');
+
+	} else if(color == "blue"){
+	
+		$('#blueName').html('unclaimed');
+	
+	} else if(color == "red"){
+	
+		$('#redName').html('unclaimed');
+	
+	} else if(color == "yellow"){
+	
+		$('#yellowName').html('unclaimed');
 	}
 }
 
@@ -168,7 +191,8 @@ function resetText(color){
 								<td-->
 									<figure>
 										
-										<div id="Blue"></div>
+										<div id="Blue" onmouseover="changeText('blue')" 
+											onmouseout="resetText('blue')"></div>
 
 										<figcaption> Blue: unclaimed </figcaption>
 									</figure>
@@ -180,7 +204,8 @@ function resetText(color){
 								<td-->
 									<figure>
 									
-										<div id="Red"></div>
+										<div id="Red" onmouseover="changeText('red')" 
+											onmouseout="resetText('red')"></div>
 
 										<figcaption> Red: unclaimed </figcaption>
 									</figure>
@@ -192,7 +217,8 @@ function resetText(color){
 								<td-->
 									<figure>
 									
-										<div id="Yellow"></div>
+										<div id="Yellow" onmouseover="changeText('yellow')" 
+											onmouseout="resetText('yellow')"></div>
 
 										<figcaption> Yellow: unclaimed </figcaption>
 									</figure>
