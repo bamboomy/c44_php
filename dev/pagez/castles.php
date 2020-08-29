@@ -194,7 +194,7 @@ function resetText(color){
 										<div id="Blue" onmouseover="changeText('blue')" 
 											onmouseout="resetText('blue')"></div>
 
-										<figcaption> Blue: unclaimed </figcaption>
+										<figcaption> Blue: <span id="blueName">unclaimed</span> </figcaption>
 									</figure>
 
 								</div>
@@ -207,7 +207,7 @@ function resetText(color){
 										<div id="Red" onmouseover="changeText('red')" 
 											onmouseout="resetText('red')"></div>
 
-										<figcaption> Red: unclaimed </figcaption>
+										<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
 									</figure>
 
 								</div>
@@ -220,7 +220,7 @@ function resetText(color){
 										<div id="Yellow" onmouseover="changeText('yellow')" 
 											onmouseout="resetText('yellow')"></div>
 
-										<figcaption> Yellow: unclaimed </figcaption>
+										<figcaption> Yellow: <span id="yellowName">unclaimed</span> </figcaption>
 									</figure>
 
 								</div>
