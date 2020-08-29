@@ -24,6 +24,8 @@ if($row['name'] == $_SESSION['name']){
 	$claimed = true;
 }
 
+$castle[$row['color']] = $row['name'];
+
 ?>
 
 <html>
@@ -91,6 +93,22 @@ figure{
    background-image: url('../imgz/yellow_castle_unclaimed.png');
    height: 170px;
    width: 300px;
+}
+
+#Green.taken {
+   background-image: url('../imgz/green_castle_taken.png');
+}
+
+#Blue.taken {
+   background-image: url('../imgz/blue_castle_taken.png');
+}
+
+#Red.taken {
+   background-image: url('../imgz/red_castle_taken.png');
+}
+
+#Yellow.taken {
+   background-image: url('../imgz/yellow_castle_taken.png');
 }
 
 <?
@@ -231,14 +249,28 @@ function claim(color){
 				
 					<div class="col-md-3">
 
+<?
+	if(isset($castle['Green'])){
+?>
 						<figure>
-
+							<div id="Green" class="taken"></div>
+<?
+							echo "<figcaption> Green: $castle['Green'] </figcaption>";
+?>							
+						</figure>
+<?		
+	}else{
+?>		
+						<figure>
 							<div id="Green" onmouseover="changeText('green')" 
 								onclick="claim('Green')" 
 								onmouseout="resetText('green')"></div>
 							
 							<figcaption> Green: <span id="greenName">unclaimed</span> </figcaption>
 						</figure>
+<?
+	}
+?>
 
 					</div>
 					<div class="col-md-3">
