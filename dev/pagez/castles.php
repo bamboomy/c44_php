@@ -234,6 +234,19 @@ function copy() {
   alert("Link copied...");
 }
 
+$( document ).ready(function() {
+
+	$.ajax({
+		type : "GET",
+		url : "nbOfColors.php",
+		async : false,
+		success : function(text) {
+			
+			alert(text);
+		}
+	});
+});
+
 </script>
 	
 	</head>

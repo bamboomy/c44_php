@@ -11,7 +11,6 @@ if(!isset($_SESSION['id'])){
 
 include_once("settings.php");
 
-
 $sql = "select sentence, private, started from game where hash = '".test_input($_SESSION['hash'])."';";
 
 $result = $conn->query($sql) or die($conn->error);
