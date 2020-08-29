@@ -19,6 +19,8 @@ $claimed = false;
 
 $castle = array();
 
+$counter = 0;
+
 while($row = $result->fetch_assoc()){
 
 	if($row['name'] == $_SESSION['name']){
@@ -34,6 +36,8 @@ while($row = $result->fetch_assoc()){
 	}
 
 	$castle[$row['color']] = $row['name'];
+	
+	$counter++;
 }
 
 $sql = "SELECT COUNT(DISTINCT color) from colors_taken where game = '".test_input($_SESSION['hash'])."';";
@@ -273,25 +277,20 @@ function again() {
 
 again();
 
-var now = new Date();
-var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 19, 52, 0, 0) - now;
-if (millisTill10 < 0) {
-     millisTill10 += 86400000; // it's after 10am, try 10am tomorrow.
-}
-setTimeout(function(){
-	
-		claim('Green');
-		
-	}, millisTill10);
-
 </script>
 	
 	</head>
 	<body>
 		
+<?
+	if($counter == 3){
+?>
 		<div style="margin: 10px; position: fixed; z-index: 1">
 			<p><a href="#">No 4th player?</a></p>
 		</div>
+<?
+	}
+?>
 	
 		<center>
 
