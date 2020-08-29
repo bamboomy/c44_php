@@ -291,6 +291,7 @@ function claim(color){
 						<figure>
 							
 							<div id="Blue" onmouseover="changeText('blue')" 
+								onclick="claim('Blue')" 
 								onmouseout="resetText('blue')"></div>
 
 							<figcaption> Blue: <span id="blueName">unclaimed</span> </figcaption>
@@ -318,6 +319,7 @@ function claim(color){
 						<figure>
 						
 							<div id="Red" onmouseover="changeText('red')" 
+								onclick="claim('Red')" 
 								onmouseout="resetText('red')"></div>
 
 							<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
@@ -345,6 +347,7 @@ function claim(color){
 						<figure>
 						
 							<div id="Yellow" onmouseover="changeText('yellow')" 
+								onclick="claim('Yellow')" 
 								onmouseout="resetText('yellow')"></div>
 
 							<figcaption> Yellow: <span id="yellowName">unclaimed</span> </figcaption>
