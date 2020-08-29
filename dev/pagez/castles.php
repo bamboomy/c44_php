@@ -305,8 +305,8 @@ again();
 					</p>
 				
 					<div class="btn-group" role="group" aria-label="Basic example">
-						<button type="button" class="btn btn-secondary">Middle</button>
-						<button type="button" class="btn btn-secondary">Right</button>
+						<button type="button" class="btn btn-secondary">Annoying Bot</button>
+						<button type="button" class="btn btn-secondary">Dubious Player</button>
 					</div>
 
 				</div>
