@@ -275,6 +275,19 @@ function claim(color){
 					</div>
 					<div class="col-md-3">
 
+<?
+	if(isset($castle['Blue'])){
+?>
+						<figure>
+							<div id="Blue" class="taken"></div>
+<?
+							echo "<figcaption> Blue: ".$castle['Blue']." </figcaption>";
+?>							
+						</figure>
+<?		
+	}else{
+?>		
+
 						<figure>
 							
 							<div id="Blue" onmouseover="changeText('blue')" 
@@ -282,9 +295,25 @@ function claim(color){
 
 							<figcaption> Blue: <span id="blueName">unclaimed</span> </figcaption>
 						</figure>
+<?
+	}
+?>
 
 					</div>
 					<div class="col-md-3">
+
+<?
+	if(isset($castle['Red'])){
+?>
+						<figure>
+							<div id="Red" class="taken"></div>
+<?
+							echo "<figcaption> Red: ".$castle['Red']." </figcaption>";
+?>							
+						</figure>
+<?		
+	}else{
+?>		
 
 						<figure>
 						
@@ -293,9 +322,25 @@ function claim(color){
 
 							<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
 						</figure>
+<?
+	}
+?>
 
 					</div>
 					<div class="col-md-3">
+
+<?
+	if(isset($castle['Yellow'])){
+?>
+						<figure>
+							<div id="Yellow" class="taken"></div>
+<?
+							echo "<figcaption> Yellow: ".$castle['Yellow']." </figcaption>";
+?>							
+						</figure>
+<?		
+	}else{
+?>		
 
 						<figure>
 						
@@ -304,6 +349,9 @@ function claim(color){
 
 							<figcaption> Yellow: <span id="yellowName">unclaimed</span> </figcaption>
 						</figure>
+<?
+	}
+?>
 
 					</div>
 				</div>
