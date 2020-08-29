@@ -82,7 +82,7 @@ $result = $conn->query($sql);
 
 if(isset($_SESSION['invited'])){
 	
-	header("Location: castles.php");
+	header("Location: fetchSentence.php");
 		
 	exit;
 }
