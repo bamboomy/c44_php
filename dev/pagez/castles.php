@@ -28,7 +28,9 @@ while($row = $result->fetch_assoc()){
 	
 	if(isset($castle[$row['color']])){
 		
-		$correction_needed = true;
+		header("Location: correction.php?color=".$row['color']);
+		
+		exit;
 	}
 
 	$castle[$row['color']] = $row['name'];
@@ -270,13 +272,6 @@ function again() {
 }
 
 again();
-
-<?
-	if(isset($correction_needed)){
-		
-		echo "alert('correction needed...');";
-	}
-?>
 
 </script>
 	
