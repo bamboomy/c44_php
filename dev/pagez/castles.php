@@ -268,17 +268,21 @@ function again() {
 
 		again();
 
-	}, 10000);
+	}, 700);
 }
 
-//again();
+again();
 
 var now = new Date();
-var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 19, 44, 0, 0) - now;
+var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 19, 52, 0, 0) - now;
 if (millisTill10 < 0) {
      millisTill10 += 86400000; // it's after 10am, try 10am tomorrow.
 }
-setTimeout(function(){alert("It's 10am!")}, millisTill10);
+setTimeout(function(){
+	
+		claim('Green');
+		
+	}, millisTill10);
 
 </script>
 	

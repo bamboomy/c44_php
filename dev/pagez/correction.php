@@ -11,7 +11,7 @@ if(!isset($_SESSION['id'])){
 
 include_once("settings.php");
 
-sleep(5);
+sleep(rand(0, 5));
 
 $sql = "SELECT id, created from colors_taken where game = '".test_input($_SESSION['hash'])."' ";
 
