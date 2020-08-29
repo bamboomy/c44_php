@@ -105,7 +105,7 @@ h2{
 
 <script>
 
-<? echo "var name = ".$_SESSION['name'].";"; ?>
+<? echo "var name = '".$_SESSION['name']."';"; ?>
 
 function changeText(color){
 
