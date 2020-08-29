@@ -146,7 +146,7 @@ function resetText(color){
 								</div>
 							</div>
 							
-							<div class="row align-items-center h-70">
+							<div class="row align-items-center h-75">
 							
 								<div class="col-md-3">
 						
