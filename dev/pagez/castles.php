@@ -303,6 +303,11 @@ again();
 					that's a player which is controlled<br/>
 					by a different human player each turn...
 					</p>
+				
+					<div class="btn-group" role="group" aria-label="Basic example">
+						<button type="button" class="btn btn-secondary">Middle</button>
+						<button type="button" class="btn btn-secondary">Right</button>
+					</div>
 
 				</div>
 			</div>
