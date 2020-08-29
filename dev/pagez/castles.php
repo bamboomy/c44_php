@@ -255,7 +255,7 @@ function claim(color){
 						<figure>
 							<div id="Green" class="taken"></div>
 <?
-							echo "<figcaption> Green: $castle['Green'] </figcaption>";
+							echo "<figcaption> Green: ".$castle['Green']." </figcaption>";
 ?>							
 						</figure>
 <?		
