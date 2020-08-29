@@ -200,9 +200,7 @@ function claim(color){
 		async : false,
 		success : function(text) {
 			
-			alert(text);
-			
-			//fill();
+			location.reload();
 		}
 	});
 }
