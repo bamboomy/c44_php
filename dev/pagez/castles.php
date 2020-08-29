@@ -15,16 +15,19 @@ $sql = "select color, name from colors_taken where game = '".$_SESSION['hash']."
 
 $result = $conn->query($sql) or die($conn->error);
 
-$row = $result->fetch_assoc();
+//$row = $result->fetch_assoc();
 
 $claimed = false;
 
-if($row['name'] == $_SESSION['name']){
-	
-	$claimed = true;
-}
+while($row = $result->fetch_assoc()){
 
-$castle[$row['color']] = $row['name'];
+	if($row['name'] == $_SESSION['name']){
+		
+		$claimed = true;
+	}
+
+	$castle[$row['color']] = $row['name'];
+}
 
 ?>
 
