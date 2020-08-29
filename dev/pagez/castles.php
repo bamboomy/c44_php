@@ -191,7 +191,7 @@ function claim(color){
 						<figure>
 
 							<div id="Green" onmouseover="changeText('green')" 
-								onclick="claim('green')" 
+								onclick="claim('Green')" 
 								onmouseout="resetText('green')"></div>
 							
 							<figcaption> Green: <span id="greenName">unclaimed</span> </figcaption>
