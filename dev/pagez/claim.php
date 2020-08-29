@@ -11,8 +11,6 @@ if(!isset($_SESSION['id'])){
 
 include_once("settings.php");
 
-$color = ;
-
 $java_hash = md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash'] . $_SESSION['id']);
 
 $sql = "insert into colors_taken (game, color, name, java_hash) ";
