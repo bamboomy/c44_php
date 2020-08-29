@@ -234,9 +234,7 @@ function claim(color){
 		async : false,
 		success : function(text) {
 			
-			alert(text);
-			
-			//location.reload();
+			location.reload();
 		}
 	});
 }
