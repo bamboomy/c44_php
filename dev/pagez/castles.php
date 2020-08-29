@@ -172,10 +172,7 @@ function resetText(color){
 							<div class="row align-items-center h-50">
 							
 								<div class="col-md-3">
-						
-						<!--table>
-							<tr>
-								<td-->
+
 									<figure>
 
 										<div id="Green" onmouseover="changeText('green')" 
@@ -186,9 +183,7 @@ function resetText(color){
 
 								</div>
 								<div class="col-md-3">
-								
-								<!--/td>
-								<td-->
+
 									<figure>
 										
 										<div id="Blue" onmouseover="changeText('blue')" 
@@ -200,8 +195,6 @@ function resetText(color){
 								</div>
 								<div class="col-md-3">
 
-								<!--/td>
-								<td-->
 									<figure>
 									
 										<div id="Red" onmouseover="changeText('red')" 
@@ -213,8 +206,6 @@ function resetText(color){
 								</div>
 								<div class="col-md-3">
 
-								<!--/td>
-								<td-->
 									<figure>
 									
 										<div id="Yellow" onmouseover="changeText('yellow')" 
@@ -225,6 +216,16 @@ function resetText(color){
 
 								</div>
 							</div>
+							
+							<div class="row align-items-center h-25">
+						
+								<div class="col-md-12">
+						
+									<h2>Choose your color:</h2>
+									
+								</div>
+							</div>
+							
 						</div>
 
 								<!--/td>
