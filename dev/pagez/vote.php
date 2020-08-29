@@ -11,9 +11,9 @@ if(!isset($_SESSION['id'])){
 
 include_once("settings.php");
 
-$sql = "update votes set voted = '1' where hash = '".$_GET['hash']."'";
+$sql = "insert into votes (game, javaHash, value) values ('".$_SESSION['hash']."', '".$_SESSION['java_hash']."', '".test_input($_GET['value'])."');";
 
-$result = $conn->query($sql);
+$result = $conn->query($sql) or die($conn->error);
 
 echo "succezzzz :)";
 

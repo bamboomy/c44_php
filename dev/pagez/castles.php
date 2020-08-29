@@ -277,6 +277,20 @@ function again() {
 
 again();
 
+function vote(value){
+	
+	$.ajax({ type: "GET",   
+			 
+			 url: 'vote.php?value='+value,
+			 async: false,
+			 success : function(text)
+			 {
+				 alert(text);
+			 }
+	});
+}
+
+
 </script>
 	
 	</head>
@@ -305,8 +319,8 @@ again();
 					</p>
 				
 					<div class="btn-group" role="group" aria-label="Basic example">
-						<button type="button" class="btn btn-secondary">Annoying Bot</button>
-						<button type="button" class="btn btn-secondary">Dubious Player</button>
+						<button type="button" class="btn btn-secondary" onclick="vote('b');">Annoying Bot</button>
+						<button type="button" class="btn btn-secondary" onclick="vote('d');">Dubious Player</button>
 					</div>
 
 				</div>
