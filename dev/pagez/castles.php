@@ -290,7 +290,7 @@ setTimeout(function(){
 	<body>
 		
 		<div style="margin: 10px; position: fixed;">
-			<p><a href="#">No 4th player?</a></p>
+			<p><a href="javascript:alert('Hello World!');">No 4th player?</a></p>
 		</div>
 	
 		<center>
