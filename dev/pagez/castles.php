@@ -261,7 +261,7 @@ function again() {
 
 		again();
 
-	}, 10000);
+	}, 700);
 }
 
 again();

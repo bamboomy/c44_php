@@ -23,4 +23,6 @@ $sql .= " values ('".$java_hash."');";
 
 $conn->query($sql) or die($conn->error);
 
+sleep(10);
+
 ?>
