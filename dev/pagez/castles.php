@@ -135,12 +135,10 @@ figure{
 	}
 ?>
 
-/*
 h3{
 	
 	margin-top: 15px;
 }
-*/
 
 </style>
 
@@ -238,11 +236,11 @@ function claim(color){
 			
 					<div class="col-md-12">
 			
-						<h3 class="mt-3">We're creating game:</h3>
+						<h3>We're creating game:</h3>
 						
-						<h3 class="mt-3">"Some game"</h3>
+						<h3>"Some game"</h3>
 			
-						<h3 class="mt-3">Choose your color:</h3>
+						<h3>Choose your color:</h3>
 						
 					</div>
 				</div>
@@ -365,7 +363,9 @@ function claim(color){
 			
 					<div class="col-md-12">
 			
-						<p>test</p>
+						<h3>You can share this link:</h3>
+						<? echo "<input id='myInput' type='text' value='https://chess4four.org".$profilePath."/pagez/invite.php?game=".$_SESSION['hash']."' />";
+						echo "<input type='button' onclick='copy();' value='copy' />"; ?>
 						
 					</div>
 				</div>
