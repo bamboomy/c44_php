@@ -2,7 +2,7 @@
 
 session_start();
 
-if(!isset($_SESSION['token']) || $_SESSION['token'] != $_GET['ownToken']){
+if(!isset($_SESSION['id'])){
 	
 	header("Location: welcome.php");
 		
