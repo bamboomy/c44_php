@@ -82,7 +82,7 @@ $result = $conn->query($sql);
 
 if(isset($_SESSION['invited'])){
 	
-	header("Location: color.php");
+	header("Location: castles.php");
 		
 	exit;
 }
