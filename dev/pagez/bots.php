@@ -12,59 +12,8 @@ include_once("settings.php");
 				font-family: 'Aclonica';font-size: 22px;
 			}
 		</style>
-	
-		<style>
-.outer {
-	display: table;
-	
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-}
-
-.middle {
-	display: table-cell;
-	vertical-align: middle;
-}
-
-.inner {
-  margin-left: auto;
-  margin-right: auto;
-  width: 400px;
-}
-
-.center {
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* unvisited link */
-a:link {
-  color: grey;
-  text-decoration: none;
-}
-
-/* visited link */
-a:visited {
-  color: black;
-  text-decoration: none;
-}
-
-/* mouse over link */
-a:hover {
-  color: orange;
-  text-decoration: none;
-}
-
-/* selected link */
-a:active {
-  color: #0000FF;
-  text-decoration: none;
-}
-
-</style>
+		
+		<link rel="stylesheet" type="text/css" href="../css/default.css">
 
 	</head>
 <body>
