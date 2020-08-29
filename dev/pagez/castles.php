@@ -283,7 +283,7 @@ again();
 	<body>
 	
 	<!-- The Waiting Modal -->
-	<div class="modal" id="feedbackModal">
+	<div class="modal" id="4thModal">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
 
@@ -311,7 +311,7 @@ again();
 	if($counter == 3){
 ?>
 		<div style="margin: 10px; position: fixed; z-index: 1">
-			<p><a href="#">No 4th player?</a></p>
+			<p><a href="#" onclick="$('#4thModal').modal('show');">No 4th player?</a></p>
 		</div>
 <?
 	}
