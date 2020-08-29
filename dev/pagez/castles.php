@@ -116,6 +116,14 @@ function changeText(color){
 	}
 }
 
+function resetText(color){
+
+	if(color == "green"){
+		
+		$('#greenName').html('unclaimed');
+	}
+}
+
 </script>
 	
 	</head>
@@ -147,8 +155,8 @@ function changeText(color){
 								<td-->
 									<figure>
 
-										<div id="Green" onmouseover="changeText('green','username')" 
-											onmouseout="changeText('green','unclaimed')"></div>
+										<div id="Green" onmouseover="changeText('green')" 
+											onmouseout="resetText('green')"></div>
 										
 										<figcaption> Green: <span id="greenName">unclaimed</span> </figcaption>
 									</figure>
