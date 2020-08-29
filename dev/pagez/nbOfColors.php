@@ -11,7 +11,7 @@ if(!isset($_SESSION['id'])){
 
 include_once("settings.php");
 
-$sql = "SELECT COUNT (DISTINCT color) from colors_taken where hash = '".test_input($_SESSION['hash'])."';";
+$sql = "SELECT COUNT (DISTINCT color) from colors_taken where game = '".test_input($_SESSION['hash'])."';";
 
 $result = $conn->query($sql) or die($conn->error);
 
