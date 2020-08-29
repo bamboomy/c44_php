@@ -295,7 +295,7 @@ again();
 				<!-- Modal body -->
 				<div class="modal-body">
 				
-					<p>You can choose between a random robot (Annoying Bot)<br/>
+					<p style="font-size: smaller;">You can choose between a random robot (Annoying Bot)<br/>
 					who puts people in check whenever it can;<br/>
 					<br/>
 					or a "Dubious Player":<br/>
