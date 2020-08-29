@@ -98,7 +98,7 @@ figure{
 
 h3{
 	
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 </style>
