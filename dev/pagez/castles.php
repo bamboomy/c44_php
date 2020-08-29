@@ -96,6 +96,11 @@ figure{
    background-image: url('../imgz/yellow_castle_taken.png');
 }
 
+h3{
+	
+	margin-top: 10px;
+}
+
 </style>
 
 <script>
