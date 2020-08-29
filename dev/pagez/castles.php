@@ -160,7 +160,7 @@ function resetText(color){
 					
 						<div class="container-fluid">
 						
-							<div class="row">
+							<div class="row align-items-center h-25">
 						
 								<div class="col-md-12">
 						
@@ -169,7 +169,7 @@ function resetText(color){
 								</div>
 							</div>
 							
-							<div class="row align-items-center h-75">
+							<div class="row align-items-center h-50">
 							
 								<div class="col-md-3">
 						
