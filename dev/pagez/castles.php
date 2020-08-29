@@ -236,11 +236,11 @@ function claim(color){
 			
 					<div class="col-md-12">
 			
-						<h3>We're creating game:</h3>
+						<h3 class="mt-3">We're creating game:</h3>
 						
-						<h3>"Some game"</h3>
+						<h3 class="mt-3">"Some game"</h3>
 			
-						<h3>Choose your color:</h3>
+						<h3 class="mt-3">Choose your color:</h3>
 						
 					</div>
 				</div>
