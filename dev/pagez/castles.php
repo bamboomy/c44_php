@@ -147,6 +147,21 @@ function resetText(color){
 	}
 }
 
+function claim(color){
+
+	$.ajax({
+		type : "GET",
+		url : "claim.php?color="+color,
+		async : false,
+		success : function(text) {
+			
+			alert(text);
+			
+			//fill();
+		}
+	});
+}
+
 </script>
 	
 	</head>
@@ -176,6 +191,7 @@ function resetText(color){
 						<figure>
 
 							<div id="Green" onmouseover="changeText('green')" 
+								onclick="claim('green')" 
 								onmouseout="resetText('green')"></div>
 							
 							<figcaption> Green: <span id="greenName">unclaimed</span> </figcaption>
