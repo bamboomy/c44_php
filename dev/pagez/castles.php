@@ -11,6 +11,19 @@ if(!isset($_SESSION['id'])){
 
 include_once("settings.php");
 
+$sql = "select color, name from colors_taken where game = '".$_SESSION['hash']."';";
+
+$result = $conn->query($sql) or die($conn->error);
+
+$row = $result->fetch_assoc();
+
+$claimed = false;
+
+if($row['name'] == $_SESSION['name']){
+	
+	$claimed = true;
+}
+
 ?>
 
 <html>
@@ -62,18 +75,10 @@ figure{
    width: 300px;
 }
 
-#Green:hover {
-   background-image: url('../imgz/green_castle_taken.png');
-}
-
 #Blue {
    background-image: url('../imgz/blue_castle_unclaimed.png');
    height: 170px;
    width: 300px;
-}
-
-#Blue:hover {
-   background-image: url('../imgz/blue_castle_taken.png');
 }
 
 #Red {
@@ -82,19 +87,35 @@ figure{
    width: 300px;
 }
 
-#Red:hover {
-   background-image: url('../imgz/red_castle_taken.png');
-}
-
 #Yellow {
    background-image: url('../imgz/yellow_castle_unclaimed.png');
    height: 170px;
    width: 300px;
 }
 
+<?
+	if(!$claimed){
+?>
+
+#Green:hover {
+   background-image: url('../imgz/green_castle_taken.png');
+}
+
+#Blue:hover {
+   background-image: url('../imgz/blue_castle_taken.png');
+}
+
+#Red:hover {
+   background-image: url('../imgz/red_castle_taken.png');
+}
+
 #Yellow:hover {
    background-image: url('../imgz/yellow_castle_taken.png');
 }
+
+<?
+	}
+?>
 
 h3{
 	
@@ -105,9 +126,23 @@ h3{
 
 <script>
 
-<? echo "var name = '".$_SESSION['name']."';"; ?>
+	var listen = true;
+
+<? 
+	if($claimed){
+		
+		echo "listen = false;";
+	}
+
+	echo "var name = '".$_SESSION['name']."';"; 
+?>
 
 function changeText(color){
+	
+	if(!listen){
+		
+		return;
+	}
 
 	if(color == "green"){
 	
@@ -129,6 +164,11 @@ function changeText(color){
 
 function resetText(color){
 
+	if(!listen){
+		
+		return;
+	}
+
 	if(color == "green"){
 		
 		$('#greenName').html('unclaimed');
@@ -148,6 +188,11 @@ function resetText(color){
 }
 
 function claim(color){
+
+	if(!listen){
+		
+		return;
+	}
 
 	$.ajax({
 		type : "GET",
