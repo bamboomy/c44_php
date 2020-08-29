@@ -246,7 +246,7 @@ function copy() {
 			
 						<h3>We're creating game:</h3>
 						
-						<h3>"Some game"</h3>
+						<? echo "<h3>\"".$_SESSION['sentence']."\"</h3>"; ?>
 			
 						<h3>Choose your color:</h3>
 						
