@@ -11,7 +11,7 @@ if(!isset($_SESSION['id'])){
 
 include_once("settings.php");
 
-$sql = "SELECT id, created from colors_taken where game = '".test_input($_SESSION['hash'])."' ";
+$sql = "SELECT id, created, name from colors_taken where game = '".test_input($_SESSION['hash'])."' ";
 
 $sql .= "and color='".test_input($_GET['color'])."' ORDER BY created ASC;";
 
@@ -21,9 +21,12 @@ $row = $result->fetch_assoc();
 
 while($row = $result->fetch_assoc()){
 	
-	$sql = "DELETE FROM colors_taken WHERE id='".$row['id']."';";
+	if($_SESSION['name'] == row['name']){
+	
+		$sql = "DELETE FROM colors_taken WHERE id='".$row['id']."';";
 
-	$conn->query($sql) or die($conn->error);
+		$conn->query($sql) or die($conn->error);
+	}
 }
 
 ?>  
