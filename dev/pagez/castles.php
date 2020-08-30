@@ -46,6 +46,13 @@ while($row = $result->fetch_assoc()){
 	$counter++;
 }
 
+if($counter == 4){			
+
+	header("Location: on.php");
+	
+	exit;
+}
+
 $sql = "SELECT COUNT(DISTINCT color) from colors_taken where game = '".test_input($_SESSION['hash'])."';";
 
 $result = $conn->query($sql) or die($conn->error);
@@ -567,19 +574,12 @@ if(!$voted){
 				<div class="row align-items-center h-25">
 			
 					<div class="col-md-12">
-<?
-if($counter != 4){			
-?>
+
 						<h5>You can share this link:
 						<? echo "<input id='myInput' type='text' value='https://chess4four.org".$profilePath."/pagez/invite.php?game=".$_SESSION['hash']."' />";
 						echo "<input type='button' onclick='copy();' value='copy' />"; ?>
 						</h5>
-<?
-} else {
-	
-	echo "<a href='https://chess4four.org".$profilePath."/tomcat/hello/".$_SESSION['java_hash']."'>It's on!!!</a>";
-} 
-?>
+
 					</div>
 				</div>
 				
