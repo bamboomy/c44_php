@@ -48,6 +48,36 @@ $row = $result->fetch_row();
 
 $colors_taken = $row[0];
 
+$sql = "SELECT id from votes where game = '".test_input($_SESSION['hash'])."' and javaHash = '".$_SESSION['java_hash']."';";
+
+$result = $conn->query($sql) or die($conn->error);
+
+$voted = $result->num_rows != 0;
+
+$sql = "SELECT count(1) from votes where game = '".test_input($_SESSION['hash'])."' and value = 'b';";
+
+$result = $conn->query($sql) or die($conn->error);
+
+$row = $result->fetch_row();
+
+$botVotes = $row[0];
+
+$sql = "SELECT count(1) from votes where game = '".test_input($_SESSION['hash'])."' and value = 'd';";
+
+$result = $conn->query($sql) or die($conn->error);
+
+$row = $result->fetch_row();
+
+$dubiousVotes = $row[0];
+
+$sql = "SELECT COUNT(1) from votes where game = '".$_SESSION['hash']."';";
+
+$result = $conn->query($sql) or die($conn->error);
+
+$row = $result->fetch_row();
+
+$votes = $row[0];
+
 ?>
 
 <html>
@@ -270,7 +300,6 @@ function again() {
 			}
 		});
 
-		/*
 		$.ajax({
 			type : "GET",
 			url : "nbOfVotes.php",
@@ -283,7 +312,6 @@ function again() {
 				}
 			}
 		});
-		*/
 
 		again();
 
@@ -300,15 +328,20 @@ function vote(value){
 			 async: false,
 			 success : function(text)
 			 {
-				 showResult();
+				 location.reload();
 			 }
 	});
 }
 
-function showResult(){
-	
-	
+<?
+if($votes!=0){
+?>	
+	$( document ).ready(function() {
+		$('#4thModal').modal('show');
+	});
+<?
 }
+?>
 
 </script>
 	
