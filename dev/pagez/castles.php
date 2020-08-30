@@ -380,7 +380,9 @@ if(!$voted){
 }
 ?>
 					<br/><br/>
-					<p style="font-size: smaller;">Bot votes: 0 Dubious votes: 0</p>
+					<p style="font-size: smaller;">
+						<? echo "Bot votes: ".$botVotes." Dubious votes: ".$dubiousVotes; ?>
+					</p>
 				</div>
 			</div>
 		</div>
