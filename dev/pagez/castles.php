@@ -369,12 +369,17 @@ if($votes!=0){
 					that's a player which is controlled<br/>
 					by a different human player each turn...
 					</p>
-				
+<?
+if(!$voted){
+?>
 					<div class="btn-group" role="group" aria-label="Basic example">
 						<button type="button" class="btn btn-secondary" onclick="vote('b');">Annoying Bot</button>
 						<button type="button" class="btn btn-secondary" onclick="vote('d');">Dubious Player</button>
 					</div>
-
+<?
+}
+?>
+					<p>Bot votes: 0 Dubious votes: 0</p>
 				</div>
 			</div>
 		</div>
