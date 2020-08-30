@@ -20,13 +20,10 @@ $result = $conn->query($sql) or die($conn->error);
 $row = $result->fetch_assoc();
 
 while($row = $result->fetch_assoc()){
-	
-	if($_SESSION['name'] == row['name']){
-	
-		$sql = "DELETE FROM colors_taken WHERE id='".$row['id']."';";
 
-		$conn->query($sql) or die($conn->error);
-	}
+	$sql = "DELETE FROM colors_taken WHERE id='".$row['id']."';";
+
+	$conn->query($sql) or die($conn->error);
 }
 
 ?>  
