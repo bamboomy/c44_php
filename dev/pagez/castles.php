@@ -379,6 +379,7 @@ if(!$voted){
 <?
 }
 ?>
+					<br/>
 					<p style="font-size: smaller;">Bot votes: 0 Dubious votes: 0</p>
 				</div>
 			</div>
