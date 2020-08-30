@@ -568,7 +568,7 @@ if(!$voted){
 			
 					<div class="col-md-12">
 <?
-if($botVotes == 2 && $counter != 4){			
+if($counter != 4){			
 ?>
 						<h5>You can share this link:
 						<? echo "<input id='myInput' type='text' value='https://chess4four.org".$profilePath."/pagez/invite.php?game=".$_SESSION['hash']."' />";
