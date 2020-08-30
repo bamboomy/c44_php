@@ -33,11 +33,13 @@ body {
 /* unvisited link */
 a:link {
   color: grey;
+  text-decoration: underline;
 }
 
 /* visited link */
 a:visited {
   color: grey;
+  text-decoration: underline;
 }
 
 /* mouse over link */
