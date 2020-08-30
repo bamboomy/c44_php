@@ -460,7 +460,7 @@ if(!$voted){
 						<figure>
 							<div id="Green" class="taken"></div>
 <?
-							echo "<figcaption> Green: ".$castle['Green']." </figcaption>";
+							echo "<figcaption> Green: ".str_replace("85247", "", $castle['Green'])."</figcaption>";
 ?>							
 						</figure>
 <?		
@@ -486,7 +486,7 @@ if(!$voted){
 						<figure>
 							<div id="Blue" class="taken"></div>
 <?
-							echo "<figcaption> Blue: ".$castle['Blue']." </figcaption>";
+							echo "<figcaption> Blue: ".str_replace("85247", "", $castle['Blue'])." </figcaption>";
 ?>							
 						</figure>
 <?		
@@ -514,7 +514,7 @@ if(!$voted){
 						<figure>
 							<div id="Red" class="taken"></div>
 <?
-							echo "<figcaption> Red: ".$castle['Red']." </figcaption>";
+							echo "<figcaption> Red: ".str_replace("85247", "", $castle['Red'])." </figcaption>";
 ?>							
 						</figure>
 <?		
@@ -542,7 +542,7 @@ if(!$voted){
 						<figure>
 							<div id="Yellow" class="taken"></div>
 <?
-							echo "<figcaption> Yellow: ".$castle['Yellow']." </figcaption>";
+							echo "<figcaption> Yellow: ".str_replace("85247", "", $castle['Yellow'])." </figcaption>";
 ?>							
 						</figure>
 <?		
