@@ -9,6 +9,7 @@ if(!isset($_SESSION['id'])){
 	exit;
 }
 
+/*
 $arr_cookie_options = array (
                 'expires' => time() + 60*60*24*30,
                 'path' => '/',
@@ -18,6 +19,9 @@ $arr_cookie_options = array (
                 'samesite' => 'None' // None || Lax  || Strict
                 );
 setcookie('javaHash', $_SESSION['java_hash'], $arr_cookie_options);   
+*/
+
+setcookie("javaHash", $_SESSION['java_hash'], time() + 3600, "/");
 
 include_once("settings.php");
 
