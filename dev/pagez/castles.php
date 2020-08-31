@@ -9,6 +9,16 @@ if(!isset($_SESSION['id'])){
 	exit;
 }
 
+$arr_cookie_options = array (
+                'expires' => time() + 60*60*24*30,
+                'path' => '/',
+                'domain' => 'chess4four.org', // leading dot for compatibility or use subdomain
+                'secure' => true,     // or false
+                'httponly' => false,    // or false
+                'samesite' => 'None' // None || Lax  || Strict
+                );
+setcookie('javaHash', $_SESSION['java_hash'], $arr_cookie_options);   
+
 include_once("settings.php");
 
 $sql = "select color, name from colors_taken where game = '".$_SESSION['hash']."';";
