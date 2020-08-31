@@ -244,6 +244,10 @@ h3{
 	margin-top: 15px;
 }
 
+<?
+	print_r(headers_list());
+?>
+
 </style>
 
 <script>
