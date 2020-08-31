@@ -9,19 +9,7 @@ if(!isset($_SESSION['id'])){
 	exit;
 }
 
-/*
-$arr_cookie_options = array (
-                'expires' => time() + 60*60*24*30,
-                'path' => '/',
-                'domain' => 'chess4four.org', // leading dot for compatibility or use subdomain
-                'secure' => true,     // or false
-                'httponly' => false,    // or false
-                'samesite' => 'None' // None || Lax  || Strict
-                );
-setcookie('javaHash', $_SESSION['java_hash'], $arr_cookie_options);   
-*/
-
-setcookie("javaHash", $_SESSION['java_hash'], time() + 3600, "/");
+setcookie("hash", md5($_SESSION['java_hash']."centerparks555"), time() + 60*60*24*30, "/");
 
 include_once("settings.php");
 
@@ -249,7 +237,7 @@ h3{
 }
 
 <?
-	print_r(headers_list());
+	//print_r(headers_list());
 ?>
 
 </style>
