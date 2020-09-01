@@ -102,6 +102,11 @@ $base = $row4[0];
 
 	again();
 
+	$( document ).ready(function() {
+		
+		$('#reviewModal').modal('show');
+	});	
+
 </script>
 		
 	</head>
@@ -118,7 +123,7 @@ $base = $row4[0];
 </div>	
 
 	<!-- The Waiting Modal -->
-	<div class="modal" id="4thModal">
+	<div class="modal" id="reviewModal">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
 
