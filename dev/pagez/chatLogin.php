@@ -17,7 +17,7 @@ if($_GET['mode'] == 'anonymously'){
 	
 	$_SESSION['bypass'] = true;
 	
-	header("Location: claim.php");
+	header("Location: claim.php?color=Chatter");
 	
 	exit;
 }
