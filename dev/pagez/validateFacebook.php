@@ -80,6 +80,13 @@ $sql = "update gebruiker set lastLogin = now() where id='" . $_SESSION['id'] . "
 
 $result = $conn->query($sql);
 
+if(isset($_SESSION['chat'])){
+	
+	header("Location: claim.php?color=Chatter");
+		
+	exit;
+}
+
 if(isset($_SESSION['invited'])){
 	
 	header("Location: fetchSentence.php");
