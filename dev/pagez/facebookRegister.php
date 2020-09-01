@@ -15,44 +15,9 @@ include_once("settings.php");
 <html>
 <head>
 
-<style>
-.outer {
-	display: table;
+	<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 	
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-}
-
-.middle {
-	display: table-cell;
-	vertical-align: middle;
-}
-
-.inner {
-  margin-left: auto;
-  margin-right: auto;
-  width: 400px;
-}
-
-.center {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.left{
-
-		text-align: left;
-}
-
-.right {
-	
-	text-align: right;
-}
-
-</style>
+	<link rel="stylesheet" type="text/css" href="../css/default.css">
 
 <script src="../js/jquery-3.4.1.min.js"></script>
 
