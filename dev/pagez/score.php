@@ -48,8 +48,6 @@ $base = $row4[0];
 		<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 		
 		<link rel="stylesheet" type="text/css" href="../css/default.css">
-		
-		<script src="../js/jquery-3.4.1.min.js"></script>
 
 <style>
 
