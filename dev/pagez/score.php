@@ -65,11 +65,11 @@ $base = $row4[0];
 	   height: 70px;
 	   width: 70px;
 	   background-repeat: no-repeat;
+	   display: inline-block;
 	}
 
 	.star:hover {
 	   background-image: url('../imgz/star_green.png');
-	   background-repeat: no-repeat;
 	}
 	
 
