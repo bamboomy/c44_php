@@ -120,6 +120,8 @@ $base = $row4[0];
 
 </div>	
 
+	<center>
+
 	<!-- The Waiting Modal -->
 	<div class="modal" id="reviewModal">
 		<div class="modal-dialog modal-dialog-centered">
@@ -154,9 +156,6 @@ $base = $row4[0];
 			</div>
 		</div>
 	</div>
-
-	
-	<center>
 
 		<div class="outer">
 			<div class="middle">
