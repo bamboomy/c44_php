@@ -1,3 +1,16 @@
+<?
+
+session_start();
+
+include_once("settings.php");
+
+$_SESSION['hash'] = test_input($_GET['game']);
+
+$_SESSION['chat'] = true;
+
+unset($_SESSION['ownColor']);
+
+?>
 <html>
 	<head>
 	
@@ -26,7 +39,7 @@
 
 					<div class="col-md-12">
 
-						<form action="/../pagez/.php">
+						<form action="/../pagez/chatLogin.php">
 
 							<h3>Do you want to chat anonymously<br/>or do you want to log in?</h3>
 							
