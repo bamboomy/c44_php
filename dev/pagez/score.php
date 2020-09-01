@@ -32,6 +32,18 @@ $base = $row4[0];
 ?>
 <html>
 	<head>
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	
 		<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 		
@@ -104,6 +116,36 @@ $base = $row4[0];
 	</p>
 
 </div>	
+
+	<!-- The Waiting Modal -->
+	<div class="modal" id="4thModal">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">No 4th player?</h4>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+				
+					<p style="font-size: smaller;">You can choose between a random robot (Annoying Bot)<br/>
+					who puts people in check whenever it can;<br/>
+					<br/>
+					or a "Dubious Player":<br/>
+					<br/>
+					that's a player which is controlled<br/>
+					by a different human player each turn...
+					</p>
+					<br/><br/>
+					<p style="font-size: smaller;">
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	
 	<center>
 
