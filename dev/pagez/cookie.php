@@ -8,6 +8,11 @@
 			margin:auto;
 		}
 		</style>
+		
+		<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+		
+		<link rel="stylesheet" type="text/css" href="../css/default.css">
+		
 	</head>
 <body>
 
