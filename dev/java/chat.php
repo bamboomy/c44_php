@@ -37,6 +37,10 @@ if($row['color'] == "Blue"){
 }else if($row['color'] == "Red"){
 	
 	$color = "red";
+
+}else if($row['color'] == "Chatter"){
+	
+	$color = "gray";
 }	
 
 if(!isset($_POST['text']) && isset($_GET['board'])){
