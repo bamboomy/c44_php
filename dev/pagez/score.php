@@ -127,7 +127,7 @@ $base = $row4[0];
 
 				<!-- Modal Header -->
 				<div class="modal-header">
-					<h4 class="modal-title">No 4th player?</h4>
+					<? echo "<h4 class='modal-title'>".$_SESSION['name']."'s review:</h4>"; ?>
 				</div>
 
 				<!-- Modal body -->
