@@ -45,9 +45,9 @@ unset($_SESSION['ownColor']);
 							
 							<br/><br/>
 
-							<input type="radio" id="anonymously" name="gender" value="anonymously">
+							<input type="radio" id="anonymously" name="mode" value="anonymously">
 							<label for="anonymously">Anonymously</label><br>
-							<input type="radio" id="log_in" name="gender" value="log_in">
+							<input type="radio" id="log_in" name="mode" value="log_in">
 							<label for="log_in">Log in</label><br>
 
 							<input type="submit" value="Let's chat!">
