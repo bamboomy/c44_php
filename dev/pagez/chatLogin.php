@@ -4,17 +4,9 @@ session_start();
 
 include_once("settings.php");
 
-$_SESSION['hash'] = test_input($_GET['game']);
-
-$_SESSION['invited'] = true;
-
-unset($_SESSION['ownColor']);
-
-if(isset($_SESSION['id'])){
+if($_GET['game'] == 'mode'){
 	
 	header("Location: welcome.php");
-		
-	exit;
 }
 
 ?>
