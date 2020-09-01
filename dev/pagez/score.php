@@ -133,7 +133,7 @@ $base = $row4[0];
 				<!-- Modal body -->
 				<div class="modal-body">
 				
-					<img src="../imgz/star_gray.png"
+					<img src="../imgz/star_gray.png" width="20" height="20"/>
 				
 					<p style="font-size: smaller;">You can choose between a random robot (Annoying Bot)<br/>
 					who puts people in check whenever it can;<br/>
