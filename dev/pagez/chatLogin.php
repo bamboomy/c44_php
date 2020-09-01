@@ -7,6 +7,19 @@ include_once("settings.php");
 if($_GET['mode'] == 'log_in'){
 	
 	header("Location: welcome.php");
+	
+	exit;
+}
+
+if($_GET['mode'] == 'anonymously'){
+	
+	$_SESSION['name'] = "Anonymous_" . rand(0, 10000);
+	
+	$_SESSION['bypass'] = true;
+	
+	header("Location: claim.php");
+	
+	exit;
 }
 
 ?>
