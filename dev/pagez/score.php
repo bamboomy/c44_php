@@ -62,12 +62,14 @@ $base = $row4[0];
 	
 	.star {
 	   background-image: url('../imgz/star_gray.png');
-	   height: 170px;
-	   width: 300px;
+	   height: 70px;
+	   width: 70px;
+	   background-repeat: no-repeat;
 	}
 
 	.star:hover {
 	   background-image: url('../imgz/star_green.png');
+	   background-repeat: no-repeat;
 	}
 	
 
