@@ -4,7 +4,7 @@ session_start();
 
 include_once("settings.php");
 
-if($_GET['game'] == 'mode'){
+if($_GET['mode'] == 'log_in'){
 	
 	header("Location: welcome.php");
 }
