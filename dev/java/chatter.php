@@ -2,7 +2,7 @@
 
 session_start();
 
-include_once("settings.php");
+include_once("../pagez/settings.php");
 
 $_SESSION['hash'] = test_input($_GET['game']);
 
