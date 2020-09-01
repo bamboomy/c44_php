@@ -39,7 +39,7 @@ unset($_SESSION['ownColor']);
 
 					<div class="col-md-12">
 
-						<form action="/../pagez/chatLogin.php">
+						<form action="../pagez/chatLogin.php">
 
 							<h3>Do you want to chat anonymously<br/>or do you want to log in?</h3>
 							
