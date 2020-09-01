@@ -21,6 +21,16 @@ if(isset($_SESSION['id'])){
 <html>
 <head>
 
+		<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+		<style>
+			body {
+				font-family: 'Aclonica';font-size: 22px;
+			}
+		</style>
+		
+		<link rel="stylesheet" type="text/css" href="../css/default.css">
+
+<!--
 <style>
 .outer {
 	display: table;
@@ -63,7 +73,7 @@ if(isset($_SESSION['id'])){
 <script>
 
 </script>
-
+-->
 
 	</head>
 <body>
