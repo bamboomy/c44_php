@@ -28,7 +28,9 @@
 
 						<form action="/../pagez/.php">
 
-							<h2>Do you want to chat anonymously or do you want to log in?</h2>
+							<h3>Do you want to chat anonymously<br/>or do you want to log in?</h3>
+							
+							<br/><br/>
 
 							<input type="radio" id="anonymously" name="gender" value="anonymously">
 							<label for="anonymously">Anonymously</label><br>
