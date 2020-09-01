@@ -39,8 +39,16 @@ if($row['color'] == "Blue"){
 	$color = "red";
 }	
 
-$sql = "insert into chat (game, text) ";
-$sql .= " values ('".$row['game']."', '<span style=\'color:".$color."\'>".$row['name']."</span>: ".  test_input($_POST['text'])."');";
+if(!isset($_POST['text']) && isset($_GET['board'])){
+	
+	$sql = "insert into chat (game, text) ";
+	$sql .= " values ('".$row['game']."', '<span style=\'color:".$color."\'>".$row['name']." has entered the chat...</span>');";
+
+} else {
+	
+	$sql = "insert into chat (game, text) ";
+	$sql .= " values ('".$row['game']."', '<span style=\'color:".$color."\'>".$row['name']."</span>: ".  test_input($_POST['text'])."');";
+}
 
 $result = $conn->query($sql);
 
