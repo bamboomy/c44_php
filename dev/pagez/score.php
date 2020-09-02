@@ -151,15 +151,8 @@ if($result5->num_rows != 0){
 			
 			for(i = 1; i < improvementCount; i++){
 				
-				$("#improvements").append( "<input type='text' class='improvement' />" );
+				$("#improvements").append( "<input type='text' class='improvement' onkeydown='addImprovement();' />" );
 			}
-			
-			$( ".improvement" ).keydown(function() {
-			
-				improvementCount++;
-				
-				reSyncImprovements();
-			});
 		}
 	}
 
@@ -210,13 +203,14 @@ if($result5->num_rows != 0){
 		
 		retrieveStars();
 
-		$( ".improvement" ).keydown(function() {
-		
-			improvementCount++;
-			
-			reSyncImprovements();
-		});
 	});	
+
+	function() addImprovement(){
+	
+		improvementCount++;
+		
+		reSyncImprovements();
+	}
 	
 
 </script>
@@ -268,7 +262,7 @@ if($result5->num_rows != 0){
 					Possible improvements:<br/>
 					
 					<div id="improvements">
-						<input type="text" class="improvement" />
+						<input type="text" class="improvement" onkeydown="addImprovement();" />
 					</div>
 				</div>
 			</div>
