@@ -155,6 +155,11 @@ $row7 = $result7->fetch_assoc();
 	}
 
 	$( document ).ready(function() {
+		
+		if(document.cookie "modalShown=shown"){
+			
+			$('#reviewModal').modal('show');
+		}
 
 <?
 	if($starz == 0){
@@ -261,6 +266,13 @@ $row7 = $result7->fetch_assoc();
 				location.reload();
 			}
 		});
+	}
+	
+	function showModal() {
+		
+		document.cookie = "modalShown=shown";
+
+		$('#reviewModal').modal('show');	
 	}
 	
 
@@ -401,7 +413,7 @@ while($row = $result->fetch_assoc()){
 	</center>
 
 	<div style="margin: 10px; position: fixed; right: 10px; bottom: 0px; z-index: 1">
-		<p><a href="#" onclick="$('#reviewModal').modal('show');">Edit review.</a></p>
+		<p><a href="#" onclick="showModal();">Edit review.</a></p>
 	</div>
 		
 	</body>
