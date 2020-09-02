@@ -147,17 +147,11 @@ if($result5->num_rows != 0){
 	
 	function reSyncImprovements(){
 		
-		alert("resync");
-		
 		if($("#improvements").length < improvementCount){
 			
-			alert("if");
-			
-			for(i = 0; i < improvementCount; i++){
+			for(i = 1; i < improvementCount; i++){
 				
-				alert(i);
-				
-				$("#improvements").add( "<input type='text' class='improvement' />" );
+				$("#improvements").append( "<input type='text' class='improvement' />" );
 			}
 		}
 	}
