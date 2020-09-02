@@ -205,7 +205,7 @@ if($result5->num_rows != 0){
 
 	});	
 
-	function() addImprovement(){
+	function addImprovement(){
 	
 		improvementCount++;
 		
