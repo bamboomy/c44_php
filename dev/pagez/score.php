@@ -399,6 +399,10 @@ while($row = $result->fetch_assoc()){
 			</div>
 		</div>
 	</center>
-	
+
+	<div style="margin: 10px; position: fixed; right: 10px; bottom: 0px; z-index: 1">
+		<p><a href="#" onclick="$('#reviewModal').modal('show');">Edit review.</a></p>
+	</div>
+		
 	</body>
 </html>
