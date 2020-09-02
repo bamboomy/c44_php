@@ -191,6 +191,12 @@ if($result5->num_rows != 0){
 		retrieveStars();
 		
 	});	
+	
+	var improvementCount = 1;
+	
+	$( ".improvement" ).keydown(function() {
+		alert( "Handler for .keydown() called." );
+	});
 
 </script>
 		
@@ -240,7 +246,7 @@ if($result5->num_rows != 0){
 
 					Possible improvements:<br/>
 
-					<input type="text" />
+					<input type="text" class="improvement" />
 				</div>
 			</div>
 		</div>
