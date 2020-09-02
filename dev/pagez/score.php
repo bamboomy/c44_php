@@ -156,7 +156,7 @@ $row7 = $result7->fetch_assoc();
 
 	$( document ).ready(function() {
 		
-		if(document.cookie "modalShown=shown"){
+		if(document.cookie == "modalShown=shown"){
 			
 			$('#reviewModal').modal('show');
 		}
