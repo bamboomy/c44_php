@@ -235,7 +235,7 @@ if($result5->num_rows != 0){
 					<div id="star_4" class="star"></div>
 					<div id="star_5" class="star"></div>
 				
-					<textarea id="w3review" name="w3review" rows="4" cols="50">
+					<textarea id="w3review" name="w3review" rows="4" cols="25">
 					</textarea>
 				</div>
 			</div>
