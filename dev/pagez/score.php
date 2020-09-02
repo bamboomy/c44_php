@@ -142,7 +142,11 @@ if($result5->num_rows != 0){
 		$( "div[id^='star']" ).mouseenter(
 		
 			function() {
-				//$( this ).addClass("selected");
+
+				for (i = 0; i <= 5; i++) {
+					
+					$("#star_"+i).removeClass("selected");
+				}
 				
 				var nr = $( this ).attr('id').split("_")[1];
 				
