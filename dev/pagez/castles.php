@@ -91,6 +91,29 @@ if($botVotes == 2 && $counter != 4){
 	exit;
 }
 
+if(isset($_SESSION['doubleBot'])){
+	
+	unset($_SESSION['doubleBot']);
+
+	$java_hash = md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash']);
+	
+	$sql = "insert into colors_taken (game, color, name, java_hash) ";
+	$sql .= " values ('".$_SESSION['hash']."', '".array_shift($remainingColors)."', 'Random85247', '".$java_hash."');";
+
+	$result = $conn->query($sql) or die($conn->error);
+
+	$java_hash = md5($_SERVER['REMOTE_ADDR'] . microtime() . "twee" . $_SESSION['hash']);
+	
+	$sql = "insert into colors_taken (game, color, name, java_hash) ";
+	$sql .= " values ('".$_SESSION['hash']."', '".array_shift($remainingColors)."', 'Random85247', '".$java_hash."');";
+
+	$result = $conn->query($sql) or die($conn->error);
+
+	header("Refresh:0");
+	
+	exit;
+}
+
 $sql = "SELECT count(1) from votes where game = '".test_input($_SESSION['hash'])."' and value = 'd';";
 
 $result = $conn->query($sql) or die($conn->error);
