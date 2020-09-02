@@ -20,7 +20,7 @@ if(isset($_POST['facebook'])){
 	$facebook = "N";
 }
 
-if(isset($_POST['publicly']){
+if(isset($_POST['publicly'])){
 	
 	$publicly = "Y";
 
