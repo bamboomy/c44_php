@@ -236,7 +236,9 @@ if($result5->num_rows != 0){
 					<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
 					<label for="vehicle1" style="font-size: smaller;"> This review may be posted on Facebook.</label><br>
 					<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-					<label for="vehicle2" style="font-size: smaller;"> This review may be viewed publicly.</label><br>					
+					<label for="vehicle2" style="font-size: smaller;"> This review may be viewed publicly.</label><br>		
+
+					<input type="text" />
 				</div>
 			</div>
 		</div>
