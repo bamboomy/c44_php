@@ -164,8 +164,7 @@ $base = $row4[0];
 					async : false,
 					success : function(text) {
 						
-							location.reload();
-						}
+						location.reload();
 					}
 				});
 			}
