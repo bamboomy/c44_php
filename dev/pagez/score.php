@@ -149,7 +149,7 @@ if($result5->num_rows != 0){
 	}
 
 	$( document ).ready(function() {
-		
+		0
 		$('#reviewModal').modal('show');
 		
 		$( "div[id^='star']" ).mouseenter(
@@ -205,6 +205,31 @@ if($result5->num_rows != 0){
 		}
 	}
 	
+	function save(){
+		
+		$(".improvement").each(function( index ) {
+
+//		console.log( index + ": " + $( this ).text() );
+
+			$.ajax({
+				type : "POST",
+				xhrFields : {
+					withCredentials : true
+				},
+<?					
+				echo "url : 'https://chess4four.org".$profilePath."/pagez/saveImprovement.php',";
+?>					
+				data : {
+					text : $( this ).val()
+				},
+				success : function(text) {
+
+				}
+			});
+		});
+
+	}
+	
 
 </script>
 		
@@ -257,6 +282,8 @@ if($result5->num_rows != 0){
 					<div id="improvements">
 						<input type="text" class="improvement" onkeydown="checkLastImprovement();" /><br/><br/>
 					</div>
+					
+					<button type="button" onclick="save();">Save</button>
 				</div>
 			</div>
 		</div>
