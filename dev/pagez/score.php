@@ -371,8 +371,7 @@ if($row7['publicly'] == "Y"){
 						<button type="button" onclick="save();">Save</button>
 						
 						<button type="button" onclick="hideModal();" style="right: 10px; position: absolute;">Close</button>
-						
-						
+
 					</form>
 				</div>
 			</div>

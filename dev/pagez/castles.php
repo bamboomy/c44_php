@@ -451,6 +451,8 @@ if(!$voted){
 
 					<a href="#" >Click here</a> to start a game with two...
 
+					<button type="button" onclick="$('#noOthersModal').modal('hide');" style="right: 10px; position: absolute;">Close</button>
+
 				</div>
 			</div>
 		</div>
