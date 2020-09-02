@@ -174,7 +174,7 @@ if($result5->num_rows != 0){
 
 		$( "div[id^='star']" ).mouseleave(
 		
-			retrieveStars()
+			retrieveStars();
 		);
 		
 		$( "div[id^='star']" ).click(
