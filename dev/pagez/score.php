@@ -294,7 +294,7 @@ $result6 = $conn->query($sql) or die($conn->error);
 <?
 					while($row6 = $result6->fetch_assoc()){
 						
-						echo "<br/><span style='width: auto;'>".$row6['text']."<img src='../imgz/red_cross.png' /></span>";
+						echo "<br/><span style='width: auto;'>".$row6['text']."<img src='../imgz/red_cross.png' style='position: absolute; right: 0px;'/></span>";
 					}
 ?>					
 					</p>
