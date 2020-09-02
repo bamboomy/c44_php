@@ -143,6 +143,8 @@ if($result5->num_rows != 0){
 		}
 	}
 
+	var improvementCount = 1;
+
 	$( document ).ready(function() {
 		
 		$('#reviewModal').modal('show');
@@ -189,14 +191,12 @@ if($result5->num_rows != 0){
 		);
 		
 		retrieveStars();
-		
+
+		$( ".improvement" ).keydown(function() {
+			alert( "Handler for .keydown() called." );
+		});
 	});	
 	
-	var improvementCount = 1;
-	
-	$( ".improvement" ).keydown(function() {
-		alert( "Handler for .keydown() called." );
-	});
 
 </script>
 		
