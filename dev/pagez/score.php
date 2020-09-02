@@ -123,10 +123,17 @@ $base = $row4[0];
 		
 		$('#reviewModal').modal('show');
 		
-		$( "div[id^='star']" ).hover(
+		$( "div[id^='star']" ).mouseenter(
 		
 			function() {
 				$( this ).addClass("selected");
+			}
+		);
+
+		$( "div[id^='star']" ).mouseleave(
+		
+			function() {
+				$( this ).removeClass("selected");
 			}
 		);
 	});	
