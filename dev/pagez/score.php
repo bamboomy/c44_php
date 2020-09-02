@@ -290,12 +290,14 @@ $result6 = $conn->query($sql) or die($conn->error);
 					<label for="vehicle2" style="font-size: smaller;"> This review may be viewed publicly.</label><br>		
 
 					Possible improvements:<br/>
+					<p style="font-size: smaller;">
 <?
 					while($row6 = $result6->fetch_assoc()){
 						
 						echo $row6['text']."<br/>";
 					}
 ?>					
+					</p>
 					<div id="improvements">
 						<input type="text" class="improvement" onkeydown="checkLastImprovement();" /><br/><br/>
 					</div>
