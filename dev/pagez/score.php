@@ -81,20 +81,13 @@ if($result5->num_rows != 0){
 	   display: inline-block;
 	}
 
-/*
-	.star:hover {
-	   background-image: url('../imgz/star_green.png');
-	}
-*/
-
 	.star.selected {
 	   background-image: url('../imgz/star_green.png');
 	}
-	
-	.star.saved {
-	   background-image: url('../imgz/star_green.png');
-	}
 
+	.left{
+		text-align: left;
+	}
 </style>		
 
 <script>
@@ -235,7 +228,7 @@ if($result5->num_rows != 0){
 					<div id="star_4" class="star"></div>
 					<div id="star_5" class="star"></div>
 				
-					<textarea id="w3review" name="w3review" rows="4" cols="25">
+					<textarea class="left" id="w3review" name="w3review" rows="4" cols="25">
 					</textarea>
 				</div>
 			</div>
