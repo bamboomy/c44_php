@@ -90,7 +90,8 @@ $result6 = $conn->query($sql) or die($conn->error);
 	}
 
 	.left{
-		text-align: left;
+		position: absolute; 
+		left: 10px;
 	}
 </style>		
 
