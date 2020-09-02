@@ -46,7 +46,7 @@ $sql = "SELECT text, id FROM improvementz where userId='".$_SESSION['id']."' and
 
 $result6 = $conn->query($sql) or die($conn->error);
 
-$sql = "SELECT text, facebook, publicly FROM review where userId='".$_SESSION['id']."' and id = (select max(id) from review userId='".$_SESSION['id']."')";
+$sql = "SELECT text, facebook, publicly FROM review where userId='".$_SESSION['id']."' and id = (select max(id) from review where userId='".$_SESSION['id']."')";
 
 $result7 = $conn->query($sql) or die($conn->error);
 
