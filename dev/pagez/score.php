@@ -290,8 +290,7 @@ $result6 = $conn->query($sql) or die($conn->error);
 
 					<form id="myForm" action="saveReview.php" method="post">
 
-						<textarea class="left" id="w3review" name="w3review" rows="4" cols="25">
-						</textarea><br/>
+						<textarea class="left" id="w3review" name="w3review" rows="4" cols="25"></textarea><br/>
 
 					</center>
 					
