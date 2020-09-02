@@ -130,14 +130,25 @@ $base = $row4[0];
 				
 				var nr = $( this ).attr('id').split("_")[1];
 				
-				alert(nr);
+				for (i = 0; i <= nr; i++) {
+					
+					$("#star_"+i).addClass("selected");
+				}
 			}
 		);
 
 		$( "div[id^='star']" ).mouseleave(
 		
 			function() {
-				$( this ).removeClass("selected");
+
+//				$( this ).removeClass("selected");
+
+				var nr = $( this ).attr('id').split("_")[1];
+				
+				for (i = 0; i <= nr; i++) {
+					
+					$("#star_"+i).removeClass("selected");
+				}
 			}
 		);
 	});	
