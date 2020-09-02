@@ -36,16 +36,12 @@ $result5 = $conn->query($sql) or die($conn->error);
 
 $starz = 0;
 
-echo $starz;
-
 if($result5->num_rows != 0){
 
-	$row5 = $result5->fetch_row();
+	$row5 = $result5->fetch_assoc();
 	
 	$starz = $row5['starz'];
 }
-
-echo $starz;
 
 ?>
 <html>
