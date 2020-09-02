@@ -29,11 +29,11 @@ $row4 = $result4->fetch_row();
 
 $base = $row4[0];
 
-$sql = "SELECT s.starz
+$sql = "SELECT *
 FROM sterren s JOIN (
-  SELECT MAX(created) AS created, id 
+  SELECT id, MAX(created) AS created
   FROM sterren si
-  GROUP BY starz
+  GROUP BY id
 ) lastEntry ON s.id = lastEntry.id AND s.created = lastEntry.created;";
 //$sql .= "(SELECT min(created) FROM sterren si WHERE si.id = s.id and userId='".$_SESSION['id']."');";
 
