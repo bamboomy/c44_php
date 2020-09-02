@@ -29,8 +29,13 @@ $row4 = $result4->fetch_row();
 
 $base = $row4[0];
 
-$sql = "SELECT starz FROM sterren s WHERE s.created = ";
-$sql .= "(SELECT min(created) FROM sterren si WHERE si.id = s.id and userId='".$_SESSION['id']."');";
+$sql = "SELECT starz, id
+FROM sterren s JOIN (
+  SELECT starz, MAX(created), id AS created
+  FROM sterren si
+  GROUP BY starz
+) lastEntry ON s.id = lastEntry.id AND s.created = lastEntry.created;";
+//$sql .= "(SELECT min(created) FROM sterren si WHERE si.id = s.id and userId='".$_SESSION['id']."');";
 
 $result5 = $conn->query($sql) or die($conn->error);
 
