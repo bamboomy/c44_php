@@ -29,9 +29,9 @@ $row4 = $result4->fetch_row();
 
 $base = $row4[0];
 
-$sql = "SELECT s.starz, s.id, s.created
+$sql = "SELECT s.starz
 FROM sterren s JOIN (
-  SELECT starz, MAX(created) AS created, id 
+  SELECT MAX(created) AS created, id 
   FROM sterren si
   GROUP BY starz
 ) lastEntry ON s.id = lastEntry.id AND s.created = lastEntry.created;";
