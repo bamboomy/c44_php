@@ -228,15 +228,15 @@ if($result5->num_rows != 0){
 						<div id="star_4" class="star"></div>
 						<div id="star_5" class="star"></div>
 
+						<textarea class="left" id="w3review" name="w3review" rows="4" cols="25">
+						</textarea><br/>
+
 					</center>
-				
-					<textarea class="left" id="w3review" name="w3review" rows="4" cols="25">
-					</textarea><br/>
-					
-					<input class="left" type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-					<label for="vehicle1"> I have a bike</label><br>
-					<input class="left" type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-					<label for="vehicle2"> I have a car</label><br>					
+
+					<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+					<label for="vehicle1" style="font-size: smaller;"> This review may be posted on Facebook.</label><br>
+					<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+					<label for="vehicle2"> This review may be viewed publicly.</label><br>					
 				</div>
 			</div>
 		</div>
