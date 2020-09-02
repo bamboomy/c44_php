@@ -33,6 +33,8 @@ $sql = "insert into review (userId, text, facebook, publicly) values ('".$_SESSI
 
 $result = $conn->query($sql) or die($conn->error);
 
+header("Location: welcome.php");
+
 ?>
 
 Succezz :)

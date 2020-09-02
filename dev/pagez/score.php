@@ -298,7 +298,9 @@ $result6 = $conn->query($sql) or die($conn->error);
 						<input type="checkbox" id="facebook" name="facebook" value="true">
 						<label for="facebook" style="font-size: smaller;"> This review may be posted on Facebook.</label><br>
 						<input type="checkbox" id="publicly" name="publicly" value="true">
-						<label for="publicly" style="font-size: smaller;"> This review may be viewed publicly.</label><br>		
+						<label for="publicly" style="font-size: smaller;"> This review may be viewed publicly.</label><br>	
+
+<?						echo "<input type='hidden' name='game' value='".$_GET['game']."' />"; ?>
 
 						Possible improvements:<br/>
 						<p style="font-size: smaller;">
