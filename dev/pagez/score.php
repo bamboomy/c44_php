@@ -42,7 +42,7 @@ if($result5->num_rows != 0){
 	$starz = $row5['starz'];
 }
 
-$sql = "SELECT text FROM improvementz where userId='".$_SESSION['id']."'";
+$sql = "SELECT text, id FROM improvementz where userId='".$_SESSION['id']."' and deleted = 'N'";
 
 $result6 = $conn->query($sql) or die($conn->error);
 
@@ -242,6 +242,19 @@ $result6 = $conn->query($sql) or die($conn->error);
 		});
 	}
 	
+	function remove(id){
+		
+		$.ajax({
+			type : "GET",
+<?			echo "url : 'https://chess4four.org".$profilePath."/pagez/remove.php?id='+id,"; ?>
+			async : false,
+			success : function(text) {
+				
+				location.reload();
+			}
+		});
+	}
+	
 
 </script>
 		
@@ -292,9 +305,15 @@ $result6 = $conn->query($sql) or die($conn->error);
 					Possible improvements:<br/>
 					<p style="font-size: smaller;">
 <?
+					$counter = 0;
+			
 					while($row6 = $result6->fetch_assoc()){
 						
-						echo "<br/><span style='width: auto;'>".$row6['text']."<img src='../imgz/red_cross.png' style='position: absolute; right: 10px;'/></span>";
+						echo "<br/><span style='width: auto;'>".$row6['text'];
+						echo "<img src='../imgz/red_cross.png' style='position: absolute; right: 10px;' onclick='remove(".$row6['id'].")'/>";
+						echo "</span>";
+						
+						$counter++;
 					}
 ?>					
 					</p>
