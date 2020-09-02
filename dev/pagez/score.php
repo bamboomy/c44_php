@@ -135,6 +135,21 @@ if($result5->num_rows != 0){
 
 	again();
 
+	function retrieveStars(){
+
+		for (i = 0; i <= 5; i++) {
+			
+			$("#star_"+i).removeClass("selected");
+		}
+
+<? echo "var nr = " . $starz . ";"; ?>
+		
+		for (i = 0; i <= nr; i++) {
+			
+			$("#star_"+i).addClass("selected");
+		}
+	}
+
 	$( document ).ready(function() {
 		
 		$('#reviewModal').modal('show');
@@ -183,21 +198,6 @@ if($result5->num_rows != 0){
 		retrieveStars();
 		
 	});	
-	
-	function retrieveStars(){
-
-		for (i = 0; i <= 5; i++) {
-			
-			$("#star_"+i).removeClass("selected");
-		}
-
-<? echo "var nr = " . $starz . ";"; ?>
-		
-		for (i = 0; i <= nr; i++) {
-			
-			$("#star_"+i).addClass("selected");
-		}
-	}
 
 </script>
 		
