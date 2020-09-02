@@ -206,10 +206,13 @@ if($result5->num_rows != 0){
 	});	
 
 	function addImprovement(){
-	
-		improvementCount++;
 		
-		reSyncImprovements();
+		if ($(".improvement").last().val() == ""){
+			
+			improvementCount++;
+			
+			reSyncImprovements();
+		}
 	}
 	
 
