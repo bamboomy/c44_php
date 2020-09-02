@@ -29,7 +29,7 @@ $row4 = $result4->fetch_row();
 
 $base = $row4[0];
 
-$sql = "SELECT s.starz, s.id
+$sql = "SELECT s.starz, s.id, s.created
 FROM sterren s JOIN (
   SELECT starz, MAX(created) AS created, id 
   FROM sterren si
