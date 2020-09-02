@@ -126,7 +126,11 @@ $base = $row4[0];
 		$( "div[id^='star']" ).mouseenter(
 		
 			function() {
-				$( this ).addClass("selected");
+				//$( this ).addClass("selected");
+				
+				var nr = $( this ).attr('id').split("_")[0];
+				
+				alert(nr);
 			}
 		);
 
