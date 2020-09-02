@@ -157,7 +157,7 @@ $row7 = $result7->fetch_assoc();
 	$( document ).ready(function() {
 
 <?
-	if($stars == 0){
+	if($starz == 0){
 ?>
 		$('#reviewModal').modal('show');
 <?
