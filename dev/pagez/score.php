@@ -288,16 +288,16 @@ $result6 = $conn->query($sql) or die($conn->error);
 						<div id="star_4" class="star"></div>
 						<div id="star_5" class="star"></div>
 
-					<form id="myForm" action="saveReview.php" method="get">
+					<form id="myForm" action="saveReview.php" method="post">
 
 						<textarea class="left" id="w3review" name="w3review" rows="4" cols="25">
 						</textarea><br/>
 
 					</center>
 					
-						<input type="checkbox" id="facebook" name="facebook" value="Bike">
+						<input type="checkbox" id="facebook" name="facebook" value="true">
 						<label for="facebook" style="font-size: smaller;"> This review may be posted on Facebook.</label><br>
-						<input type="checkbox" id="publicly" name="publicly" value="Car">
+						<input type="checkbox" id="publicly" name="publicly" value="true">
 						<label for="publicly" style="font-size: smaller;"> This review may be viewed publicly.</label><br>		
 
 						Possible improvements:<br/>
