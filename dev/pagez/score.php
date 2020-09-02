@@ -235,17 +235,8 @@ if($result5->num_rows != 0){
 					<div id="star_4" class="star"></div>
 					<div id="star_5" class="star"></div>
 				
-					<p style="font-size: smaller;">You can choose between a random robot (Annoying Bot)<br/>
-					who puts people in check whenever it can;<br/>
-					<br/>
-					or a "Dubious Player":<br/>
-					<br/>
-					that's a player which is controlled<br/>
-					by a different human player each turn...
-					</p>
-					<br/><br/>
-					<p style="font-size: smaller;">
-					</p>
+					<textarea id="w3review" name="w3review" rows="4" cols="50">
+					</textarea>
 				</div>
 			</div>
 		</div>
