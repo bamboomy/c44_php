@@ -311,7 +311,7 @@ if($row7['facebook'] == "Y"){
 ?>
 						<label for="facebook" style="font-size: smaller;"> This review may be posted on Facebook.</label><br>
 <?
-if($row7['facebook'] == "Y"){
+if($row7['publicly'] == "Y"){
 	
 	echo "<input type='checkbox' checked = 'checked' id='publicly' name='publicly' value='true'>"; 
 
