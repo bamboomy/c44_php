@@ -155,8 +155,14 @@ $row7 = $result7->fetch_assoc();
 	}
 
 	$( document ).ready(function() {
-		0
+
+<?
+	if($stars == 0){
+?>
 		$('#reviewModal').modal('show');
+<?
+	}
+?>
 		
 		$( "div[id^='star']" ).mouseenter(
 		
