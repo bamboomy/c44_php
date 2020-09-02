@@ -173,7 +173,7 @@ $chatHash = md5(microtime() . $_SESSION['hash'] . rand(0, 1000));
 <div class="outer">
   <div class="middle">
     <div class="inner center">
-		<? echo "<h2>Hey " . $_SESSION['firstName'] . " (".$_SESSION['name']."),</h2>" ?>
+		<? echo "<h2>Hey ".$_SESSION['name'].",</h2>" ?>
 		<h3>What do you want to do?</h3>
 		<br/>
 		<a href="create.php">Play now</a><br/>
