@@ -154,18 +154,21 @@ $base = $row4[0];
 		
 		$( "div[id^='star']" ).click(
 		
-			var nr = $( this ).attr('id').split("_")[1];
+			function() {
+		
+				var nr = $( this ).attr('id').split("_")[1];
 
-			$.ajax({
-				type : "GET",
-	<?			echo "url : 'https://chess4four.org".$profilePath."/pagez/saveStar.php?stars='+nr,"; ?>
-				async : false,
-				success : function(text) {
-					
-						location.reload();
+				$.ajax({
+					type : "GET",
+		<?			echo "url : 'https://chess4four.org".$profilePath."/pagez/saveStar.php?stars='+nr,"; ?>
+					async : false,
+					success : function(text) {
+						
+							location.reload();
+						}
 					}
-				}
-			});
+				});
+			}
 		);
 		
 	});	
