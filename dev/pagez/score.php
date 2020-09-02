@@ -30,7 +30,7 @@ $row4 = $result4->fetch_row();
 $base = $row4[0];
 
 $sql = "SELECT starz FROM sterren s WHERE s.created = ";
-$sql .= "(SELECT MAX(created) FROM sterren si WHERE si.id = s.id and userId='".$_SESSION['id']."');";
+$sql .= "(SELECT min(created) FROM sterren si WHERE si.id = s.id and userId='".$_SESSION['id']."');";
 
 $result5 = $conn->query($sql) or die($conn->error);
 
