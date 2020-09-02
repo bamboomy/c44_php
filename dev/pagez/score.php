@@ -34,6 +34,8 @@ $sql .= "(SELECT MAX(created) FROM sterren si WHERE si.id = s.id and userId='".$
 
 $result5 = $conn->query($sql) or die($conn->error);
 
+echo $sql;
+
 $starz = 0;
 
 if($result5->num_rows != 0){
