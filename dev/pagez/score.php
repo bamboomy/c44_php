@@ -88,11 +88,6 @@ $result6 = $conn->query($sql) or die($conn->error);
 	.star.selected {
 	   background-image: url('../imgz/star_green.png');
 	}
-
-	.left{
-		position: absolute; 
-		left: 10px;
-	}
 </style>		
 
 <script>
