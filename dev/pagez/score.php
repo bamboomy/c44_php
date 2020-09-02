@@ -144,6 +144,17 @@ if($result5->num_rows != 0){
 	}
 
 	var improvementCount = 1;
+	
+	function reSyncImprovements(){
+		
+		if($("#improvements").size() < improvementCount){
+			
+			for(i = 0; i < improvementCount; i++){
+				
+				$("#improvements").add( "<input type='text' class='improvement' />" );
+			}
+		}
+	}
 
 	$( document ).ready(function() {
 		
@@ -193,7 +204,10 @@ if($result5->num_rows != 0){
 		retrieveStars();
 
 		$( ".improvement" ).keydown(function() {
-			alert( "Handler for .keydown() called." );
+		
+			improvementCount++;
+			
+			reSyncImprovements();
 		});
 	});	
 	
@@ -245,8 +259,10 @@ if($result5->num_rows != 0){
 					<label for="vehicle2" style="font-size: smaller;"> This review may be viewed publicly.</label><br>		
 
 					Possible improvements:<br/>
-
-					<input type="text" class="improvement" />
+					
+					<div id="improvements">
+						<input type="text" class="improvement" />
+					</div>
 				</div>
 			</div>
 		</div>
