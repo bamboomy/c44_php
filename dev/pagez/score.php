@@ -46,6 +46,12 @@ $sql = "SELECT text, id FROM improvementz where userId='".$_SESSION['id']."' and
 
 $result6 = $conn->query($sql) or die($conn->error);
 
+$sql = "SELECT text, facebook, publicly FROM review where userId='".$_SESSION['id']."' and id = (select max(id) from review userId='".$_SESSION['id']."')";
+
+$result7 = $conn->query($sql) or die($conn->error);
+
+$row7 = $result7->fetch_assoc();
+
 ?>
 <html>
 	<head>
@@ -290,13 +296,30 @@ $result6 = $conn->query($sql) or die($conn->error);
 
 					<form id="myForm" action="saveReview.php" method="post">
 
-						<textarea class="left" id="w3review" name="w3review" rows="4" cols="25"></textarea><br/>
+<?						echo "<textarea id='w3review' name='w3review' rows='4' cols='25'>".$row7['text']."</textarea><br/>"; ?>
 
 					</center>
-					
-						<input type="checkbox" id="facebook" name="facebook" value="true">
+<?
+if($row7['facebook'] == "Y"){
+	
+	echo "<input type='checkbox' checked = 'checked' id='facebook' name='facebook' value='true'>"; 
+
+} else {
+
+	echo "<input type='checkbox' id='facebook' name='facebook' value='true'>"; 
+}
+?>
 						<label for="facebook" style="font-size: smaller;"> This review may be posted on Facebook.</label><br>
-						<input type="checkbox" id="publicly" name="publicly" value="true">
+<?
+if($row7['facebook'] == "Y"){
+	
+	echo "<input type='checkbox' checked = 'checked' id='publicly' name='publicly' value='true'>"; 
+
+} else {
+
+	echo "<input type='checkbox' id='publicly' name='publicly' value='true'>"; 
+}
+?>
 						<label for="publicly" style="font-size: smaller;"> This review may be viewed publicly.</label><br>	
 
 <?						echo "<input type='hidden' name='game' value='".$_GET['game']."' />"; ?>
