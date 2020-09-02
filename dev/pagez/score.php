@@ -207,8 +207,6 @@ if($result5->num_rows != 0){
 
 </div>	
 
-	<center>
-
 	<!-- The Waiting Modal -->
 	<div class="modal" id="reviewModal">
 		<div class="modal-dialog modal-dialog-centered">
@@ -221,12 +219,16 @@ if($result5->num_rows != 0){
 
 				<!-- Modal body -->
 				<div class="modal-body">
+
+					<center>
 				
-					<div id="star_1" class="star"></div>
-					<div id="star_2" class="star"></div>
-					<div id="star_3" class="star"></div>
-					<div id="star_4" class="star"></div>
-					<div id="star_5" class="star"></div>
+						<div id="star_1" class="star"></div>
+						<div id="star_2" class="star"></div>
+						<div id="star_3" class="star"></div>
+						<div id="star_4" class="star"></div>
+						<div id="star_5" class="star"></div>
+
+					</center>
 				
 					<textarea class="left" id="w3review" name="w3review" rows="4" cols="25">
 					</textarea><br/>
@@ -239,6 +241,8 @@ if($result5->num_rows != 0){
 			</div>
 		</div>
 	</div>
+
+	<center>
 
 		<div class="outer">
 			<div class="middle">
