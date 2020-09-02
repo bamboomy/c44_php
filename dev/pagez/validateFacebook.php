@@ -110,7 +110,7 @@ if(isset($_SESSION['invited'])){
 		<div class="middle">
 			<div class="inner center">
 
-				<? echo "<h2>Welcome back " . $_SESSION['firstName'] . " (".$row['name'].")!</h2>" ?>
+				<? echo "<h2>Welcome back ".$row['name']."!</h2>" ?>
 				
 				<a href="lobby.php">Let's see what great games await us...</a>
 
