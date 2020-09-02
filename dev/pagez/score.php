@@ -42,6 +42,10 @@ if($result5->num_rows != 0){
 	$starz = $row5['starz'];
 }
 
+$sql = "SELECT text FROM improvementz where userId='".$_SESSION['id']."'";
+
+$result6 = $conn->query($sql) or die($conn->error);
+
 ?>
 <html>
 	<head>
@@ -209,25 +213,33 @@ if($result5->num_rows != 0){
 		
 		$(".improvement").each(function( index ) {
 
-//		console.log( index + ": " + $( this ).text() );
+			if($( this ).val() != ""){
 
-			$.ajax({
-				type : "POST",
-				xhrFields : {
-					withCredentials : true
-				},
-<?					
-				echo "url : 'https://chess4four.org".$profilePath."/pagez/saveImprovement.php',";
-?>					
-				data : {
-					text : $( this ).val()
-				},
-				success : function(text) {
+				$.ajax({
+					type : "POST",
+					xhrFields : {
+						withCredentials : true
+					},
+	<?					
+					echo "url : 'https://chess4four.org".$profilePath."/pagez/saveImprovement.php',";
+	?>					
+					data : {
+						text : $( this ).val()
+					},
+					success : function(text) {
 
-				}
-			});
+					}
+				});
+				
+			}else{
+				
+				setTimeout(function() {
+
+					location.reload();
+
+				}, 1000);
+			}
 		});
-
 	}
 	
 
@@ -278,7 +290,12 @@ if($result5->num_rows != 0){
 					<label for="vehicle2" style="font-size: smaller;"> This review may be viewed publicly.</label><br>		
 
 					Possible improvements:<br/>
-					
+<?
+					while($row6 = $result6->fetch_assoc()){
+						
+						echo $row6['text']."<br/>";
+					}
+?>					
 					<div id="improvements">
 						<input type="text" class="improvement" onkeydown="checkLastImprovement();" /><br/><br/>
 					</div>
