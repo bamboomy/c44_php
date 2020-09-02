@@ -147,7 +147,7 @@ if($result5->num_rows != 0){
 	
 	function reSyncImprovements(){
 		
-		if($("#improvements").length() < improvementCount){
+		if($("#improvements").length < improvementCount){
 			
 			for(i = 0; i < improvementCount; i++){
 				
