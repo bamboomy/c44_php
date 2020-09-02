@@ -68,7 +68,13 @@ $base = $row4[0];
 	   display: inline-block;
 	}
 
+/*
 	.star:hover {
+	   background-image: url('../imgz/star_green.png');
+	}
+*/
+
+	.star.selected {
 	   background-image: url('../imgz/star_green.png');
 	}
 	
@@ -150,7 +156,7 @@ $base = $row4[0];
 				
 					<div class="star"></div>
 					<div class="star"></div>
-					<div class="star"></div>
+					<div class="star selected"></div>
 					<div class="star"></div>
 					<div class="star"></div>
 				
