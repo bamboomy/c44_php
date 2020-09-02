@@ -207,7 +207,7 @@ if($result5->num_rows != 0){
 
 	function addImprovement(){
 		
-		if ($(".improvement").last().val() == ""){
+		if ($(".improvement").last().val() != ""){
 			
 			improvementCount++;
 			
