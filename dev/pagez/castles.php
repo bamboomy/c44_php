@@ -449,7 +449,7 @@ if(!$voted){
 				<!-- Modal body -->
 				<div class="modal-body">
 
-					<a href="#" >Click here</a> to start a game with two...<br/>
+					<a href="doubleBot.php" >Click here</a> to start a game with two...<br/>
 					<br/>
 
 					<button type="button" onclick="$('#noOthersModal').modal('hide');" style="right: 10px;">Close</button>
