@@ -275,6 +275,13 @@ $row7 = $result7->fetch_assoc();
 		$('#reviewModal').modal('show');	
 	}
 	
+	function hideModal(){
+		
+		document.cookie = "";
+
+		$('#reviewModal').modal('hide');	
+	}
+	
 
 </script>
 		
@@ -362,6 +369,10 @@ if($row7['publicly'] == "Y"){
 						</div>
 						
 						<button type="button" onclick="save();">Save</button>
+						
+						<button type="button" onclick="hideModal();" style="right: 10px;">Close</button>
+						
+						
 					</form>
 				</div>
 			</div>
