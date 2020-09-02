@@ -122,6 +122,13 @@ $base = $row4[0];
 	$( document ).ready(function() {
 		
 		$('#reviewModal').modal('show');
+		
+		$( "div[id^='star']" ).hover(
+		
+			function() {
+				$( this ).addClass("selected");
+			}
+		);
 	});	
 
 </script>
@@ -154,11 +161,11 @@ $base = $row4[0];
 				<!-- Modal body -->
 				<div class="modal-body">
 				
-					<div class="star"></div>
-					<div class="star"></div>
-					<div class="star selected"></div>
-					<div class="star"></div>
-					<div class="star"></div>
+					<div id="star_1" class="star"></div>
+					<div id="star_2" class="star"></div>
+					<div id="star_3" class="star"></div>
+					<div id="star_4" class="star"></div>
+					<div id="star_5" class="star"></div>
 				
 					<p style="font-size: smaller;">You can choose between a random robot (Annoying Bot)<br/>
 					who puts people in check whenever it can;<br/>
