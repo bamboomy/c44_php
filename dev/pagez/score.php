@@ -277,7 +277,7 @@ $row7 = $result7->fetch_assoc();
 	
 	function hideModal(){
 		
-		document.cookie = "";
+		document.cookie = "myReviewModalShown=";
 
 		$('#reviewModal').modal('hide');	
 	}
