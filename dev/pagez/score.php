@@ -128,7 +128,7 @@ $base = $row4[0];
 			function() {
 				//$( this ).addClass("selected");
 				
-				var nr = $( this ).attr('id').split("_")[0];
+				var nr = $( this ).attr('id').split("_")[1];
 				
 				alert(nr);
 			}
