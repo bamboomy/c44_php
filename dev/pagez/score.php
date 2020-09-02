@@ -153,6 +153,13 @@ if($result5->num_rows != 0){
 				
 				$("#improvements").append( "<input type='text' class='improvement' />" );
 			}
+			
+			$( ".improvement" ).keydown(function() {
+			
+				improvementCount++;
+				
+				reSyncImprovements();
+			});
 		}
 	}
 
