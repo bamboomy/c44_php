@@ -156,7 +156,7 @@ $row7 = $result7->fetch_assoc();
 
 	$( document ).ready(function() {
 		
-		if(document.cookie.includes("modalShown=shown")){
+		if(document.cookie.includes("myReviewModalShown=shown")){
 			
 			$('#reviewModal').modal('show');
 		}
@@ -270,7 +270,7 @@ $row7 = $result7->fetch_assoc();
 	
 	function showModal() {
 		
-		document.cookie = "modalShown=shown";
+		document.cookie = "myReviewModalShown=shown";
 
 		$('#reviewModal').modal('show');	
 	}
