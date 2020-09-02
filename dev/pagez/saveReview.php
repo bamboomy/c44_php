@@ -11,7 +11,7 @@ if(!isset($_SESSION['id'])){
 
 include_once("settings.php");
 
-if($_POST['facebook'] = "true"){
+if(isset($_POST['facebook'])){
 	
 	$facebook = "Y";
 
@@ -20,7 +20,7 @@ if($_POST['facebook'] = "true"){
 	$facebook = "N";
 }
 
-if($_POST['publicly'] = "true"){
+if(isset($_POST['publicly']){
 	
 	$publicly = "Y";
 
