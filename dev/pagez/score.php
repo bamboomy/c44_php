@@ -164,7 +164,7 @@ $row7 = $result7->fetch_assoc();
 <?
 	if($starz == 0){
 ?>
-		$('#reviewModal').modal('show');
+		showModal();
 <?
 	}
 ?>

@@ -396,7 +396,7 @@ if($votes!=0 && $botVotes != 2 && $dubiousVotes != 2){
 	</head>
 	<body>
 	
-	<!-- The Waiting Modal -->
+	<!-- The 4thModal Modal -->
 	<div class="modal" id="4thModal">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
@@ -436,8 +436,34 @@ if(!$voted){
 		</div>
 	</div>
 
+	<!-- The noOthersModal Modal -->
+	<div class="modal" id="noOthersModal">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Just the two of you?</h4>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+
+					<a href="#" >Click here</a> to start a game with two...
+
+				</div>
+			</div>
+		</div>
+	</div>
+
 <?
-	if($counter == 3){
+	if($counter == 2){
+?>
+		<div style="margin: 10px; position: fixed; z-index: 1">
+			<p><a href="#" onclick="$('#noOthersModal').modal('show');">No other players?</a></p>
+		</div>
+<?
+	} else if($counter == 3){
 ?>
 		<div style="margin: 10px; position: fixed; z-index: 1">
 			<p><a href="#" onclick="$('#4thModal').modal('show');">No 4th player?</a></p>
