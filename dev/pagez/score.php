@@ -143,17 +143,9 @@ if($result5->num_rows != 0){
 		}
 	}
 
-	var improvementCount = 1;
-	
-	function reSyncImprovements(){
-		
-		if($("#improvements").length < improvementCount){
-			
-			for(i = 1; i < improvementCount; i++){
-				
-				$("#improvements").append( "<input type='text' class='improvement' onkeydown='addImprovement();' /><br/><br/>" );
-			}
-		}
+	function addImprovement(){
+
+		$("#improvements").append( "<input type='text' class='improvement' onkeydown='checkLastImprovement();' /><br/><br/>" );
 	}
 
 	$( document ).ready(function() {
@@ -205,13 +197,11 @@ if($result5->num_rows != 0){
 
 	});	
 
-	function addImprovement(){
+	function checkLastImprovement(){
 		
 		if ($(".improvement").last().val() != ""){
-			
-			improvementCount++;
-			
-			reSyncImprovements();
+
+			addImprovement();
 		}
 	}
 	
@@ -265,7 +255,7 @@ if($result5->num_rows != 0){
 					Possible improvements:<br/>
 					
 					<div id="improvements">
-						<input type="text" class="improvement" onkeydown="addImprovement();" /><br/><br/>
+						<input type="text" class="improvement" onkeydown="checkLastImprovement();" /><br/><br/>
 					</div>
 				</div>
 			</div>
