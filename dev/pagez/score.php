@@ -239,8 +239,7 @@ if($result5->num_rows != 0){
 					<label for="vehicle2" style="font-size: smaller;"> This review may be viewed publicly.</label><br>		
 
 					Possible improvements:<br/>
-					<br/>
-					
+
 					<input type="text" />
 				</div>
 			</div>
