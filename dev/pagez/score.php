@@ -151,7 +151,7 @@ if($result5->num_rows != 0){
 			
 			for(i = 1; i < improvementCount; i++){
 				
-				$("#improvements").append( "<input type='text' class='improvement' onkeydown='addImprovement();' /><br/>" );
+				$("#improvements").append( "<input type='text' class='improvement' onkeydown='addImprovement();' /><br/><br/>" );
 			}
 		}
 	}
@@ -262,7 +262,7 @@ if($result5->num_rows != 0){
 					Possible improvements:<br/>
 					
 					<div id="improvements">
-						<input type="text" class="improvement" onkeydown="addImprovement();" /><br/>
+						<input type="text" class="improvement" onkeydown="addImprovement();" /><br/><br/>
 					</div>
 				</div>
 			</div>
