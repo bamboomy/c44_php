@@ -231,7 +231,7 @@ $result6 = $conn->query($sql) or die($conn->error);
 				
 				setTimeout(function() {
 
-					location.reload();
+					$("#myForm").submit();
 
 				}, 1000);
 			}
@@ -292,32 +292,35 @@ $result6 = $conn->query($sql) or die($conn->error);
 						</textarea><br/>
 
 					</center>
-
-					<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-					<label for="vehicle1" style="font-size: smaller;"> This review may be posted on Facebook.</label><br>
-					<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-					<label for="vehicle2" style="font-size: smaller;"> This review may be viewed publicly.</label><br>		
-
-					Possible improvements:<br/>
-					<p style="font-size: smaller;">
-<?
-					$counter = 0;
-			
-					while($row6 = $result6->fetch_assoc()){
-						
-						echo "<br/><span style='width: auto;'>".$row6['text'];
-						echo "<img src='../imgz/red_cross.png' style='position: absolute; right: 10px;' onclick='remove(".$row6['id'].")'/>";
-						echo "</span>";
-						
-						$counter++;
-					}
-?>					
-					</p>
-					<div id="improvements">
-						<input type="text" class="improvement" onkeydown="checkLastImprovement();" /><br/><br/>
-					</div>
 					
-					<button type="button" onclick="save();">Save</button>
+					<form id="myForm" action="saveReview.php" method="get">
+
+						<input type="checkbox" id="facebook" name="facebook" value="Bike">
+						<label for="facebook" style="font-size: smaller;"> This review may be posted on Facebook.</label><br>
+						<input type="checkbox" id="publicly" name="publicly" value="Car">
+						<label for="publicly" style="font-size: smaller;"> This review may be viewed publicly.</label><br>		
+
+						Possible improvements:<br/>
+						<p style="font-size: smaller;">
+<?
+						$counter = 0;
+				
+						while($row6 = $result6->fetch_assoc()){
+							
+							echo "<br/><span style='width: auto;'>".$row6['text'];
+							echo "<img src='../imgz/red_cross.png' style='position: absolute; right: 10px;' onclick='remove(".$row6['id'].")'/>";
+							echo "</span>";
+							
+							$counter++;
+						}
+?>					
+						</p>
+						<div id="improvements">
+							<input type="text" class="improvement" onkeydown="checkLastImprovement();" /><br/><br/>
+						</div>
+						
+						<button type="button" onclick="save();">Save</button>
+					</form>
 				</div>
 			</div>
 		</div>
