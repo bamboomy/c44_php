@@ -29,6 +29,20 @@ $row4 = $result4->fetch_row();
 
 $base = $row4[0];
 
+$sql = "SELECT starz FROM sterren s WHERE s.created = ";
+$sql .= "(SELECT MAX(created) FROM sterren si WHERE si.id = s.id and userId='".$_SESSION['id']."');";
+
+$result5 = $conn->query($sql);
+
+$starz = 0;
+
+if($result5->num_rows != 0){
+
+	$row5 = $result5->fetch_row();
+	
+	$starz = $row5['starz'];
+}
+
 ?>
 <html>
 	<head>
@@ -78,6 +92,9 @@ $base = $row4[0];
 	   background-image: url('../imgz/star_green.png');
 	}
 	
+	.star.saved {
+	   background-image: url('../imgz/star_green.png');
+	}
 
 </style>		
 
@@ -139,17 +156,7 @@ $base = $row4[0];
 
 		$( "div[id^='star']" ).mouseleave(
 		
-			function() {
-
-//				$( this ).removeClass("selected");
-
-				var nr = $( this ).attr('id').split("_")[1];
-				
-				for (i = 0; i <= nr; i++) {
-					
-					$("#star_"+i).removeClass("selected");
-				}
-			}
+			retrieveStars()
 		);
 		
 		$( "div[id^='star']" ).click(
@@ -170,7 +177,24 @@ $base = $row4[0];
 			}
 		);
 		
+		retrieveStars();
+		
 	});	
+	
+	function retrieveStars(){
+
+		for (i = 0; i <= 5; i++) {
+			
+			$("#star_"+i).removeClass("selected");
+		}
+
+<? echo "var nr = " . $starz . ";"; ?>
+		
+		for (i = 0; i <= nr; i++) {
+			
+			$("#star_"+i).addClass("selected");
+		}
+	}
 
 </script>
 		
