@@ -16,6 +16,4 @@ $sql .= " values ('".$_SESSION['id']."', '".test_input($_POST['text'])."');";
 
 $result = $conn->query($sql) or die($conn->error);
 
-header("Location: score.php?game=".$_POST['game']);
-
 ?>
