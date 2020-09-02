@@ -294,7 +294,7 @@ $result6 = $conn->query($sql) or die($conn->error);
 <?
 					while($row6 = $result6->fetch_assoc()){
 						
-						echo $row6['text']."<br/>";
+						echo "<br/>".$row6['text'];
 					}
 ?>					
 					</p>
