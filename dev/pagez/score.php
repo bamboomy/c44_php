@@ -422,7 +422,7 @@ while($row = $result->fetch_assoc()){
 		</div>
 	</center>
 
-	<div style="margin: 10px; position: fixed; right: 10px; bottom: 0px; z-index: 1">
+	<div style="margin: 10px; position: fixed; right: 20px; bottom: 0px; z-index: 1">
 		<p><a href="#" onclick="showModal();">Edit review</a></p>
 	</div>
 		
