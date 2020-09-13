@@ -410,7 +410,7 @@ while($row = $result->fetch_assoc()){
 	
 	$row3 = $result3->fetch_assoc();
 	
-	echo "<li>".$row3['color'].": ".$row3['name'].": ".$row['reason']."</li>";
+	echo "<li>".$row3['color'].": ".str_replace("Dubious85247", "Dubious", $row3['name']).": ".$row['reason']."</li>";
 	
 }
 ?>				
