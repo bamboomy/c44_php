@@ -394,7 +394,7 @@ if($row7['publicly'] == "Y"){
 <?		
 	} else {
 		
-		
+		echo "ended";
 	}
 ?>
 
