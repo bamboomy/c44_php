@@ -393,8 +393,10 @@ if($row7['publicly'] == "Y"){
 	This is the partial result:</p>	
 <?		
 	} else {
-		
-		echo "ended";
+?>		
+	<p>The game ended,<br/>
+	these are the results:</p>	
+<?		
 	}
 ?>
 

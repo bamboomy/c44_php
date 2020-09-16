@@ -53,3 +53,7 @@ a:active {
   color: #0000FF;
   text-decoration: none;
 }
+
+#reload{
+	z-index: 1;
+}
