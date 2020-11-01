@@ -24,6 +24,8 @@ $sql = "insert into gebruiker (voornaam, name, fbId, fail, timeZone) values ('".
 
 $result = $conn->query($sql);
 
+echo $sql;
+
 ?>
 <html>
 <head>
