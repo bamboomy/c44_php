@@ -67,7 +67,7 @@ if ($result->num_rows == 0) {
 	
 	//header("Location: cookie.php");
 	
-	echo $sql;
+	echo $sql. "->". $result->num_rows;
 		
 	exit;
 }
