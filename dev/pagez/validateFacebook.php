@@ -65,7 +65,9 @@ $result = $conn->query($sql);
 
 if ($result->num_rows == 0) {
 	
-	header("Location: cookie.php");
+	//header("Location: cookie.php");
+	
+	echo $sql;
 		
 	exit;
 }
