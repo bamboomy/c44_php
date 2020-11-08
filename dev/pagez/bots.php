@@ -9,7 +9,7 @@ include_once("settings.php");
 		<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 		<style>
 			body {
-				 font-family: 'Aclonica';font-size: 22px;
+				font-family: 'Aclonica';font-size: 22px;
 			}
 		</style>
 		
