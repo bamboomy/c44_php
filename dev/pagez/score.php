@@ -430,8 +430,6 @@ function sortArrayByArray(array $array, array $orderArray) {
 			
 			$ordered[$key] = $array[$key];
         }
-		
-		var_dump($ordered);
     }
 	
     return $ordered;
@@ -473,6 +471,8 @@ while($row = $result->fetch_assoc()){
 $ordered = sortArrayByArray($players, $positions);
 
 foreach ($ordered as $key) {
+	
+	var_dump($ordered);
 	
 	if(count($ordered[$key]) == 1){
 		
