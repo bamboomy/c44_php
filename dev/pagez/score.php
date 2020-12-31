@@ -472,7 +472,7 @@ $ordered = sortArrayByArray($players, $positions);
 
 foreach ($ordered as $key => $value) {
 	
-	var_dump($ordered);
+	//var_dump($ordered);
 	
 	if(count($ordered[$key]) == 1){
 		
