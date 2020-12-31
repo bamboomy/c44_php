@@ -477,13 +477,13 @@ foreach ($ordered as $key => $value) {
 	
 	if(count($ordered[$key]) == 1){
 		
-		echo "<li>".$value['color'].": ".str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $value['name'])).": ".$key."</li>";
+		echo "<li>".$value[0].": ".str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $value[1])).": ".$key."</li>";
 		
 	} else {
 		
 		foreach ($value as $element){
 			
-			echo "<li>".$element['color'].": ".str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $element['name'])).": ".$key."</li>";
+			echo "<li>".$element[0].": ".str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $element[1])).": ".$key."</li>";
 		}
 	}
 }
