@@ -470,19 +470,19 @@ while($row = $result->fetch_assoc()){
 
 $ordered = sortArrayByArray($players, $positions);
 
-foreach ($ordered as $key) {
+foreach ($ordered as $key => $value) {
 	
 	var_dump($ordered);
 	
 	if(count($ordered[$key]) == 1){
 		
-		echo "<li>".$ordered[$key]['color'].": ".str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $ordered[$key]['name'])).": ".$key."</li>";
+		echo "<li>".$value['color'].": ".str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $value['name'])).": ".$key."</li>";
 		
 	} else {
 		
-		foreach ($ordered[$key] as $value){
+		foreach ($value as $element){
 			
-			echo "<li>".$value['color'].": ".str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $value['name'])).": ".$key."</li>";
+			echo "<li>".$element['color'].": ".str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $element['name'])).": ".$key."</li>";
 		}
 	}
 }
