@@ -288,7 +288,7 @@ $row7 = $result7->fetch_assoc();
 	</head>
 	<body>
 	
-<div id="reload" style="display: none;">
+<div id="reload" style="display: none; z-index: 2;">
 
 	<p>
 		The game also ended for someone else...<br/>
