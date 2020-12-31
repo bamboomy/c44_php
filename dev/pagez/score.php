@@ -404,6 +404,40 @@ if($row7['publicly'] == "Y"){
 
 <?
 
+function array_depth(array $array) {
+    $max_depth = 1;
+
+    foreach ($array as $value) {
+        if (is_array($value)) {
+            $depth = array_depth($value) + 1;
+
+            if ($depth > $max_depth) {
+                $max_depth = $depth;
+            }
+        }
+    }
+
+    return $max_depth;
+}
+
+function sortArrayByArray(array $array, array $orderArray) {
+	
+    $ordered = array();
+    
+	foreach ($orderArray as $key) {
+		
+        if (array_key_exists($key, $array)) {
+			
+			$ordered[$key] = $array[$key];
+        }
+    }
+    return $ordered;
+}
+
+$positions = array("winner", "pat", "mate", "resign");
+
+$players = array();
+
 while($row = $result->fetch_assoc()){
 	
 	$sql = "select color, name from colors_taken where java_hash = '".test_input($row['player'])."';";
@@ -411,9 +445,43 @@ while($row = $result->fetch_assoc()){
 	$result3 = $conn->query($sql) or die($conn->error);
 	
 	$row3 = $result3->fetch_assoc();
+
+	if (array_key_exists($row['reason'], $players)) {
+		
+		if(array_depth($players[$row['reason']]) == 1){
+			
+			$temp = array($players[$row['reason']]);
+			
+		} else {
+			
+			$temp = $players[$row['reason']];
+		}
+		
+		$temp[] = array($row3['color'], str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $row3['name'])));
+		
+		$players[$row['reason']] = $temp;
+		
+	} else {
+		
+		$players[$row['reason']] = array($row3['color'], str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $row3['name'])));
+	}
+}
+
+$ordered = sortArrayByArray($players, $positions);
+
+foreach ($ordered as $key) {
 	
-	echo "<li>".$row3['color'].": ".str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $row3['name'])).": ".$row['reason']."</li>";
-	
+	if(count($ordered[$key]) == 1){
+		
+		echo "<li>".$ordered[$key]['color'].": ".str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $ordered[$key]['name'])).": ".$key."</li>";
+		
+	} else {
+		
+		foreach ($ordered[$key] as $value){
+			
+			echo "<li>".$value['color'].": ".str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $value['name'])).": ".$key."</li>";
+		}
+	}
 }
 ?>				
 
