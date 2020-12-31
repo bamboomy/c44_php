@@ -430,7 +430,10 @@ function sortArrayByArray(array $array, array $orderArray) {
 			
 			$ordered[$key] = $array[$key];
         }
+		
+		var_dump($ordered);
     }
+	
     return $ordered;
 }
 
@@ -460,17 +463,11 @@ while($row = $result->fetch_assoc()){
 		$temp[] = array($row3['color'], str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $row3['name'])));
 		
 		$players[$row['reason']] = $temp;
-		
-		//var_dump($temp);
-		
+
 	} else {
 		
 		$players[$row['reason']] = array($row3['color'], str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $row3['name'])));
 	}
-	
-	echo "awan";
-	
-	var_dump($players);
 }
 
 $ordered = sortArrayByArray($players, $positions);
