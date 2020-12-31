@@ -468,6 +468,8 @@ while($row = $result->fetch_assoc()){
 		$players[$row['reason']] = array($row3['color'], str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $row3['name'])));
 	}
 	
+	echo "awan";
+	
 	var_dump($players);
 }
 
