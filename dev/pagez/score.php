@@ -472,9 +472,6 @@ $ordered = sortArrayByArray($players, $positions);
 
 foreach ($ordered as $key => $value) {
 	
-	var_dump($key);
-	var_dump($value);
-	
 	if(array_depth($value) == 1){
 		
 		echo "<li>".$value[0].": ".str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $value[1])).": ".$key."</li>";
