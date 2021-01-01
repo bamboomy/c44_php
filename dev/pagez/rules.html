@@ -1,0 +1,139 @@
+<html>
+	<head>
+	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+		<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+		
+		<link rel="stylesheet" type="text/css" href="../css/default.css">
+	</head>
+	<body>
+	<div style="margin: 20px;">
+		<h1>The rules of chess4four</h1>
+		
+Ok,<br/><br/>
+
+in this game we will play chess with 4 players,<br/>
+at the same time,<br/>
+on the same board :)<br/><br/>
+
+<h2>The Board:</h2>
+
+This is the board:<br/><br/>
+
+<img src="../imgz/board.png" width="" height="" /><br/><br/>
+
+A few notes compared to other forms of chess with 4 players:<br/>
+- it's regular chess, so no promotion in the middle of the board<br/>
+&nbsp;&nbsp;(you can promote if you reach the opposite side however<br/>
+&nbsp;&nbsp;(which is highly unlikely, but it is implemented)).<br/>
+- another difference with other forms of chess with 4 players is: <br/>
+&nbsp;&nbsp;there is no "buffer row" in front of your army:<br/>
+&nbsp;&nbsp;the right and left pawn can take the left and right (respectively) pawn <br/>
+&nbsp;&nbsp;of the right and left opponent (also respectively)<br/>
+&nbsp;&nbsp;(and thus freeing the towers early in the game)<br/>
+&nbsp;&nbsp;(the towers do have a row of eager pawns to look out for <br/>
+&nbsp;&nbsp;but they can be used earlier in the game compared to regular chess).<br/>
+<br/>
+<br/>
+
+<h2>Castling</h2>
+
+Castling is also supported with the <a href="https://en.wikipedia.org/wiki/Castling" target=”_blank”>rule from wikipedia</a><br/>
+(i.e. you are allowed to have been check and still castle).<br/>
+<br/>
+<br/>
+
+<h2>Direction</h2>
+
+The players each play forward, so, for the pawns<br/>
+(the only pieces that have a sense of direction<br/>
+when it comes to legal moves)<br/>
+this means:<br/>
+- situation A: both pawns block each other<br/>
+- situation B: yellow is blocked but green can move ahead<br/>
+<br/>
+
+<h2>En passant</h2>
+
+Here I'm quite proud of (pardon my braggin').<br/>
+This is where a lot of (some nightly) hours of work showed off:<br/>
+<a href="https://en.wikipedia.org/wiki/En_passant" target=”_blank”>en passant</a>:<br/>
+having 4 directions makes the en passant move (which isn't your vanilla chess move)<br/>
+<u>3 times</u> as difficult:<br/>
+- two (opposing) pawns can possibly perform en passant on the same pawn (fig. C.)<br/>
+- in rare conditions (sometimes it's a burden to be a perfectionist)<br/>
+&nbsp;&nbsp;one single pawn can capture <u>two</u> different pawns of two different opponents<br/>
+&nbsp;&nbsp;<u>with one and the same en passant move!!!</u> (fig. D.)<br/>
+<br/>
+
+<h2>Promoting</h2>
+
+Promoting is possible if you reach the other side of the board<br/>
+(the opposite side, so red when it arrives at the green side,<br/>
+green at the red side, yellow at the blue side, ...)<br/>
+For sake of simplicity you can only promote to a queen or knight.<br/>
+A queen can do the same moves as a tower or bishop<br/>
+so we didn't see the point in providing this nuance...<br/>
+<br/>
+
+<h2>Dubious player</h2>
+
+If there is only the three of you you can still play.<br/>
+<br/>
+In fact you can also play with two (against two robots)<br/>
+(and you can play alone from the start screen against 3 bots<br/>
+(but that isn't much fun (the bots are quite weak))).<br/>
+<br/>
+With three you can opt for a robot player,or a so-called "dubious player":<br/>
+the dubious player is controlled by a different player each turn<br/>
+if you lose (by mate or pat (or resign))<br/>
+you can still choose to control Dubious when it's your turn to do so.<br/>
+For now, when 1 human player and only Dubious remain in a game Dubious resigns<br/>
+(see also survey).<br/>
+You cannot resign from Dubious or let Dubious resign<br/>
+(unless you resign from the game)<br/>
+(if you resign from the game you can choose whether you still want to control Dubious,<br/>
+if you choose to continue controlling Dubious<br/>
+you can (for now) not come back from this decision.<br/>
+<br/>
+
+<h2>Some thoughts</h2>
+
+For players unfamiliar with playing with 4 players this is a real brain teaser.<br/>
+<br/>
+There is so much information and things you overlook when playing with 4.<br/>
+And with three (and Dubious) you see a different viewpoint from time to time<br/>
+(which also doesn't help...).<br/>
+<br/>
+If you have 4 medium level players things can get really complicated real quick.<br/><br/>
+
+For example: if you are strong with the bishops imagine what you can do in this game:<br/><br/>
+
+normally people expect attacks from the back or front (of 1 opponent)<br/>
+disorientated about having a left and right opponent a bishop can strike<br/>
+from 2x more directions, hidden in the chaos of the board,<br/>
+sniping when the opponent least expects it...  <br/>
+<br/>
+Well, I hope you will enjoy the game,<br/><br/>
+
+thanks for checking it out (pun intended)<br/><br/>
+
+and it would really be nice if you could take the time to fill in the survey<br/><br/>
+
+most importantly: keep having fun!!!<br/><br/>
+
+The Chess4four team.<br/>
+		</div>
+	</body>
+</html>
