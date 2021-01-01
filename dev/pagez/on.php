@@ -11,7 +11,16 @@ if(!isset($_SESSION['id'])){
 
 include_once("settings.php");
 
+$sql = "select started from game where hash = '".$_SESSION['hash']."';";
 
+$result = $conn->query($sql) or die($conn->error);
+
+if($result->num_rows != 1){
+	
+	die("nope :(");
+}
+
+$row = $result->fetch_assoc();
 
 ?>
 <html>
@@ -42,7 +51,19 @@ include_once("settings.php");
 
 					<div class="col-md-12">
 <?
+
+if($row["started"] != "Y"){
+
 	echo "<a href='https://chess4four.org".$profilePath."/tomcat/hello/".$_SESSION['java_hash']."'>It's on!!!</a>";
+
+} else {
+
+	echo "This game is already started...<br/><br/>What do you want to do?<br/><br/>";
+
+	echo "<a href='https://chess4four.org".$profilePath."/tomcat/hello/".$_SESSION['java_hash']."'>Log on</a><br/><br/>";
+	
+	echo "<a href='create.php'>Start another game.</a>";
+}
 ?>
 					</div>
 
