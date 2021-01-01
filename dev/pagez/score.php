@@ -474,13 +474,13 @@ foreach ($ordered as $key => $value) {
 	
 	if(array_depth($value) == 1){
 		
-		echo "<li>".$value[0].": ".str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $value[1])).": ".$key."</li>";
+		echo "<li>".$value[0].": ".$value[1].": ".$key."</li>";
 		
 	} else {
 		
 		foreach ($value as $element){
 			
-			echo "<li>".$element[0].": ".str_replace("Random85247", "Bot", str_replace("Dubious85247", "Dubious", $element[1])).": ".$key."</li>";
+			echo "<li>".$element[0].": ".$element[1].": ".$key."</li>";
 		}
 	}
 }
