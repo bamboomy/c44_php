@@ -60,7 +60,7 @@ if($row["started"] != "Y"){
 
 	echo "This game is already started...<br/><br/>What do you want to do?<br/><br/>";
 
-	echo "<a href='https://chess4four.org".$profilePath."/tomcat/hello/".$_SESSION['java_hash']."'>Log on</a><br/><br/>";
+	echo "<a href='https://chess4four.org".$profilePath."/tomcat/hello/".$_SESSION['java_hash']."'>Log on.</a><br/><br/>";
 	
 	echo "<a href='create.php'>Start another game.</a>";
 }
