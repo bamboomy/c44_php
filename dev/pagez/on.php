@@ -56,8 +56,6 @@ if($row["started"] != "Y" || !$_SESSION['onShown']){
 
 	echo "<a href='https://chess4four.org".$profilePath."/tomcat/hello/".$_SESSION['java_hash']."'>It's on!!!</a>";
 	
-	$_SESSION['onShown'] = true;
-
 } else {
 
 	echo "This game is already started...<br/><br/>What do you want to do?<br/><br/>";
@@ -66,6 +64,9 @@ if($row["started"] != "Y" || !$_SESSION['onShown']){
 	
 	echo "<a href='create.php'>Start another game.</a>";
 }
+
+$_SESSION['onShown'] = true;
+
 ?>
 					</div>
 
