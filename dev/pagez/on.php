@@ -52,9 +52,11 @@ $row = $result->fetch_assoc();
 					<div class="col-md-12">
 <?
 
-if($row["started"] != "Y"){
+if($row["started"] != "Y" || !$_SESSION['onShown']){
 
 	echo "<a href='https://chess4four.org".$profilePath."/tomcat/hello/".$_SESSION['java_hash']."'>It's on!!!</a>";
+	
+	$_SESSION['onShown'] = true;
 
 } else {
 
