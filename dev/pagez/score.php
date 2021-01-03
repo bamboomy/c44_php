@@ -439,7 +439,7 @@ if($row7['publicly'] == "Y"){
 						<br/>
 						In any case: thanks for have tested out the game!<br/>
 						<br/>
-						The chess4four team.
+						The Chess4four Team.
 					</center>
 				
 				</div>
