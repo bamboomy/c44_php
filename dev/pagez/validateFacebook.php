@@ -59,7 +59,7 @@ $_SESSION['fbId'] = $me->getProperty('id');
 
 $_SESSION['firstName'] = $me->getProperty('first_name');
 
-$sql = "select id, name from gebruiker where fbId='" . $_SESSION['fbId'] . "';";
+$sql = "select id, name, logins from gebruiker where fbId='" . $_SESSION['fbId'] . "';";
 
 $result = $conn->query($sql);
 
@@ -76,7 +76,7 @@ $_SESSION['id'] = $row['id'];
 
 $_SESSION['name'] = $row['name'];
 
-$sql = "update gebruiker set lastLogin = now() where id='" . $_SESSION['id'] . "';";
+$sql = "update gebruiker set lastLogin = now(), logins = '".($row['logins'] + 1)."' where id='" . $_SESSION['id'] . "';";
 
 $result = $conn->query($sql);
 
