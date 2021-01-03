@@ -1,0 +1,36 @@
+<?
+
+	header("Location: dev/");
+
+	die;
+
+?>
+<html>
+	<head>
+		<style>
+		#logo {
+			position:absolute; 
+			left:0; right:0;
+			top:0; bottom:0;
+			margin:auto;
+		}
+		</style>
+
+<!-- Global site tag (gtag.js) - Google Ads: 968172277 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-968172277"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-968172277');
+</script>
+		
+		
+	</head>
+<body>
+
+	<center><a href="pagez/bots.php"><img id="logo" src="imgz/logo.png" /></a></center>
+
+</body>
+</html>
