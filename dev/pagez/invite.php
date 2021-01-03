@@ -29,7 +29,6 @@ if ($result->num_rows != 0) {
 
 $conn->query($sql) or die($conn->error);
 
-
 if(!isset($_SESSION['id'])){
 	
 	header("Location: welcome.php");
