@@ -432,7 +432,7 @@ if($row7['publicly'] == "Y"){
 						This is the first time the app gets tested by it's real users,<br/>
 						(that means you)<br/>
 						<br/>
-						so we are really greatfull that you want to try it out<br/>
+						...so we are really greatfull that you want to try it out<br/>
 						in this experimental phase of the creative process.<br/>
 						<br/>
 						If you'd prefer not, it's not a problem,<br/>
