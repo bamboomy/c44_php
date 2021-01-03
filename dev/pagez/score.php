@@ -441,6 +441,8 @@ if($row7['publicly'] == "Y"){
 						<br/>
 						The Chess4four Team.
 					</center>
+					
+					<button type="button" onclick="hideSurveyModal();" style="right: 10px; position: absolute;">Close</button>
 				
 				</div>
 			</div>
