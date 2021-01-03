@@ -418,16 +418,26 @@ if($row7['publicly'] == "Y"){
 				<div class="modal-body">
 
 					<center>
-						We really would like your opinion about the game!!!<br/>
+						We really would like your opinion about the game...<br/>
 						<br/>
-						If you could fill in this survey, that would be really great!<br/><br/>
-						
-						It's anonymous, takes 5 min of your life and would mean the world to us!<br/>
+						If you could fill in this survey, that would be really great!<br/>
 						<br/>						
-						
+						It's anonymous, takes 5 min of your life and would mean the world to us!<br/>
+						<br/>				
+						<br/>
+						We realize there are problems, bugs, issues and improvements to be made,<br/>
+						but we need your help in either finding problems we didn't knew about<br/>
+						or, otherwise, address the most urgent problems first.<br/>
+						<br/>
+						This is the first time the app gets tested by it's real users,<br/>
+						(that means you)<br/>
+						<br/>
+						so we are really greatfull that you want to try it out<br/>
+						in this experimental phase of the creative process.<br/>
+						<br/>
 						If you'd prefer not, it's not a problem,<br/>
 						<br/>
-						Thanks for testing out the game!<br/>
+						In any case: thanks for have tested out the game!<br/>
 						<br/>
 						The chess4four team.
 					</center>
