@@ -2,12 +2,52 @@
 
 session_start();
 
+$page = "castles_attempt";
+
+$sql = "select counter from visits where page='".$page."';";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows != 0) {
+	
+	$row = $result->fetch_assoc();
+	
+	$sql = "update visits set counter = '".($row['counter'] + 1)."', updated = now() where page = '".$page."';";
+	
+} else {
+	
+	$sql = "insert into visits (page, counter) values ('".$page."', '1');";
+}
+
+$conn->query($sql) or die($conn->error);
+
+
 if(!isset($_SESSION['id'])){
 	
 	header("Location: welcome.php");
 		
 	exit;
 }
+
+$page = "castles_success";
+
+$sql = "select counter from visits where page='".$page."';";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows != 0) {
+	
+	$row = $result->fetch_assoc();
+	
+	$sql = "update visits set counter = '".($row['counter'] + 1)."', updated = now() where page = '".$page."';";
+	
+} else {
+	
+	$sql = "insert into visits (page, counter) values ('".$page."', '1');";
+}
+
+$conn->query($sql) or die($conn->error);
+
 
 setcookie("hash", md5($_SESSION['java_hash']."centerparks555"), time() + 60*60*24*30, "/");
 
