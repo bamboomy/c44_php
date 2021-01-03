@@ -161,12 +161,28 @@ $row7 = $result7->fetch_assoc();
 			$('#reviewModal').modal('show');
 		}
 
+		if(document.cookie.includes("mySurveyModalShown=shown")){
+			
+			$('#surveyModal').modal('show');
+		}
+
 <?
-	if($starz == 0){
+
+if($starz == 0){
+
 ?>
-		showModal();
+			//later...
+			//showModal();
+			
+		showSurveyModal();
 <?
-	}
+
+	$sql = "insert into sterren (userId, starz) ";
+	$sql .= " values ('".$_SESSION['id']."', '2');";
+
+	$result = $conn->query($sql) or die($conn->error);
+}
+
 ?>
 		
 		$( "div[id^='star']" ).mouseenter(
@@ -187,10 +203,7 @@ $row7 = $result7->fetch_assoc();
 			}
 		);
 
-		$( "div[id^='star']" ).mouseleave(
-		
-			retrieveStars
-		);
+		$( "div[id^='star']" ).mouseleave(retrieveStars);
 		
 		$( "div[id^='star']" ).click(
 		
@@ -281,6 +294,20 @@ $row7 = $result7->fetch_assoc();
 
 		$('#reviewModal').modal('hide');	
 	}
+
+	function showSurveyModal() {
+		
+		document.cookie = "mySurveyModalShown=shown";
+
+		$('#surveyModal').modal('show');	
+	}
+	
+	function hideSurveyModal(){
+		
+		document.cookie = "mySurveyModalShown=";
+
+		$('#surveyModal').modal('hide');	
+	}
 	
 
 </script>
@@ -298,7 +325,7 @@ $row7 = $result7->fetch_assoc();
 
 </div>	
 
-	<!-- The Waiting Modal -->
+	<!-- The Review Modal -->
 	<div class="modal" id="reviewModal">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
@@ -373,6 +400,38 @@ if($row7['publicly'] == "Y"){
 						<button type="button" onclick="hideModal();" style="right: 10px; position: absolute;">Close</button>
 
 					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" id="surveyModal">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<? echo "<h4 class='modal-title'>".$_SESSION['name'].", can we ask one thing?</h4>"; ?>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+
+					<center>
+						We really would like your opinion about the game!!!<br/>
+						<br/>
+						If you could fill in this survey, that would be really great!<br/><br/>
+						
+						It's anonymous, takes 5 min of your life and would mean the world to us!<br/>
+						<br/>						
+						
+						If you'd prefer not, it's not a problem,<br/>
+						<br/>
+						Thanks for testing out the game!<br/>
+						<br/>
+						The chess4four team.
+					</center>
+				
 				</div>
 			</div>
 		</div>
