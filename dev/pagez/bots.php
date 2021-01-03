@@ -2,7 +2,7 @@
 
 include_once("settings.php");
 
-$page = "logo";
+$page = "bots";
 
 $sql = "select counter from visits where page='".$page."';";
 
