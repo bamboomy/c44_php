@@ -21,7 +21,7 @@ if ($result->num_rows != 0) {
 	$sql = "insert into visits (page, counter) values ('".$page."', '1');";
 }
 
-$result = $conn->query($sql);
+$conn->query($sql) or die($conn->error);
 
 ?>
 
