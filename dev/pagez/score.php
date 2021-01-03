@@ -420,7 +420,7 @@ if($row7['publicly'] == "Y"){
 					<center>
 						We really would like your opinion about the game...<br/>
 						<br/>
-						If you could fill in <a href="https://docs.google.com/forms/d/1S10QqCMnAdwW5mLfupXJ7xTwT8B7OIiOIvzq1uPQL2k">this survey</a>
+						If you could fill in <a href="https://docs.google.com/forms/d/1S10QqCMnAdwW5mLfupXJ7xTwT8B7OIiOIvzq1uPQL2k" target="_blank">this survey</a>
 						, that would be really great!<br/>
 						<br/>						
 						It's anonymous, takes 5 min of your life and would mean the world to us!<br/>
