@@ -2,6 +2,8 @@
 
 session_start();
 
+include_once("settings.php");
+
 $page = "castles_attempt";
 
 $sql = "select counter from visits where page='".$page."';";
@@ -50,8 +52,6 @@ $conn->query($sql) or die($conn->error);
 
 
 setcookie("hash", md5($_SESSION['java_hash']."centerparks555"), time() + 60*60*24*30, "/");
-
-include_once("settings.php");
 
 $sql = "select color, name from colors_taken where game = '".$_SESSION['hash']."';";
 
