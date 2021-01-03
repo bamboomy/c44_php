@@ -566,7 +566,7 @@ foreach ($ordered as $key => $value) {
 	</center>
 
 	<div style="margin: 10px; position: fixed; right: 20px; bottom: 0px; z-index: 1">
-		<p><a href="#" onclick="showModal();">Edit review.</a></p>
+		<p><a href="#" onclick="showSurveyModal();">Show survey dialog.</a></p>
 	</div>
 
 	<div style="margin: 10px; position: fixed; left: 20px; bottom: 0px; z-index: 1">
