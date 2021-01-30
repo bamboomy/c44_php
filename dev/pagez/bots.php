@@ -44,7 +44,7 @@ $conn->query($sql) or die($conn->error);
 			<div class="inner center">
 <?
 
-	echo "<h1><a href='https://chess4four.org".$profilePath."/tomcat/bots/?id=".md5(microtime() . rand(0, 1000))."'>";
+	echo "<h1><a href='https://chess4four.org/prod/bots/tomcat/bots/?id=".md5(microtime() . rand(0, 1000))."'>";
 	echo "Try it!</a></h1>";
 
 ?>
