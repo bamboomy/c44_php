@@ -40,7 +40,7 @@ $conn->query($sql) or die($conn->error);
 
 	<center>
 		<a href="pagez/bots.php"><img id="logo" src="imgz/logo.png" /></a><br/>
-		<span style="position:absolute; bottom: 10px; left: 10px;">Version 0.2.0</span>
+		<h3 style="position:absolute; bottom: 10px; margin:auto;">Version 0.2.0</h3>
 	</center>
 
 </body>
