@@ -38,6 +38,7 @@ $conn->query($sql) or die($conn->error);
 		.centerBottom{
 			position:absolute; 
 			bottom: 10px;
+			margin:auto;
 		}
 		</style>
 	</head>
