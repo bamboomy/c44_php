@@ -34,13 +34,18 @@ $conn->query($sql) or die($conn->error);
 			top:0; bottom:0;
 			margin:auto;
 		}
+		
+		.centerBottom{
+			position:absolute; 
+			bottom: 10px;
+		}
 		</style>
 	</head>
 <body>
 
 	<center>
 		<a href="pagez/bots.php"><img id="logo" src="imgz/logo.png" /></a><br/>
-		<h3 style="position:absolute; bottom: 10px;">Version 0.2.0</h3>
+		<h3 class="centerBottom">Version 0.2.0</h3>
 	</center>
 
 </body>
