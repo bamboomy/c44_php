@@ -38,7 +38,10 @@ $conn->query($sql) or die($conn->error);
 	</head>
 <body>
 
-	<center><a href="pagez/bots.php"><img id="logo" src="imgz/logo.png" /></a></center>
+	<center>
+		<a href="pagez/bots.php"><img id="logo" src="imgz/logo.png" /></a><br/>
+		Version 0.2.0
+	</center>
 
 </body>
 </html>
