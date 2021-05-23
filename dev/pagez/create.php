@@ -13,7 +13,7 @@ include_once("settings.php");
 
 $four = array("Alfa", "Beta", "Gamma", "Delta", "Jota", "Mu", "Pi", "Rho", "Sigma", "Tau", "Phi", "Chi", "Psi", "Omega");
 
-$_SESSION['sentence'] = '"Game ' . $four[rand(0, count($four) - 1)] . '-';
+$_SESSION['sentence'] = '"' . $four[rand(0, count($four) - 1)] . '-';
 
 $_SESSION['sentence'] .= rand(1000, 7000) . '.' . rand(50, 600) . '"';
 
@@ -29,7 +29,7 @@ if ($result->num_rows != 0) {
 	
 	while($fail){
 		
-		$_SESSION['sentence'] = '"Game ' . $four[rand(0, count($four) - 1)] . '-';
+		$_SESSION['sentence'] = '"' . $four[rand(0, count($four) - 1)] . '-';
 
 		$_SESSION['sentence'] .= rand(1000, 7000) . '.' . rand(50, 600) . '"';
 
