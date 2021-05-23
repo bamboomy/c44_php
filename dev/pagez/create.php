@@ -17,7 +17,7 @@ $five = array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
 
 $_SESSION['sentence'] = '"' . $four[rand(0, count($four) - 1)] . '-';
 
-$_SESSION['sentence'] .= rand(1000, 7000) . '.' . rand(50, 600) . '-' . $five[rand(0, count($four) - 1)] . '"';
+$_SESSION['sentence'] .= rand(1000, 7000) . '.' . rand(50, 600) . '-' . $five[rand(0, count($four) - 1)] . '.' . rand(1, 9) . '"';
 
 $failCounter = 0;
 
@@ -33,7 +33,7 @@ if ($result->num_rows != 0) {
 		
 		$_SESSION['sentence'] = '"' . $four[rand(0, count($four) - 1)] . '-';
 
-		$_SESSION['sentence'] .= rand(1000, 7000) . '.' . rand(50, 600) . '-' . $five[rand(0, count($four) - 1)] . '"';
+		$_SESSION['sentence'] .= rand(1000, 7000) . '.' . rand(50, 600) . '-' . $five[rand(0, count($four) - 1)] . '.' . rand(1, 9) . '"';
 
 		$sql = "select id from game where sentence = '".$_SESSION['sentence']."';";
 
