@@ -456,27 +456,12 @@ if($row7['publicly'] == "Y"){
 				<div class="modal-body">
 
 					<center>
-						We really would like your opinion about the game...<br/>
+						If you don't mind we've got a little <a href="https://docs.google.com/forms/d/1S10QqCMnAdwW5mLfupXJ7xTwT8B7OIiOIvzq1uPQL2k" target="_blank">survey</a>
+						which we would like you to fill in...<br/>
 						<br/>
-						If you could fill in <a href="https://docs.google.com/forms/d/1S10QqCMnAdwW5mLfupXJ7xTwT8B7OIiOIvzq1uPQL2k" target="_blank">this survey</a>
-						, that would be really great!<br/>
+						No obligation, and we won't ask it again.<br/>
 						<br/>						
-						It's anonymous, takes 5 min of your life and would mean the world to us!<br/>
-						<br/>				
-						<br/>
-						We realize there are problems, bugs, issues and improvements to be made,<br/>
-						but we need your help in either finding problems we didn't knew about<br/>
-						or, otherwise, address the most urgent problems first.<br/>
-						<br/>
-						This is the first time the app gets tested by it's real users,<br/>
-						(that means you)<br/>
-						<br/>
-						...so we are really greatfull that you want to try it out<br/>
-						in this experimental phase of the creative process.<br/>
-						<br/>
-						If you'd prefer not, it's not a problem,<br/>
-						<br/>
-						In any case: thanks for have tested out the game!<br/>
+						We hope you enjoyed the game!<br/>
 						<br/>
 						The Chess4four Team.
 					</center>
@@ -545,7 +530,7 @@ function sortArrayByArray(array $array, array $orderArray) {
     return $ordered;
 }
 
-$positions = array("winner", "pat", "mate", "resign");
+$positions = array("winner", "pat", "mate", "timeout", "resign", "gone");
 
 $players = array();
 
