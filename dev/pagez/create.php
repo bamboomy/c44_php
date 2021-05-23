@@ -13,9 +13,11 @@ include_once("settings.php");
 
 $four = array("Alfa", "Beta", "Gamma", "Delta", "Jota", "Mu", "Pi", "Rho", "Sigma", "Tau", "Phi", "Chi", "Psi", "Omega");
 
+$five = array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n");
+
 $_SESSION['sentence'] = '"' . $four[rand(0, count($four) - 1)] . '-';
 
-$_SESSION['sentence'] .= rand(1000, 7000) . '.' . rand(50, 600) . '"';
+$_SESSION['sentence'] .= rand(1000, 7000) . '.' . rand(50, 600) . '-' . $five[rand(0, count($four) - 1)] . '"';
 
 $failCounter = 0;
 
@@ -31,7 +33,7 @@ if ($result->num_rows != 0) {
 		
 		$_SESSION['sentence'] = '"' . $four[rand(0, count($four) - 1)] . '-';
 
-		$_SESSION['sentence'] .= rand(1000, 7000) . '.' . rand(50, 600) . '"';
+		$_SESSION['sentence'] .= rand(1000, 7000) . '.' . rand(50, 600) . '-' . $five[rand(0, count($four) - 1)] . '"';
 
 		$sql = "select id from game where sentence = '".$_SESSION['sentence']."';";
 
