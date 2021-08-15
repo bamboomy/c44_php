@@ -264,18 +264,6 @@ function copy() {
 					</div>
 				</div>
 				
-				<div class="row align-items-center h-25">
-			
-					<div class="col-md-12">
-
-						<h5>You can share this link:
-						<? echo "<input id='myInput' type='text' value='https://chess4four.org".$profilePath."/pagez/invite.php?game=".$_SESSION['hash']."' />";
-						echo "<input type='button' onclick='copy();' value='copy' />"; ?>
-						</h5>
-
-					</div>
-				</div>
-				
 			</div>
 
 		</center>
