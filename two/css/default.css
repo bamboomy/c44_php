@@ -1,0 +1,59 @@
+
+
+body {
+	font-family: 'Aclonica';font-size: 22px;
+}
+
+.outer {
+	display: table;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.middle {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* unvisited link */
+a:link {
+  color: grey;
+  text-decoration: underline;
+}
+
+/* visited link */
+a:visited {
+  color: grey;
+  text-decoration: underline;
+}
+
+/* mouse over link */
+a:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: #0000FF;
+  text-decoration: none;
+}
+
+#reload{
+	z-index: 1;
+}
