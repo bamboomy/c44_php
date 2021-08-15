@@ -1,1 +1,6 @@
-sudo cp -R Dropbox/c44/* /var/www/html/
+git pull
+<<<<<<< Updated upstream
+sudo cp -R * /var/www/html/
+=======
+sudo cp -R 2/* /var/www/html/
+>>>>>>> Stashed changes
