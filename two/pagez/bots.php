@@ -31,7 +31,7 @@ include_once("settings.php");
 ?>
 				<h1><a href="welcome.php">Play it!</a></h1>
 				<h1><a href="welcome.php">Rules</a></h1>
-				<h1><a href="welcome.php">Play with two.</a></h1>
+				<h1><a href="two.php">Play with two.</a></h1>
 
 			</div>
 		</div>
