@@ -89,6 +89,23 @@ figure{
    background-image: url('../imgz/yellow_castle_taken.png');
 }
 
+#Green:hover {
+   background-image: url('../imgz/green_castle_taken.png');
+}
+
+#Blue:hover {
+   background-image: url('../imgz/blue_castle_taken.png');
+}
+
+#Red:hover {
+   background-image: url('../imgz/red_castle_taken.png');
+}
+
+#Yellow:hover {
+   background-image: url('../imgz/yellow_castle_taken.png');
+}
+
+
 h3{
 	
 	margin-top: 15px;
