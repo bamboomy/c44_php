@@ -7,6 +7,8 @@ session_start();
 
 include_once("settings.php");
 
+$color = $_SESSION[$color[$_GET['color']]];
+
 ?>
 
 <html>
@@ -50,9 +52,22 @@ figure{
 }
 
 #Green {
-   background-image: url('../imgz/green_castle_unclaimed.png');
-   height: 170px;
-   width: 300px;
+
+<?
+
+if($color == 'green'){
+
+    background-image: url('../imgz/green_castle_taken.png');
+
+} else {
+
+    background-image: url('../imgz/green_castle_unclaimed.png');
+}
+
+?>
+
+    height: 170px;
+    width: 300px;
 }
 
 #Blue {
@@ -73,6 +88,7 @@ figure{
    width: 300px;
 }
 
+/*
 #Green.taken {
    background-image: url('../imgz/green_castle_taken.png');
 }
@@ -90,7 +106,7 @@ figure{
 }
 
 #Green:hover {
-   background-image: url('../imgz/green_castle_taken.png');
+   
 }
 
 #Blue:hover {
@@ -104,7 +120,7 @@ figure{
 #Yellow:hover {
    background-image: url('../imgz/yellow_castle_taken.png');
 }
-
+*/
 
 h3{
 	
