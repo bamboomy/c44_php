@@ -13,11 +13,11 @@ include_once("settings.php");
 
 $four = array("A wonderfull", "Some good", "A tea spoon of", "A green", "A wooden", "A bright", "A decent", "An excellent", "A handfull of");
 
-$one = array("breeze", "tea", "outlet", "garden", "color", "t-shirt", "glass", "chocolate", "ashtray", "card", "letter", "globe", "bottle");
+$one = array("breeze", "tea", "outlet", "garden", "color", "t-shirt", "glass", "chocolate", "card", "letter", "globe", "bottle");
 
-$two = array("without", "in", "between", "amongst", "outside of", "with");
+$two = array("without", "in", "amongst", "outside of", "with");
 
-$three = array("the dark", "elves", "Godot", "a lamp", "the unknown", "the French", "a sister", "some coffee", "a group of Elvises", "Indiana Jones");
+$three = array("elves.", "Godot.", "a lamp.", "some coffee.", "a group of Elvises.", "Indiana Jones.");
 
 $_SESSION['sentence'] = '"' . $four[rand(0, count($four) - 1)] . ' ';
 
