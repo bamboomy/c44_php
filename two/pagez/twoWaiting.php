@@ -57,11 +57,11 @@ figure{
 
 if($color == 'green'){
 
-    background-image: url('../imgz/green_castle_taken.png');
+    echo "background-image: url('../imgz/green_castle_taken.png');";
 
 } else {
 
-    background-image: url('../imgz/green_castle_unclaimed.png');
+    echo "background-image: url('../imgz/green_castle_unclaimed.png');";
 }
 
 ?>
