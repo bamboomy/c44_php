@@ -7,7 +7,16 @@ session_start();
 
 include_once("settings.php");
 
-$color = $_SESSION[$color[$_GET['color']]];
+$ownColor = $_SESSION[$color[$_GET['color']]];
+
+if($ownColor == 'green'){
+
+    $greenName = "You";
+
+} else {
+
+    $greenName = "unclaimed";
+}
 
 ?>
 
@@ -55,7 +64,7 @@ figure{
 
 <?
 
-if($color == 'green'){
+if($ownColor == 'green'){
 
     echo "background-image: url('../imgz/green_castle_taken.png');";
 
@@ -237,14 +246,7 @@ function copy() {
 							<div id="Green"></div>
 <?
 
-if($color == 'green'){
-
-    echo "<figcaption> Green: You</figcaption>";
-
-} else {
-
-    echo "<figcaption> Green: unclaimed</figcaption>";
-}
+echo "<figcaption> Green: ".$greenName."</figcaption>";
 
 ?>
 						</figure>
