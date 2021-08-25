@@ -225,7 +225,7 @@ function copy() {
 
 						<figure>
 							<div id="Green" onmouseover="changeText('green')" 
-								onclick="claim('Green')" 
+<?  echo "onclick=\"window.location.assign('twoWaiting.php?color=".$greenMD5."')\""; ?>
 								onmouseout="resetText('green')"></div>
 							
 							<figcaption> Green: <span id="greenName">unclaimed</span> </figcaption>
