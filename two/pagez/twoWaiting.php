@@ -234,11 +234,19 @@ function copy() {
 					<div class="col-md-3">
 
 						<figure>
-							<div id="Green" onmouseover="changeText('green')" 
-								onclick="claim('Green')" 
-								onmouseout="resetText('green')"></div>
-							
-							<figcaption> Green: <span id="greenName">unclaimed</span> </figcaption>
+							<div id="Green"></div>
+<?
+
+if($color == 'green'){
+
+    echo "<figcaption> Green: You</figcaption>";
+
+} else {
+
+    echo "<figcaption> Green: unclaimed</figcaption>";
+}
+
+?>
 						</figure>
 
 					</div>
