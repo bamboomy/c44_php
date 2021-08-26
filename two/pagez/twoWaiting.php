@@ -19,6 +19,8 @@ $ownColor = $_SESSION[$color[$_GET['color']]];
 $sql = "insert into 42player (gameHash, color, first, sideKick) ";
 $sql .= " values ('".$gameHash."', '".$ownColor."', 'Y', 'N');";
 
+$result = $conn->query($sql);
+
 if($ownColor == 'green'){
 
     $greenName = "You";
