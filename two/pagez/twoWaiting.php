@@ -7,19 +7,37 @@ session_start();
 
 include_once("settings.php");
 
-$gameHash = md5( time() . rand());
-
-$sql = "insert into game42 (hash) ";
-$sql .= " values ('".$gameHash."');";
-
-$result = $conn->query($sql);
-
 $ownColor = $_SESSION[$color[$_GET['color']]];
 
-$sql = "insert into 42player (gameHash, color, first, sideKick) ";
-$sql .= " values ('".$gameHash."', '".$ownColor."', 'Y', 'N');";
+if(!isset($_SESSION['generated']){
+
+    $gameHash = md5( time() . rand());
+    
+    $_SESSION['gameHash'] = $gameHash;
+
+    $sql = "insert into game42 (hash) ";
+    $sql .= " values ('".$gameHash."');";
+
+    $result = $conn->query($sql);
+
+    $sql = "insert into 42player (gameHash, color, first, sideKick) ";
+    $sql .= " values ('".$gameHash."', '".$ownColor."', 'Y', 'N');";
+
+    $result = $conn->query($sql);
+    
+    $_SESSION['generated'] = "set";
+}
+
+$sql = "select state from game42 where hash = '".$_SESSION['gameHash']."' and state <> 'begun';";
 
 $result = $conn->query($sql);
+
+if ($result->num_rows != 1) {
+
+    die("no game found");
+}
+
+$row = $result->fetch_assoc();
 
 if($ownColor == 'green'){
 
@@ -305,12 +323,16 @@ echo "<figcaption> Green: ".$greenName."</figcaption>";
 				<div class="row align-items-center h-25">
 			
 					<div class="col-md-12">
-
+<?
+    if($row['state'] == 'new'){
+?>
 						<h5>You can share this link:
 						<? echo "<input id='myInput' type='text' value='https://chess4four.org".$profilePath."/pagez/invite.php?game=".$_SESSION['hash']."' />";
 						echo "<input type='button' onclick='copy();' value='copy' />"; ?>
 						</h5>
-
+<?
+    }
+?>
 					</div>
 				</div>
 				
