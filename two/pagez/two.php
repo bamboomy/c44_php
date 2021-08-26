@@ -11,8 +11,6 @@ $greenMD5 = md5( time() . rand());
 
 $_SESSION[$color[$greenMD5]] = 'green';
 
-echo getrandmax();
-
 ?>
 
 <html>

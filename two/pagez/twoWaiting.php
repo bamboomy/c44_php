@@ -12,6 +12,8 @@ $sql .= " values ('".md5( time() . rand())."');";
 
 $result = $conn->query($sql);
 
+echo $sql;
+
 
 $ownColor = $_SESSION[$color[$_GET['color']]];
 
