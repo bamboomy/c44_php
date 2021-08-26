@@ -295,7 +295,7 @@ echo "<figcaption> Blue: ".$blueName."</figcaption>";
                             <div id="Red"></div>
 <?
 							
-echo "<figcaption> Red: ".$blueName."</figcaption>";
+echo "<figcaption> Red: ".$redName."</figcaption>";
 
 ?>
 						</figure>
