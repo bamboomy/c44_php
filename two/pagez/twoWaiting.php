@@ -48,6 +48,33 @@ if($ownColor == 'green'){
     $greenName = "unclaimed";
 }
 
+if($ownColor == 'blue'){
+
+    $blueName = "You";
+
+} else {
+
+    $blueName = "unclaimed";
+}
+
+if($ownColor == 'red'){
+
+    $redName = "You";
+
+} else {
+
+    $redName = "unclaimed";
+}
+
+if($ownColor == 'yellow'){
+
+    $yellowName = "You";
+
+} else {
+
+    $yellowName = "unclaimed";
+}
+
 ?>
 
 <html>
@@ -110,21 +137,60 @@ if($ownColor == 'green'){
 }
 
 #Blue {
-   background-image: url('../imgz/blue_castle_unclaimed.png');
-   height: 170px;
-   width: 300px;
+
+<?
+
+if($ownColor == 'blue'){
+
+    echo "background-image: url('../imgz/blue_castle_taken.png');";
+
+} else {
+
+    echo "background-image: url('../imgz/blue_castle_unclaimed.png');";
+}
+
+?>
+
+    height: 170px;
+    width: 300px;
 }
 
 #Red {
-   background-image: url('../imgz/red_castle_unclaimed.png');
-   height: 170px;
-   width: 300px;
+
+<?
+
+if($ownColor == 'red'){
+
+    echo "background-image: url('../imgz/red_castle_taken.png');";
+
+} else {
+
+    echo "background-image: url('../imgz/red_castle_unclaimed.png');";
+}
+
+?>
+
+    height: 170px;
+    width: 300px;
 }
 
 #Yellow {
-   background-image: url('../imgz/yellow_castle_unclaimed.png');
-   height: 170px;
-   width: 300px;
+
+<?
+
+if($ownColor == 'yellow'){
+
+    echo "background-image: url('../imgz/yellow_castle_taken.png');";
+
+} else {
+
+    echo "background-image: url('../imgz/yellow_castle_unclaimed.png');";
+}
+
+?>
+
+    height: 170px;
+    width: 300px;
 }
 
 /*
@@ -170,78 +236,6 @@ h3{
 
 <script>
 
-	var listen = true;
-	
-	var name = 'You'; 
-
-function changeText(color){
-	
-	if(!listen){
-		
-		return;
-	}
-
-	if(color == "green"){
-	
-		$('#greenName').html(name);
-	
-	} else if(color == "blue"){
-	
-		$('#blueName').html(name);
-	
-	} else if(color == "red"){
-	
-		$('#redName').html(name);
-	
-	} else if(color == "yellow"){
-	
-		$('#yellowName').html(name);
-	}
-}
-
-function resetText(color){
-
-	if(!listen){
-		
-		return;
-	}
-
-	if(color == "green"){
-		
-		$('#greenName').html('unclaimed');
-
-	} else if(color == "blue"){
-	
-		$('#blueName').html('unclaimed');
-	
-	} else if(color == "red"){
-	
-		$('#redName').html('unclaimed');
-	
-	} else if(color == "yellow"){
-	
-		$('#yellowName').html('unclaimed');
-	}
-}
-
-function claim(color){
-
-	if(!listen){
-		
-		return;
-	}
-
-	$.ajax({
-		type : "GET",
-		url : "claim.php?color="+color,
-		async : false,
-		success : function(text) {
-			
-			location.reload();
-		}
-	});
-}
-
 function copy() {
   var copyText = document.getElementById("myInput");
   copyText.select();
@@ -285,10 +279,13 @@ echo "<figcaption> Green: ".$greenName."</figcaption>";
 					<div class="col-md-3">
 
 						<figure>
+                            <div id="Blue"></div>
 							
-							<div id="Blue" onmouseover="changeText('blue')" 
-								onclick="claim('Blue')" 
-								onmouseout="resetText('blue')"></div>
+<?
+							
+echo "<figcaption> Blue: ".$blueName."</figcaption>";
+
+?>
 
 							<figcaption> Blue: <span id="blueName">unclaimed</span> </figcaption>
 						</figure>
@@ -297,10 +294,12 @@ echo "<figcaption> Green: ".$greenName."</figcaption>";
 					<div class="col-md-3">
 
 						<figure>
-						
-							<div id="Red" onmouseover="changeText('red')" 
-								onclick="claim('Red')" 
-								onmouseout="resetText('red')"></div>
+                            <div id="Red"></div>
+<?
+							
+echo "<figcaption> Red: ".$blueName."</figcaption>";
+
+?>
 
 							<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
 						</figure>
@@ -310,11 +309,13 @@ echo "<figcaption> Green: ".$greenName."</figcaption>";
 
 						<figure>
 						
-							<div id="Yellow" onmouseover="changeText('yellow')" 
-								onclick="claim('Yellow')" 
-								onmouseout="resetText('yellow')"></div>
+							<div id="Yellow"></div>
 
-							<figcaption> Yellow: <span id="yellowName">unclaimed</span> </figcaption>
+<?
+							
+echo "<figcaption> Yellow: ".$yellowName."</figcaption>";
+
+?>
 						</figure>
 
 					</div>
