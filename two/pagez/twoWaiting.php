@@ -7,15 +7,19 @@ session_start();
 
 include_once("settings.php");
 
+$gameHash = md5( time() . rand());
+
 $sql = "insert into game42 (hash) ";
-$sql .= " values ('".md5( time() . rand())."');";
+$sql .= " values ('".$gameHash."');";
 
 $result = $conn->query($sql);
 
 echo $sql;
 
-
 $ownColor = $_SESSION[$color[$_GET['color']]];
+
+$sql = "insert into 42player (gameHash, color, first, sideKick) ";
+$sql .= " values ('".$gameHash."', '".$ownColor."', 'Y', 'N');";
 
 if($ownColor == 'green'){
 
