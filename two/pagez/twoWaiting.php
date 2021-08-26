@@ -14,8 +14,6 @@ $sql .= " values ('".$gameHash."');";
 
 $result = $conn->query($sql);
 
-echo $sql;
-
 $ownColor = $_SESSION[$color[$_GET['color']]];
 
 $sql = "insert into 42player (gameHash, color, first, sideKick) ";
