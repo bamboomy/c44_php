@@ -12,10 +12,10 @@ $blueMD5 = md5( time() . rand());
 $redMD5 = md5( time() . rand());
 $yellowMD5 = md5( time() . rand());
 
-$_SESSION[$color[$greenMD5]] = 'green';
-$_SESSION[$color[$blueMD5]] = 'blue';
-$_SESSION[$color[$redMD5]] = 'red';
-$_SESSION[$color[$yellowMD5]] = 'yellow';
+$_SESSION[$greenMD5] = 'green';
+$_SESSION[$blueMD5] = 'blue';
+$_SESSION[$redMD5] = 'red';
+$_SESSION[$yellowMD5] = 'yellow';
 
 unset($_SESSION['generated']);
 

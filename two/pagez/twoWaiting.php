@@ -7,7 +7,7 @@ session_start();
 
 include_once("settings.php");
 
-$ownColor = $_SESSION[$color[$_GET['color']]];
+$ownColor = $_SESSION[$_GET['color']];
 
 if(!isset($_SESSION['generated'])){
 
