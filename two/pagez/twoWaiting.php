@@ -286,8 +286,6 @@ echo "<figcaption> Green: ".$greenName."</figcaption>";
 echo "<figcaption> Blue: ".$blueName."</figcaption>";
 
 ?>
-
-							<figcaption> Blue: <span id="blueName">unclaimed</span> </figcaption>
 						</figure>
 
 					</div>
@@ -300,8 +298,6 @@ echo "<figcaption> Blue: ".$blueName."</figcaption>";
 echo "<figcaption> Red: ".$blueName."</figcaption>";
 
 ?>
-
-							<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
 						</figure>
 
 					</div>
