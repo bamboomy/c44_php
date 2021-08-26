@@ -8,8 +8,14 @@ session_start();
 include_once("settings.php");
 
 $greenMD5 = md5( time() . rand());
+$blueMD5 = md5( time() . rand());
+$redMD5 = md5( time() . rand());
+$yellowMD5 = md5( time() . rand());
 
 $_SESSION[$color[$greenMD5]] = 'green';
+$_SESSION[$color[$blueMD5]] = 'blue';
+$_SESSION[$color[$redMD5]] = 'red';
+$_SESSION[$color[$yellowMD5]] = 'yellow';
 
 unset($_SESSION['generated']);
 
@@ -237,7 +243,7 @@ function copy() {
 						<figure>
 							
 							<div id="Blue" onmouseover="changeText('blue')" 
-								onclick="claim('Blue')" 
+<?  echo "onclick=\"window.location.assign('twoWaiting.php?color=".$blueMD5."')\""; ?>
 								onmouseout="resetText('blue')"></div>
 
 							<figcaption> Blue: <span id="blueName">unclaimed</span> </figcaption>
@@ -249,7 +255,7 @@ function copy() {
 						<figure>
 						
 							<div id="Red" onmouseover="changeText('red')" 
-								onclick="claim('Red')" 
+<?  echo "onclick=\"window.location.assign('twoWaiting.php?color=".$redMD5."')\""; ?>
 								onmouseout="resetText('red')"></div>
 
 							<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
@@ -261,7 +267,7 @@ function copy() {
 						<figure>
 						
 							<div id="Yellow" onmouseover="changeText('yellow')" 
-								onclick="claim('Yellow')" 
+<?  echo "onclick=\"window.location.assign('twoWaiting.php?color=".$yellowMD5."')\""; ?>
 								onmouseout="resetText('yellow')"></div>
 
 							<figcaption> Yellow: <span id="yellowName">unclaimed</span> </figcaption>
