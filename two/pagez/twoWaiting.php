@@ -327,7 +327,7 @@ echo "<figcaption> Green: ".$greenName."</figcaption>";
     if($row['state'] == 'new'){
 ?>
 						<h5>You can share this link:
-						<? echo "<input id='myInput' type='text' value='https://chess4four.org".$profilePath."/pagez/invite.php?game=".$_SESSION['hash']."' />";
+						<? echo "<input id='myInput' type='text' value='https://engine.chess4four.org/two/pagez/twoDecide.php?game=".$_SESSION['gameHash']."' />";
 						echo "<input type='button' onclick='copy();' value='copy' />"; ?>
 						</h5>
 <?
