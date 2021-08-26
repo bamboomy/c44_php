@@ -9,7 +9,7 @@ include_once("settings.php");
 
 $ownColor = $_SESSION[$color[$_GET['color']]];
 
-if(!isset($_SESSION['generated']){
+if(!isset($_SESSION['generated'])){
 
     $gameHash = md5( time() . rand());
     
