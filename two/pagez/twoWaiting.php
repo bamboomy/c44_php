@@ -7,6 +7,12 @@ session_start();
 
 include_once("settings.php");
 
+$sql = "insert into game42 (hash) ";
+$sql .= " values ('".md5( time() . rand())."');";
+
+$result = $conn->query($sql);
+
+
 $ownColor = $_SESSION[$color[$_GET['color']]];
 
 if($ownColor == 'green'){
