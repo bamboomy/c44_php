@@ -7,9 +7,13 @@ session_start();
 
 include_once("settings.php");
 
+$_SESSION['game'] = test_input($_GET['game']);
+
 $sql = "select color, first, sideKick from 42player where gameHash = '".test_input($_GET['game'])."';";
 
 $result = $conn->query($sql);
+
+$chooseSideKick = "N";
 
 while($row = $result->fetch_assoc()){
 
@@ -220,7 +224,9 @@ function claim(color){
 
 	$.ajax({
 		type : "GET",
-		url : "claim.php?color="+color,
+<?
+echo "url : 'claimTwo.php?color='+color+'&sideKick=".$chooseSideKick."',";
+?>
 		async : false,
 		success : function(text) {
 			
