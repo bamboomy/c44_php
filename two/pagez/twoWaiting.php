@@ -158,7 +158,7 @@ figure{
 
 <?
 
-if($ownColor == 'green'){
+if(isset($name['green'])){
 
     echo "background-image: url('../imgz/green_castle_taken.png');";
 
@@ -177,9 +177,9 @@ if($ownColor == 'green'){
 
 <?
 
-if($ownColor == 'blue'){
+if(isset($name['blue'])){
 
-    echo "background-image: url('../imgz/blue_castle_taken.png');";
+echo "background-image: url('../imgz/blue_castle_taken.png');";
 
 } else {
 
@@ -196,7 +196,7 @@ if($ownColor == 'blue'){
 
 <?
 
-if($ownColor == 'red'){
+if(isset($name['red'])){
 
     echo "background-image: url('../imgz/red_castle_taken.png');";
 
@@ -215,7 +215,7 @@ if($ownColor == 'red'){
 
 <?
 
-if($ownColor == 'yellow'){
+if(isset($name['yellow'])){
 
     echo "background-image: url('../imgz/yellow_castle_taken.png');";
 
