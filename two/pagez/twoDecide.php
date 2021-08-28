@@ -355,12 +355,24 @@ if(isset($name['red'])){
 					<div class="col-md-3">
 
 						<figure>
-						
+<?
+if(isset($name['yellow'])){
+?>
+							<div id="Yellow"></div>
+<?
+    echo "<figcaption> Yellow: ".$name['yellow']." </figcaption>";
+
+} else {
+
+?>
 							<div id="Yellow" onmouseover="changeText('yellow')" 
 								onclick="claim('yellow')" 
 								onmouseout="resetText('yellow')"></div>
-
 							<figcaption> Yellow: <span id="yellowName">unclaimed</span> </figcaption>
+<?
+}
+?>
+						
 						</figure>
 
 					</div>
