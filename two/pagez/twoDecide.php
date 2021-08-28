@@ -9,9 +9,18 @@ include_once("settings.php");
 
 $_SESSION['game'] = test_input($_GET['game']);
 
-$sql = "UPDATE game42 SET state = 'choosing' where hash = '".$_SESSION['game']."';";
+$sql = "select state from game42 where gameHash = '".test_input($_SESSION['game'])."';";
 
 $result = $conn->query($sql);
+
+$row = $result->fetch_assoc();
+
+if($row['state'] !== "engageable"){
+
+    $gameSQL = "UPDATE game42 SET state = 'choosing' where hash = '".$_SESSION['game']."';";
+
+    $conn->query($gameSQL);
+}
 
 $sql = "select color, first, sideKick from 42player where gameHash = '".test_input($_GET['game'])."';";
 
@@ -64,9 +73,12 @@ if ($result->num_rows == 3) {
 
     $conn->query($sql) or die($conn->error);
     
+    $gameSQL = "UPDATE game42 SET state = 'engageable' where hash = '".$_SESSION['game']."';";
+    
+    $conn->query($gameSQL);
+    
     header("Refresh:0");
 }
-
 
 ?>
 
