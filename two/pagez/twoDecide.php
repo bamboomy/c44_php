@@ -108,7 +108,18 @@ if(isset($name['blue'])){
 }
 
 #Red {
-   background-image: url('../imgz/red_castle_unclaimed.png');
+
+<?
+if(isset($name['red'])){
+?>
+    background-image: url('../imgz/red_castle_taken.png');
+<?
+} else {
+?>
+    background-image: url('../imgz/red_castle_unclaimed.png');
+<?
+}
+?>
    height: 170px;
    width: 300px;
 }
