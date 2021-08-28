@@ -175,8 +175,18 @@ h3{
 <script>
 
 	var listen = true;
-	
+
+<?
+if($chooseSideKick == "N"){
+?>
 	var name = 'You'; 
+<?
+} else {
+?>
+    var name = 'Your sidekick'; 
+<?
+} 
+?>						
 
 function changeText(color){
 	
