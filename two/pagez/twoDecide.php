@@ -318,18 +318,29 @@ if($chooseSideKick == "N"){
 					<div class="col-md-3">
 
 						<figure>
+<?
+if(isset($name['blue'])){
+?>
+							<div id="Green"></div>
+<?
+    echo "<figcaption> Green: ".$name['green']." </figcaption>";
+
+} else {
+
+?>
 							<div id="Green" onmouseover="changeText('green')" 
-<?  echo "onclick=\"window.location.assign('twoWaiting.php?color=".$greenMD5."')\""; ?>
+                                onclick="claim('green')" 
 								onmouseout="resetText('green')"></div>
-							
 							<figcaption> Green: <span id="greenName">unclaimed</span> </figcaption>
+<?
+}
+?>
 						</figure>
 
 					</div>
 					<div class="col-md-3">
 
 						<figure>
-
 <?
 if(isset($name['blue'])){
 ?>
