@@ -12,8 +12,29 @@ $sql = "select color, first, sideKick from 42player where gameHash = '".test_inp
 $result = $conn->query($sql);
 
 while($row = $result->fetch_assoc()){
+
+    if($row['first'] == 'Y'){
     
-    $name[$row['color']] = "opponent";
+        if($row['sideKick'] == 'Y'){
+        
+            $name[$row['color']] = "Opponent's sidekick";
+        
+        } else {
+        
+            $name[$row['color']] = "Opponent";
+        }
+        
+    } else {
+    
+        if($row['sideKick'] == 'Y'){
+        
+            $name[$row['color']] = "You";
+        
+        } else {
+        
+            $name[$row['color']] = "Your sidekick";
+        }
+    }
 }
 
 
