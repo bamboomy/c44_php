@@ -291,7 +291,6 @@ if(isset($name['blue'])){
 							<div id="Blue" onmouseover="changeText('blue')" 
 								onclick="claim('blue')" 
 								onmouseout="resetText('blue')"></div>
-
 							<figcaption> Blue: <span id="blueName">unclaimed</span> </figcaption>
 <?
 }
@@ -307,7 +306,7 @@ if(isset($name['red'])){
 ?>
 							<div id="Red"></div>
 <?
-    echo "<figcaption> Blue: ".$name['red']." </figcaption>";
+    echo "<figcaption> Red: ".$name['red']." </figcaption>";
 
 } else {
 
@@ -315,10 +314,10 @@ if(isset($name['red'])){
 							<div id="Red" onmouseover="changeText('red')" 
 								onclick="claim('red')" 
 								onmouseout="resetText('red')"></div>
+							<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
 <?
 }
 ?>
-							<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
 						</figure>
 
 					</div>
