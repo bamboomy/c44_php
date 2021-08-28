@@ -32,11 +32,11 @@ while($row = $result->fetch_assoc()){
     
         if($row['sideKick'] == 'Y'){
         
-            $name[$row['color']] = "You";
+            $name[$row['color']] = "Your sidekick";
         
         } else {
         
-            $name[$row['color']] = "Your sidekick";
+            $name[$row['color']] = "You";
         }
     }
 }
