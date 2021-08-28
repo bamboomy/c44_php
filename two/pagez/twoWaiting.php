@@ -294,7 +294,7 @@ function copy() {
 			
 					<div class="col-md-12">
 
-						<h3>Choose your color:</h3>
+						<h3>Waiting on opponent...</h3>
 						
 					</div>
 				</div>
