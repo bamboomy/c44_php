@@ -21,7 +21,7 @@ while($row = $result->fetch_assoc()){
     
         if($row['sideKick'] == 'Y'){
         
-            $name[$row['color']] = "Opponent's sidekick";
+            $name[$row['color']] = "Opponent's Sidekick";
         
         } else {
         
@@ -32,7 +32,7 @@ while($row = $result->fetch_assoc()){
     
         if($row['sideKick'] == 'Y'){
         
-            $name[$row['color']] = "Your sidekick";
+            $name[$row['color']] = "Your Sidekick";
         
         } else {
         
@@ -195,7 +195,7 @@ if($chooseSideKick == "N"){
 <?
 } else {
 ?>
-    var name = 'Your sidekick'; 
+    var name = 'Your Sidekick'; 
 <?
 } 
 ?>						
