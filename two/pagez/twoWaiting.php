@@ -77,7 +77,7 @@ if($ownColor == 'yellow'){
 }
 */
 
-$sql = "select color, first, sideKick from 42player where id = '".test_input($row['id'])."';";
+$sql = "select color, first, sideKick from 42player where gameHash = '".test_input($_SESSION['gameHash'])."';";
 
 $result = $conn->query($sql);
 
