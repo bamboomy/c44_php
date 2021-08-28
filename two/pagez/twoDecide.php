@@ -296,19 +296,28 @@ if(isset($name['blue'])){
 <?
 }
 ?>
-						
-						
 						</figure>
 
 					</div>
 					<div class="col-md-3">
 
 						<figure>
-						
+<?
+if(isset($name['red'])){
+?>
+							<div id="Red"></div>
+<?
+    echo "<figcaption> Blue: ".$name['red']." </figcaption>";
+
+} else {
+
+?>
 							<div id="Red" onmouseover="changeText('red')" 
 								onclick="claim('red')" 
 								onmouseout="resetText('red')"></div>
-
+<?
+}
+?>
 							<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
 						</figure>
 
