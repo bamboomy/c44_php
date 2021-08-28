@@ -455,6 +455,13 @@ if(isset($name['yellow'])){
 						
 						</figure>
 
+<?
+    if($decided){
+?>
+						<h2><a href="#">Engage!!!</a></h2>
+<?
+    }
+?>
 					</div>
 				</div>
 				
