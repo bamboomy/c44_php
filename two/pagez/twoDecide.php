@@ -7,11 +7,15 @@ session_start();
 
 include_once("settings.php");
 
-$greenMD5 = md5( time() . rand());
+$sql = "select color, first, sideKick from 42player where gameHash = '".test_input($_GET['game'])."';";
 
-$_SESSION[$color[$greenMD5]] = 'green';
+$result = $conn->query($sql);
 
-unset($_SESSION['generated']);
+while($row = $result->fetch_assoc()){
+    
+    echo $row['color'];
+}
+
 
 ?>
 
