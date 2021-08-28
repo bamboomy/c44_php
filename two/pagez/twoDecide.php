@@ -335,7 +335,7 @@ if($chooseSideKick == "N"){
 
 						<figure>
 <?
-if(isset($name['blue'])){
+if(isset($name['green'])){
 ?>
 							<div id="Green"></div>
 <?
