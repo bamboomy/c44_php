@@ -15,7 +15,11 @@ $result = $conn->query($sql);
 
 $chooseSideKick = "N";
 
+$remainingColor = array('green', 'blue', 'red', 'yellow');
+
 while($row = $result->fetch_assoc()){
+
+    unset($remainingColor[$row['color']]);
 
     if($row['first'] == 'Y'){
     
@@ -33,6 +37,11 @@ while($row = $result->fetch_assoc()){
         if($row['sideKick'] == 'Y'){
         
             $name[$row['color']] = "Your Sidekick";
+            
+            if(!empty($remainingColor)){
+            
+                $name[$remainingColor[0]]] = "Opponent's Sidekick";
+            }
         
         } else {
         
