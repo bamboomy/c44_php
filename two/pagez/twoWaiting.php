@@ -37,7 +37,7 @@ if ($result->num_rows != 1) {
     die("no game found");
 }
 
-$row = $result->fetch_assoc();
+$row0 = $result->fetch_assoc();
 
 /*
 if($ownColor == 'green'){
@@ -387,7 +387,7 @@ if(isset($name['yellow'])){
 			
 					<div class="col-md-12">
 <?
-    if($row['state'] == 'new'){
+    if($row0['state'] == 'new'){
 ?>
 						<h5>You can share this link:
 						<? echo "<input id='myInput' type='text' value='https://engine.chess4four.org/two/pagez/twoDecide.php?game=".$_SESSION['gameHash']."' />";
