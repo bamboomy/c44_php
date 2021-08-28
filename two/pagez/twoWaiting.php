@@ -39,6 +39,7 @@ if ($result->num_rows != 1) {
 
 $row = $result->fetch_assoc();
 
+/*
 if($ownColor == 'green'){
 
     $greenName = "You";
@@ -74,6 +75,42 @@ if($ownColor == 'yellow'){
 
     $yellowName = "unclaimed";
 }
+*/
+
+$sql = "select color, first, sideKick from 42player where gameHash = '".test_input($_GET['game'])."';";
+
+$result = $conn->query($sql);
+
+$chooseSideKick = "N";
+
+$remainingColor = array('green', 'blue', 'red', 'yellow');
+
+while($row = $result->fetch_assoc()){
+
+    if($row['first'] == 'Y'){
+    
+        if($row['sideKick'] == 'Y'){
+        
+            $name[$row['color']] = "Your Sidekick";
+            
+        } else {
+        
+            $name[$row['color']] = "You";
+        }
+        
+    } else {
+
+        if($row['sideKick'] == 'Y'){
+        
+            $name[$row['color']] = "Opponent's Sidekick";
+        
+        } else {
+        
+            $name[$row['color']] = "Opponent";
+        }
+    }
+}
+
 
 ?>
 
@@ -270,7 +307,7 @@ function copy() {
 							<div id="Green"></div>
 <?
 
-echo "<figcaption> Green: ".$greenName."</figcaption>";
+echo "<figcaption> Green: ".$name['green']."</figcaption>";
 
 ?>
 						</figure>
@@ -283,7 +320,7 @@ echo "<figcaption> Green: ".$greenName."</figcaption>";
 							
 <?
 							
-echo "<figcaption> Blue: ".$blueName."</figcaption>";
+echo "<figcaption> Blue: ".$name['blue']."</figcaption>";
 
 ?>
 						</figure>
@@ -295,7 +332,7 @@ echo "<figcaption> Blue: ".$blueName."</figcaption>";
                             <div id="Red"></div>
 <?
 							
-echo "<figcaption> Red: ".$redName."</figcaption>";
+echo "<figcaption> Red: ".$name['red']."</figcaption>";
 
 ?>
 						</figure>
@@ -309,7 +346,7 @@ echo "<figcaption> Red: ".$redName."</figcaption>";
 
 <?
 							
-echo "<figcaption> Yellow: ".$yellowName."</figcaption>";
+echo "<figcaption> Yellow: ".$name['yellow']."</figcaption>";
 
 ?>
 						</figure>

@@ -103,7 +103,7 @@ figure{
 #Green {
 
 <?
-if(isset($name['blue'])){
+if(isset($name['green'])){
 ?>
     background-image: url('../imgz/green_castle_taken.png');
 <?
@@ -154,7 +154,7 @@ if(isset($name['red'])){
 #Yellow {
 
 <?
-if(isset($name['blue'])){
+if(isset($name['yellow'])){
 ?>
     background-image: url('../imgz/yellow_castle_taken.png');
 <?
