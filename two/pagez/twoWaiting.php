@@ -311,7 +311,7 @@ if(isset($name['green'])){
 
 ?>
 							<div id="Green""></div>
-							<figcaption> Green: <span id="greenName">unclaimed</span> </figcaption>
+							<figcaption>Green: unclaimed</figcaption>
 <?
 }
 ?>
@@ -321,12 +321,20 @@ if(isset($name['green'])){
 					<div class="col-md-3">
 
 						<figure>
-                            <div id="Blue"></div>
-							
 <?
-							
-echo "<figcaption> Blue: ".$name['blue']."</figcaption>";
+if(isset($name['blue'])){
+?>
+                            <div id="Blue"></div>
+<?
+    echo "<figcaption> Blue: ".$name['blue']." </figcaption>";
 
+} else {
+
+?>
+							<div id="Blue""></div>
+							<figcaption>Blue: unclaimed</figcaption>
+<?
+}
 ?>
 						</figure>
 
@@ -334,11 +342,20 @@ echo "<figcaption> Blue: ".$name['blue']."</figcaption>";
 					<div class="col-md-3">
 
 						<figure>
+<?
+if(isset($name['red'])){
+?>
                             <div id="Red"></div>
 <?
-							
-echo "<figcaption> Red: ".$name['red']."</figcaption>";
+    echo "<figcaption> Red: ".$name['red']." </figcaption>";
 
+} else {
+
+?>
+							<div id="Red""></div>
+							<figcaption>Red: unclaimed</figcaption>
+<?
+}
 ?>
 						</figure>
 
@@ -346,13 +363,20 @@ echo "<figcaption> Red: ".$name['red']."</figcaption>";
 					<div class="col-md-3">
 
 						<figure>
-						
-							<div id="Yellow"></div>
-
 <?
-							
-echo "<figcaption> Yellow: ".$name['yellow']."</figcaption>";
+if(isset($name['yellow'])){
+?>
+                            <div id="Yellow"></div>
+<?
+    echo "<figcaption> Yellow: ".$name['yellow']." </figcaption>";
 
+} else {
+
+?>
+							<div id="Yellow""></div>
+							<figcaption>Yellow: unclaimed</figcaption>
+<?
+}
 ?>
 						</figure>
 
