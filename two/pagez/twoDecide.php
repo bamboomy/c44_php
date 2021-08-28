@@ -19,7 +19,9 @@ $remainingColor = array('green', 'blue', 'red', 'yellow');
 
 while($row = $result->fetch_assoc()){
 
-    unset($remainingColor[$row['color']]);
+    if (($key = array_search($row['color'], $remainingColor)) !== false) {
+        unset($remainingColor[$key]);
+    }
 
     if($row['first'] == 'Y'){
     
