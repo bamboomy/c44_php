@@ -250,7 +250,15 @@ function again() {
 	}, 500);
 }
 
+<?
+if($row0['state'] !== 'engageable'){
+?>
+
 again();
+
+<?
+}
+?>
 
 </script>
 	
@@ -379,7 +387,7 @@ if(isset($name['yellow'])){
 <?
     } else if($row0['state'] == 'engageable'){
 ?>
-						<h5><a href="#">Engage</a></h5>
+						<h2><a href="#">Engage!!!</a></h2>
 <?
     }
 ?>
