@@ -9,6 +9,10 @@ include_once("settings.php");
 
 $_SESSION['game'] = test_input($_GET['game']);
 
+$sql = "UPDATE game42 SET state = 'choosing' where hash = '".$_SESSION['game']."';";
+
+$result = $conn->query($sql);
+
 $sql = "select color, first, sideKick from 42player where gameHash = '".test_input($_GET['game'])."';";
 
 $result = $conn->query($sql);
