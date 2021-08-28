@@ -39,44 +39,6 @@ if ($result->num_rows != 1) {
 
 $row0 = $result->fetch_assoc();
 
-/*
-if($ownColor == 'green'){
-
-    $greenName = "You";
-
-} else {
-
-    $greenName = "unclaimed";
-}
-
-if($ownColor == 'blue'){
-
-    $blueName = "You";
-
-} else {
-
-    $blueName = "unclaimed";
-}
-
-if($ownColor == 'red'){
-
-    $redName = "You";
-
-} else {
-
-    $redName = "unclaimed";
-}
-
-if($ownColor == 'yellow'){
-
-    $yellowName = "You";
-
-} else {
-
-    $yellowName = "unclaimed";
-}
-*/
-
 $sql = "select color, first, sideKick from 42player where gameHash = '".test_input($_SESSION['gameHash'])."';";
 
 $result = $conn->query($sql);
@@ -276,6 +238,19 @@ function copy() {
   document.execCommand("copy");
   alert("Link copied...");
 }
+
+function again() {
+
+	setTimeout(function() {
+
+        location.reload();
+
+        again();
+
+	}, 500);
+}
+
+again();
 
 </script>
 	
