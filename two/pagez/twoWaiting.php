@@ -264,9 +264,17 @@ again();
 				<div class="row align-items-center h-25">
 			
 					<div class="col-md-12">
-
+<?
+if($row0['state'] == 'engageable'){
+?>
+						<h3>Let's do this!!!</h3>
+<?
+} else {
+?>
 						<h3>Waiting on opponent...</h3>
-						
+<?
+}
+?>
 					</div>
 				</div>
 				
@@ -368,6 +376,10 @@ if(isset($name['yellow'])){
 						<? echo "<input id='myInput' type='text' value='https://engine.chess4four.org/two/pagez/twoDecide.php?game=".$_SESSION['gameHash']."' />";
 						echo "<input type='button' onclick='copy();' value='copy' />"; ?>
 						</h5>
+<?
+    } else if($row0['state'] == 'engageable'){
+?>
+						<h5><a href="#">Engage</a>/h5>
 <?
     }
 ?>
