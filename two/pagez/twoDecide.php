@@ -37,19 +37,7 @@ while($row = $result->fetch_assoc()){
         if($row['sideKick'] == 'Y'){
         
             $name[$row['color']] = "Your Sidekick";
-            
-            if(!empty($remainingColor)){
-            
-                $last = array_pop($remainingColor);
-            
-                $name[$last] = "Opponent's Sidekick";
-                
-                $sql = "insert into 42player (gameHash, color, first, sideKick) ";
-                $sql .= " values ('".test_input($_SESSION['game'])."', '".test_input($last)."', 'Y', 'Y');";
 
-                $conn->query($sql) or die($conn->error);
-            }
-        
         } else {
         
             $name[$row['color']] = "You";
@@ -57,6 +45,20 @@ while($row = $result->fetch_assoc()){
             $chooseSideKick = "Y";
         }
     }
+}
+
+if ($result->num_rows == 3) {
+
+    $last = array_pop($remainingColor);
+
+    $name[$last] = "Opponent's Sidekick";
+    
+    $sql = "insert into 42player (gameHash, color, first, sideKick) ";
+    $sql .= " values ('".test_input($_SESSION['game'])."', '".test_input($last)."', 'Y', 'Y');";
+
+    $conn->query($sql) or die($conn->error);
+    
+    header("Refresh:0");
 }
 
 
