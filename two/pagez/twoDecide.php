@@ -256,7 +256,7 @@ if(isset($name['blue'])){
 ?>
 							<div id="Blue"></div>
 <?
-    echo "<figcaption> Blue: $name['blue'] </figcaption>";
+    echo "<figcaption> Blue: ".$name['blue']." </figcaption>";
 
 } else {
 
