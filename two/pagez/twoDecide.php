@@ -9,7 +9,7 @@ include_once("settings.php");
 
 $_SESSION['game'] = test_input($_GET['game']);
 
-$sql = "select state from game42 where gameHash = '".test_input($_SESSION['game'])."';";
+$sql = "select state from game42 where hash = '".test_input($_SESSION['game'])."';";
 
 $result = $conn->query($sql);
 
