@@ -96,7 +96,18 @@ figure{
 }
 
 #Green {
-   background-image: url('../imgz/green_castle_unclaimed.png');
+
+<?
+if(isset($name['blue'])){
+?>
+    background-image: url('../imgz/green_castle_taken.png');
+<?
+} else {
+?>
+    background-image: url('../imgz/green_castle_unclaimed.png');
+<?
+}
+?>
    height: 170px;
    width: 300px;
 }
