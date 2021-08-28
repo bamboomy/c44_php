@@ -40,7 +40,7 @@ while($row = $result->fetch_assoc()){
             
             if(!empty($remainingColor)){
             
-                $name[$remainingColor[0]]] = "Opponent's Sidekick";
+                $name[$remainingColor[0]] = "Opponent's Sidekick";
             }
         
         } else {
