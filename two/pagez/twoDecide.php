@@ -37,6 +37,8 @@ while($row = $result->fetch_assoc()){
         } else {
         
             $name[$row['color']] = "You";
+            
+            $chooseSideKick = "Y";
         }
     }
 }
@@ -266,9 +268,17 @@ function copy() {
 				<div class="row align-items-center h-25">
 			
 					<div class="col-md-12">
-
+<?
+if($chooseSideKick == "N"){
+?>
 						<h3>Choose your color:</h3>
-						
+<?
+} else {
+?>
+						<h3>Choose the color of your sidekick:</h3>
+<?
+} 
+?>						
 					</div>
 				</div>
 				
