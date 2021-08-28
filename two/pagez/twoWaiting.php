@@ -28,9 +28,16 @@ if(!isset($_SESSION['generated'])){
     $_SESSION['generated'] = "set";
 }
 
-$sql = "select state from game42 where hash = '".$_SESSION['gameHash']."' and state <> 'begun';";
+$sql = "select state, id from game42 where hash = '".$_SESSION['gameHash']."' and state <> 'begun';";
 
 $result = $conn->query($sql);
+
+if ($result->num_rows != 1) {
+
+    die("no game found");
+}
+
+$row = $result->fetch_assoc();
 
 /*
 if($ownColor == 'green'){
@@ -69,6 +76,10 @@ if($ownColor == 'yellow'){
     $yellowName = "unclaimed";
 }
 */
+
+$sql = "select color, first, sideKick from 42player where id = '".test_input($row['id'])."';";
+
+$result = $conn->query($sql);
 
 while($row = $result->fetch_assoc()){
 
