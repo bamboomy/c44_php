@@ -9,6 +9,8 @@ include_once("settings.php");
 
 $_SESSION['game'] = test_input($_GET['game']);
 
+$decided = false;
+
 $sql = "select state from game42 where hash = '".test_input($_SESSION['game'])."';";
 
 $result = $conn->query($sql);
@@ -20,7 +22,11 @@ if($row['state'] !== "engageable"){
     $gameSQL = "UPDATE game42 SET state = 'choosing' where hash = '".$_SESSION['game']."';";
 
     $conn->query($gameSQL);
-}
+    
+} else {
+
+    $decided = true;
+}    
 
 $sql = "select color, first, sideKick from 42player where gameHash = '".test_input($_GET['game'])."';";
 
@@ -342,9 +348,13 @@ if($chooseSideKick == "N"){
 ?>
 						<h3>Choose your color:</h3>
 <?
-} else {
+} else if(!$decided) {
 ?>
 						<h3>Choose the color of your sidekick:</h3>
+<?
+} else {
+?>
+						<h3>All is decided...</h3>
 <?
 } 
 ?>						
