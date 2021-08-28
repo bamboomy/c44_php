@@ -454,7 +454,12 @@ if(isset($name['yellow'])){
 ?>
 						
 						</figure>
-
+					
+					</div>
+				</div>
+					
+				<div class="row align-items-center h-25">
+					<div class="col-md-12">
 <?
     if($decided){
 ?>
