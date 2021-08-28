@@ -32,13 +32,6 @@ $sql = "select state from game42 where hash = '".$_SESSION['gameHash']."' and st
 
 $result = $conn->query($sql);
 
-if ($result->num_rows != 1) {
-
-    die("no game found");
-}
-
-$row = $result->fetch_assoc();
-
 /*
 if($ownColor == 'green'){
 
@@ -76,14 +69,6 @@ if($ownColor == 'yellow'){
     $yellowName = "unclaimed";
 }
 */
-
-$sql = "select color, first, sideKick from 42player where gameHash = '".test_input($_GET['game'])."';";
-
-$result = $conn->query($sql);
-
-$chooseSideKick = "N";
-
-$remainingColor = array('green', 'blue', 'red', 'yellow');
 
 while($row = $result->fetch_assoc()){
 
