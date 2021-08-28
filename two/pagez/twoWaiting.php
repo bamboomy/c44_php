@@ -239,6 +239,7 @@ function copy() {
   alert("Link copied...");
 }
 
+/*
 function again() {
 
 	setTimeout(function() {
@@ -251,6 +252,7 @@ function again() {
 }
 
 again();
+*/
 
 </script>
 	
