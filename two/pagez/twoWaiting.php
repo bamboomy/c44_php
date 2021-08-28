@@ -245,9 +245,7 @@ function again() {
 
         location.reload();
 
-        again();
-
-	}, 500);
+    }, 500);
 }
 
 <?
