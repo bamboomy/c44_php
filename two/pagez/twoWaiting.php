@@ -289,11 +289,20 @@ function copy() {
 					<div class="col-md-3">
 
 						<figure>
+<?
+if(isset($name['green'])){
+?>
 							<div id="Green"></div>
 <?
+    echo "<figcaption> Green: ".$name['green']." </figcaption>";
 
-echo "<figcaption> Green: ".$name['green']."</figcaption>";
+} else {
 
+?>
+							<div id="Green""></div>
+							<figcaption> Green: <span id="greenName">unclaimed</span> </figcaption>
+<?
+}
 ?>
 						</figure>
 
