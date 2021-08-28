@@ -13,7 +13,7 @@ $result = $conn->query($sql);
 
 while($row = $result->fetch_assoc()){
     
-    echo $row['color'];
+    $name[$row['color']] = "opponent";
 }
 
 
@@ -66,9 +66,20 @@ figure{
 }
 
 #Blue {
-   background-image: url('../imgz/blue_castle_unclaimed.png');
-   height: 170px;
-   width: 300px;
+
+<?
+if(isset($name['blue'])){
+?>
+    background-image: url('../imgz/blue_castle_taken.png');
+<?
+} else {
+?>
+    background-image: url('../imgz/blue_castle_unclaimed.png');
+<?
+}
+?>
+    height: 170px;
+    width: 300px;
 }
 
 #Red {
@@ -239,12 +250,27 @@ function copy() {
 					<div class="col-md-3">
 
 						<figure>
-							
+
+<?
+if(isset($name['blue'])){
+?>
+							<div id="Blue"></div>
+<?
+    echo "<figcaption> Blue: $name['blue'] </figcaption>";
+
+} else {
+
+?>
 							<div id="Blue" onmouseover="changeText('blue')" 
 								onclick="claim('Blue')" 
 								onmouseout="resetText('blue')"></div>
 
 							<figcaption> Blue: <span id="blueName">unclaimed</span> </figcaption>
+<?
+}
+?>
+						
+						
 						</figure>
 
 					</div>
