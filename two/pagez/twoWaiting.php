@@ -4,8 +4,6 @@ session_start();
 
 $seconds = 60000 * 60 *24 *7;
 
-echo $seconds;
-
 header('Cache-Control: max-age=' . $seconds);
 
 // todo : move
@@ -251,7 +249,7 @@ function again() {
 
         location.reload();
 
-    }, 20000);
+    }, 1000);
 }
 
 <?
