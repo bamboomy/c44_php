@@ -1,0 +1,16 @@
+- the clock is starting
+- crash
+- mark current player!!!
+- dubious (interface) hangs
+- don't only mark last move of every player but also last played move (double mark)
+- 
+
+2.0
+---
+- remove last move of current player
+- pieces getting drawn asynchronously... => refactor needed (postpone till after php)
+- at the end game -> 3 min
+
+3.0
+---
+- 
