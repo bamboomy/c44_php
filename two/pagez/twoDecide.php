@@ -108,30 +108,60 @@ if ($result->num_rows == 3) {
 			
 		$dataElement['color'] = $row['color'];
 		$dataElement['first'] = $row['first'];
+		$dataElement['sideKick'] = $row['sideKick'];
 		
 		$dataArray[$row['color']] = $dataElement;
 		
 		unset($dataElement);
 	}
 
-/*
-		$sql = "insert into colors_taken (color, game, java_hash, name, ally_color) ";
-		$sql .= " values ('".$sentence."', '".$_SESSION['game']."', '0');";
-
-		$conn->query($sql);
-*/
-
 	foreach ($dataArray as $dataElement) {
-		echo $dataElement['color'];
-		echo $dataElement['first'];
+		
+		if($dataElement['first'] == 'Y'){
+			
+			if($dataElement['sideKick'] == 'Y'){
+				
+				$firstTeam['sideKick'] = $dataElement;
+				
+			} else {
+				
+				$firstTeam['player'] = $dataElement;
+			}
+			
+		} else {
+
+			if($dataElement['sideKick'] == 'Y'){
+				
+				$secondTeam['sideKick'] = $dataElement;
+				
+			} else {
+				
+				$secondTeam['player'] = $dataElement;
+			}
+		}
 	}
 
-	foreach ($dataArray as $dataElement) {
-		echo $dataElement['color'];
-		echo $dataElement['first'];
-	}
+	$sql = "insert into colors_taken (color, game, java_hash, name) ";
+	$sql .= " values ('".$firstTeam['player']['color']."', '".$_SESSION['game']."', '".md5( time() . rand())."', 'First Player');";
 
-    //header("Refresh:0");
+	$conn->query($sql);
+
+	$sql = "insert into colors_taken (color, game, java_hash, name, ally_color) ";
+	$sql .= " values ('".$firstTeam['sideKick']['color']."', '".$_SESSION['game']."', '".md5( time() . rand())."', 'First Aid', '".$firstTeam['player']['color']."');";
+
+	$conn->query($sql);
+
+	$sql = "insert into colors_taken (color, game, java_hash, name) ";
+	$sql .= " values ('".$secondTeam['player']['color']."', '".$_SESSION['game']."', '".md5( time() . rand())."', 'Second Player');";
+
+	$conn->query($sql);
+
+	$sql = "insert into colors_taken (color, game, java_hash, name, ally_color) ";
+	$sql .= " values ('".$secondTeam['sideKick']['color']."', '".$_SESSION['game']."', '".md5( time() . rand())."', 'Second Aid', '".$secondTeam['player']['color']."');";
+
+	$conn->query($sql);
+
+    header("Refresh:0");
 }
 
 ?>
