@@ -103,10 +103,15 @@ if ($result->num_rows == 3) {
 	$sql = "select color, first, sideKick from 42player where gameHash = '".$_SESSION['game']."';";
 
 	$result = $conn->query($sql);
-
-	while($row = $result->fetch_assoc()){
+	
+µ	while($row = $result->fetch_assoc()){
 		
-		echo $row['color'];
+		$dataElement['color'] = $row['color'];
+		$dataElement['first'] = $row['first'];
+		
+		$dataArray[$row['color']] = $dataElement;
+		
+		unset($dataElement);
 
 /*
 		$sql = "insert into colors_taken (color, game, java_hash, name, ally_color) ";
@@ -115,10 +120,15 @@ if ($result->num_rows == 3) {
 		$conn->query($sql);
 */
 	}
+	
+	foreach ($dataArray as $dataElement) {
+		echo $dataElement['color'];
+		echo $dataElement['first'];
+	}
 
-	while($row = $result->fetch_assoc()){
-		
-		echo $row['color'];
+	foreach ($dataArray as $dataElement) {
+		echo $dataElement['color'];
+		echo $dataElement['first'];
 	}
 
     //header("Refresh:0");
