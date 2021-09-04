@@ -112,6 +112,7 @@ if ($result->num_rows == 3) {
 		$dataArray[$row['color']] = $dataElement;
 		
 		unset($dataElement);
+	}
 
 /*
 		$sql = "insert into colors_taken (color, game, java_hash, name, ally_color) ";
