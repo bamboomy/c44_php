@@ -120,8 +120,7 @@ if ($result->num_rows == 3) {
 
 		$conn->query($sql);
 */
-	}
-	
+
 	foreach ($dataArray as $dataElement) {
 		echo $dataElement['color'];
 		echo $dataElement['first'];
