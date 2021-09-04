@@ -104,8 +104,8 @@ if ($result->num_rows == 3) {
 
 	$result = $conn->query($sql);
 	
-µ	while($row = $result->fetch_assoc()){
-		
+	while($row = $result->fetch_assoc()){
+			
 		$dataElement['color'] = $row['color'];
 		$dataElement['first'] = $row['first'];
 		
