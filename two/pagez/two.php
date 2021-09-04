@@ -2,10 +2,6 @@
 
 session_start();
 
-$seconds = 60000 * 60 *24 *7;
-
-header('Cache-Control: max-age=' . $seconds);
-
 // todo : move
 //setcookie("hash", md5($_SESSION['java_hash']."centerparks555"), time() + 60*60*24*30, "/");
 

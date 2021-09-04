@@ -249,7 +249,7 @@ function again() {
 
         location.reload();
 
-    }, 5 * 1000);
+    }, 2 * 1000);
 }
 
 <?

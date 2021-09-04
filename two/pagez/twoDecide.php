@@ -2,10 +2,6 @@
 
 session_start();
 
-$seconds = 60000 * 60 *24 *7;
-
-header('Cache-Control: max-age=' . $seconds);
-
 // todo : move
 //setcookie("hash", md5($_SESSION['java_hash']."centerparks555"), time() + 60*60*24*30, "/");
 
@@ -86,8 +82,46 @@ if ($result->num_rows == 3) {
     $gameSQL = "UPDATE game42 SET state = 'engageable' where hash = '".$_SESSION['game']."';";
     
     $conn->query($gameSQL);
-    
-    header("Refresh:0");
+	
+	$four = array("A wonderfull", "Some good", "A tea spoon of", "A green", "A wooden", "A bright", "A decent", "An excellent", "A handfull of");
+
+	$one = array("breeze", "tea", "outlet", "garden", "color", "t-shirt", "glass", "chocolate", "ashtray", "card", "letter", "globe", "bottle");
+
+	$two = array("without", "in", "between", "amongst", "outside of", "with");
+
+	$three = array("the dark", "elves", "Godot", "a lamp", "the unknown", "the French", "a sister", "some coffee", "a group of Elvises", "Indiana Jones");
+
+	$sentence = '"' . $four[rand(0, count($four) - 1)] . ' ';
+
+	$sentence .= $one[rand(0, count($one) - 1)] . '<br/>' . $two[rand(0, count($two) - 1)] . ' ' . $three[rand(0, count($three) - 1)] . '."' ;
+	
+	$sql = "insert into game (sentence, hash, fail) ";
+	$sql .= " values ('".$sentence."', '".$_SESSION['game']."', '0');";
+
+	$conn->query($sql);
+
+	$sql = "select color, first, sideKick from 42player where gameHash = '".$_SESSION['game']."';";
+
+	$result = $conn->query($sql);
+
+	while($row = $result->fetch_assoc()){
+		
+		echo $row['color'];
+
+/*
+		$sql = "insert into colors_taken (color, game, java_hash, name, ally_color) ";
+		$sql .= " values ('".$sentence."', '".$_SESSION['game']."', '0');";
+
+		$conn->query($sql);
+*/
+	}
+
+	while($row = $result->fetch_assoc()){
+		
+		echo $row['color'];
+	}
+
+    //header("Refresh:0");
 }
 
 ?>
