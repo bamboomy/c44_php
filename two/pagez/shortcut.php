@@ -8,6 +8,12 @@ include_once("settings.php");
 
 $remainingColors = array("Green", "Blue", "Red", "Yellow");
 
+?>
+<html>
+<body>
+<ul>
+<?
+
 foreach ($remainingColors as $color) {
 
 	$java_hash = md5($_SERVER['REMOTE_ADDR'] . openssl_random_pseudo_bytes(5, $cstrong) . $_SESSION['hash']);
@@ -16,4 +22,11 @@ foreach ($remainingColors as $color) {
 	$sql .= " values ('".$_SESSION['hash']."', '".$color."', '".$color."', '".$java_hash."');";
 
 	$result = $conn->query($sql) or die($conn->error);
+	
+	echo "<li><a href='https://engine.chess4four.org/two/pagez/direct.php?hash=".$java_hash."'>".$color."</a></li>";
 }
+
+?>
+</ul>
+</body>
+</html>
