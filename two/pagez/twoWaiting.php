@@ -281,7 +281,7 @@ if($row0['state'] == 'engageable'){
 <?
 } else {
 ?>
-						<h3>Waiting on opponent...</h3>
+						<h3>Waiting for opponent...</h3>
 <?
 }
 ?>
@@ -388,9 +388,14 @@ if(isset($name['yellow'])){
 						</h5>
 <?
     } else if($row0['state'] == 'engageable'){
-?>
-						<h2><a href="#">Engage!!!</a></h2>
-<?
+		
+		$sql = "select java_hash from colors_taken where gameHash = '".$_SESSION['game']."' and name = 'First Player';";
+
+		$result = $conn->query($sql);
+		
+		$row = $result->fetch_assoc();
+
+		echo "<h2><a href='https://engine.chess4four.org/dev/two/tomcat/helloTwo/".$row['java_hash']."'>Engage!!!</a></h2>";
     }
 ?>
 					</div>
