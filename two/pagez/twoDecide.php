@@ -540,9 +540,15 @@ if(isset($name['yellow'])){
 					<div class="col-md-12">
 <?
     if($decided){
-?>
-						<h2><a href="#">Engage!!!</a></h2>
-<?
+		
+		$sql = "select java_hash from colors_taken where game = '".$_SESSION['gameHash']."' and name = 'Second Player';";
+
+		$result = $conn->query($sql);
+		
+		$row = $result->fetch_assoc();
+
+		echo "<h2><a href='https://engine.chess4four.org/dev/two/tomcat/helloTwo/".$row['java_hash']."'>Engage!!!</a></h2>";
+
     }
 ?>
 					</div>
