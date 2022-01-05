@@ -389,7 +389,7 @@ if(isset($name['yellow'])){
 <?
     } else if($row0['state'] == 'engageable'){
 		
-		$sql = "select java_hash from colors_taken where game = '".$_SESSION['game']."' and name = 'First Player';";
+		$sql = "select java_hash from colors_taken where game = '".$_SESSION['gameHash']."' and name = 'First Player';";
 
 		$result = $conn->query($sql);
 		
