@@ -541,7 +541,7 @@ if(isset($name['yellow'])){
 <?
     if($decided){
 		
-		$sql = "select java_hash from colors_taken where game = '".$_SESSION['gameHash']."' and name = 'Second Player';";
+		$sql = "select java_hash from colors_taken where game = '".$_SESSION['game']."' and name = 'Second Player';";
 
 		$result = $conn->query($sql);
 		
