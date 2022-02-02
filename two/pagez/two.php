@@ -260,7 +260,26 @@ $( document ).ready(function() {
 					</div>
 				</div>
 				
-				<div class="row align-items-center h-50">
+				<div class="row h-50">
+
+					<div class="col"></div>
+					<div class="col"></div>
+					<div class="col">
+
+						<figure>
+						
+							<div id="Red" onmouseover="changeText('red')" 
+<?  echo "onclick=\"window.location.assign('twoWaiting.php?color=".$redMD5."')\""; ?>
+								onmouseout="resetText('red')"></div>
+
+							<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
+						</figure>
+				
+					<div class="col"></div>
+					<div class="col"></div>
+				
+				</div>
+				<div class="row h-50">
 				
 					<div class="col"></div>
 					<div class="col">
@@ -274,6 +293,7 @@ $( document ).ready(function() {
 						</figure>
 
 					</div>
+					<div class="col"></div>
 					<div class="col">
 
 						<figure>
@@ -286,21 +306,15 @@ $( document ).ready(function() {
 						</figure>
 
 					</div>
+				</div>
+				<div class="row h-50">
+					<div class="col"></div>
+
+					<div class="col"></div>
+					<div class="col"></div>
 					<div class="col">
 
 						<figure>
-						
-							<div id="Red" onmouseover="changeText('red')" 
-<?  echo "onclick=\"window.location.assign('twoWaiting.php?color=".$redMD5."')\""; ?>
-								onmouseout="resetText('red')"></div>
-
-							<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
-						</figure>
-
-					</div>
-					<div class="col"></div>
-
-						<!--figure>
 						
 							<div id="Yellow" onmouseover="changeText('yellow')" 
 <?  echo "onclick=\"window.location.assign('twoWaiting.php?color=".$yellowMD5."')\""; ?>
@@ -309,7 +323,9 @@ $( document ).ready(function() {
 							<figcaption> Yellow: <span id="yellowName">unclaimed</span> </figcaption>
 						</figure>
 
-					</div-->
+					<div class="col"></div>
+					<div class="col"></div>
+					</div>
 				</div>
 				
 			</div>
