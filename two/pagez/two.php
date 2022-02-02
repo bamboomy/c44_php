@@ -241,8 +241,7 @@ $( document ).ready(function() {
 					<label for="aid" class="radio-label">play together with a helpful,<br/>friendly robot?</label><br>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary">Save changes</button>
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" onclick="alert('test')">Confirm</button>
 				</div>
 			</div>
 		</div>
