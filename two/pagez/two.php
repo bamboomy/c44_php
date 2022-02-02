@@ -260,7 +260,7 @@ $( document ).ready(function() {
 					</div>
 				</div>
 				
-				<div class="row h-50">
+				<div class="row">
 
 					<div class="col"></div>
 					<div class="col"></div>
@@ -280,7 +280,7 @@ $( document ).ready(function() {
 					<div class="col"></div>
 				
 				</div>
-				<div class="row h-50">
+				<div class="row">
 				
 					<div class="col"></div>
 					<div class="col">
@@ -308,7 +308,7 @@ $( document ).ready(function() {
 
 					</div>
 				</div>
-				<div class="row h-50">
+				<div class="row">
 					<div class="col"></div>
 
 					<div class="col"></div>
