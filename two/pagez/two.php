@@ -262,7 +262,8 @@ $( document ).ready(function() {
 				
 				<div class="row align-items-center h-50">
 				
-					<div class="col-md-3">
+					<div class="col"></div>
+					<div class="col">
 
 						<figure>
 							<div id="Green" onmouseover="changeText('green')" 
@@ -273,7 +274,7 @@ $( document ).ready(function() {
 						</figure>
 
 					</div>
-					<div class="col-md-3">
+					<div class="col">
 
 						<figure>
 							
@@ -285,7 +286,7 @@ $( document ).ready(function() {
 						</figure>
 
 					</div>
-					<div class="col-md-3">
+					<div class="col">
 
 						<figure>
 						
@@ -297,9 +298,9 @@ $( document ).ready(function() {
 						</figure>
 
 					</div>
-					<div class="col-md-3">
+					<div class="col"></div>
 
-						<figure>
+						<!--figure>
 						
 							<div id="Yellow" onmouseover="changeText('yellow')" 
 <?  echo "onclick=\"window.location.assign('twoWaiting.php?color=".$yellowMD5."')\""; ?>
@@ -308,7 +309,7 @@ $( document ).ready(function() {
 							<figcaption> Yellow: <span id="yellowName">unclaimed</span> </figcaption>
 						</figure>
 
-					</div>
+					</div-->
 				</div>
 				
 			</div>
