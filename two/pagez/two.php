@@ -313,7 +313,6 @@ $( document ).ready(function() {
 
 					<div class="col"></div>
 					<div class="col"></div>
-					<div class="col"></div>
 					<div class="col">
 
 						<figure>
