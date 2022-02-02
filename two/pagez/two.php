@@ -124,14 +124,14 @@ h3{
 }
 
 .radio-label {
-   display: inline-block;
-    vertical-align: top;
-    margin-right: 3%;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 3%;
 }
 
 .radio-input {
-   display: inline-block;
-    vertical-align: top;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 </style>
