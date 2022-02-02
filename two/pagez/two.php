@@ -227,7 +227,7 @@ $( document ).ready(function() {
 					<label for="double">command two armies?</label><br>
 					or<br/>
 					<input type="radio" id="aid" name="mode" value="aid">
-					<label for="aid">play together with a helpful, friendly robot?</label><br>
+					<label for="aid">play together with a helpful,<br/>friendly robot?</label><br>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary">Save changes</button>
