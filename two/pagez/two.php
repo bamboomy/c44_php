@@ -275,6 +275,7 @@ $( document ).ready(function() {
 							<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
 						</figure>
 				
+					</div>
 					<div class="col"></div>
 					<div class="col"></div>
 				
