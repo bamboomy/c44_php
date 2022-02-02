@@ -220,18 +220,14 @@ $( document ).ready(function() {
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title">Modal title</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
+					<h5 class="modal-title">Do you want to:</h5>
 				</div>
 				<div class="modal-body">
-					<input type="radio" id="html" name="fav_language" value="HTML">
-					<label for="html">HTML</label><br>
-					<input type="radio" id="css" name="fav_language" value="CSS">
-					<label for="css">CSS</label><br>
-					<input type="radio" id="javascript" name="fav_language" value="JavaScript">
-					<label for="javascript">JavaScript</label>
+					<input type="radio" id="double" name="mode" value="double">
+					<label for="double">command two armies?</label><br>
+					or<br/>
+					<input type="radio" id="aid" name="mode" value="aid">
+					<label for="aid">play together with a helpful, friendly robot?</label><br>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary">Save changes</button>
