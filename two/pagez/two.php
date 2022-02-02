@@ -279,10 +279,9 @@ $( document ).ready(function() {
 					<div class="col"></div>
 					<div class="col"></div>
 					<div class="col"></div>
-				
-				</div>
-				<div class="row">
-				
+
+					<div class="w-100"></div>
+
 					<div class="col"></div>
 					<div class="col">
 
@@ -309,8 +308,9 @@ $( document ).ready(function() {
 
 					</div>
 					<div class="col"></div>
-				</div>
-				<div class="row">
+
+					<div class="w-100"></div>
+
 					<div class="col"></div>
 					<div class="col"></div>
 					<div class="col"></div>
