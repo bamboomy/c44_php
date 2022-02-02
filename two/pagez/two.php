@@ -123,6 +123,17 @@ h3{
 	margin-top: 15px;
 }
 
+.radio-label {
+   display: inline-block;
+    vertical-align: top;
+    margin-right: 3%;
+}
+
+.radio-input {
+   display: inline-block;
+    vertical-align: top;
+}
+
 </style>
 
 <script>
@@ -225,9 +236,9 @@ $( document ).ready(function() {
 				<div class="modal-body">
 					<input type="radio" id="double" name="mode" value="double">
 					<label for="double">command two armies?</label><br>
-					or
-					<input type="radio" id="aid" name="mode" value="aid">
-					<label for="aid">play together with a helpful,<br/>friendly robot?</label><br>
+					or<br/>
+					<input type="radio" id="aid" name="mode" value="aid" class="radio-input">
+					<label for="aid" class="radio-label">play together with a helpful,<br/>friendly robot?</label><br>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary">Save changes</button>
