@@ -322,10 +322,10 @@ $( document ).ready(function() {
 
 							<figcaption> Yellow: <span id="yellowName">unclaimed</span> </figcaption>
 						</figure>
+					</div>
 
 					<div class="col"></div>
 					<div class="col"></div>
-					</div>
 				</div>
 				
 			</div>
