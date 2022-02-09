@@ -123,17 +123,6 @@ h3{
 	margin-top: 15px;
 }
 
-.radio-label {
-	display: inline-block;
-	vertical-align: middle;
-	margin-right: 3%;
-}
-
-.radio-input {
-	display: inline-block;
-	vertical-align: middle;
-}
-
 </style>
 
 <script>
@@ -218,34 +207,10 @@ function copy() {
   alert("Link copied...");
 }
 
-$( document ).ready(function() {
-    $('#myModal').modal('show')
-});
-
 </script>
 	
 	</head>
 	<body>
-	
-	<div id="myModal" class="modal" tabindex="-1" role="dialog">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title">Do you want to:</h5>
-				</div>
-				<div class="modal-body">
-					<input type="radio" id="double" name="mode" value="double">
-					<label for="double">command two armies?</label><br>
-					or<br/>
-					<input type="radio" id="aid" name="mode" value="aid" class="radio-input">
-					<label for="aid" class="radio-label">play together with a helpful,<br/>robot?</label><br>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" onclick="alert('test')">Confirm</button>
-				</div>
-			</div>
-		</div>
-	</div>
 
 		<center>
 
@@ -260,29 +225,20 @@ $( document ).ready(function() {
 					</div>
 				</div>
 				
-				<div class="row">
-
-					<div class="col"></div>
-					<div class="col"></div>
-					<div class="col">
+				<div class="row align-items-center h-50">
+				
+					<div class="col-md-3">
 
 						<figure>
-						
-							<div id="Red" onmouseover="changeText('red')" 
-<?  echo "onclick=\"window.location.assign('twoWaiting.php?color=".$redMD5."')\""; ?>
-								onmouseout="resetText('red')"></div>
-
-							<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
+							<div id="Green" onmouseover="changeText('green')" 
+<?  echo "onclick=\"window.location.assign('twoWaiting.php?color=".$greenMD5."')\""; ?>
+								onmouseout="resetText('green')"></div>
+							
+							<figcaption> Green: <span id="greenName">unclaimed</span> </figcaption>
 						</figure>
-				
+
 					</div>
-					<div class="col"></div>
-					<div class="col"></div>
-
-					<div class="w-100"></div>
-
-					<div class="col"></div>
-					<div class="col">
+					<div class="col-md-3">
 
 						<figure>
 							
@@ -294,9 +250,19 @@ $( document ).ready(function() {
 						</figure>
 
 					</div>
-					<div class="col"></div>
-					<div class="col">
+					<div class="col-md-3">
 
+						<figure>
+						
+							<div id="Red" onmouseover="changeText('red')" 
+<?  echo "onclick=\"window.location.assign('twoWaiting.php?color=".$redMD5."')\""; ?>
+								onmouseout="resetText('red')"></div>
+
+							<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
+						</figure>
+
+					</div>
+					<div class="col-md-3">
 
 						<figure>
 						
@@ -306,26 +272,8 @@ $( document ).ready(function() {
 
 							<figcaption> Yellow: <span id="yellowName">unclaimed</span> </figcaption>
 						</figure>
+
 					</div>
-					<div class="col"></div>
-
-					<div class="w-100"></div>
-
-					<div class="col"></div>
-					<div class="col"></div>
-					<div class="col">
-
-						<figure>
-							<div id="Green" onmouseover="changeText('green')" 
-<?  echo "onclick=\"window.location.assign('twoWaiting.php?color=".$greenMD5."')\""; ?>
-								onmouseout="resetText('green')"></div>
-							
-							<figcaption> Green: <span id="greenName">unclaimed</span> </figcaption>
-						</figure>
-					</div>
-
-					<div class="col"></div>
-					<div class="col"></div>
 				</div>
 				
 			</div>
