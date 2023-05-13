@@ -29,6 +29,8 @@ if(!isset($_SESSION['generated'])){
 		$sql = "insert into game42 (hash) ";
 		$sql .= " values ('".$gameHash."');";
 	}
+	
+	echo $sql;
 
     $result = $conn->query($sql);
 
