@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>C44: editor</title>
+
+<style>	
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #fff;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.black {
+	width: 35px;
+	height: 35px;
+	z-index: 1;
+	float: left;
+	border: 1px solid black;
+	background-image: url(img/black.png);
+}
+
+.white {
+	width: 35px;
+	height: 35px;
+	z-index: 1;
+	float: left;
+	border: 1px solid black;
+	background-image: url(img/white.png);
+}
+
+.blank {
+	width: 35px;
+	height: 35px;
+	z-index: 1;
+	float: left;
+	border: 1px solid #59b300;
+	background-image: url(img/blank.png);
+}
+
+
+.outer {
+	display: table;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.middle {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.inner {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.center {
+	margin: 0 auto;
+	text-align: center;
+}
+
+body {
+	background-color: #59b300;
+}
+
+.game-board{
+	margin: auto;
+}
+
+.pieces {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	text-align: left;
+}
+
+.not_selected {
+	border-style: outset;
+	border-width: 5px;
+	width: 30px;
+	height: 30px;
+}
+
+.selected {
+	border-style: inset;
+	border-width: 5px;
+	width: 30px;
+	height: 30px;
+}
+
+.buttons {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+.buttons .not_selected {
+	width: auto;
+	padding: 5px;
+}
+
+.up {
+	vertical-align: top;
+}
+
+.middleDiv {
+	vertical-align: middle;
+}
+
+.bottom {
+	vertical-align: bottom;
+}
+
+.hidden{
+	display: none;
+}
+
+.low{
+	bottom: 5px;
+	left: 5px;
+}
+</style>
+
+	
+  </head>
+  <body>
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<div id="errors" style="
+  background: #c00;
+  color: #fff;
+  display: none;
+  margin: -20px -20px 20px;
+  padding: 20px;
+  white-space: pre-wrap;
+"></div>
+<div class="outer">
+	<div class="middle">
+		<div class="inner center">
+			<div id="root"></div>
+		</div>
+	</div>
+</div>
+<script>
+window.addEventListener('mousedown', function(e) {
+  document.body.classList.add('mouse-navigation');
+  document.body.classList.remove('kbd-navigation');
+});
+window.addEventListener('keydown', function(e) {
+  if (e.keyCode === 9) {
+    document.body.classList.add('kbd-navigation');
+    document.body.classList.remove('mouse-navigation');
+  }
+});
+window.addEventListener('click', function(e) {
+  if (e.target.tagName === 'A' && e.target.getAttribute('href') === '#') {
+    e.preventDefault();
+  }
+});
+window.onerror = function(message, source, line, col, error) {
+  var text = error ? error.stack || error : message + ' (at ' + source + ':' + line + ':' + col + ')';
+  errors.textContent += text + '\n';
+  errors.style.display = '';
+};
+console.error = (function(old) {
+  return function error() {
+    errors.textContent += Array.prototype.slice.call(arguments).join(' ') + '\n';
+    errors.style.display = '';
+    old.apply(this, arguments);
+  }
+})(console.error);
+
+</script>
+
+	<script type="text/babel">
+
+class Square extends React.Component {
+
+	constructor(props) {
+		super(props);
+	}
+
+  render() {
+  
+	var img = "";
+	
+	if(this.props.value !== null && this.props.value.piece !== null && this.props.value.color !== null){
+		img = <img src={"img/" + this.props.value.piece + "_" + this.props.value.color + ".png"} width="35" height="35" />;
+	}
+  
+    return (
+      <div className={this.props.color} 
+		onClick={() => this.props.onClick()} >
+		{img}
+      </div>
+    );
+  }
+}
+
+class Piece extends React.Component {
+
+	render() {
+
+		var css = "not_selected";
+		
+		if(this.props.selected === "selected"){
+			css = "selected";
+		}
+
+		return (
+			<img className={css} src={"img/" + this.props.name + ".png"} onClick={() => this.props.onClick()} />
+		);
+	}
+}
+
+class Color extends React.Component {
+
+	render() {
+	
+		var css = "not_selected";
+		
+		if(this.props.selected === "selected"){
+			css = "selected";
+		}
+
+		return (
+			<img className={css} src={"img/" + this.props.name + ".png"} onClick={() => this.props.onClick()} />
+		);
+	}
+}
+
+class Option extends React.Component {
+
+	constructor(props) {
+		super(props);
+		
+		this.state = {
+			enabled: false,
+			value: 0,
+		}
+	}
+
+	toggleEnable(){
+
+		if(this.state.enabled){
+			this.props.setValue(this.props.name, 0);
+		} else {
+			if(this.props.name === "king"){
+				this.props.setValue(this.props.name, 1);
+			}
+		}
+
+		this.setState({enabled: !this.state.enabled});
+	}
+	
+	handleChange(event) {
+
+		if(this.props.name === "king"){
+			return;
+		}
+	
+		this.props.setValue(this.props.name, event.target.value);
+	}
+
+	render() {
+
+		return (
+			<div>
+				<input className="up" type="checkbox" onClick={() => this.toggleEnable()} />
+				<img className="middleDiv" src={"img/" + this.props.name + ".png"} width="50" height="50" />
+				<input className="bottom" type="number" min={this.props.min} max={this.props.max} value={this.props.value} disabled={!this.state.enabled} onChange={(event) => this.handleChange(event)} />
+				<br/>
+			</div>
+		);
+	}
+}
+
+class Randomize extends React.Component {
+
+	constructor(props) {
+		super(props);
+		
+		this.state = {
+			pawnValue: 0,
+			horseValue: 0,
+			bisshopValue: 0,
+			towerValue: 0,
+			queenValue: 0,
+			kingValue: 0,
+		}
+	}
+	
+	setValue(name, value){
+	
+		switch(name) {
+			case "pawn":
+				this.setState({pawnValue: value});
+				break;
+			case "horse":
+				this.setState({horseValue: value});
+				break;
+			case "bisshop":
+				this.setState({bisshopValue: value});
+				break;
+			case "tower":
+				this.setState({towerValue: value});
+				break;
+			case "queen":
+				this.setState({queenValue: value});
+				break;
+			case "king":
+				this.setState({kingValue: value});
+				break;
+		}
+	}
+
+	renderOption(name, min, max, value){
+		return <Option key={name} name={name} min={min} max={max} value={value} setValue={(name, value) => this.setValue(name, value)} />;
+	}
+
+	render() {
+	
+		const options = [];
+		
+		options.push(this.renderOption("pawn", 0, 8, this.state.pawnValue));
+		options.push(this.renderOption("horse", 0, 4, this.state.horseValue));
+		options.push(this.renderOption("bisshop", 0, 4, this.state.bisshopValue));
+		options.push(this.renderOption("tower", 0, 4, this.state.towerValue));
+		options.push(this.renderOption("queen", 0, 4, this.state.queenValue));
+		options.push(this.renderOption("king", 0, 1, this.state.kingValue));
+		
+		this.currentOptions = options;
+
+		return (
+			<div>
+				{options}
+				<div className="not_selected" onClick={() => this.props.onClick(this.state.pawnValue, this.state.horseValue, this.state.bisshopValue, this.state.towerValue, this.state.queenValue, this.state.kingValue)}>Randomize</div>
+			</div>
+		);
+	}
+}
+
+class Board extends React.Component {
+
+	static validSquares;
+	static takenSquares;
+
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			squares: Array(12 * 12).fill(null),
+			pieceColor: null,
+			pieceName: null,
+			greenKing: 138,
+			blueKing: 72,
+			redKing: 5,
+			yellowKing: 71,
+		};
+	}
+	
+	addKings(squares){
+
+		squares[this.state.greenKing] = {
+			piece: "king",
+			color: "green",
+		}
+		squares[this.state.blueKing] = {
+			piece: "king",
+			color: "blue",
+		}
+		squares[this.state.redKing] = {
+			piece: "king",
+			color: "red",
+		}
+		squares[this.state.yellowKing] = {
+			piece: "king",
+			color: "yellow",
+		}
+	
+		return squares;
+	}
+	
+	componentDidMount(){
+
+		this.setState({
+			squares: this.addKings(this.state.squares),
+		});
+	}
+
+	handleClick(i) {
+		const squares = this.state.squares.slice();
+		
+		var piece = this.state.pieceName;
+		
+		if(squares[i] !== null && squares[i].piece != null && squares[i].piece === "king"){
+			alert("You can't replace a king...");
+			return;
+		}
+
+		var greenKing = this.state.greenKing;
+		var blueKing = this.state.blueKing;
+		var redKing = this.state.redKing;
+		var yellowKing = this.state.yellowKing;
+		
+		if(piece === "cancel"){
+			piece = null;
+		} else if(piece === "king"){
+			
+			switch(this.state.pieceColor) {
+				case "green":
+					squares[greenKing].piece = null;
+					greenKing = i;
+					break;
+				case "blue":
+					squares[blueKing].piece = null;
+					blueKing = i;
+					break;
+				case "red":
+					squares[redKing].piece = null;
+					redKing = i;
+					break;
+				case "yellow":
+					squares[yellowKing].piece = null;
+					yellowKing = i;
+					break;
+			}
+		}
+		
+		squares[i] = {
+			piece: piece,
+			color: this.state.pieceColor,
+		};
+		
+		this.setState({
+			squares: squares,
+			greenKing: greenKing,
+			blueKing: blueKing,
+			redKing: redKing,
+			yellowKing: yellowKing,
+		});
+	}
+	
+	setColor(color){
+	
+		var newColor = color;
+	
+		if(color === this.state.pieceColor){
+			newColor = null;
+		}
+	
+		this.setState({
+			pieceColor: newColor,
+		});
+	}
+
+	setPiece(piece){
+
+		var newPiece = piece;
+	
+		if(piece === this.state.pieceName){
+			newPiece = null;
+		}
+
+		this.setState({
+			pieceName: newPiece,
+		});
+	}
+
+  renderSquare(i,j, color) {
+  
+	var classColor;
+	var click = () => {};
+  
+	if(color === "black"){
+	
+		click = () => {this.handleClick((i*12)+j)};
+		
+		if(((i+j) %2) == 0){
+			classColor = "black";
+		} else {
+			classColor = "white";
+		}
+	} else {
+		classColor = "blank";
+	}
+
+    return <Square key={(i*12)+j} value={this.state.squares[(i*12)+j]} color={classColor} onClick={click} />;
+  }
+  
+  renderRow(i) {
+  
+	const squares = [];
+	for (let j = 0; j < 12; j++) {
+		if(i!=0 && i!=1 && i!=10 && i!=11){
+			squares.push(this.renderSquare(i,j, "black"));
+			this.validSquares.push((i*12)+j);
+		} else {
+			if(j!=0 && j!=1 && j!=10 && j!=11){
+				squares.push(this.renderSquare(i,j, "black"));
+				this.validSquares.push((i*12)+j);
+			} else {
+				squares.push(this.renderSquare(i,j, "blank"));
+			}
+		}
+	}
+
+    return <div key={i}>{squares}</div>;
+  }
+
+  renderPiece(piece){
+
+	if(this.state.pieceName === piece){
+		return <Piece key={piece} name={piece} onClick={() => this.setPiece(piece)} selected="selected" />;
+	} else {
+		return <Piece key={piece} name={piece} onClick={() => this.setPiece(piece)} selected="false" />;
+	}
+  }
+
+  renderPieces(){
+  
+	const pieces = [];
+	
+	pieces.push(this.renderPiece("pawn"));
+	pieces.push(this.renderPiece("horse"));
+	pieces.push(this.renderPiece("bisshop"));
+	pieces.push(this.renderPiece("tower"));
+	pieces.push(<br key="firstBr" />);
+	pieces.push(this.renderPiece("queen"));
+	pieces.push(this.renderPiece("king"));
+	pieces.push(this.renderPiece("cancel"));
+	pieces.push(<br key="secondBr" />);
+
+	return (
+		<div>
+			{pieces}
+		</div>
+	);
+  }
+  
+  renderColor(color){
+	if(this.state.pieceColor === color){
+		return <Color key={color} name={color} onClick={() => this.setColor(color)} selected="selected" />;
+	} else {
+		return <Color key={color} name={color} onClick={() => this.setColor(color)} selected="false" />;
+	}
+  }
+  
+  renderColors(){
+  
+	const colors = [];
+	
+	colors.push(this.renderColor("green"));
+	colors.push(this.renderColor("blue"));
+	colors.push(this.renderColor("red"));
+	colors.push(this.renderColor("yellow"));
+
+	return (
+		<div>
+			{colors}
+		</div>
+	);
+  }
+  
+	getValidRandomSquare(){
+	
+		var candidate = this.validSquares[Math.floor(Math.random() * this.validSquares.length)];
+	
+		while(this.takenSquares.includes(candidate)){
+			candidate = this.validSquares[Math.floor(Math.random() * this.validSquares.length)];
+		}
+		
+		this.takenSquares.push(candidate);
+		
+		return candidate;
+	}
+
+	addPieces(name, squares){
+	
+		squares[this.getValidRandomSquare()] = {
+			piece: name,
+			color: "green",
+		};
+		squares[this.getValidRandomSquare()] = {
+			piece: name,
+			color: "blue",
+		};
+		squares[this.getValidRandomSquare()] = {
+			piece: name,
+			color: "red",
+		};
+		squares[this.getValidRandomSquare()] = {
+			piece: name,
+			color: "yellow",
+		};
+		
+		return squares;
+	}
+
+  randomize(pawnValue, horseValue, bisshopValue, towerValue, queenValue, kingValue){
+  
+	this.takenSquares = [];
+	
+	var squares = Array(12 * 12).fill(null);
+	
+	for (let i = 0; i < pawnValue; i++) {
+		squares = this.addPieces("pawn", squares);
+	}
+	for (let i = 0; i < horseValue; i++) {
+		squares = this.addPieces("horse", squares);
+	}
+	for (let i = 0; i < bisshopValue; i++) {
+		squares = this.addPieces("bisshop", squares);
+	}
+	for (let i = 0; i < towerValue; i++) {
+		squares = this.addPieces("tower", squares);
+	}
+	for (let i = 0; i < queenValue; i++) {
+		squares = this.addPieces("queen", squares);
+	}
+
+	if(kingValue === 0){
+	
+		this.setState({
+				greenKing: 138,
+				blueKing: 72,
+				redKing: 5,
+				yellowKing: 71,
+		});
+
+		squares = this.addKings(squares);
+		
+	} else {
+		for (let i = 0; i < 1; i++) {
+			squares = this.addPieces("king", squares);
+		}
+	}
+
+	this.setState({
+		squares: squares,
+	});
+  }
+
+  renderRandomize(){
+  
+	return (
+		<Randomize onClick={(pawnValue, horseValue, bisshopValue, towerValue, queenValue, kingValue) => this.randomize(pawnValue, horseValue, bisshopValue, towerValue, queenValue, kingValue)} />
+	);
+  }
+  
+  addPiece(i, color, squares, name){
+		squares[i] = {
+			piece: name,
+			color: color,
+		};
+		
+		return squares;
+  }
+
+	addGreen(squares){
+	
+		for(let i=0; i<8; i++){
+			squares = this.addPiece(i + 122, "green", squares, "pawn");
+		}
+		squares = this.addPiece(134, "green", squares, "tower");
+		squares = this.addPiece(141, "green", squares, "tower");
+		squares = this.addPiece(135, "green", squares, "horse");
+		squares = this.addPiece(140, "green", squares, "horse");
+		squares = this.addPiece(136, "green", squares, "bisshop");
+		squares = this.addPiece(139, "green", squares, "bisshop");
+		squares = this.addPiece(137, "green", squares, "queen");
+		
+		return squares;
+	}
+	
+	
+	addBlue(squares){
+
+		for(let i=0; i<8; i++){
+			squares = this.addPiece(25 + (i*12), "blue", squares, "pawn");
+		}
+		squares = this.addPiece(24, "blue", squares, "tower");
+		squares = this.addPiece(108, "blue", squares, "tower");
+		squares = this.addPiece(36, "blue", squares, "horse");
+		squares = this.addPiece(96, "blue", squares, "horse");
+		squares = this.addPiece(48, "blue", squares, "bisshop");
+		squares = this.addPiece(84, "blue", squares, "bisshop");
+		squares = this.addPiece(60, "blue", squares, "queen");
+
+		return squares;
+	}
+	
+	
+	addRed(squares){
+
+		for(let i=0; i<8; i++){
+			squares = this.addPiece(i + 14, "red", squares, "pawn");
+		}
+		squares = this.addPiece(2, "red", squares, "tower");
+		squares = this.addPiece(9, "red", squares, "tower");
+		squares = this.addPiece(3, "red", squares, "horse");
+		squares = this.addPiece(8, "red", squares, "horse");
+		squares = this.addPiece(4, "red", squares, "bisshop");
+		squares = this.addPiece(7, "red", squares, "bisshop");
+		squares = this.addPiece(6, "red", squares, "queen");
+
+		return squares;
+	}
+	
+	
+	addYellow(squares){
+
+		for(let i=0; i<8; i++){
+			squares = this.addPiece(34 + (i*12), "yellow", squares, "pawn");
+		}
+		squares = this.addPiece(35, "yellow", squares, "tower");
+		squares = this.addPiece(119, "yellow", squares, "tower");
+		squares = this.addPiece(47, "yellow", squares, "horse");
+		squares = this.addPiece(107, "yellow", squares, "horse");
+		squares = this.addPiece(59, "yellow", squares, "bisshop");
+		squares = this.addPiece(95, "yellow", squares, "bisshop");
+		squares = this.addPiece(83, "yellow", squares, "queen");
+
+		return squares;
+	}
+  
+  default(){
+  
+	var squares = Array(12 * 12).fill(null);
+	
+	squares = this.addGreen(squares);
+	squares = this.addBlue(squares);
+	squares = this.addRed(squares);
+	squares = this.addYellow(squares);
+	
+	squares = this.addKings(squares);
+
+	this.setState({
+		squares: squares,
+	});
+  }
+  
+  reset(){
+  
+	var squares = Array(12 * 12).fill(null);
+
+	this.setState({
+			greenKing: 138,
+			blueKing: 72,
+			redKing: 5,
+			yellowKing: 71,
+	});
+
+	squares = this.addKings(squares);
+	
+	this.setState({
+		squares: squares,
+	});
+  }
+  
+  renderDefault(){
+  
+	return (
+		<div className="not_selected" onClick={() => this.default()}>Default</div>
+	);
+  }
+  
+  renderReset(){
+  
+	return (
+		<div className="not_selected" onClick={() => this.reset()}>Reset</div>
+	);
+  }
+  
+  render() {
+  
+	this.validSquares = [];
+
+	const rows = [];
+	for (let i = 0; i < 12; i++) {
+		rows.push(this.renderRow(i));
+	}
+
+    return (
+		<div>
+		  <div>
+			{rows}
+		  </div>
+			<div className="pieces">
+				{this.renderPieces()}
+				{this.renderColors()}
+			</div>
+			<div className="buttons">
+				{this.renderRandomize()}
+				{this.renderDefault()}
+				{this.renderReset()}
+			</div>
+		</div>
+    );
+  }
+}
+
+class Message extends React.Component {
+
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			message: "vanilla",
+		};
+	}
+
+	async componentDidMount() {
+    // Simple GET request using fetch
+	
+		const response = await fetch('http://35.188.212.39:8080/');
+		const data = await response.json();
+		this.setState({ message: data.total });
+	}
+
+	render() {
+		return (
+			<div className="low">
+			  <div>
+				{this.state.message}
+			  </div>
+			</div>
+		);
+	}
+}
+
+class Game extends React.Component {
+  render() {
+    return (
+		<div>
+		  <div className="game">
+			<div className="game-board">
+			  <Board />
+			</div>
+		  </div>
+		  <div>
+			<Message />
+		  </div>
+		 </div>
+    );
+  }
+}
+
+// ========================================
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Game />);
+
+</script>
+
+
+
+  </body>
+</html>
