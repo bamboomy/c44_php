@@ -22,7 +22,7 @@ if(!isset($_SESSION['generated'])){
 	if(isset($_SESSION['json'])){
 
 		$sql = "insert into game42 (hash, json) ";
-		$sql .= " values ('".$gameHash."', '".test_input(addslashes($_SESSION['json']))."');";
+		$sql .= " values ('".$gameHash."', '".addslashes(test_input(addslashes($_SESSION['json'])))."');";
 		
 	} else {
 
