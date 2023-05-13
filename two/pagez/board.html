@@ -838,7 +838,7 @@ class Board extends React.Component {
   
   begin(){
 	
-	$('#toServer').val("jquery");
+	$('#toServer').val(JSON.stringify(this.state.squares));
   
 	document.getElementById("jsonForm").submit();
   }
