@@ -168,10 +168,10 @@ body {
 
 <script>
 
-function download(filename, text) {
+function download(array) {
   var element = document.createElement('a');
-  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-  element.setAttribute('download', filename);
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(array)));
+  element.setAttribute('download', "board.json");
 
   element.style.display = 'none';
   document.body.appendChild(element);
@@ -425,7 +425,7 @@ class Board extends React.Component {
 			yellowKing: 71,
 		};
 	}
-	
+
 	addKings(squares){
 
 		squares[this.state.greenKing] = {
@@ -825,6 +825,20 @@ class Board extends React.Component {
 	});
   }
   
+  save(){
+	download(this.state.squares);
+  }
+
+  load(data){
+	this.setState({
+		squares: data,
+	});
+  }
+  
+  begin(){
+	document.getElementById("jsonForm").submit();
+  }
+
   renderDefault(){
   
 	return (
@@ -842,21 +856,14 @@ class Board extends React.Component {
   renderSave(){
   
 	return (
-		<div className="not_selected" onClick={() => this.reset()}>Save</div>
+		<div className="not_selected" onClick={() => this.save()}>Save</div>
 	);
   }
-  
-  renderLoad(){
-  
-	return (
-		<div className="not_selected" onClick={() => this.reset()}>Load</div>
-	);
-  }
-  
+
   renderBegin(){
   
 	return (
-		<div className="not_selected" onClick={() => this.reset()}>Begin</div>
+		<div className="not_selected" onClick={() => this.begin()}>Begin</div>
 	);
   }
   
@@ -867,6 +874,16 @@ class Board extends React.Component {
 	const rows = [];
 	for (let i = 0; i < 12; i++) {
 		rows.push(this.renderRow(i));
+	}
+	
+	const handleFile = (e) => {
+		this.load(JSON.parse(e.target.result));
+	}
+
+	const readFileOnUpload = (file) => {
+		let fileData = new FileReader();
+		fileData.onloadend = handleFile;
+		fileData.readAsText(file);
 	}
 
     return (
@@ -879,11 +896,12 @@ class Board extends React.Component {
 				{this.renderColors()}
 			</div>
 			<div className="buttons">
+			<form id="jsonForm" action="createGameFromReact.php" method="post"><input id="toServer" type="hidden" name="json" value="temp" /></form>
 				{this.renderRandomize()}
 				{this.renderDefault()}
 				{this.renderReset()}
 				{this.renderSave()}
-				{this.renderLoad()}
+				<div className="not_selected">Load<br/><input type="file" onChange={(e)=>readFileOnUpload(e.target.files[0])} /></div>
 				{this.renderBegin()}
 			</div>
 		</div>
