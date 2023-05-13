@@ -19,8 +19,16 @@ if(!isset($_SESSION['generated'])){
     
     $_SESSION['gameHash'] = $gameHash;
 
-    $sql = "insert into game42 (hash, json) ";
-    $sql .= " values ('".$gameHash."', '".test_input($_SESSION['json'])."');";
+	if(isset($_SESSION['json'])){
+
+		$sql = "insert into game42 (hash, json) ";
+		$sql .= " values ('".$gameHash."', '".test_input($_SESSION['json'])."');";
+		
+	} else {
+
+		$sql = "insert into game42 (hash) ";
+		$sql .= " values ('".$gameHash."');";
+	}
 
     $result = $conn->query($sql);
 
