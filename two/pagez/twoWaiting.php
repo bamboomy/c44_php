@@ -20,6 +20,10 @@ if(!isset($_SESSION['generated'])){
     $_SESSION['gameHash'] = $gameHash;
 
 	if(isset($_SESSION['json'])){
+		
+		echo $_SESSION['json'];
+		echo test_input($_SESSION['json']);
+		echo addslashes(test_input($_SESSION['json']));
 
 		$sql = "insert into game42 (hash, json) ";
 		$sql .= " values ('".$gameHash."', '".addslashes(test_input($_SESSION['json']))."');";
