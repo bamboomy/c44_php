@@ -822,6 +822,27 @@ class Board extends React.Component {
 	);
   }
   
+  renderSave(){
+  
+	return (
+		<div className="not_selected" onClick={() => this.reset()}>Save</div>
+	);
+  }
+  
+  renderLoad(){
+  
+	return (
+		<div className="not_selected" onClick={() => this.reset()}>Load</div>
+	);
+  }
+  
+  renderBegin(){
+  
+	return (
+		<div className="not_selected" onClick={() => this.reset()}>Begin</div>
+	);
+  }
+  
   render() {
   
 	this.validSquares = [];
@@ -844,6 +865,9 @@ class Board extends React.Component {
 				{this.renderRandomize()}
 				{this.renderDefault()}
 				{this.renderReset()}
+				{this.renderSave()}
+				{this.renderLoad()}
+				{this.renderBegin()}
 			</div>
 		</div>
     );
