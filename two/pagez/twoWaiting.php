@@ -24,9 +24,10 @@ if(!isset($_SESSION['generated'])){
 		echo $_SESSION['json'] ."<br/>";
 		echo test_input($_SESSION['json']) ."<br/>";
 		echo addslashes(test_input($_SESSION['json'])) ."<br/>";
+		echo str_replace("\"", "\\\"", test_input($_SESSION['json'])) ."<br/>";
 
 		$sql = "insert into game42 (hash, json) ";
-		$sql .= " values ('".$gameHash."', '".addslashes(test_input($_SESSION['json']))."');";
+		$sql .= " values ('".$gameHash."', '".str_replace("\"", "\\\"", test_input($_SESSION['json']))."');";
 		
 	} else {
 
