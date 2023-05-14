@@ -391,7 +391,7 @@ if(isset($name['yellow'])){
     if($row0['state'] == 'new'){
 ?>
 						<h5>You can share this link:
-						<? echo "<input id='myInput' type='text' value='https://engine.chess4four.org/two/pagez/twoDecide.php?game=".$_SESSION['gameHash']."' />";
+						<? echo "<input id='myInput' type='text' value='http://engine.chess4four.org/two/pagez/twoDecide.php?game=".$_SESSION['gameHash']."' />";
 						echo "<input type='button' onclick='copy();' value='copy' />"; ?>
 						</h5>
 <?
@@ -403,7 +403,7 @@ if(isset($name['yellow'])){
 		
 		$row = $result->fetch_assoc();
 
-		echo "<h2><a href='https://engine.chess4four.org/dev/two/tomcat/helloTwoBots/".$row['java_hash']."'>Engage!!!</a></h2>";
+		echo "<h2><a href='http://engine.chess4four.org/dev/two/tomcat/helloTwoBots/".$row['java_hash']."'>Engage!!!</a></h2>";
     }
 ?>
 					</div>
