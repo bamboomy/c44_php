@@ -403,7 +403,7 @@ if(isset($name['yellow'])){
 		
 		$row = $result->fetch_assoc();
 
-		echo "<h2><a href='https://engine.chess4four.org/dev/two/tomcat/helloTwo/".$row['java_hash']."'>Engage!!!</a></h2>";
+		echo "<h2><a href='https://engine.chess4four.org/dev/two/tomcat/helloTwoBots/".$row['java_hash']."'>Engage!!!</a></h2>";
     }
 ?>
 					</div>
