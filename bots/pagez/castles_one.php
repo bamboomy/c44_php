@@ -448,7 +448,7 @@ if(!$voted){
 
 						<figure>
 						
-							<div id="Red" onmouseover="changeText('red')" 
+							<div id="Red" onmouseover="	('red')" 
 								onclick="claim('Red')" 
 								onmouseout="resetText('red')"></div>
 
