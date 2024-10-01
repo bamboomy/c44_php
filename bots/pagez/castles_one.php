@@ -150,10 +150,8 @@ h3{
 		echo "listen = false;";
 	}
 
-	echo "//var name = '".$_SESSION['name']."';"; 
+	echo "var name = '".$_SESSION['name']."';"; 
 ?>
-
-var name = "You";
 
 function changeText(color){
 	
