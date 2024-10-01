@@ -14,7 +14,7 @@ if(!empty($_SESSION['color'])){
 	
 	$_SESSION['botColor'] = test_input($_GET['color']);
 	
-	$keys = array_keys($my_arr);
+	$keys = array_keys($colors);
 	
 	$sql = "insert into colors_taken (game, color, name, java_hash) ";
 	$sql .= " values ('".$_SESSION['hash']."', '".$colors[$keys[0]]."', 'Hostile Bot 1', '".$_SESSION['java_hash']."');";
