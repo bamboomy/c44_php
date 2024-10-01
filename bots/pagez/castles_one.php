@@ -7,6 +7,8 @@ if(empty($_SESSION['java_hash'])){
 	$_SESSION['hash'] = md5(microtime());
 }
 
+$_SESSION['sentence'] = "At centerparks";
+
 ?>
 
 <html>
