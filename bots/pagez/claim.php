@@ -6,7 +6,7 @@ include_once("settings.php");
 
 $name = $_SESSION['name'];
 
-unset($colors[$_GET['color']]);
+unset($_SESSION['colors'][$_GET['color']]);
 
 if(!empty($_SESSION['color'])){
 
@@ -14,15 +14,15 @@ if(!empty($_SESSION['color'])){
 	
 	$_SESSION['botColor'] = test_input($_GET['color']);
 	
-	$keys = array_keys($colors);
+	$keys = array_keys($_SESSION['colors']);
 	
 	$sql = "insert into colors_taken (game, color, name, java_hash) ";
-	$sql .= " values ('".$_SESSION['hash']."', '".$colors[$keys[1]]."', 'Hostile Bot 1', '".$_SESSION['java_hash']."');";
+	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['colors'][$keys[1]]."', 'Hostile Bot 1', '".$_SESSION['java_hash']."');";
 
 	$conn->query($sql) or die($conn->error);
 
 	$sql = "insert into colors_taken (game, color, name, java_hash) ";
-	$sql .= " values ('".$_SESSION['hash']."', '".$colors[$keys[2]]."', 'Hostile Bot 2', '".$_SESSION['java_hash']."');";
+	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['colors'][$keys[2]]."', 'Hostile Bot 2', '".$_SESSION['java_hash']."');";
 
 	$conn->query($sql) or die($conn->error);
 
