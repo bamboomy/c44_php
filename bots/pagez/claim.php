@@ -17,12 +17,12 @@ if(!empty($_SESSION['color'])){
 	$keys = array_keys($_SESSION['colors']);
 	
 	$sql = "insert into colors_taken (game, color, name, java_hash) ";
-	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['colors'][$keys[1]]."', 'Hostile Bot 1', '".$_SESSION['java_hash']."');";
+	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['colors'][$keys[0]]."', 'Hostile Bot 1', '".$_SESSION['java_hash']."');";
 
 	$conn->query($sql) or die($conn->error);
 
 	$sql = "insert into colors_taken (game, color, name, java_hash) ";
-	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['colors'][$keys[2]]."', 'Hostile Bot 2', '".$_SESSION['java_hash']."');";
+	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['colors'][$keys[1]]."', 'Hostile Bot 2', '".$_SESSION['java_hash']."');";
 
 	$conn->query($sql) or die($conn->error);
 
