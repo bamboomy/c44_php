@@ -5,6 +5,8 @@ session_start();
 if(empty($_SESSION['java_hash'])){
 
 	$_SESSION['hash'] = md5(microtime());
+	
+	$_SESSION['name'] = "First Player";
 }
 
 $_SESSION['sentence'] = "At centerparks";

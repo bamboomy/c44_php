@@ -11,18 +11,4 @@ $sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."', '".
 
 $conn->query($sql) or die($conn->error);
 
-$sql = "insert into chatDirty (javaHash) ";
-$sql .= " values ('".$_SESSION['java_hash']."');";
-
-$conn->query($sql) or die($conn->error);
-
-if(isset($_SESSION['chat'])){
-	
-	setcookie("hash", md5($_SESSION['java_hash']."centerparks555"), time() + 60*60*24*30, "/");
-
-	header("Location: ".$profilePath."/tomcat/hello/".$_SESSION['java_hash']);
-		
-	exit;
-}
-
 ?>
