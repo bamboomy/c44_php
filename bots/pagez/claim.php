@@ -16,13 +16,23 @@ if(!empty($_SESSION['color'])){
 	
 	$keys = array_keys($_SESSION['colors']);
 	
-	$sql = "insert into colors_taken (game, color, name, java_hash) ";
-	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['colors'][$keys[0]]."', 'Hostile Bot 1', '".$_SESSION['java_hash']."');";
+	$sql = "insert into colors_taken (game, color, name, java_hash, ally_color) ";
+	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['colors'][$keys[0]]."', 'Hostile Bot wan', '".$_SESSION['java_hash']."', '".$_SESSION['colors'][$keys[1]]."');";
 
 	$conn->query($sql) or die($conn->error);
 
-	$sql = "insert into colors_taken (game, color, name, java_hash) ";
-	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['colors'][$keys[1]]."', 'Hostile Bot 2', '".$_SESSION['java_hash']."');";
+	$sql = "insert into colors_taken (game, color, name, java_hash, ally_color) ";
+	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['colors'][$keys[1]]."', 'Hostile Bot too', '".$_SESSION['java_hash']."', '".$_SESSION['colors'][$keys[0]]."');";
+
+	$conn->query($sql) or die($conn->error);
+
+	$sql = "insert into colors_taken (game, color, name, java_hash, ally_color) ";
+	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['color']."', 'First Player', '".$_SESSION['java_hash']."', '".$_SESSION['botColor']."');";
+
+	$conn->query($sql) or die($conn->error);
+
+	$sql = "insert into colors_taken (game, color, name, java_hash, ally_color) ";
+	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['botColor']."', 'Friendly Bot', '".$_SESSION['java_hash']."', '".$_SESSION['color']."');";
 
 	$conn->query($sql) or die($conn->error);
 
@@ -34,9 +44,5 @@ if(!empty($_SESSION['color'])){
 }
 
 
-$sql = "insert into colors_taken (game, color, name, java_hash) ";
-$sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."', '".$name."', '".$_SESSION['java_hash']."');";
-
-$conn->query($sql) or die($conn->error);
 
 ?>
