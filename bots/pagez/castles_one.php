@@ -501,7 +501,7 @@ if($_SESSION['color'] == "Yellow"){
 ?>		
 							<div id="Yellow" onmouseover="changeText('yellow')" 
 								onclick="claim('Yellow')" 
-								onmouseout="resetText('yellow')" />
+								onmouseout="resetText('yellow')"></div>
 							<figcaption> Yellow: <span id="yellowName">unclaimed</span> </figcaption>
 <?
 	}
