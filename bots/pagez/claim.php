@@ -4,8 +4,6 @@ session_start();
 
 include_once("settings.php");
 
-$_SESSION['java_hash'] = md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash'] . $_SESSION['id']);
-
 $name = $_SESSION['name'];
 
 unset($colors[$_GET['color']]);
@@ -29,6 +27,8 @@ if(!empty($_SESSION['color'])){
 } else {
 	
 	$_SESSION['color'] = test_input($_GET['color']);
+	
+	$_SESSION['java_hash'] = md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash'] . $_SESSION['id']);
 }
 
 
