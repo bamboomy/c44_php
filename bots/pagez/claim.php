@@ -6,8 +6,16 @@ include_once("settings.php");
 
 $_SESSION['java_hash'] = md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash'] . $_SESSION['id']);
 
+$name = $_SESSION['name'];
+
+if(!empty($_SESSION['color'])){
+
+	$name = "Friendly bot";
+}
+
+
 $sql = "insert into colors_taken (game, color, name, java_hash) ";
-$sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."', '".$_SESSION['name']."', '".$_SESSION['java_hash']."');";
+$sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."', '".$name."', '".$_SESSION['java_hash']."');";
 
 $conn->query($sql) or die($conn->error);
 
