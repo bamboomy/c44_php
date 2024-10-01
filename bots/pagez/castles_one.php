@@ -350,22 +350,6 @@ if(!$voted){
 		</div>
 	</div>
 
-<?
-	if($counter == 2){
-?>
-		<div style="margin: 10px; position: fixed; z-index: 1">
-			<p><a href="#" onclick="$('#noOthersModal').modal('show');">No other players?</a></p>
-		</div>
-<?
-	} else if($counter == 3){
-?>
-		<div style="margin: 10px; position: fixed; z-index: 1">
-			<p><a href="#" onclick="$('#4thModal').modal('show');">No 4th player?</a></p>
-		</div>
-<?
-	}
-?>
-	
 		<center>
 
 			<div class="container-fluid">
