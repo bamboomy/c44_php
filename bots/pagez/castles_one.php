@@ -360,7 +360,7 @@ if(!empty($_SESSION['color'])){
 						<h3>Choose your color:</h3>
 <?
        }
-+?>
+?>
 
 						
 					</div>
