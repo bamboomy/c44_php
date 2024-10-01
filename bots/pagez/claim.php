@@ -11,4 +11,6 @@ $sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."', '".
 
 $conn->query($sql) or die($conn->error);
 
+$_SESSION['color'] = test_input($_GET['color']);
+
 ?>

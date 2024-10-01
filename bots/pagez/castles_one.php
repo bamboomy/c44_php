@@ -376,8 +376,17 @@ if($votes!=0 && $botVotes != 2 && $dubiousVotes != 2){
 							<div id="Green" onmouseover="changeText('green')" 
 								onclick="claim('Green')" 
 								onmouseout="resetText('green')"></div>
-							
+<?
+if($_SESSION['color'] == "Green"){
+?>
+							<figcaption> Green: <span id="greenName"><? echo $_SESSION['name']?></span> </figcaption>
+<?		
+	}else{
+?>		
 							<figcaption> Green: <span id="greenName">unclaimed</span> </figcaption>
+<?
+	}
+?>
 						</figure>
 <?
 	}
@@ -404,8 +413,18 @@ if($votes!=0 && $botVotes != 2 && $dubiousVotes != 2){
 							<div id="Blue" onmouseover="changeText('blue')" 
 								onclick="claim('Blue')" 
 								onmouseout="resetText('blue')"></div>
-
+<?
+if($_SESSION['color'] == "Blue"){
+?>
+							<figcaption> Blue: <span id="blueName"><? echo $_SESSION['name']?></span> </figcaption>
+<?		
+	}else{
+?>		
 							<figcaption> Blue: <span id="blueName">unclaimed</span> </figcaption>
+<?
+	}
+?>
+
 						</figure>
 <?
 	}
@@ -433,7 +452,18 @@ if($votes!=0 && $botVotes != 2 && $dubiousVotes != 2){
 								onclick="claim('Red')" 
 								onmouseout="resetText('red')"></div>
 
+<?
+if($_SESSION['color'] == "Red"){
+?>
+							<figcaption> Red: <span id="redName"><? echo $_SESSION['name']?></span> </figcaption>
+<?		
+	}else{
+?>		
 							<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
+<?
+	}
+?>
+
 						</figure>
 <?
 	}
@@ -461,7 +491,17 @@ if($votes!=0 && $botVotes != 2 && $dubiousVotes != 2){
 								onclick="claim('Yellow')" 
 								onmouseout="resetText('yellow')"></div>
 
+<?
+if($_SESSION['color'] == "Yellow"){
+?>
+							<figcaption> Yellow: <span id="yellowName"><? echo $_SESSION['name']?></span> </figcaption>
+<?		
+	}else{
+?>		
 							<figcaption> Yellow: <span id="yellowName">unclaimed</span> </figcaption>
+<?
+	}
+?>
 						</figure>
 <?
 	}
