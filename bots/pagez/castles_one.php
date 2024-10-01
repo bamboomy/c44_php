@@ -2,6 +2,10 @@
 
 session_start();
 
+if(empty($_SESSION['java_hash'])){
+
+	$_SESSION['hash'] = md5(microtime());
+}
 
 ?>
 
