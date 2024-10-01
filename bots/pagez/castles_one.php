@@ -214,6 +214,7 @@ function copy() {
   alert("Link copied...");
 }
 
+/*
 function again() {
 
 	setTimeout(function() {
@@ -273,6 +274,7 @@ if($votes!=0 && $botVotes != 2 && $dubiousVotes != 2){
 <?
 }
 ?>
+*/
 
 </script>
 	
