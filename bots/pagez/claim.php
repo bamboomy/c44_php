@@ -40,7 +40,7 @@ if(!empty($_SESSION['color'])){
 	$conn->query($sql) or die($conn->error);
 
 	$sql = "insert into game (sentence, hash, fail) ";
-	$sql .= " values ('At centerparks', '".$_SESSION['hash']."', '0')";
+	$sql .= " values ('At centerparks(".$_SESSION['hash'].")', '".$_SESSION['hash']."', '0')";
 
 	$conn->query($sql) or die($conn->error);
 
