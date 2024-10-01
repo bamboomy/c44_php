@@ -526,6 +526,8 @@ if($_SESSION['color'] == "Yellow"){
 						</figure>
 <?
 	}
+	
+	}
 ?>
 
 					</div>
