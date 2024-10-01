@@ -17,12 +17,14 @@ if(!empty($_SESSION['color'])){
 	$keys = array_keys($_SESSION['colors']);
 	
 	$sql = "insert into colors_taken (game, color, name, java_hash, ally_color) ";
-	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['colors'][$keys[0]]."', 'Hostile Bot wan', '".$_SESSION['java_hash']."', '".$_SESSION['colors'][$keys[1]]."');";
+	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['colors'][$keys[0]]."', 'Hostile Bot wan', '".md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash'] . $_SESSION['id'])."'";
+	$sql .= " , '".$_SESSION['colors'][$keys[1]]."');";
 
 	$conn->query($sql) or die($conn->error);
 
 	$sql = "insert into colors_taken (game, color, name, java_hash, ally_color) ";
-	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['colors'][$keys[1]]."', 'Hostile Bot too', '".$_SESSION['java_hash']."', '".$_SESSION['colors'][$keys[0]]."');";
+	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['colors'][$keys[1]]."', 'Hostile Bot too', '".md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash'] . $_SESSION['id'])."'";
+	$sql .= " , '".$_SESSION['colors'][$keys[0]]."');";
 
 	$conn->query($sql) or die($conn->error);
 
@@ -32,7 +34,8 @@ if(!empty($_SESSION['color'])){
 	$conn->query($sql) or die($conn->error);
 
 	$sql = "insert into colors_taken (game, color, name, java_hash, ally_color) ";
-	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['botColor']."', 'Friendly Bot', '".$_SESSION['java_hash']."', '".$_SESSION['color']."');";
+	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['botColor']."', 'Friendly Bot', '".md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash'] . $_SESSION['id'])."'";
+	$sql .= " , '".$_SESSION['color']."');";
 
 	$conn->query($sql) or die($conn->error);
 
