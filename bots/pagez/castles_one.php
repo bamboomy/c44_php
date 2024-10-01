@@ -5,18 +5,14 @@ session_start();
 if(empty($_SESSION['java_hash'])){
 
 	$_SESSION['hash'] = md5(microtime());
+	
+	$_SESSION['name'] = "First Player";
 }
 
 if(!empty($_SESSION['color'])){
 
-	$_SESSION['name'] = "Friendly bot";
-
-       }else{
-		   
-		   $_SESSION['name'] = "First Player";
-
-       }
-
+	$_SESSION['bot'] = "Friendly bot";
+}
 
 $_SESSION['sentence'] = "At centerparks";
 
@@ -150,7 +146,14 @@ h3{
 		echo "listen = false;";
 	}
 
+if(!empty($_SESSION['color'])){
+
+	echo "var name = '".$_SESSION['bot']."';"; 
+	
+} else {
+	
 	echo "var name = '".$_SESSION['name']."';"; 
+}
 ?>
 
 function changeText(color){
@@ -520,9 +523,6 @@ if($_SESSION['color'] == "Yellow"){
 								onclick="claim('Yellow')" 
 								onmouseout="resetText('yellow')"></div>
 							<figcaption> Yellow: <span id="yellowName">unclaimed</span> </figcaption>
-<?
-	}
-?>
 						</figure>
 <?
 	}
