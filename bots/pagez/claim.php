@@ -11,6 +11,12 @@ $name = $_SESSION['name'];
 if(!empty($_SESSION['color'])){
 
 	$name = "Friendly bot";
+	
+	$_SESSION['botColor'] = test_input($_GET['color']);
+	
+} else {
+	
+	$_SESSION['color'] = test_input($_GET['color']);
 }
 
 
@@ -19,6 +25,6 @@ $sql .= " values ('".$_SESSION['hash']."', '".test_input($_GET['color'])."', '".
 
 $conn->query($sql) or die($conn->error);
 
-$_SESSION['color'] = test_input($_GET['color']);
+
 
 ?>

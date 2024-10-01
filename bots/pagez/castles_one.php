@@ -401,11 +401,20 @@ if($_SESSION['color'] == "Green"){
 <?		
 	}else{
 ?>		
+	<?
+	if($_SESSION['botColor'] == "Blue"){
+	?>
+								<div id="Green" class="taken"></div>
+								<figcaption> Green: <span id="greenName">Friendly Bot</span> </figcaption>
+	<?		
+		}else{
+	?>		
 							<div id="Green" onmouseover="changeText('green')" 
 								onclick="claim('Green')" 
 								onmouseout="resetText('green')"></div>
 							<figcaption> Green: <span id="greenName">unclaimed</span> </figcaption>
 <?
+		}
 	}
 ?>
 						</figure>
@@ -439,11 +448,20 @@ if($_SESSION['color'] == "Blue"){
 <?		
 	}else{
 ?>		
+	<?
+	if($_SESSION['botColor'] == "Blue"){
+	?>
+								<div id="Blue" class="taken"></div>
+								<figcaption> Blue: <span id="blueName">Friendly Bot</span> </figcaption>
+	<?		
+		}else{
+	?>		
 							<div id="Blue" onmouseover="changeText('blue')" 
 								onclick="claim('Blue')" 
 								onmouseout="resetText('blue')"></div>
 							<figcaption> Blue: <span id="blueName">unclaimed</span> </figcaption>
 <?
+		}
 	}
 ?>
 
@@ -479,11 +497,20 @@ if($_SESSION['color'] == "Red"){
 <?		
 	}else{
 ?>		
+	<?
+	if($_SESSION['botColor'] == "Red"){
+	?>
+								<div id="Red" class="taken"></div>
+								<figcaption> Red: <span id="redName">Friendly Bot</span> </figcaption>
+	<?		
+		}else{
+	?>		
 							<div id="Red" onmouseover="changeText('red')" 
 								onclick="claim('Red')" 
 								onmouseout="resetText('red')"></div>
 							<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
 <?
+		}
 	}
 ?>
 
@@ -519,12 +546,22 @@ if($_SESSION['color'] == "Yellow"){
 <?		
 	}else{
 ?>		
+	<?
+	if($_SESSION['botColor'] == "Yellow"){
+	?>
+								<div id="Yellow" class="taken"></div>
+								<figcaption> Yellow: <span id="yellowName">Friendly Bot</span> </figcaption>
+	<?		
+		}else{
+	?>		
 							<div id="Yellow" onmouseover="changeText('yellow')" 
 								onclick="claim('Yellow')" 
 								onmouseout="resetText('yellow')"></div>
 							<figcaption> Yellow: <span id="yellowName">unclaimed</span> </figcaption>
 						</figure>
 <?
+	}
+
 	}
 	
 	}

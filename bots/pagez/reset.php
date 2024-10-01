@@ -8,6 +8,8 @@ unset($_SESSION['color']);
 
 unset($_SESSION['bot']);
 
+unset($_SESSION['botColor']);
+
 header("Location: castles_one.php");
 
 ?>
