@@ -350,8 +350,18 @@ if($votes!=0 && $botVotes != 2 && $dubiousVotes != 2){
 						<h3>We're creating game:</h3>
 						
 						<? echo "<h3>".str_replace("<br/>", " ", $_SESSION['sentence'])."</h3>"; ?>
-			
+<?
+if(!empty($_SESSION['color'])){
+?>			
+						<h3>Choose the color of your bot:</h3>
+<?
+       }else{
+?>
 						<h3>Choose your color:</h3>
+<?
+       }
++?>
+
 						
 					</div>
 				</div>
