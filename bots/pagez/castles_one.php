@@ -373,16 +373,17 @@ if($votes!=0 && $botVotes != 2 && $dubiousVotes != 2){
 	}else{
 ?>		
 						<figure>
-							<div id="Green" onmouseover="changeText('green')" 
-								onclick="claim('Green')" 
-								onmouseout="resetText('green')"></div>
 <?
 if($_SESSION['color'] == "Green"){
 ?>
+							<div id="Green" class="taken"></div>
 							<figcaption> Green: <span id="greenName"><? echo $_SESSION['name']?></span> </figcaption>
 <?		
 	}else{
 ?>		
+							<div id="Green" onmouseover="changeText('green')" 
+								onclick="claim('Green')" 
+								onmouseout="resetText('green')"></div>
 							<figcaption> Green: <span id="greenName">unclaimed</span> </figcaption>
 <?
 	}
@@ -410,16 +411,17 @@ if($_SESSION['color'] == "Green"){
 
 						<figure>
 							
-							<div id="Blue" onmouseover="changeText('blue')" 
-								onclick="claim('Blue')" 
-								onmouseout="resetText('blue')"></div>
 <?
 if($_SESSION['color'] == "Blue"){
 ?>
+							<div id="Blue" class="taken"></div>
 							<figcaption> Blue: <span id="blueName"><? echo $_SESSION['name']?></span> </figcaption>
 <?		
 	}else{
 ?>		
+							<div id="Blue" onmouseover="changeText('blue')" 
+								onclick="claim('Blue')" 
+								onmouseout="resetText('blue')"></div>
 							<figcaption> Blue: <span id="blueName">unclaimed</span> </figcaption>
 <?
 	}
@@ -448,17 +450,18 @@ if($_SESSION['color'] == "Blue"){
 
 						<figure>
 						
-							<div id="Red" onmouseover="changeText('red')" 
-								onclick="claim('Red')" 
-								onmouseout="resetText('red')"></div>
 
 <?
 if($_SESSION['color'] == "Red"){
 ?>
+							<div id="Red" class="taken"></div>
 							<figcaption> Red: <span id="redName"><? echo $_SESSION['name']?></span> </figcaption>
 <?		
 	}else{
 ?>		
+							<div id="Red" onmouseover="changeText('red')" 
+								onclick="claim('Red')" 
+								onmouseout="resetText('red')"></div>
 							<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
 <?
 	}
@@ -487,17 +490,18 @@ if($_SESSION['color'] == "Red"){
 
 						<figure>
 						
-							<div id="Yellow" onmouseover="changeText('yellow')" 
-								onclick="claim('Yellow')" 
-								onmouseout="resetText('yellow')"></div>
 
 <?
 if($_SESSION['color'] == "Yellow"){
 ?>
+							<div id="Yellow" class="taken"></div>
 							<figcaption> Yellow: <span id="yellowName"><? echo $_SESSION['name']?></span> </figcaption>
 <?		
 	}else{
 ?>		
+							<div id="Yellow" onmouseover="changeText('yellow')" 
+								onclick="claim('Yellow')" 
+								onmouseout="resetText('yellow')" />
 							<figcaption> Yellow: <span id="yellowName">unclaimed</span> </figcaption>
 <?
 	}
