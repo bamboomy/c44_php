@@ -308,20 +308,7 @@ if($votes!=0 && $botVotes != 2 && $dubiousVotes != 2){
 					that's a player which is controlled<br/>
 					by a different human player each turn...
 					</p>
-<?
-if(!$voted){
-?>
-					<div class="btn-group" role="group" aria-label="Basic example">
-						<button type="button" class="btn btn-secondary" onclick="vote('b');">Annoying Bot</button>
-						<button type="button" class="btn btn-secondary" onclick="vote('d');">Dubious Player</button>
-					</div>
-<?
-}
-?>
-					<br/><br/>
-					<p style="font-size: smaller;">
-						<? echo "Bot votes: ".$botVotes." <br/>Dubious votes: ".$dubiousVotes; ?>
-					</p>
+
 				</div>
 			</div>
 		</div>
