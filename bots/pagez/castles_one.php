@@ -409,10 +409,21 @@ if($_SESSION['color'] == "Green"){
 	<?		
 		}else{
 	?>		
+		<?
+		if(empty($_SESSION['botColor'])){
+		?>
 							<div id="Green" onmouseover="changeText('green')" 
 								onclick="claim('Green')" 
 								onmouseout="resetText('green')"></div>
 							<figcaption> Green: <span id="greenName">unclaimed</span> </figcaption>
+		<?		
+			}else{
+		?>		
+							<div id="Green"></div>
+							<figcaption> Green: <span id="greenName">Hostile Bot</span> </figcaption>
+		<?		
+			}
+		?>		
 <?
 		}
 	}
@@ -456,10 +467,21 @@ if($_SESSION['color'] == "Blue"){
 	<?		
 		}else{
 	?>		
+		<?
+		if(empty($_SESSION['botColor'])){
+		?>
 							<div id="Blue" onmouseover="changeText('blue')" 
 								onclick="claim('Blue')" 
 								onmouseout="resetText('blue')"></div>
 							<figcaption> Blue: <span id="blueName">unclaimed</span> </figcaption>
+		<?		
+			}else{
+		?>		
+							<div id="Blue"></div>
+							<figcaption> Blue: <span id="blueName">Hostile Bot</span> </figcaption>
+		<?		
+			}
+		?>		
 <?
 		}
 	}
@@ -505,10 +527,21 @@ if($_SESSION['color'] == "Red"){
 	<?		
 		}else{
 	?>		
+		<?
+		if(empty($_SESSION['botColor'])){
+		?>
 							<div id="Red" onmouseover="changeText('red')" 
 								onclick="claim('Red')" 
 								onmouseout="resetText('red')"></div>
 							<figcaption> Red: <span id="redName">unclaimed</span> </figcaption>
+		<?		
+			}else{
+		?>		
+							<div id="Red"></div>
+							<figcaption> Red: <span id="redName">Hostile Bot</span> </figcaption>
+		<?		
+			}
+		?>		
 <?
 		}
 	}
@@ -554,10 +587,21 @@ if($_SESSION['color'] == "Yellow"){
 	<?		
 		}else{
 	?>		
+		<?
+		if(empty($_SESSION['botColor'])){
+		?>
 							<div id="Yellow" onmouseover="changeText('yellow')" 
 								onclick="claim('Yellow')" 
 								onmouseout="resetText('yellow')"></div>
 							<figcaption> Yellow: <span id="yellowName">unclaimed</span> </figcaption>
+		<?		
+			}else{
+		?>		
+							<div id="Yellow"></div>
+							<figcaption> Yellow: <span id="yellowName">Hostile Bot</span> </figcaption>
+		<?		
+			}
+		?>		
 						</figure>
 <?
 	}
