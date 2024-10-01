@@ -55,6 +55,7 @@ if($counter == 4){
 	exit;
 }
 
+
 $sql = "SELECT COUNT(DISTINCT color) from colors_taken where game = '".test_input($_SESSION['hash'])."';";
 
 $result = $conn->query($sql) or die($conn->error);
