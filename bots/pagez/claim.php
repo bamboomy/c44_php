@@ -36,7 +36,9 @@ if(!empty($_SESSION['color'])){
 	$sql = "insert into colors_taken (game, color, name, java_hash, ally_color) ";
 	$sql .= " values ('".$_SESSION['hash']."', '".$_SESSION['botColor']."', 'Friendly Bot', '".md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash'] . $_SESSION['id'])."'";
 	$sql .= " , '".$_SESSION['color']."');";
-	
+
+	$conn->query($sql) or die($conn->error);
+
 	$sql = "insert into game (sentence, hash, fail) ";
 	$sql .= " values ('At centerparks', '".$_SESSION['hash']."', '0')";
 
