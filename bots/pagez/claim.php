@@ -2,13 +2,6 @@
 
 session_start();
 
-if(!isset($_SESSION['id']) && !isset($_SESSION['bypass'])){
-	
-	header("Location: welcome.php");
-		
-	exit;
-}
-
 include_once("settings.php");
 
 $_SESSION['java_hash'] = md5($_SERVER['REMOTE_ADDR'] . microtime() . $_SESSION['hash'] . $_SESSION['id']);
