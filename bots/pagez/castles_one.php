@@ -102,6 +102,8 @@ figure{
 }
 
 <?
+var_dump($colors);
+
 	if(!$claimed){
 ?>
 
@@ -402,7 +404,7 @@ if($_SESSION['color'] == "Green"){
 	}else{
 ?>		
 	<?
-	if($_SESSION['botColor'] == "Blue"){
+	if($_SESSION['botColor'] == "Green"){
 	?>
 								<div id="Green" class="taken"></div>
 								<figcaption> Green: <span id="greenName">Friendly Bot</span> </figcaption>
